@@ -167,7 +167,7 @@ No part of this file may be used without permission.
 	<input type="hidden" name="nf_ftp">
 	<input type="hidden" name="nf_sip">
 
-	<div class="box">
+	<div class="box" data-box="ctnf-cons">
 		<div class="heading">Connections</div>
 		<div class="content">
 			<div class="conectionsfirst"></div>
@@ -185,7 +185,7 @@ No part of this file may be used without permission.
 		</div>
 	</div>
 
-	<div class="box">
+	<div class="box" data-box="ctnf-tcp-time">
 		<div class="heading">TCP Timeout</div>
 		<div class="section tcptimeout content"></div>
 		<script type="text/javascript">
@@ -205,7 +205,7 @@ No part of this file may be used without permission.
 		</script>
 	</div>
 
-	<div class="box">
+	<div class="box" data-box="ctnf-udp-time">
 		<div class="heading">UDP Timeout</div>
 		<div class="udptimeout content"></div>
 		<script type="text/javascript">
@@ -220,7 +220,7 @@ No part of this file may be used without permission.
 		</script>
 	</div>
 
-	<div class="box">
+	<div class="box" data-box="ctnf-timeout">
 		<div class="heading">Other Timeouts</div>
 		<div class="otimeout content"></div>
 		<script type="text/javascript">
@@ -236,7 +236,7 @@ No part of this file may be used without permission.
 		</script>
 	</div>
 
-	<div class="box">
+	<div class="box" data-box="ctnf-nat">
 		<div class="heading">Tracking / NAT Helpers</div>
 		<div class="content helpers"></div>
 		<script type="text/javascript">
@@ -252,7 +252,7 @@ No part of this file may be used without permission.
 		</script>
 	</div>
 
-	<div class="box">
+	<div class="box" data-box="ctnf-misc"">
 		<div class="heading">Miscellaneous</div>
 		<div class="content misc"></div>
 		<script type="text/javascript">

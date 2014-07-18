@@ -210,7 +210,7 @@ No part of this file may be used without permission.
 		<input type="hidden" name="sshd_forwarding">
 		<input type="hidden" name="web_mx">
 
-		<div class="box">
+		<div class="box" data-box="admin-access">
 			<div class="heading">Admin Access Settings</div>
 			<div class="content" id="section-gui">
 
@@ -245,7 +245,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="box" id="section-ssh">
+		<div class="box" id="section-ssh" data-box="access-ssh">
 			<div class="heading">SSH Daemon <span class="ssh-status"></span></div>
 			<div class="content">
 				<script type="text/javascript">
@@ -265,7 +265,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="box" id="section-telnet">
+		<div class="box" id="section-telnet" data-box="access-telnet">
 			<div class="heading">Telnet Daemon <span class="telnet-status"></span></div>
 			<div class="content">
 				<script type="text/javascript">
@@ -280,7 +280,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="box" id="section-restrict">
+		<div class="box" id="section-restrict" data-box="access-restrict">
 			<div class="heading">Admin Restrictions</div>
 			<div class="content">
 				<script type="text/javascript">

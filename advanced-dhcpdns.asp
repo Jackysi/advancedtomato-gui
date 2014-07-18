@@ -113,7 +113,7 @@ No part of this file may be used without permission.
 		<input type="hidden" name="ipv6_radvd">
 		<input type="hidden" name="dnsmasq_q">
 
-		<div class="box">
+		<div class="box" data-box="dhcp-server">
 			<div class="heading">DHCP / DNS Server (LAN)</div>
 			<div class="section dnsdhcp content"></div>
 			<script type="text/javascript">
@@ -140,7 +140,7 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="dhcp-client-wan">
 			<div class="heading">DHCP Client (WAN)</div>
 			<div class="section dhcpwan content"></div>
 			<script type="text/javascript">

@@ -228,7 +228,7 @@ No part of this file may be used without permission.
 		<input type="hidden" name="sch_c2" value="">
 		<input type="hidden" name="sch_c3" value="">
 
-		<div class="box">
+		<div class="box" data-box="sched-reboot">
 			<div class="heading">Reboot</div>
 			<div class="content rboot"></div>
 		</div>
@@ -237,7 +237,7 @@ No part of this file may be used without permission.
 		</script>
 
 
-		<div class="box">
+		<div class="box" data-box="sched-reconnect">
 			<div class="heading">Reconnect</div>
 			<div class="content rcon"></div>
 			<script type="text/javascript">
@@ -245,7 +245,7 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="sched-cust1">
 			<div class="heading">Custom 1</div>
 			<div class="content c1"></div>
 			<script type="text/javascript">
@@ -253,7 +253,7 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="sched-cust2">
 			<div class="heading">Custom 2</div>
 			<div class="content c2"></div>
 			<script type="text/javascript">
@@ -261,7 +261,7 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="sched-cust3">
 			<div class="heading">Custom 3</div>
 			<div class="content c3"></div>
 			<script type="text/javascript">

@@ -133,7 +133,7 @@ No part of this file may be used without permission.
 		<input type="hidden" name="webmon_bkp">
 		<input type="hidden" name="webmon_shrink">
 
-		<div class="box">
+		<div class="box" data-box="router-log">
 			<div class="heading">Router Logging</div>
 			<div class="content" id="router-log"></div>
 			<script type="text/javascript">
@@ -174,7 +174,7 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="webmon-settings">
 			<div class="heading">Web Monitor</div>
 			<div class="content" id="webmon"></div>
 			<script type='text/javascript'>

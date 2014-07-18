@@ -228,7 +228,7 @@ No part of this file may be used without permission.
 
 		<span id="notice-msg"></span>
 
-		<div class="box" id="dlna">
+		<div class="box" id="dlna" data-box="dlna-media-serv">
 			<div class="heading">Media / DLNA Server </div>
 			<div class="content mediadlna"></div>
 			<script type="text/javascript">
@@ -273,7 +273,7 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="dlna-dirs">
 			<div class="heading">Media Directories</div>
 			<div class="content">
 				<table class="line-table" id="ms-grid"></table>

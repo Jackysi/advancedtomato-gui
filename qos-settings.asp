@@ -176,7 +176,7 @@ No part of this file may be used without permission.
 		<input type="hidden" name="qos_reset">
 		<input type="hidden" name="ne_vegas">
 
-		<div class="box">
+		<div class="box" data-box="qos-basic-set">
 			<div class="heading">Basic QOS Settings</div>
 			<div class="content qos-settings"></div>
 			<script type="text/javascript">
@@ -206,7 +206,7 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="qos-dsl-set">
 			<div class="heading">Settings for DSL only</div>
 			<div class="content qos-dsl"></div>
 			<script type="text/javascript">
@@ -222,7 +222,7 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="qos-out-limits">
 			<div class="heading">Outbound Rates / Limits</div>
 			<div class="content out-limit"></div>
 			<script type="text/javascript">
@@ -243,7 +243,7 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="qos-in-limits">
 			<div class="heading">Inbound Rates / Limits</div>
 			<div class="content in-limit"></div>
 			<script type="text/javascript">
@@ -269,8 +269,8 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
-			<div class="heading">QOS Class Names <a class="pull-right" href="#" data-toggle="tooltip" title="Hide / Show QOS Class Names" onclick="$('.classnames').slideToggle(); return false;"><i class="icon-chevron-down"></i></a></div>
+		<div class="box" data-box="qos-class-n">
+			<div class="heading">QOS Class Names</div>
 			<div class="content classnames" style="display:none"></div>
 			<script type="text/javascript">
 
@@ -288,9 +288,9 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="qos-tcp-vegas">
 			<div class="heading">TCP Vegas <small>(Network Congestion Control)</small></div>
-			<div class="section tcp-vegas"></div>
+			<div class="content tcp-vegas"></div>
 			<script type="text/javascript">
 				/* move me? */
 				$('.tcp-vegas').forms([

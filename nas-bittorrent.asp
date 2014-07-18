@@ -220,7 +220,7 @@ No part of this file may be used without permission.
 		<input type="hidden" name="bt_dl_queue_enable">
 		<input type="hidden" name="bt_ul_queue_enable">
 
-		<div class="box">
+		<div class="box" data-box="bit-basic-set">
 			<div class="heading">BitTorrent Client - Basic Settings</div>
 			<div class="content" id="torrent-config-section">
 
@@ -255,7 +255,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="bit-remote">
 			<div class="heading">Remote Access <span class="bt-link"></span></div>
 			<div class="content">
 				<div class="remoteacc"></div><hr>
@@ -279,7 +279,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="bit-limits">
 			<div class="heading">Limits</div>
 			<div class="content">
 				<div class="limitsgui"></div>
@@ -305,7 +305,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="bit-queue">
 			<div class="heading">Queue torrents</div>
 			<div class="content">
 				<div class="queuetor"></div><hr>
@@ -329,7 +329,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="bit-advanced">
 			<div class="heading">Advanced Settings</div>
 			<div class="content" id="tor-advancedsettings"></div>
 			<script type="text/javascript">

@@ -189,7 +189,7 @@ No part of this file may be used without permission.
 		<input type="hidden" name="pptpd_enable">
 		<input type="hidden" name="pptpd_remoteip">
 
-		<div class="box">
+		<div class="box" data-box="pptp-server">
 			<div class="heading">PPTP Server</div>
 			<div class="content">
 
@@ -241,7 +241,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="pptp-userlist">
 			<div class="heading">PPTP User List </div>
 			<div class="content" id="sesdiv_userlist">
 				<table class="line-table" id="ul-grid"></table>

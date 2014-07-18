@@ -1553,7 +1553,7 @@ No part of this file may be used without permission.
 		</script>
 		<!-- VLAN-END -->
 
-		<div class="box">
+		<div class="box" data-box="network-wan">
 			<div class="heading">WAN / Internet</div>
 			<div class="content" id="wan-settings"></div>
 			<script type="text/javascript">
@@ -1602,7 +1602,7 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="network-lan">
 			<div class="heading">LAN</div>
 			<div class="content lan-settings">
 				<!-- VLAN-BEGIN -->
@@ -1624,7 +1624,7 @@ No part of this file may be used without permission.
 					/* DNSCRYPT-BEGIN */
 					{ title: 'Use dnscrypt-proxy', name: 'f_dnscrypt_proxy', type: 'checkbox', value: (nvram.dnscrypt_proxy == 1) },
 					{ title: 'Manual Entry', indent: 2, name: 'f_dnscrypt_manual', type: 'checkbox', value: (nvram.dnscrypt_manual == 1) },
-					{ title: 'Resolver', indent: 2, name: 'dnscrypt_resolver', type: 'select', options: [/*_dnscrypt_resolvers_*/],  value: nvram.dnscrypt_resolver, suffix: ' <a href=\'https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv\' target=\'_new\'>Resolver Details</a>' },
+					{ title: 'Resolver', indent: 2, name: 'dnscrypt_resolver', type: 'select', options: [/*dnscrypt_resolvers*/],  value: nvram.dnscrypt_resolver, suffix: ' <a href=\'https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv\' target=\'_new\'>Resolver Details</a>' },
 					{ title: 'Resolver Address', indent: 2, name: 'dnscrypt_resolver_address', type: 'text', maxlen: 50, size: 25, value: nvram.dnscrypt_resolver_address, suffix: ' <a href=\'https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv\' target=\'_new\'>Resolver Details</a>' },
 					{ title: 'Provider Name', indent: 2, name: 'dnscrypt_provider_name', type: 'text', maxlen: 60, size: 25, value: nvram.dnscrypt_provider_name },
 					{ title: 'Provider Public Key', indent: 2, name: 'dnscrypt_provider_key', type: 'text', maxlen: 80, size: 25, value: nvram.dnscrypt_provider_key },
@@ -1637,7 +1637,7 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="network-ethports">
 			<div class="heading">Ethernet Ports State - Configuration</div>
 			<div class="content eth-ports"></div>
 			<script type="text/javascript">
@@ -1678,7 +1678,7 @@ No part of this file may be used without permission.
 					htmlOut += ('<input type="hidden" id="_wl'+u+'_nctrlsb" name="wl'+u+'_nctrlsb">');
 					htmlOut += ('<input type="hidden" id="_wl'+u+'_nbw" name="wl'+u+'_nbw">');
 
-					htmlOut += '<div class="box"><div class="heading">Wireless';
+					htmlOut += '<div class="box" data-box="network_wl' + u +'"><div class="heading">Wireless';
 					//	if (wl_ifaces.length > 1)
 					htmlOut += ' (' + wl_display_ifname(uidx) + ')';
 					htmlOut += '</div>';
@@ -1688,7 +1688,7 @@ No part of this file may be used without permission.
 					f = [
 						{ title: 'Enable Wireless', name: 'f_wl'+u+'_radio', type: 'checkbox',
 							value: (eval('nvram.wl'+u+'_radio') == '1') && (eval('nvram.wl'+u+'_net_mode') != 'disabled') },
-						{ title: 'MAC Address', text: '<a href="advanced-mac.asp">' + eval('nvram.wl'+u+'_hwaddr') + '</a>' },
+						{ title: 'MAC Address', text: '<a href="/#advanced-mac.asp">' + eval('nvram.wl'+u+'_hwaddr') + '</a>' },
 						{ title: 'Wireless Mode', name: 'f_wl'+u+'_mode', type: 'select',
 							options: [['ap', 'Access Point'],['apwds', 'Access Point + WDS'],['sta', 'Wireless Client'],['wet', 'Wireless Ethernet Bridge'],['wds', 'WDS']],
 							value: ((eval('nvram.wl'+u+'_mode') == 'ap') && (eval('nvram.wl'+u+'_wds_enable') == '1')) ? 'apwds' : eval('nvram.wl'+u+'_mode') },

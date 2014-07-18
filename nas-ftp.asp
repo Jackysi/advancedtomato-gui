@@ -201,7 +201,7 @@ No part of this file may be used without permission.
 		<input type="hidden" name="ftp_sip">
 		<input type="hidden" name="ftp_limit">
 
-		<div class="box">
+		<div class="box" data-box="ftp-conf-main">
 			<div class="heading">FTP Server Configuration</div>
 			<div class="content">
 				<small style="color: red">Note: Avoid using this option when FTP server is enabled for WAN. IT PROVIDES FULL ACCESS TO THE ROUTER FILE SYSTEM!</small><br /><br />
@@ -228,7 +228,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="ftp-dirs">
 			<div class="heading">Directories</div>
 			<div class="content">
 
@@ -258,7 +258,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="ftp-limits">
 			<div class="heading">Limits</div>
 			<div class="content" id="ftp-limits"></div>
 			<script type="text/javascript">
@@ -288,7 +288,7 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="ftp-cust">
 			<div class="heading">Custom Configuration</div>
 			<div class="content" id="ftpcustom"></div>
 			<script type="text/javascript">
@@ -299,7 +299,7 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="ftp-usr-acc">
 			<div class="heading">User Accounts</div>
 			<div class="content">
 				<table class="line-table" id="aft-grid"></table><br /><hr>

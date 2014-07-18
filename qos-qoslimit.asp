@@ -265,7 +265,7 @@ No part of this file may be used without permission.
 		<input type="hidden" name="limit_br2_enable">
 		<input type="hidden" name="limit_br3_enable">
 
-		<div class="box">
+		<div class="box" data-box="qos-lan-limit">
 			<div class="heading">Bandwidth Limiter for LAN (br0)</div>
 			<div class="content">
 				<div class="br0-set"></div><hr>
@@ -291,7 +291,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="box" id="qoslimitbr0">
+		<div class="box" id="qoslimitbr0" data-box="qos-br0-limit">
 			<div class="heading">Default Class for unlisted MAC / IP's in LAN (br0)</div>
 			<div class="content">
 				<div id="unlistedmac"></div><hr>
@@ -333,7 +333,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="box" id="qoslimitbr1">
+		<div class="box" id="qoslimitbr1" data-box="qos-limit-br1">
 			<div class="heading">Default Class for LAN1 (br1)</div>
 			<div class="content">
 				<div class="table-set1"></div><hr>
@@ -355,7 +355,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="box" id="qoslimitbr2">
+		<div class="box" id="qoslimitbr2" data-box="qos-limit-br2">
 			<div class="heading">Default Class for LAN2 (br2)</div>
 			<div class="content">
 				<div class="table-set2"></div><hr>
@@ -377,7 +377,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="box" id="qoslimitbr3">
+		<div class="box" id="qoslimitbr3" data-box="qos-limit-br3">
 			<div class="heading">Default Class for LAN3 (br3)</div>
 			<div class="content">
 				<div class="table-set3"></div><hr>

@@ -1,6 +1,9 @@
 // Bind Navi etc.
 function AdvancedTomato () {
 
+	/** Misc functions, calls, binds
+	************************************************************************************************/
+
 	// Call navi function in tomato.js to generate navigation
 	navi();
 
@@ -15,6 +18,22 @@ function AdvancedTomato () {
 
 	});
 
+	// First run, check hash for current page
+	if (window.location.hash.match(/#/)) { loadPage(window.location.hash); } else { loadPage('#status-home.asp'); }
+
+	// Bind for "back" state of browser
+	$(window).hashchange(function(e) {
+
+		// Prevent Missmatch on features page
+		((location.hash.replace('#', '') != '') ? loadPage(location.hash.replace('#', '')) : '');
+		return false;
+
+	});
+
+
+	/** Click handlers
+	************************************************************************************************/
+
 	// Navigation slides
 	$('.navigation > ul > li > a').click(function() {
 
@@ -27,19 +46,22 @@ function AdvancedTomato () {
 		return false;
 	});
 
-	// Bind for "back" state of browser
-	$(window).hashchange(function(e) {
-
-		// Prevent Missmatch on features page
-		((location.hash.replace('#', '') != '') ? loadPage(location.hash.replace('#', '')) : '');
-		return false;
-
-	});
-
 	// Close click handler for updates
 	$('.ajaxwrap').on('click', '.alert .close', function() {
 		if ($(this).attr('data-update')) { cookie.set('latest-update', $(this).attr('data-update')); }
 		$(this).parent('.alert').slideUp();
+		return false;
+	});
+
+	// Handle ajax loading
+	$('.navigation li ul a, .header .links a[href!="#system"]').on('click', function(e) {
+		loadPage($(this).attr('href'));
+		return false;
+	});
+
+	// Handle Ajax Class Loading
+	$('.ajaxwrap').on('click', '.ajaxload', function(e) {
+		loadPage($(this).attr('href'));
 		return false;
 	});
 
@@ -60,19 +82,6 @@ function AdvancedTomato () {
 			$(document).click(function() {$('#system-ui').removeClass('active'); $('.system-ui').fadeOut(250); $(document).unbind('click'); });
 		}
 
-		return false;
-	});
-
-
-	// Handle ajax loading
-	$('.navigation li ul a, .header .links a[href!="#system"]').on('click', function(e) {
-		loadPage($(this).attr('href'));
-		return false;
-	});
-
-	// Handle Ajax Class Loading
-	$('.ajaxwrap').on('click', '.ajaxload', function(e) {
-		loadPage($(this).attr('href'));
 		return false;
 	});
 
@@ -110,8 +119,6 @@ function AdvancedTomato () {
 		}
 	}
 
-
-	if (window.location.hash.match(/#/)) { loadPage(window.location.hash); } else { loadPage('#status-home.asp'); }
 }
 
 
@@ -182,6 +189,43 @@ function loadPage(page) {
 
 		// Custom file inputs
 		$("input[type='file']").each(function() { $(this).customFileInput(); });
+
+		// Function that allows easy implementation of content hide/show on boxes
+		$('[data-box]').each(function() {
+
+			var id 		= $(this).attr('data-box');
+			var parent	= $(this);
+			var status	= (((c = cookie.get(id + '_visibility')) != null) && (c != '1') || !$(this).is(':visible')) ? false : true;
+			var html	= $('<a class="pull-right" href="#" data-toggle="tooltip" title="Hide/Show"><i class="icon-chevron-' + ((status) ? 'down' : 'up') + '"></i></a>');
+
+			// Hide if hidden
+			if (!status) { $(this).find('.content').hide(); }
+
+			// Now click handler
+			$(html).on('click', function() {
+
+				if (status) {
+
+					$(parent).find('.content').stop(true, true).slideUp('fast');
+					$(html).find('i').removeClass('icon-chevron-down').addClass('icon-chevron-up');
+					cookie.set(id + '_visibility', 0); status = false;
+
+				} else {
+
+					$(parent).find('.content').stop(true, true).slideDown('fast');
+					$(html).find('i').removeClass('icon-chevron-uo').addClass('icon-chevron-down');
+					cookie.set(id + '_visibility', 1); status = true;
+
+				}
+
+				return false;
+
+			});
+
+			$(parent).find('.heading').prepend(html);
+
+
+		});
 
 		// Init Tooltips
 		$('[data-toggle="tooltip"]').tooltip({ placement: 'top auto' });

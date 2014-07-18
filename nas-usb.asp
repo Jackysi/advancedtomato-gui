@@ -281,7 +281,7 @@ No part of this file may be used without permission.
 		<input type="hidden" name="usb_3g">
 		/* LINUX26-END */
 
-		<div class="box">
+		<div class="box" data-box="usb-supp">
 			<div class="heading">USB Support</div>
 			<div class="content">
 				<div id="usbfields"></div>
@@ -334,7 +334,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="box" id="last-box">
+		<div class="box" id="last-box" data-box="attached-devices">
 			<div class="heading">Attached Devices</div>
 			<div class="content">
 				<table id="dev-grid" class="line-table"></table>

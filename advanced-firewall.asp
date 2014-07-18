@@ -99,7 +99,7 @@ No part of this file may be used without permission.
 		<input type="hidden" name="udpxy_clients">
 		<input type="hidden" name="udpxy_port">
 
-		<div class="box">
+		<div class="box" data-box="firewal-set">
 			<div class="heading">Firewall Settings</div>
 			<div class="section firewall content"></div>
 			<script type="text/javascript">
@@ -114,7 +114,7 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="firewall-nat">
 			<div class="heading">NAT</div>
 			<div class="section natfirewall content"></div>
 			<script type="text/javascript">
@@ -125,7 +125,7 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="firewall-multicast">
 			<div class="heading">Multicast</div>
 			<div class="section multicast content"></div>
 			<script type="text/javascript">

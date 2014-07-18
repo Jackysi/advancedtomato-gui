@@ -204,21 +204,21 @@ No part of this file may be used without permission.
 		<input type="hidden" name="dr_wan_tx">
 		<input type="hidden" name="dr_wan_rx">
 
-		<div class="box">
+		<div class="box" data-box="routing-table">
 			<div class="heading">Current Routing Table</div>
 			<div class="section content">
 				<table class="line-table" id="ara-grid"></table><br />
 			</div>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="routing-static">
 			<div class="heading">Static Routing Table</div>
 			<div class="section content">
 				<table class="line-table" id="ars-grid"></table>
 			</div>
 		</div>
 
-		<div class="box">
+		<div class="box" data-box="routing-misc">
 			<div class="heading">Miscellaneous</div>
 			<div class="content misc"></div>
 			<script type="text/javascript">
