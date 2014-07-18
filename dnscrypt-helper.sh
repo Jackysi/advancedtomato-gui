@@ -14,4 +14,4 @@ do
 	x=$(( $x + 1 ))
 done
 
-sed -i 's/\/\*_dnscrypt_resolvers_\/\*/'"$list"'/' $2
+sed -i 's/\/\*dnscrypt_resolvers\*\//'"$list"'/' $2
