@@ -1,43 +1,8 @@
-function notifications () {
-
-	if (typeof nvram == 'undefined') { return false; }
-
-	// Check for update
-	if (typeof nvram.at_update !== "undefined" && nvram.at_update != '') {
-		var n = cookie.get('latest-update');
-		var lastUpdate = nvram['at_update'].replace('.', '');
-
-		if (n < lastUpdate || n == null) {
-			$(".content").prepend('<div class="alert info"><a href="#" class="close" data-update="' + nvram.at_update.replace('.','') + '"><i class="icon-cancel"></i></a>\
-				AdvancedTomato <b>v' + nvram.at_update + '</b> is already available. <a target="_blank" href="http://at.prahec.com/changelog/">Click here to find out more</a>.</div>');
-		}
-	}
-
-	// Check if tomatoanon is configured
-	if (typeof nvram.tomatoanon_answer !== "undefined") {
-		if (nvram.tomatoanon_answer != '1') {
-			$('.content').prepend('<div class="alert warning"><h5>Attention</h5> You did not configure <b>TomatoAnon project</b> setting.\
-				Please go to <a onclick="loadPage(\'admin-tomatoanon.asp\')" href="#">TomatoAnon configuration page</a> and make a choice.</div>');
-
-		}
-	}
-
-	// Not notification but gona borrow function :P
-	if (typeof nvram.at_width !== "undefined") {
-
-		if (nvram.at_width != 'fluid' && nvram.at_width != null) {
-			$('#wrapper').css('width', nvram.at_width);
-			$('body').addClass('fixedwidth');
-		}
-	}
-}
-
 // Bind Navi etc.
 function AdvancedTomato () {
 
-	// Display Navigation
+	// Call navi function in tomato.js to generate navigation
 	navi();
-	notifications();
 
 	// Find current active link
 	$('.navigation > ul > li').each(function(key) {
@@ -48,6 +13,18 @@ function AdvancedTomato () {
 			$(this).find('ul').slideUp(150);
 		}
 
+	});
+
+	// Navigation slides
+	$('.navigation > ul > li > a').click(function() {
+
+		if ($(this).parent('li').hasClass('active')) { return false; }
+
+		$('.navigation > ul > li').removeClass('active').find('ul').slideUp('150');
+		$(this).parent('li').addClass('active');
+		$(this).closest('li').find('ul').slideDown('150');
+
+		return false;
 	});
 
 	// Bind for "back" state of browser
@@ -86,17 +63,6 @@ function AdvancedTomato () {
 		return false;
 	});
 
-	// Navigation slides
-	$('.navigation > ul > li > a').click(function() {
-
-		if ($(this).parent('li').hasClass('active')) { return false; }
-
-		$('.navigation > ul > li').removeClass('active').find('ul').slideUp('150');
-		$(this).parent('li').addClass('active');
-		$(this).closest('li').find('ul').slideDown('150');
-
-		return false;
-	});
 
 	// Handle ajax loading
 	$('.navigation li ul a, .header .links a[href!="#system"]').on('click', function(e) {
@@ -109,6 +75,40 @@ function AdvancedTomato () {
 		loadPage($(this).attr('href'));
 		return false;
 	});
+
+
+	/** Handle Global Notifications
+	************************************************************************************************/
+	if (typeof nvram == 'undefined') { return false; }
+
+	// Check for update
+	if (typeof nvram.at_update !== "undefined" && nvram.at_update != '') {
+		var n = cookie.get('latest-update');
+		var lastUpdate = nvram['at_update'].replace('.', '');
+
+		if (n < lastUpdate || n == null) {
+			$(".content").prepend('<div class="alert info"><a href="#" class="close" data-update="' + nvram.at_update.replace('.','') + '"><i class="icon-cancel"></i></a>\
+				AdvancedTomato <b>v' + nvram.at_update + '</b> is already available. <a target="_blank" href="http://at.prahec.com/changelog/">Click here to find out more</a>.</div>');
+		}
+	}
+
+	// Check if tomatoanon is configured
+	if (typeof nvram.tomatoanon_answer !== "undefined") {
+		if (nvram.tomatoanon_answer != '1') {
+			$('.content').prepend('<div class="alert warning"><h5>Attention</h5> You did not configure <b>TomatoAnon project</b> setting.\
+				Please go to <a onclick="loadPage(\'admin-tomatoanon.asp\')" href="#">TomatoAnon configuration page</a> and make a choice.</div>');
+
+		}
+	}
+
+	// Function to limit GUI size to specific width (not working!)
+	if (typeof nvram.at_width !== "undefined") {
+
+		if (nvram.at_width != 'fluid' && nvram.at_width != null) {
+			$('#wrapper').css('width', nvram.at_width);
+			$('body').addClass('fixedwidth');
+		}
+	}
 
 
 	if (window.location.hash.match(/#/)) { loadPage(window.location.hash); } else { loadPage('#status-home.asp'); }
@@ -124,12 +124,7 @@ function systemUI () {
 	systemAJAX.onCompleted = function (data, xml) {
 
 		stats = {};
-		try {
-			eval(data);
-		}
-		catch (ex) {
-			stats = {};
-		}
+		try { eval(data); } catch (ex) { stats = {}; }
 
 		stats.wanstatus = '<a title="Go to Status Overview" href="#" onclick="loadPage(\'#status-home.asp\');">' + ((stats.wanstatus == 'Connected') ? '<span style="color: green;">' + stats.wanstatus + '</span>' : stats.wanstatus) + '</a>';
 		$('.system-ui .datasystem').html('<div class="router-name">' + stats.routermodel + ' <small class="pull-right">(' + stats.uptime + ')</small></div>' +
@@ -142,25 +137,8 @@ function systemUI () {
 	systemAJAX.get('js/status-data.jsx');
 }
 
-
-// Function preloader (Shows preloader close to cursor)
-function preloader (event) {
-
-	if (event == 'start') {
-
-		$('html,a,.btn').attr('style', 'cursor: wait !important');
-
-	} else {
-
-		$('html,a,.btn').removeAttr('style');
-
-	}
-
-}
-
-
 // Ajax Function to load pages
-function loadPage(Page) {
+function loadPage(page) {
 
 	// Fix refreshers when switching pages
 	if (typeof (ref) != 'undefined') {
@@ -168,8 +146,8 @@ function loadPage(Page) {
 	}
 
 	// Some things that need to be done here =)
-	Page = Page.replace('#', '');
-	if (Page == 'status-home.asp' || Page == '/') { Page = 'status-home.asp'; }
+	page = page.replace('#', '');
+	if (page == 'status-home.asp' || page == '/') { page = 'status-home.asp'; }
 	if (window.ajaxLoadingState) { return false; } else { window.ajaxLoadingState = true; }
 
 	preloader('start');
@@ -187,7 +165,7 @@ function loadPage(Page) {
 
 		// Push History
 		if (history.pushState) { // Fix issue with IE9 or bellow
-			window.history.pushState({"html":null,"pageTitle": window.routerName + title }, '#'+Page, '#'+Page);
+			window.history.pushState({"html":null,"pageTitle": window.routerName + title }, '#'+page, '#'+page);
 		}
 
 		// Go back to top
@@ -196,7 +174,7 @@ function loadPage(Page) {
 		// Handle Navigation
 		$('.navigation li ul li').removeClass('active'); // Reset all
 
-		var naviLinks = $(".navigation a[href='#" + Page + "']");
+		var naviLinks = $(".navigation a[href='#" + page + "']");
 		$(naviLinks).parent('li').addClass('active');
 
 		// Loaded, clear state
@@ -227,7 +205,22 @@ function loadPage(Page) {
 	}
 
 	// Execute Prototype
-	TomatoAJAX.get(Page);
+	TomatoAJAX.get(page);
+
+}
+
+// Function preloader (Shows preloader close to cursor)
+function preloader (event) {
+
+	if (event == 'start') {
+
+		$('html,a,.btn').attr('style', 'cursor: wait !important');
+
+	} else {
+
+		$('html,a,.btn').removeAttr('style');
+
+	}
 
 }
 
