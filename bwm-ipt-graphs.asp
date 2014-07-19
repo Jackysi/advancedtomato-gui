@@ -14,12 +14,14 @@ LAN Access admin module by Augusto Bott
 			height: 25px;
 		}
 		.title {
+			padding: 0 5px;
 		}
 		.count {
 			text-align: right;
 		}
 		.pct {
 			width:55px;
+			padding-right: 10px;
 			text-align: right;
 		}
 		.thead {
@@ -32,9 +34,6 @@ LAN Access admin module by Augusto Bott
 			margin-top: 5px;
 		}
 
-		#firstGraph, #secondGraph, #thirdGraph {
-			text-align: center;
-		}
 	</style>
 	<script type="text/javascript">
 		//	<% nvram('at_update,tomatoanon_answer,cstats_enable,lan_ipaddr,lan1_ipaddr,lan2_ipaddr,lan3_ipaddr,lan_netmask,lan1_netmask,lan2_netmask,lan3_netmask,dhcpd_static,web_svg'); %>
@@ -233,6 +232,15 @@ LAN Access admin module by Augusto Bott
 				return;
 			}
 
+			// SVG's
+			if (nvram.web_svg != '0') {
+
+				for (i=0; i < 3; i++) {
+
+					$('#svg-'+i).html('<embed id="svg' + i + '" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" src="img/ipt-graph.svg?n=' + i + '&v=<% version(); %>" style="width:310px;height:310px;"></embed>').css('text-align', 'center');
+				}
+			}
+
 			// Data
 			for (i = 0; i < 11; ++i) {
 				$('#firstTable').prepend('<tr>' +
@@ -281,47 +289,37 @@ LAN Access admin module by Augusto Bott
 	<div class="fluid-grid x3">
 		<div class="box graphs">
 			<div class="heading">IP Traffic</div>
-			<div id="firstGraph">
-				<script type="text/javascript">
-					if (nvram.web_svg != '0') {
-						$('#firstGraph').html('<embed id="svg0" type="image/svg+xml" src="img/ipt-graph.svg?n=0&v=<% version(); %>" style="width:310px;height:310px;"></embed>');
-					}
-				</script>
+			<div class="content">
+				<div id="svg-0"></div>
+				<table id="firstTable">
+					<tr><td class="color" style="height:1em"></td><td class="title" style="width:45px">&nbsp;</td><td class="thead count">kbit/s</td><td class="thead count">KB/s</td><td class="pct">&nbsp;</td></tr>
+					<tr><td>&nbsp;</td><td class="total">Total</td><td id="ccnt-total" class="total count"></td><td class="total pct">100%</td></tr>
+				</table>
 			</div>
-			<table id="firstTable">
-				<tr><td class="color" style="height:1em"></td><td class="title" style="width:45px">&nbsp;</td><td class="thead count">kbit/s</td><td class="thead count">KB/s</td><td class="pct">&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td class="total">Total</td><td id="ccnt-total" class="total count"></td><td class="total pct">100%</td></tr>
-			</table>
 		</div>
 
 		<div class="box graphs">
 			<div class="heading">Bandwidth Distribution (Inbound)</div>
-			<div id="secondGraph">
-				<script type='text/javascript'>
-					if (nvram.web_svg != '0') {
-						$('#secondGraph').html('<embed id="svg1" type="image/svg+xml" src="img/ipt-graph.svg?n=1&v=<% version(); %>" style="width:310px;height:310px;"></embed>');
-					}
-				</script>
+			<div class="content">
+				<div id="svg-1"></div>
+
+				<table id="secondTable">
+					<tr><td class="color" style="height:1em"></td><td class="title" style="width:45px">&nbsp;</td><td class="thead count">kbit/s</td><td class="thead count">KB/s</td><td class="pct">&nbsp;</td></tr>
+					<tr><td>&nbsp;</td><td class="total">Total</td><td id="bcnt-total" class="total count"></td><td id="bcntx-total" class="total count"></td><td class="total pct">100%</td></tr>
+				</table>
 			</div>
-			<table id="secondTable">
-				<tr><td class="color" style="height:1em"></td><td class="title" style="width:45px">&nbsp;</td><td class="thead count">kbit/s</td><td class="thead count">KB/s</td><td class="pct">&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td class="total">Total</td><td id="bcnt-total" class="total count"></td><td id="bcntx-total" class="total count"></td><td class="total pct">100%</td></tr>
-			</table>
 		</div>
 
 		<div class="box graphs">
-			<div class="heading">Bandwidth Distribution (Outbound)</div>
-			<div id="thirdGraph">
-				<script type='text/javascript'>
-					if (nvram.web_svg != '0') {
-						$('#thirdGraph').html('<embed id="svg2" type="image/svg+xml" src="img/ipt-graph.svg?n=2&v=<% version(); %>" style="width:610px;height:310px;"></embed>');
-					}
-				</script>
+			<div class="content">
+				<div class="heading">Bandwidth Distribution (Outbound)</div>
+				<div id="svg-2"></div>
+
+				<table id="thirdTable">
+					<tr><td class="color" style="height:1em"></td><td class="title" style="width:45px">&nbsp;</td><td class="thead count">kbit/s</td><td class="thead count">KB/s</td><td class="pct">&nbsp;</td></tr>
+					<tr><td>&nbsp;</td><td class="total">Total</td><td id="obcnt-total" class="total count"></td><td id="obcntx-total" class="total count"></td><td class="total pct">100%</td></tr>
+				</table>
 			</div>
-			<table id="thirdTable">
-				<tr><td class="color" style="height:1em"></td><td class="title" style="width:45px">&nbsp;</td><td class="thead count">kbit/s</td><td class="thead count">KB/s</td><td class="pct">&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td class="total">Total</td><td id="obcnt-total" class="total count"></td><td id="obcntx-total" class="total count"></td><td class="total pct">100%</td></tr>
-			</table>
 		</div>
 	</div>
 

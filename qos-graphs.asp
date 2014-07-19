@@ -13,6 +13,7 @@ No part of this file may be used without permission.
 			height: 25px;
 		}
 		.title {
+			padding: 0 5px;
 		}
 		.count {
 			text-align: right;
@@ -252,8 +253,13 @@ No part of this file may be used without permission.
 			}
 		}
 
-		function init()
-		{
+		function init() {
+
+			// Write Graphs to content
+			for (i=0; i < 3; i++) {
+				$('#svg-'+i).html('<embed id="svg' + i + '" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" src="img/qos-graph.svg?n=' + i + '&v=<% version(); %>" style="width:310px;height:310px;"></embed>').css('text-align', 'center');
+			}
+
 			nbase = fixInt(cookie.get('qnbase'), 0, 1, 0);
 			showData();
 			checkSVG();
@@ -273,13 +279,7 @@ No part of this file may be used without permission.
 		<div class="box graphs">
 			<div class="heading">Connections Distribution</div>
 			<div class="content">
-				<div id="firstGraph" class="embedGraph">
-					<script type="text/javascript">
-						if (nvram.web_svg != '0') {
-							$('#firstGraph').html('<embed id="svg0" type="image/svg+xml" src="img/qos-graph.svg?n=0&v=<% version(); %>" style="width:310px;height:310px;"></embed>');
-						}
-					</script>
-				</div>
+				<div id="svg-0" class="embedGraph"></div>
 
 				<table id="firstTable">
 					<tr><td>&nbsp;</td><td class="total">Total</td><td id="ccnt-total" class="total count"></td><td class="total pct">100%</td></tr>
@@ -300,13 +300,7 @@ No part of this file may be used without permission.
 		<div class="box graphs">
 			<div class="heading">Bandwidth Distribution (Outbound)</div>
 			<div class="content">
-				<div id="secondGraph" class="embedGraph">
-					<script type="text/javascript">
-						if (nvram.web_svg != '0') {
-							$('#secondGraph').html('<embed id="svg1" type="image/svg+xml" src="img/qos-graph.svg?n=1&v=<% version(); %>" style="width:310px;height:310px;"></embed>');
-						}
-					</script>
-				</div>
+				<div id="svg-1" class="embedGraph"></div>
 
 				<table id="secondTable">
 					<tr><td class="color" style="height:1em; margin-right: 5px;"></td><td class="title">&nbsp;</td><td class="thead count">kbit/s</td><td class="thead count">KB/s</td><td class="thead pct">Rate</td></tr>
@@ -329,13 +323,7 @@ No part of this file may be used without permission.
 		<div class="box graphs">
 			<div class="heading">Bandwidth Distribution (Inbound)</div>
 			<div class="content">
-				<div id="thirdGraph" class="embedGraph">
-					<script type="text/javascript">
-						if (nvram.web_svg != '0') {
-							$('#thirdGraph').html('<embed id="svg2" type="image/svg+xml" src="img/qos-graph.svg?n=2&v=<% version(); %>" style="width:310px;height:310px;"></embed>');
-						}
-					</script>
-				</div>
+				<div id="svg-2" class="embedGraph"></div>
 
 				<table id="thirdTable">
 					<tr><td class="color" style="height:1em; margin-right: 5px;"></td><td class="title">&nbsp;</td><td class="thead count">kbit/s</td><td class="thead count">KB/s</td><td class="thead pct">Rate</td></tr>
