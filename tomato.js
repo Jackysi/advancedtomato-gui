@@ -2335,7 +2335,7 @@ function nothing()
 function show_notice1(s, type)
 {
 	// ---- !!TB - USB Support: multi-line notices
-	if (s.length) $('#ajaxwrap').prepend('<div class="alert ' + ((type == null) ? 'alert-warning' : type) + '"><a href="#" class="close">×</a>' + s.replace(/\n/g, '<br>') + '</div>');
+	if (s.length) $('#ajaxwrap').prepend('<div class="alert ' + ((type == null) ? 'alert-warning' : type) + '"><a href="#" class="close"><i class="icon-cancel"></i></a>' + s.replace(/\n/g, '<br>') + '</div>');
 }
 
 // -----------------------------------------------------------------------------
@@ -2654,7 +2654,7 @@ function peekaboo(id, show)
 // -----------------------------------------------------------------------------
 
 function reloadPage() {
-	document.location.reload(1);
+	if (document.location.hash.match(/#/)) { loadPage(document.location.hash); } else { loadPage('#status-home.asp'); }
 }
 
 function reboot() {
