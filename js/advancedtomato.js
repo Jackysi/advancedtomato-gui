@@ -35,8 +35,9 @@ function AdvancedTomato () {
 	************************************************************************************************/
 
 	// Navigation slides
-	$('.navigation > ul > li > a').click(function() {
+	$('.navigation:not(.collapsed) > ul > li > a').on('click', function() {
 
+		if ($('.navigation').hasClass('collapsed')) { return; }
 		if ($(this).parent('li').hasClass('active')) { return false; }
 
 		$('.navigation > ul > li').removeClass('active').find('ul').slideUp('150');
