@@ -1078,7 +1078,7 @@ input[type=radio]:disabled + span:before {
 /* New Ethernet States */
 #ethPorts {
 	display: table;
-	padding: 30px 0;
+	padding: 30px 10px;
 	width: 100%;
 	font-size: 12px;
 }
@@ -1103,13 +1103,14 @@ input[type=radio]:disabled + span:before {
 	display:table-cell;
 	position: relative;
 	z-index: 15;
-	width: 64px;
+	width: auto;
+	padding: 0 10px;
 	height: 48px;
 }
 
-#ethPorts .eth.off { background: url('/img/ethernet.x.svg') 4px 0 no-repeat; }
-#ethPorts .eth.on { background:  url('/img/ethernet.svg') 4px 0 no-repeat; }
-#ethPorts .eth.wan { width: 50%; }
+#ethPorts .eth.off { background: url('/img/ethernet.x.svg') 20px center no-repeat; }
+#ethPorts .eth.on { background:  url('/img/ethernet.svg') 20px center no-repeat; }
+#ethPorts .eth.wan { width: 40%; }
 
 
 /* Style Refresh timers */
