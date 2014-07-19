@@ -126,6 +126,7 @@ small { font-size: 80%; }
 	background: #3498DB;
 	text-align: center;
 	transition: width 0.2s ease-out;
+	-webkit-transition: width 0.2s ease-out;
 }
 
 .top-header .logo a h1 {
@@ -306,6 +307,7 @@ small { font-size: 80%; }
 	z-index: 3;
 	overflow: auto;
 	transition: width 0.2s ease-out;
+	-webkit-transition: width 0.2s ease-out;
 }
 
 .navigation ul {
@@ -485,6 +487,7 @@ small { font-size: 80%; }
 	min-width: 720px;
 	margin-left: 240px;
 	transition: margin 0.2s linear 0.2s;
+	-webkit-transition: margin 0.2s linear 0.2s;
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
 }
