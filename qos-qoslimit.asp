@@ -33,7 +33,7 @@ No part of this file may be used without permission.
 				{ type: 'select', options: class_prio },
 				{ type: 'select', options: class_tcp },
 				{ type: 'select', options: class_udp }]);
-			this.headerSet(['<b>IP</b> | <b>IP Range</b> | <b>MAC Address</b>', '<b>DLRate</b>', '<b>DLCeil</b>', '<b>ULRate</b>', '<b>ULCeil</b>', '<b>Priority</b>', '<b>TCP Limit</b>', '<b>UDP Limit</b>']);
+			this.headerSet(['IP | IP Range | MAC Address', 'DLRate', 'DLCeil', 'ULRate', 'ULCeil', 'Priority', 'TCP Limit', 'UDP Limit']);
 			var qoslimitrules = nvram.new_qoslimit_rules.split('>');
 			for (var i = 0; i < qoslimitrules.length; ++i) {
 				var t = qoslimitrules[i].split('<');
@@ -249,7 +249,7 @@ No part of this file may be used without permission.
 
 	<script type="text/javascript">
 		if (nvram.qos_enable != '1') {
-			$('.content > .ajaxwrap').prepend('<div class="alert alert-warning"><b>QoS is disabled.</b>&nbsp; <a class="ajaxload" href="#qos-settings.asp">Enable &raquo;</a> <a class="close"><i class="icon-cancel"></i></a></div>');
+			$('.container .ajaxwrap').prepend('<div class="alert alert-warning"><b>QoS is disabled.</b>&nbsp; <a class="ajaxload" href="#qos-settings.asp">Enable &raquo;</a> <a class="close"><i class="icon-cancel"></i></a></div>');
 		}
 	</script>
 

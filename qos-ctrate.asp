@@ -201,7 +201,7 @@ No part of this file may be used without permission.
 
 		grid.setup = function() {
 			this.init('grid', 'sort');
-			this.headerSet(['<b>Proto</b>', '<b>Source</b>', '<b>S Port</b>', '<b>Destination</b>', '<b>D Port</b>', '<b>UL Rate</b>', '<b>DL Rate</b>']);
+			this.headerSet(['Proto', 'Source', 'S Port', 'Destination', 'D Port', 'UL Rate', 'DL Rate']);
 		}
 
 		var ref = new TomatoRefresh('/update.cgi', '', 0, 'qos_ctrate');
@@ -453,7 +453,7 @@ No part of this file may be used without permission.
 	</script>
 	<script type="text/javascript">
 		if (nvram.qos_enable != '1') {
-			$('.content .ajaxwrap').prepend('<div class="alert alert-info"><b>QoS is disabled.</b>&nbsp; <a class="ajaxload" href="#qos-settings.asp">Enable &raquo;</a> <a class="close"><i class="icon-cancel"></i></a></div>');
+			$('.container .ajaxwrap').prepend('<div class="alert alert-info"><b>QoS is disabled.</b>&nbsp; <a class="ajaxload" href="#qos-settings.asp">Enable &raquo;</a> <a class="close"><i class="icon-cancel"></i></a></div>');
 		}
 	</script>
 

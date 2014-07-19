@@ -59,6 +59,27 @@ function AdvancedTomato () {
 		return false;
 	});
 
+	// Toggle Navigation
+	$('.toggle-nav').on('click', function() {
+
+		if (!$('.navigation').hasClass('collapsed')) {
+
+			$('#wrapper').find('.container').css('margin-left', '60px');
+			$('#wrapper').find('.navigation').addClass('collapsed');
+			$('#wrapper').find('.logo').addClass('collapsed');
+			$('#wrapper').find('.nav-collapse-hide').hide();
+
+		} else {
+
+			$('#wrapper').find('.container').css('margin-left', '240px');
+			$('#wrapper').find('.navigation').removeClass('collapsed');
+			$('#wrapper').find('.logo').removeClass('collapsed');
+			$('#wrapper').find('.nav-collapse-hide').show();
+
+		}
+
+	});
+
 	// Handle Ajax Class Loading
 	$('.ajaxwrap').on('click', '.ajaxload', function(e) {
 		loadPage($(this).attr('href'));
@@ -96,7 +117,7 @@ function AdvancedTomato () {
 		var lastUpdate = nvram['at_update'].replace('.', '');
 
 		if (n < lastUpdate || n == null) {
-			$(".content").prepend('<div class="alert info"><a href="#" class="close" data-update="' + nvram.at_update.replace('.','') + '"><i class="icon-cancel"></i></a>\
+			$(".container").prepend('<div class="alert info"><a href="#" class="close" data-update="' + nvram.at_update.replace('.','') + '"><i class="icon-cancel"></i></a>\
 				AdvancedTomato <b>v' + nvram.at_update + '</b> is already available. <a target="_blank" href="http://at.prahec.com/changelog/">Click here to find out more</a>.</div>');
 		}
 	}
@@ -104,7 +125,7 @@ function AdvancedTomato () {
 	// Check if tomatoanon is configured
 	if (typeof nvram.tomatoanon_answer !== "undefined") {
 		if (nvram.tomatoanon_answer != '1') {
-			$('.content').prepend('<div class="alert warning"><h5>Attention</h5> You did not configure <b>TomatoAnon project</b> setting.\
+			$('.container').prepend('<div class="alert warning"><h5>Attention</h5> You did not configure <b>TomatoAnon project</b> setting.\
 				Please go to <a onclick="loadPage(\'admin-tomatoanon.asp\')" href="#">TomatoAnon configuration page</a> and make a choice.</div>');
 
 		}
@@ -168,7 +189,7 @@ function loadPage(page) {
 		var html = dom.filter('content').html();
 		$('title').text(window.routerName + title);
 		$('h2.currentpage').text(title);
-		$('.content .ajaxwrap').hide().html(html).fadeIn(400);
+		$('.container .ajaxwrap').hide().html(html).fadeIn(400);
 
 		// Push History
 		if (history.pushState) { // Fix issue with IE9 or bellow
@@ -176,7 +197,7 @@ function loadPage(page) {
 		}
 
 		// Go back to top
-		$('#wrapper > .content').scrollTop(0);
+		$('.container').scrollTop(0);
 
 		// Handle Navigation
 		$('.navigation li ul li').removeClass('active'); // Reset all

@@ -44,19 +44,9 @@ body {
 
 /* Fixed width changes some CSS styles */
 body.fixedwidth {
-	background: #ffffff;
 }
 
 body.fixedwidth > #wrapper {
-	display: block;
-	height: auto;
-	border: 1px solid #DCDCDC;
-	margin: 0 auto;
-	padding: 0;
-	background: #f9f9f9;
-	border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-width: 0 1px 1px;
 }
 
 /* Replace some general styles (b, h1-h6, etc...) */
@@ -114,7 +104,7 @@ small { font-size: 80%; }
 
 
 /* Header Design */
-#wrapper > .header {
+.top-header {
 	display: block;
 	height: 60px;
 	position: fixed;
@@ -127,39 +117,90 @@ small { font-size: 80%; }
 	z-index: 2;
 }
 
-#wrapper > .header .links {
+.top-header .logo {
+	display: inline-block;
+	float: left;
+	height: 60px;
+	width: 240px;
+	line-height: normal;
+	background: #3498DB;
+	text-align: center;
+	transition: width 0.2s ease-out;
+}
+
+.top-header .logo a h1 {
+	display: inline-block;
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+	font-size: 18px;
+	margin: 12px 0 0 0;
+	padding: 0;
+	font-weight: 500;
+}
+
+.top-header .logo h2 {
+	color: #fff;
+	display: block;
+	font-size: 13px;
+	padding: 0;
+	font-weight: normal;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.1);
+}
+
+.top-header .logo a svg { margin: 0; padding:0; vertical-align: bottom; }
+
+.top-header .left-container {
+	float: left;
+	display: inline-block;
+	height: 100%;
+	margin-left: 10px;
+	line-height: 60px;
+}
+
+.top-header .left-container a {
+	font-size: 14px;
+	font-weight: normal;
+	color: #777;
+	line-height: 100%;
+}
+
+.top-header .left-container a:hover {
+	color: #000;
+}
+
+.top-header .links {
 	position: relative;
 }
 
-#wrapper > .header > .links > ul > li > a {
+.top-header > .links > ul > li > a {
 	display: inline-block;
 	color: #696969;
 
-	padding: 21px 20px;
+	padding: 21px 15px;
 	transition: all 150ms ease-out;
 	-webkit-transition: all 150ms ease-out;
 }
 
-#wrapper > .header > .links > ul > li > a:hover,
-#wrapper > .header > .links > ul > li a.active {
+.top-header > .links > ul > li > a:hover,
+.top-header > .links > ul > li a.active {
 	color: #000;
 	background: #f9f9f9;
 }
 
-#wrapper > .header .links > ul {
+.top-header .links > ul {
 	list-style: none;
 }
 
-#wrapper > .header .links > ul > li {
+.top-header .links > ul > li {
 	margin: 0 0 0 -4px;
 	padding: 0;
 	display: inline-block;
 }
 
-#wrapper > .header .links li a i:before {
-	padding-left: 0px;
+.top-header .links li a i {
+	padding-left: 2px;
 	font-size: 16px;
-	margin-top: -2px;
+	margin-top: -4px;
 }
 
 
@@ -254,55 +295,17 @@ small { font-size: 80%; }
 }
 
 /* Navigation */
-.sidebar-left {
+.navigation {
 	display: block;
 	position: fixed;
 	left: 0;
-	top: 0;
+	top: 60px;
 	bottom: 0;
 	width: 240px;
 	background: #2C3037;
 	z-index: 3;
-}
-
-.sidebar-left .logo {
-	display: block;
-	height: 60px;
-	width: 240px;
-	background: #3498DB;
-	text-align: center;
-}
-
-.sidebar-left .logo a h1 {
-	display: inline-block;
-	color: #fff;
-	text-shadow: 0 1px 0 rgba(0,0,0,0.2);
-	font-size: 18px;
-	margin: 12px 0 0 0;
-	padding: 0;
-	font-weight: 500;
-}
-
-.sidebar-left .logo h2 {
-	color: #fff;
-	display: block;
-	font-size: 13px;
-	padding: 0;
-	font-weight: normal;
-	text-shadow: 0 1px 0 rgba(0,0,0,0.1);
-}
-
-.sidebar-left .logo a svg { margin: 0; padding:0; vertical-align: bottom; }
-
-.navigation {
-	display: block;
-	position: absolute;
-	top: 60px;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	overflow-y: auto;
-	overflow-x: hidden;
+	overflow: auto;
+	transition: width 0.2s ease-out;
 }
 
 .navigation ul {
@@ -311,9 +314,13 @@ small { font-size: 80%; }
 	padding: 0;
 }
 
-.navigation li a {
-	display: block;
+.navigation li {
 	position: relative;
+}
+
+.navigation li a {
+	position: relative;
+	display: block;
 	color: #919293;
 	text-shadow: 0px 1px 3px #222;
 	font-size: 13px;
@@ -394,8 +401,76 @@ small { font-size: 80%; }
 
 .navigation .nav-footer i { font-size: 18px; margin: -2px 0 0 -4px; }
 
+/* Collapse Logo/Navigation and extend content */
+.top-header .logo.collapsed {
+	width:60px;
+}
+
+.top-header .logo.collapsed a svg {
+	margin-top:15px;
+}
+
+.navigation.collapsed {
+	width:60px;
+	overflow:visible;
+}
+
+.navigation.collapsed .icons-desc {
+	display:none;
+}
+
+.navigation.collapsed li a i {
+	font-size:20px;
+}
+
+.navigation.collapsed > ul > li > a {
+	text-align:center;
+	padding:14px 18px;
+}
+
+.navigation.collapsed li:hover ul {
+	display:block!important;
+	top:40px;
+}
+
+.navigation.collapsed li:hover > a {
+	color: #fff;
+	background: rgba(255,255,255,0.05);
+}
+
+.navigation.collapsed li:hover .icons-desc {
+	display:block!important;
+	position:absolute;
+	text-align:left;
+	left:100%;
+	top:0;
+	font-weight:400;
+	line-height:40px;
+	width:200px;
+	color:#FFF;
+	background:none repeat scroll 0 0 #212429;
+	z-index:4;
+	padding:0 20px;
+	border-top-right-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+}
+
+.navigation.collapsed li ul li a {
+	width:200px;
+}
+
+.navigation.collapsed li ul {
+	display:none!important;
+	width:200px;
+	position:absolute;
+	height:auto;
+	left:100%;
+	border-bottom-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+}
+
 /* Content Design */
-#wrapper > .content {
+#wrapper > .container {
 	display: block;
 	position: absolute;
 	left: 0;
@@ -405,13 +480,16 @@ small { font-size: 80%; }
 	padding: 20px 40px;
 	height: auto;
 	overflow-y: auto;
-	overflow-x: hidden;
+	overflow-x: visible;
 	z-index: 1;
 	min-width: 720px;
 	margin-left: 240px;
+	transition: margin 0.2s linear 0.2s;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
 }
 
-#wrapper > .content .debug {
+#wrapper > .container .debug {
 	background: #fff;
 	border: 1px solid #F5F5F5;
 	padding: 10px;
@@ -419,17 +497,17 @@ small { font-size: 80%; }
 	-webkit-border-radius: 3px;
 }
 
-#wrapper > .content:after {
+#wrapper > .container:after {
 	content: "";
 	display: table;
 	clear: both;
 }
 
-#wrapper .content ul {
+#wrapper .container ul {
 	margin: 10px 15px;
 }
 
-#wrapper .content ul li {
+#wrapper .container ul li {
 	margin: 0 20px;
 }
 
@@ -754,9 +832,9 @@ a.close {
 	position: absolute;
 	top: 50%;
 	right: 15px;
-	margin-top: -11px;
+	margin-top: -10px;
 	padding: 2px;
-	font-size: 18px;
+	font-size: 14px;
 	line-height: 1;
 	text-decoration: none;
 	cursor: pointer;
@@ -1110,7 +1188,7 @@ input[type=radio]:disabled + span:before {
 
 #ethPorts .eth.off { background: url('/img/ethernet.x.svg') 20px center no-repeat; }
 #ethPorts .eth.on { background:  url('/img/ethernet.svg') 20px center no-repeat; }
-#ethPorts .eth.wan { width: 40%; }
+#ethPorts .eth.wan { width: 30%; }
 
 
 /* Style Refresh timers */
@@ -1162,6 +1240,7 @@ input[type=radio]:disabled + span:before {
 .icon-top:before { vertical-align: top; }
 
 /* Icons */
+
 .icon-chevron-left:before {
 	content: "\e000";
 }
@@ -1183,9 +1262,6 @@ input[type=radio]:disabled + span:before {
 .icon-check:before {
 	content: "\e006";
 }
-.icon-cancel:before {
-	content: "\e007";
-}
 .icon-stop:before {
 	content: "\e008";
 }
@@ -1198,17 +1274,11 @@ input[type=radio]:disabled + span:before {
 .icon-drive:before {
 	content: "\e00b";
 }
-.icon-power:before {
-	content: "\e00c";
-}
 .icon-disable:before {
 	content: "\e00d";
 }
 .icon-globe:before {
 	content: "\e00e";
-}
-.icon-signal:before {
-	content: "\e00f";
 }
 .icon-search:before {
 	content: "\e010";
@@ -1243,21 +1313,6 @@ input[type=radio]:disabled + span:before {
 .icon-system:before {
 	content: "\e01c";
 }
-.icon-graphs:before {
-	content: "\e01d";
-}
-.icon-wifi-1:before {
-	color: red;
-	content: "\e01e";
-}
-.icon-wifi-2:before {
-	color: orange;
-	content: "\e01f";
-}
-.icon-wifi-3:before {
-	color: green;
-	content: "\e020";
-}
 .icon-info:before {
 	content: "\e014";
 }
@@ -1289,12 +1344,27 @@ input[type=radio]:disabled + span:before {
 	content: "\e028";
 }
 .icon-info-alt:before {
-  content: "\e027";
+	content: "\e027";
+}
+.icon-align-left:before {
+	content: "\e029";
+}
+.icon-power:before {
+	content: "\e02a";
+}
+.icon-cancel:before {
+	content: "\e02b";
+}
+.icon-signal:before {
+	content: "\e00c";
+}
+.icon-graphs:before {
+	content: "\e00f";
 }
 
 /* Responsive stuff */
 @media (max-width: 960px) {
-	#wrapper > .content { padding: 5px 10px; }
+	#wrapper > .container { padding: 5px 10px; }
 }
 
 .preloader {

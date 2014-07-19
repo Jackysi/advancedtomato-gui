@@ -272,7 +272,7 @@ No part of this file may be used without permission.
 				{ type: 'text', maxlen: 32, vtop: 1, class:'input-medium' }
 			]);
 
-			this.headerSet(['<b>Match Rule</b>', '<b>Class</b>', '<b>Description</b>', '<b>#</b>']);
+			this.headerSet(['Match Rule', 'Class', 'Description', '#']);
 
 			// addr_type < addr < proto < port_type < port < ipp2p < L7 < bcount < dscp < class < desc
 
@@ -360,7 +360,7 @@ No part of this file may be used without permission.
 
 	<script type="text/javascript">
 		if (nvram.qos_enable != '1') {
-			$('.content .ajaxwrap').prepend('<div class="alert alert-info"><b>QoS is disabled.</b>&nbsp; <a class="ajaxload" href="qos-settings.asp">Enable &raquo;</a> <a class="close"><i class="icon-cancel"></i></a></div>');
+			$('.container .ajaxwrap').prepend('<div class="alert alert-info"><b>QoS is disabled.</b>&nbsp; <a class="ajaxload" href="qos-settings.asp">Enable &raquo;</a> <a class="close"><i class="icon-cancel"></i></a></div>');
 		}
 	</script>
 

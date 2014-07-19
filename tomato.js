@@ -2354,13 +2354,13 @@ function navi()
 {
 	var htmlmenu = '', activeURL = myName();
 	var menu = {
-		'<i class="icon-home"></i> Status': {
+		'<i class="icon-home"></i> <span class="icons-desc">Status</span>': {
 			'Overview':            'status-home.asp',
 			'Device List':         'status-devices.asp',
 			'Web Usage':           'status-webmon.asp',
 			'Logs':                'status-log.asp'
 		},
-		'<i class="icon-tools"></i> Basic Settings': {
+		'<i class="icon-tools"></i> <span class="icons-desc">Basic Settings</span>': {
 			'Network':             'basic-network.asp',
 			/* IPV6-BEGIN */
 			'IPv6':                'basic-ipv6.asp',
@@ -2371,7 +2371,7 @@ function navi()
 			'DHCP/ARP/BW':         'basic-static.asp',
 			'Wireless Filter':     'basic-wfilter.asp'
 		},
-		'<i class="icon-shield"></i> Advanced Settings': {
+		'<i class="icon-shield"></i> <span class="icons-desc">Advanced Settings</span>': {
 			'Access Restriction':   'advanced-restrict.asp',
 			'Conntrack/Netfilter':  'advanced-ctnf.asp',
 			'DHCP/DNS':             'advanced-dhcpdns.asp',
@@ -2390,7 +2390,7 @@ function navi()
 			'LAN Access':           'advanced-access.asp',
 			'Virtual Wireless':     'advanced-wlanvifs.asp'
 		},
-		'<i class="icon-forward"></i> Port Forwarding': {
+		'<i class="icon-forward"></i> <span class="icons-desc">Port Forwarding</span>': {
 			'Basic':                'forward-basic.asp',
 			/* IPV6-BEGIN */
 			'Basic IPv6':           'forward-basic-ipv6.asp',
@@ -2399,7 +2399,7 @@ function navi()
 			'Triggered':            'forward-triggered.asp',
 			'UPnP/NAT-PMP':         'forward-upnp.asp'
 		},
-		'<i class="icon-gauge"></i> Quality of Service': {
+		'<i class="icon-gauge"></i> <span class="icons-desc">Quality of Service</span>': {
 			'Basic Settings':       'qos-settings.asp',
 			'Classification':       'qos-classify.asp',
 			'View Graphs':          'qos-graphs.asp',
@@ -2409,7 +2409,7 @@ function navi()
 		},
 		/* USB-BEGIN */
 		// ---- !!TB - USB, FTP, Samba, Media Server
-		'<i class="icon-drive"></i> USB & NAS': {
+		'<i class="icon-drive"></i> <span class="icons-desc">USB & NAS</span>': {
 			'USB Support':          'nas-usb.asp'
 			/* FTP-BEGIN */
 			,'FTP Server':          'nas-ftp.asp'
@@ -2432,7 +2432,7 @@ function navi()
 		},
 		/* USB-END */
 		/* VPN-BEGIN */
-		'<i class="icon-globe"></i> VPN': {
+		'<i class="icon-globe"></i> <span class="icons-desc">VPN</span>': {
 			/* OPENVPN-BEGIN */
 			'OpenVPN Server':       'vpn-server.asp',
 			'OpenVPN Client':       'vpn-client.asp'
@@ -2444,7 +2444,7 @@ function navi()
 			/* PPTPD-END */
 		},
 		/* VPN-END */
-		'<i class="icon-wrench"></i> Administration': {
+		'<i class="icon-wrench"></i> <span class="icons-desc">Administration</span>': {
 			'Admin Access':         'admin-access.asp',
 			'TomatoAnon': 			'admin-tomatoanon.asp',
 			'Bandwidth Monitoring': 'admin-bwm.asp',
@@ -2472,11 +2472,7 @@ function navi()
 	};
 
 	// Add custom menu
-	try {
-		$.extend(menu, $.parseJSON(nvram.web_nav));
-	} catch (e) {
-		// console.log('Failed to parse custom navigation (might not be set)');
-	}
+	try { $.extend(menu, $.parseJSON(nvram.web_nav)); } catch (e) {  /* console.log('Failed to parse custom navigation (might not be set)'); */ }
 
 	// Loop Through MENU
 	$.each(menu, function (key, linksobj) {
@@ -2485,7 +2481,7 @@ function navi()
 
 		// Loop Through subcats
 		$.each(linksobj, function(name, link) {
-			category += '<li' + ((activeURL == link) ? ' class="active"' : '') + '><a href="#' + link + '">' + name + '</a></li>';
+			category += '<li  class="' + ((activeURL == link) ? 'active' : '') + '"><a href="#' + link + '">' + name + '</a></li>';
 		});
 
 		htmlmenu += '<li' + (($(category).filter('.active')[0] == null) ? '' : ' class="active"') + '><a href="#">' + key + '</a><ul>' + category + '</ul></li>';
