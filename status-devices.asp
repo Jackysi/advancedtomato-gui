@@ -304,7 +304,7 @@
 	<div class="box">
 		<div class="heading">Devices List</div>
 		<div class="content">
-			<table id="dev-grid" class="line-table"></table>
+			<table id="dev-grid" class="line-table"></table><br />
 			<div class="devicedata"></div>
 			<script type="text/javascript">
 				f = [];
@@ -323,7 +323,7 @@
 						}
 					}
 				}
-				createFieldTable('', f, '.devicedata');
+				$('.devicedata').forms(f);
 			</script>
 		</div>
 	</div>
