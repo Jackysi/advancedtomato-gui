@@ -1724,7 +1724,7 @@ No part of this file may be used without permission.
 						{ title: 'Encryption', indent: 2, name: 'wl'+u+'_wep_bit', type: 'select', options: [['128','128-bits'],['64','64-bits']],
 							value: eval('nvram.wl'+u+'_wep_bit') },
 						{ title: 'Passphrase', indent: 2, name: 'wl'+u+'_passphrase', type: 'text', maxlen: 16, size: 20,
-							suffix: ' <button class="btn" type="button" id="_f_wl'+u+'_wep_gen" value="Generate" onclick="generate_wep('+u+')"> <button class="btn" type="button" id="_f_wl'+u+'_wep_random" value="Random" onclick="random_wep('+u+')">Random</button>',
+							suffix: ' <button class="btn" type="button" id="_f_wl'+u+'_wep_gen" value="Generate" onclick="generate_wep('+u+')">Generate</button> <button class="btn" type="button" id="_f_wl'+u+'_wep_random" value="Random" onclick="random_wep('+u+')">Random</button>',
 							value: eval('nvram.wl'+u+'_passphrase') }
 					];
 
