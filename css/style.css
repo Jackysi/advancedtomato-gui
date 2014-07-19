@@ -428,6 +428,7 @@ small { font-size: 80%; }
 .navigation.collapsed > ul > li > a {
 	text-align:center;
 	padding:14px 18px;
+	color: #919292;
 }
 
 .navigation.collapsed li:hover ul {
@@ -436,7 +437,7 @@ small { font-size: 80%; }
 }
 
 .navigation.collapsed li:hover > a {
-	color: #fff;
+	color: #fff !important;
 	background: rgba(255,255,255,0.05);
 }
 

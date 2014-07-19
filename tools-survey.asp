@@ -29,8 +29,9 @@ No part of this file may be used without permission.
 		#survey-controls {
 			text-align: right;
 		}
-		#expire-time {
+		#expire-time, #refresh-time {
 			width: 120px;
+			vertical-align: middle;
 		}
 	</style>
 	<script type="text/javascript">
