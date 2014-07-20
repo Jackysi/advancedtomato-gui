@@ -143,7 +143,7 @@
 			elem.display('ip6_lan_ll', stats.ip6_lan_ll != '');
 			/* IPV6-END */
 
-			c('wanstatus', ((stats.wanstatus == 'Connected') ? 'Connected <i class="icon-globe"></i>' : stats.wanstatus + ' <i class="icon-cancel icon-red"></i>'));
+			c('wanstatus', ((stats.wanstatus == 'Connected') ? 'Connected <i class="icon-globe icon-green"></i>' : stats.wanstatus + ' <i class="icon-cancel icon-red"></i>'));
 			c('wanuptime', stats.wanuptime);
 			if (show_dhcpc) c('wanlease', stats.wanlease);
 			if (show_codi) {
@@ -193,37 +193,17 @@
 		}
 
 		function init() {
-			var c;
-			if (((c = cookie.get('status_overview_system_vis')) != null) && (c != '1')) toggleVisibility("system");
-			if (((c = cookie.get('status_overview_wan_vis')) != null) && (c != '1')) toggleVisibility("wan");
-			if (((c = cookie.get('status_overview_lan_vis')) != null) && (c != '1')) toggleVisibility("lan");
-			if (((c = cookie.get('status_overview_lan-ports_vis')) != null) && (c != '1')) toggleVisibility("lan-ports");
-			for (var uidx = 0; uidx < wl_ifaces.length; ++uidx) {
-				u = wl_fface(uidx);
-				if (((c = cookie.get('status_overview_wl_'+u+'_vis')) != null) && (c != '1')) toggleVisibility("wl_"+u);
-			}
 
 			ref.initPage(3000, 3);
 
 		}
 
-		function toggleVisibility(whichone) {
-			if ($('#sesdiv_' + whichone).css('display') != 'none') {
-				$('#sesdiv_' + whichone).slideUp();
-				$('#sesdiv_' + whichone + '_showhide').html('<i class="icon-chevron-up"></i>');
-				cookie.set('status_overview_' + whichone + '_vis', 0);
-			} else {
-				$('#sesdiv_' + whichone).slideDown();
-				$('#sesdiv_' + whichone + '_showhide').html('<i class="icon-chevron-down"></i>');
-				cookie.set('status_overview_' + whichone + '_vis', 1);
-			}
-		}
 	</script>
 
 	<div class="fluid-grid">
 
-		<div class="box">
-			<div class="heading">System <a data-toggle="tooltip" title="Hide/show" class="pull-right" href="javascript:toggleVisibility('system');"><span id="sesdiv_system_showhide"><i class="icon-chevron-down"></i></span></a></div>
+		<div class="box" data-box="home_systembox">
+			<div class="heading">System</div>
 			<div class="content" id="sesdiv_system">
 				<div class="section"></div>
 				<script type="text/javascript">
@@ -244,8 +224,8 @@
 			</div>
 		</div>
 
-		<div class="box" id="wan-title">
-			<div class="heading">WAN <a data-toggle="tooltip" title="Hide/show" class="pull-right" href="javascript:toggleVisibility('wan');"><span id="sesdiv_wan_showhide"><i class="icon-chevron-down"></i></span></a></div>
+		<div class="box" id="wan-title" data-box="home_wanbox">
+			<div class="heading">WAN</div>
 			<div class="content" id="sesdiv_wan">
 				<div class="WANField"></div>
 				<script type="text/javascript">
@@ -281,16 +261,15 @@
 			</div>
 		</div>
 
-		<div class="box" id="ethernetPorts">
+		<div class="box" id="ethernetPorts" data-box="home_ethports">
 			<div class="heading">Ethernet Ports State
-				<a class="pull-right" data-toggle="tooltip" title="Hide/show" href="javascript:toggleVisibility('lan-ports');"><span id="sesdiv_lan-ports_showhide"><i class="icon-chevron-down"></i></span></a>
 				<a class="ajaxload pull-right" data-toggle="tooltip" title="Configure Settings" href="#basic-network.asp"><i class="icon-system"></i></a>
 			</div>
 			<div class="content" id="sesdiv_lan-ports"></div>
 		</div>
 
-		<div class="box" id="LAN-settings">
-			<div class="heading">LAN <a data-toggle="tooltip" title="Hide/show" class="pull-right" href="javascript:toggleVisibility('lan');"><span id="sesdiv_lan_showhide"><i class="icon-chevron-down"></i></span></a></div>
+		<div class="box" id="LAN-settings" data-box="home_lanbox">
+			<div class="heading">LAN </div>
 			<div class="content" id="sesdiv_lan">
 				<script type="text/javascript">
 
@@ -368,10 +347,9 @@
 				//	u = wl_unit(uidx);
 				REMOVE-END */
 				u = wl_fface(uidx);
-				data += '<div class="box"><div class="heading" id="wl'+u+'-title">Wireless';
+				data += '<div class="box" data-box="home_wl' + u +'"><div class="heading" id="wl'+u+'-title">Wireless';
 				if (wl_ifaces.length > 0)
 					data += ' (' + wl_display_ifname(uidx) + ')';
-				data += ' <a data-toggle="tooltip" title="Hide/show" class="pull-right" href="javascript:toggleVisibility(\'wl_' + u + '\');"><span id="sesdiv_wl_' +u + '_showhide"><i class="icon-chevron-down"></i></span></a>';
 				data += '</div>';
 				data += '<div class="content" id="sesdiv_wl_'+u+'">';
 				sec = auth[nvram['wl'+u+'_security_mode']] + '';
@@ -402,8 +380,8 @@
 					], null, 'data-table dataonly');
 
 				data += '<div class="btn-group">';
-				data += '<button type="button" class="btn" onclick="wlenable('+uidx+', 1)" id="b_wl'+uidx+'_enable" value="Enable" style="display:none"><i class="icon-check"></i> Enable</i></button>';
-				data += '<button type="button" class="btn" onclick="wlenable('+uidx+', 0)" id="b_wl'+uidx+'_disable" value="Disable" style="display:none"><i class="icon-disable"></i> Disable</i></button>';
+				data += '<button type="button" class="btn" onclick="wlenable('+uidx+', 1)" id="b_wl'+uidx+'_enable" value="Enable" style="display:none"><i class="icon-check icon-green"></i> Enable</i></button>';
+				data += '<button type="button" class="btn" onclick="wlenable('+uidx+', 0)" id="b_wl'+uidx+'_disable" value="Disable" style="display:none"><i class="icon-disable icon-red"></i> Disable</i></button>';
 				data += '</div></div></div>';
 				$('#LAN-settings').after(data);
 			}
