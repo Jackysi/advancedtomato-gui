@@ -30,7 +30,7 @@ No part of this file may be used without permission.
 
 		function submit_complete()
 		{
-			reloadPage();
+			document.location.reload();
 		}
 	</script>
 
