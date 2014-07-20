@@ -231,10 +231,8 @@ No part of this file may be used without permission.
 						{ title: 'Allow Wireless Access', name: 'f_http_wireless', type: 'checkbox', value:  nvram.web_wl_filter == 0 },
 						{ title: '<h5>Interface Settings</h5>' },
 						{ title: 'Interface Theme', name: 'web_css', type: 'select', help: 'With AdvancedTomato you get very few built in skins, others are available on AdvancedTomato Themes Directory. This way we can save space on router for more important functions.',
-							options: [['tomato','Default'], ['css/metro','Metro'],['ext/custom','Custom (ext/custom.css)'], ['online', 'On-line from ATTD']], value: nvram.web_css },
+							options: [['tomato','Default'],['ext/custom','Custom (ext/custom.css)'], ['online', 'On-line from ATTD']], value: nvram.web_css },
 						{ title: 'ATTD ID#', indent: 2, name: 'ttb_css', type: 'text', maxlen: 25, size: 30, value: nvram.ttb_css, suffix: 'Theme ID# from <a href="http://at.prahec.com/themes/" target="_blank"><u><i>ATTD themes gallery</i></u></a>' },
-						{ title: 'Interface Width', help: "This preference allows you to change the way web interface adapts to your browser screen.", size: 35,
-							name: 'at_width', type: 'select', options: [['fluid','Fluid (Full Browser Size)'],['1024','Fixed: 1024px'], ['1280','Fixed: 1280px'], ['1680','Fixed: 1680px']], value: nvram.at_width },
 						{ title: 'Interface Navigation', help: "This option allows you to add custom navigation links or rewrite existing ones. Only JSON format accepted!",
 							name: 'web_nav', type: 'textarea', style: 'width: 100%; height: 100px;', value: nvram.web_nav }
 					];

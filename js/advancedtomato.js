@@ -132,15 +132,6 @@ function AdvancedTomato () {
 		}
 	}
 
-	// Function to limit GUI size to specific width (not working!)
-	if (typeof nvram.at_width !== "undefined") {
-
-		if (nvram.at_width != 'fluid' && nvram.at_width != null) {
-			$('#wrapper').css('width', nvram.at_width);
-			$('body').addClass('fixedwidth');
-		}
-	}
-
 }
 
 
