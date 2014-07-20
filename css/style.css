@@ -771,10 +771,6 @@ table tr.editor td textarea {
 	background: #F54121;
 }
 
-.btn i {
-	margin-top: -2px;
-}
-
 .btn.btn-link {
 	color: #919293 !important;
 	box-shadow: none;
@@ -1225,6 +1221,7 @@ input[type=radio]:disabled + span:before {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	vertical-align: middle;
+	margin-top: -2px;
 }
 
 /* Colors */
