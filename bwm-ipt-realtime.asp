@@ -257,10 +257,9 @@ No part of this file may be used without permission.
 				<b>Color</b>: <a href="javascript:switchColor()" id="drawcolor">-</a> |
 				<small><a href="javascript:switchColor(1)" id="drawrev">[reverse]</a></small>
 				| <a class="ajaxload" href="admin-iptraffic.asp"><b>Configure</b></a>
-			</div><br />
+			</div>
 
-
-			<table id="txt" class="table-striped">
+			<br /><table id="txt" class="data-table">
 				<tr>
 					<td><b style="border-bottom:blue 1px solid" id="rx-name">RX</b>
 						<i class="icon-arrow-down"></i></td>

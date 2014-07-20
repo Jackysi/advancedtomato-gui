@@ -94,7 +94,7 @@ No part of this file may be used without permission.
 
 		function init()
 		{
-			if (nvram.rstats_enable != '1') { $('#rstats').before('<div class="alert">Bandwidth monitoring disabled.</b> <a href="/#admin-bwm.asp">Enable &raquo;</a></div>'); return; }
+			// if (nvram.rstats_enable != '1') { $('#rstats').before('<div class="alert">Bandwidth monitoring disabled.</b> <a href="/#admin-bwm.asp">Enable &raquo;</a></div>'); return; }
 
 			try {
 				//<% bandwidth("speed"); %>
@@ -167,10 +167,10 @@ No part of this file may be used without permission.
 				<a class="ajaxload" href="admin-bwm.asp"><b>Configure</b></a>
 			</div>
 
-			<br>
-			<table id="txt" class="table-striped">
+			<br /><table id="txt" class="data-table">
 				<tr>
-					<td><b style="border-bottom:blue 1px solid" id="rx-name">RX</b><i class="icon-arrow-down"></i></td>
+					<td><b style="border-bottom:blue 1px solid" id="rx-name">RX</b>
+						<i class="icon-arrow-down"></i></td>
 					<td><span id="rx-current"></span></td>
 					<td><b>Avg</b></td>
 					<td id="rx-avg"></td>
@@ -181,7 +181,8 @@ No part of this file may be used without permission.
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
-					<td><b style="border-bottom:blue 1px solid" id="tx-name">TX</b><i class="icon-arrow-up"></i></td>
+					<td><b style="border-bottom:blue 1px solid" id="tx-name">TX</b>
+						<i class="icon-arrow-up"></i></td>
 					<td><span id="tx-current"></span></td>
 					<td><b>Avg</b></td>
 					<td id="tx-avg"></td>
@@ -191,9 +192,8 @@ No part of this file may be used without permission.
 					<td id="tx-total"></td>
 					<td>&nbsp;</td>
 				</tr>
-			</table>
+			</table><br />
 
-			<br />
 			<div id="rbusy" class="alert warning" style="display:none">Warning: 10 second session timeout, restarting...&nbsp;</div>
 
 		</div>

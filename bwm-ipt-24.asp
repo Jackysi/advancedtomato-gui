@@ -305,28 +305,29 @@ No part of this file may be used without permission.
 				<a class="ajaxload" href="admin-bwm.asp"><b>Configure</b></a>
 			</div>
 
-			<br>
-			<table class="data-table" id="txt">
+			<br /><table id="txt" class="data-table">
 				<tr>
-					<td width="8%"><b style="border-bottom:blue 1px solid" id="rx-name">RX</b><i class="icon-arrow-down"></i></td>
-					<td width="15%"><span id="rx-current"></span></td>
-					<td width="8%"><b>Avg</b></td>
-					<td width="15%" id="rx-avg"></td>
-					<td width="8%"><b>Peak</b></td>
-					<td width="15%" id="rx-max"></td>
-					<td width="8%"><b>Total</b></td>
-					<td width="14%" id="rx-total"></td>
+					<td><b style="border-bottom:blue 1px solid" id="rx-name">RX</b>
+						<i class="icon-arrow-down"></i></td>
+					<td><span id="rx-current"></span></td>
+					<td><b>Avg</b></td>
+					<td id="rx-avg"></td>
+					<td><b>Peak</b></td>
+					<td id="rx-max"></td>
+					<td><b>Total</b></td>
+					<td id="rx-total"></td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
-					<td width="8%"><b style="border-bottom:blue 1px solid" id="tx-name">TX</b><i class="icon-arrow-up"></i></td>
-					<td width="15%"><span id="tx-current"></span></td>
-					<td width="8%"><b>Avg</b></td>
-					<td width="15%" id="tx-avg"></td>
-					<td width="8%"><b>Peak</b></td>
-					<td width="15%" id="tx-max"></td>
-					<td width="8%"><b>Total</b></td>
-					<td width="14%" id="tx-total"></td>
+					<td><b style="border-bottom:blue 1px solid" id="tx-name">TX</b>
+						<i class="icon-arrow-up"></i></td>
+					<td><span id="tx-current"></span></td>
+					<td><b>Avg</b></td>
+					<td id="tx-avg"></td>
+					<td><b>Peak</b></td>
+					<td id="tx-max"></td>
+					<td><b>Total</b></td>
+					<td id="tx-total"></td>
 					<td>&nbsp;</td>
 				</tr>
 			</table><br />
