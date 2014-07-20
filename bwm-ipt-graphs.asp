@@ -311,8 +311,8 @@ LAN Access admin module by Augusto Bott
 		</div>
 
 		<div class="box graphs">
+			<div class="heading">Bandwidth Distribution (Outbound)</div>
 			<div class="content">
-				<div class="heading">Bandwidth Distribution (Outbound)</div>
 				<div id="svg-2"></div>
 
 				<table id="thirdTable">
