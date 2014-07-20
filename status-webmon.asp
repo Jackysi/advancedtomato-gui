@@ -388,8 +388,8 @@ No part of this file may be used without permission.
 	</div>
 
 	<div id="wm-disabled" class="alert alert-info">
-		<b>Web Monitoring disabled.</b><br />
-		<a class="ajaxload" href="admin-log.asp">Enable &raquo;</a>
+		<h5>Web Monitoring disabled</h5>
+		Please <a class="ajaxload" href="/#admin-log.asp">enable</a> web monitoring in order to view information on this page.
 	</div>
 
 	<script type="text/javascript">earlyInit();</script>
