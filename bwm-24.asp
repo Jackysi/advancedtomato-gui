@@ -11,7 +11,8 @@ No part of this file may be used without permission.
 	<script type="text/javascript" src="js/wireless.jsx?_http_id=<% nv(http_id); %>"></script>
 	<script type="text/javascript" src="js/bwm-common.js"></script>
 	<script type="text/javascript">
-		//	<% nvram("at_update,tomatoanon_answer,wan_ifname,lan_ifname,wl_ifname,wan_proto,wan_iface,web_svg,rstats_enable,rstats_colors"); %>
+
+		//	<% nvram("wan_ifname,lan_ifname,wl_ifname,wan_proto,wan_iface,web_svg,rstats_enable,rstats_colors"); %>
 
 		var cprefix = 'bw_24';
 		var updateInt = 120;
@@ -40,7 +41,7 @@ No part of this file may be used without permission.
 			cookie.set(cprefix + 'hrs', hours);
 		}
 
-		var ref = new TomatoRefresh('/update.cgi', 'exec=bandwidth&arg0=speed');
+		var ref = new TomatoRefresh('update.cgi', 'exec=bandwidth&arg0=speed');
 
 		ref.refresh = function(text)
 		{
@@ -68,14 +69,16 @@ No part of this file may be used without permission.
 			--updating;
 		}
 
+		ref.showState = function()
+		{
+			$('#refresh-but').html('<i class="icon-' + (this.running ? 'stop' : 'reboot') + '"></i>');
+		}
+
 		ref.toggleX = function()
 		{
 			this.toggle();
-
-			$('#refresh-but').html('<i class="icon-' + (this.running ? 'stop' : 'reboot') + '"></i>');
-
+			this.showState();
 			cookie.set(cprefix + 'refresh', this.running ? 1 : 0);
-			return false;
 		}
 
 		ref.initX = function()
@@ -89,8 +92,9 @@ No part of this file may be used without permission.
 			}
 		}
 
-		function init() {
-			if (nvram.rstats_enable != '1') $('#rstats').before('<div class="alert">Bandwidth monitoring disabled.</b> <a href="/#admin-bwm.asp">Enable &raquo;</a></div>'); return;
+		function init()
+		{
+			if (nvram.rstats_enable != '1') { $('#rstats').before('<div class="alert">Bandwidth monitoring disabled.</b> <a href="/#admin-bwm.asp">Enable &raquo;</a></div>'); return; }
 
 			try {
 				//<% bandwidth("speed"); %>
