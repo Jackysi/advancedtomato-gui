@@ -108,7 +108,7 @@ function AdvancedTomato () {
 	});
 
 
-	/** Handle Global Notifications
+	/** Handle NVRAM global functions and notifications
 	************************************************************************************************/
 	if (typeof nvram == 'undefined') { return false; }
 
@@ -129,6 +129,15 @@ function AdvancedTomato () {
 			$('.container').prepend('<div class="alert warning"><h5>Attention</h5> You did not configure <b>TomatoAnon project</b> setting.\
 				Please go to <a onclick="loadPage(\'admin-tomatoanon.asp\')" href="#">TomatoAnon configuration page</a> and make a choice.</div>');
 
+		}
+	}
+
+	if (typeof nvram.at_navi !== 'undefined') {
+		if (nvram.at_navi == 'collapsed') {
+			$('#wrapper').find('.container').css('margin-left', '60px');
+			$('#wrapper').find('.navigation').addClass('collapsed');
+			$('#wrapper').find('.logo').addClass('collapsed');
+			$('#wrapper').find('.nav-collapse-hide').hide();
 		}
 	}
 

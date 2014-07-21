@@ -17,16 +17,16 @@
 
 		<script type="text/javascript">
 			var routerName = '[<% ident(); %>] ';
-			//<% nvram("web_nav,at_update,at_width,tomatoanon_answer"); %>
+			//<% nvram("web_nav,at_update,at_navi,tomatoanon_answer"); %>
 			//<% anonupdate(); %>
 			// Fix for system data display
 			var refTimer, wl_ifaces = {}, ajaxLoadingState = false, gui_version = "<% version(0); %>";
 
 			$(document).ready(function() {
 
-				AdvancedTomato();
 				gui_version = gui_version.match(/^1.28\.0000 (MIPSR2\-)?(.*)/)[2] || '';
 				$('#gui-version').html('<i class="icon-info-alt"></i> <span class="nav-collapse-hide">' + gui_version + '</span>');
+				AdvancedTomato();
 
 			});
 		</script>
