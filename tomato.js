@@ -247,7 +247,12 @@ var form = {
 		v = ['_ajax=1'];
 		wait = 5;
 		for (var i = 0; i < fom.elements.length; ++i) {
+
 			f = fom.elements[i];
+
+			/* IE Bugfix */
+			if (typeof(f) == 'undefined' || (typeof(f.name) == 'undefined')) { continue; }
+
 			if ((f.disabled) || (f.name == '') || (f.name.substr(0, 2) == 'f_')) continue;
 			if ((f.tagName == 'INPUT') && ((f.type == 'CHECKBOX') || (f.type == 'RADIO')) && (!f.checked)) continue;
 			if (f.name == '_nextwait') {
