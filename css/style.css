@@ -747,8 +747,10 @@ table tr.editor td textarea {
 
 .btn.disabled,
 .btn[disabled] {
-	opacity: 0.5;
-	cursor:not-allowed;
+	pointer-events: none;
+	cursor: not-allowed;
+	box-shadow: none;
+	opacity: 0.65;
 }
 
 .btn.btn-primary {
