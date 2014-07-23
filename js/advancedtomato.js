@@ -119,7 +119,7 @@ function AdvancedTomato () {
 
 		if (n < lastUpdate || n == null) {
 			$(".container").prepend('<div class="alert info"><a href="#" class="close" data-update="' + nvram.at_update.replace('.','') + '"><i class="icon-cancel"></i></a>\
-				AdvancedTomato <b>v' + nvram.at_update + '</b> is already available. <a target="_blank" href="http://at.prahec.com/changelog/">Click here to find out more</a>.</div>');
+				AdvancedTomato <b>v' + nvram.at_update + '</b> is already available. <a target="_blank" href="http://advancedtomato.com/changelog/">Click here to find out more</a>.</div>');
 		}
 	}
 
@@ -263,7 +263,7 @@ function loadPage(page) {
 		$('h2.currentpage').text('Interface Error');
 		$('.container .ajaxwrap').hide().html('<h2>ERROR occured!<i class="icon-cancel" style="font-size: 20px; color: red; vertical-align: top;"></i></h2>\
 			<span style="font-size: 14px;">There has been error while loading a page, please review debug data bellow if this is isolated issue.<br />\
-			Otherwise please contact AdvancedTomato developer <a target="_blank" href="http://at.prahec.com/contact/">Jacky</a>. <br /><br /><pre class="debug">' + x + '</pre><br /><a href="/">Refreshing</a> browser window might help.</span>').fadeIn(200);
+			Otherwise please leave a message at <a target="_blank" href="http://advancedtomato.com/contact/">http://advancedtomato.com</a>. <br /><br /><pre class="debug">' + x + '</pre><br /><a href="/">Refreshing</a> browser window might help.</span>').fadeIn(200);
 
 		preloader('stop');
 		// Loaded, clear state
