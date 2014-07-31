@@ -178,7 +178,9 @@ small { font-size: 80%; }
 	display: inline-block;
 	color: #696969;
 
-	padding: 21px 15px;
+	padding: 0 15px;
+	height: 60px;
+	line-height: 60px;
 	transition: all 150ms ease-out;
 	-webkit-transition: all 150ms ease-out;
 }
@@ -1374,6 +1376,9 @@ input[type=radio]:disabled + span:before {
 /* Responsive stuff */
 @media (max-width: 960px) {
 	#wrapper > .container { padding: 5px 10px; }
+	.links ul li a { font-size: 0; }
+	.links ul li a i { font-size: 16px; }
+	.system-ui:before, .system-ui:after { display: none; }
 }
 
 .preloader {

@@ -50,10 +50,10 @@
 
 				<div class="pull-right links">
 					<ul>
-						<li><a href="#tools-ping.asp">Tools <i class="icon-tools"></i></a></li>
-						<li><a href="#bwm-realtime.asp">Bandwidth <i class="icon-graphs"></i></a></li>
-						<li><a href="#bwm-ipt-realtime.asp">IP Traffic <i class="icon-globe"></i></a></li>
-						<li><a id="system-ui" href="#system">System <i class="icon-system"></i></a></li>
+						<li><a title="Tools" href="#tools-ping.asp">Tools <i class="icon-tools"></i></a></li>
+						<li><a title="Bandwidth" href="#bwm-realtime.asp">Bandwidth <i class="icon-graphs"></i></a></li>
+						<li><a title="IP Traffic" href="#bwm-ipt-realtime.asp">IP Traffic <i class="icon-globe"></i></a></li>
+						<li><a title="System" id="system-ui" href="#system">System <i class="icon-system"></i></a></li>
 					</ul>
 					<div class="system-ui">
 
