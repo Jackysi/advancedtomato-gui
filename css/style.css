@@ -983,6 +983,7 @@ form { margin-bottom: 20px; }
 .input-append .btn { margin: 0; vertical-align: middle; }
 .input-append input { vertical-align: middle; padding: 5px 10px; margin: 0 -2px 0 0; }
 input, select, textarea {
+	color: #656565;
 	padding: 5px 10px;
 	height: auto;
 	line-height: 1.3;
@@ -992,8 +993,8 @@ input, select, textarea {
 	box-shadow: 0 1px 1px 0 #fff;
 	-webkit-box-shadow: 0 1px 1px 0 #fff;
 	background: #fff;
-	transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-	-webkit-transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+	transition: border-color 0.15s ease-in-out 0s, color 0.15s ease-in-out 0s;
+	-webkit-transition: border-color 0.15s ease-in-out 0s, color 0.15s ease-in-out 0s;
 	border-radius: 3px;
 	outline-style: none;
 	vertical-align: baseline;
@@ -1001,6 +1002,7 @@ input, select, textarea {
 }
 
 input:focus, select:focus, textarea:focus {
+	color: #000;
 	border-color: #66AFE9;
 }
 
@@ -1077,11 +1079,13 @@ input[type=radio]:checked + span:before {
 /* Disable state */
 input[type=checkbox]:disabled + span,
 input[type=radio]:disabled + span {
+	pointer-events: none;
 	border-color: #dddddd !important;
 	background-color: #dddddd !important;
 }
 /* override for radio */
 input[type=radio]:disabled + span {
+	pointer-events: none;
 	background-color: #fff !important;
 }
 input[type=radio]:disabled + span:before {
@@ -1113,6 +1117,7 @@ input[type=radio]:disabled + span:before {
 }
 
 .customfile-disabled  {
+	pointer-events: none;
 	opacity:  .5;
 	cursor:  default;
 }
