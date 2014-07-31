@@ -2722,7 +2722,7 @@ function createFormFields (data, settings) {
 			if (id1 == '') id1 = id;
 
 			common = ' onchange="verifyFields(this, 1)" id="' + id + '"';
-			if (f.size > 60) common += ' style="width: 100%; display: block;"';
+			if (f.size > 65) common += ' style="width: 100%; display: block;"';
 
 			if (f.attrib) common += ' ' + f.attrib;
 			name = f.name ? (' name="' + f.name + '"') : '';
