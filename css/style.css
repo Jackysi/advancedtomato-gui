@@ -1158,6 +1158,7 @@ input[type=radio]:disabled + span:before {
 
 /* New Ethernet States */
 #ethPorts {
+	position: relative;
 	display: table;
 	padding: 30px 10px;
 	width: 100%;
@@ -1168,7 +1169,7 @@ input[type=radio]:disabled + span:before {
 	position: absolute;
 	display: block;
 	width: 64px;
-	top: -20px;
+	top: 10px;
 	text-align: center;
 }
 
@@ -1176,13 +1177,12 @@ input[type=radio]:disabled + span:before {
 	position: absolute;
 	display: block;
 	width: 64px;
-	bottom: -20px;
+	bottom: 10px;
 	text-align: center;
 }
 
 #ethPorts .eth {
 	display:table-cell;
-	position: relative;
 	z-index: 15;
 	width: auto;
 	padding: 0 10px;
