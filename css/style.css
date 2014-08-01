@@ -796,21 +796,22 @@ button.btn { text-transform: none; overflow: visible; color: inherit;  margin: 0
 
 .btn-group {
 	white-space: no-wrap;
+	font-size: 0px;
 }
 
-.btn-group .btn {
+.btn-group > .btn {
 	margin: 0;
 	border-radius: 0;
 	-webkit-border-radius: 0;
 	margin-left: -1px;
 }
 
-.btn-group .btn:first-child {
+.btn-group > .btn:first-child {
 	border-top-left-radius: 3px;
 	border-bottom-left-radius: 3px;
 }
 
-.btn-group .btn:last-child {
+.btn-group > .btn:last-child {
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
 }

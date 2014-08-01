@@ -247,6 +247,7 @@
 						{ title: 'Remaining Lease Time', rid: 'wanlease', text: stats.wanlease, ignore: !show_dhcpc }
 						], '.WANField', 'data-table dataonly');
 				</script>
+
 				<div id="b_dhcpc" style="display: none; margin-bottom: 8px;">
 					<div class="btn-group">
 						<button type="button" class="btn" onclick="dhcpc('renew')" value="Renew">Renew</button>
