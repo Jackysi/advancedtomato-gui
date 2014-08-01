@@ -75,8 +75,10 @@
 		{
 			var status, speed, code = '';
 
-			if (etherstates.port0 == "disable" || typeof (etherstates.port0) == 'undefined' || typeof (etherstates.port1) == 'undefined'
-				|| typeof (etherstates.port2) == 'undefined' || typeof (etherstates.port3) == 'undefined' || typeof (etherstates.port4) == 'undefined') { return false; }
+			if (etherstates.port0 == "disable" || typeof (etherstates.port0) == 'undefined' || typeof (etherstates.port1) == 'undefined' || typeof (etherstates.port2) == 'undefined' || typeof (etherstates.port3) == 'undefined' || typeof (etherstates.port4) == 'undefined') {
+				$('#ethernetPorts').remove();
+				return false;
+			}
 
 			// Above code checks if ETH ports are Disabled/Enabled
 			code += '<div id="ethPorts">';
