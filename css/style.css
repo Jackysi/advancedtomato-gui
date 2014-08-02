@@ -1377,9 +1377,9 @@ input[type=radio]:disabled + span:before {
 /* Responsive stuff */
 @media (max-width: 960px) {
 	#wrapper > .container { padding: 5px 10px; }
-	.links ul li a { font-size: 0; }
-	.links ul li a i { font-size: 16px; }
-	.system-ui:before, .system-ui:after { display: none; }
+.links ul li a { font-size: 0; }
+.links ul li a i { font-size: 16px; }
+.system-ui:before, .system-ui:after { display: none; }
 }
 
 .preloader {
@@ -1396,7 +1396,8 @@ input[type=radio]:disabled + span:before {
 	box-sizing: border-box;
 
 	border: solid 1px #3498DB;
-	border-color: #3498DB transparent #3498DB transparent;
+	border-color: #3498DB #3498DB transparent transparent;
+	border-width: 0 1px 1px;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 
@@ -1407,7 +1408,15 @@ input[type=radio]:disabled + span:before {
 .spinner.spinner-small {
 	width: 12px;
 	height: 12px;
-	border-width: 1px;
+}
+
+.spinner.spinner-large {
+	width: 36px;
+	height: 36px;
+	border-width: 0 3px 3px;
+
+	-webkit-animation: tomato-spinner 1s linear infinite;
+	animation: tomato-spinner 1s linear infinite;
 }
 
 @-webkit-keyframes tomato-spinner { 0%   { -webkit-transform: rotate(0deg); }  100% { -webkit-transform: rotate(360deg); } }
