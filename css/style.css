@@ -722,8 +722,9 @@ table tr.editor td textarea {
 /* Buttons design */
 .btn {
 	display: inline-block;
-	padding: 8px 14px;
+	padding: 7px 14px;
 	font-size: 12px;
+	font-weight: 500 !important;
 	line-height: 1.42857;
 	color: #f9f9f9 !important;
 	background-color: #585858;
@@ -734,9 +735,9 @@ table tr.editor td textarea {
 	-webkit-border-radius: 3px;
 	outline-style: none;
 	vertical-align: middle;
-	border: 1px solid rgba(0, 0, 0, 0.15);
-	box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.15) inset;
-	-webkit-box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.15) inset;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.05) inset;
+	-webkit-box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.05) inset;
 	white-space: nowrap;
 }
 
@@ -791,7 +792,7 @@ table tr.editor td textarea {
 }
 
 /* Other btn styles */
-button.btn { text-transform: none; overflow: visible; color: inherit;  margin: 0px; line-height: 1.42857; padding: 6px 14px; vertical-align: middle; }
+button.btn { font-family: 'Open Sans', sans-serif; overflow: visible; color: inherit;  margin: 0px; line-height: 1.42857; padding: 6px 14px; vertical-align: middle; }
 .btn-small { font-size: 12px; padding: 4px 12px !important; }
 
 .btn-group {
