@@ -16,15 +16,17 @@
 		<script type="text/javascript" src="js/advancedtomato.js"></script>
 
 		<script type="text/javascript">
+
 			var routerName = '[<% ident(); %>] ';
 			//<% nvram("web_nav,at_update,at_navi,tomatoanon_answer"); %>
 			//<% anonupdate(); %>
+
 			// Fix for system data display
 			var refTimer, wl_ifaces = {}, ajaxLoadingState = false, gui_version = "<% version(0); %>";
 
 			$(document).ready(function() {
 
-				gui_version = gui_version.match(/^1.28\.0000 (MIPSR2\-)?(.*)/)[2] || '';
+				gui_version = gui_version.match(/^1.28\.0000 (MIPSR2\-|\-)?(.*)/)[2] || '';
 				$('#gui-version').html('<i class="icon-info-alt"></i> <span class="nav-collapse-hide">' + gui_version + '</span>');
 				AdvancedTomato();
 
@@ -45,7 +47,7 @@
 				</div>
 
 				<div class="left-container">
-					<a href="#" class="toggle-nav"><i class="icon-align-left"></i></a>
+					<a data-toggle="tooltip" title="Toggle Collapsed Navigation" href="#" class="toggle-nav"><i class="icon-align-left"></i></a>
 				</div>
 
 				<div class="pull-right links">
