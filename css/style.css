@@ -114,7 +114,7 @@ small { font-size: 80%; }
 	background: #fff; /* Old browsers */
 	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
 	-webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
-	z-index: 2;
+	z-index: 3;
 }
 
 .top-header .logo {
@@ -307,7 +307,7 @@ small { font-size: 80%; }
 	bottom: 0;
 	width: 240px;
 	background: #2C3037;
-	z-index: 3;
+	z-index: 2;
 	overflow: auto;
 	transition: width 600ms cubic-bezier(1.000, -0.600, 0.000, 1.650);
 	-webkit-transition: width 600ms cubic-bezier(1.000, -0.600, 0.000, 1.650);
