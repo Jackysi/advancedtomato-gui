@@ -1374,6 +1374,10 @@ input[type=radio]:disabled + span:before {
 .icon-graphs:before {
 	content: "\e00f";
 }
+.icon-move:before {
+  content: "\e007";
+}
+
 
 /* Responsive stuff */
 @media (max-width: 960px) {
