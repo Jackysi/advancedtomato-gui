@@ -647,6 +647,7 @@ table {
 
 /* Nice Lined Tables */
 table.line-table tr {
+	position: relative;
 	border-bottom: 1px solid #EEE;
 	box-shadow: 0 1px 0 #ffffff;
 	-webkit-box-shadow: 0 1px 0 #ffffff;
@@ -677,6 +678,49 @@ table.line-table tr td {
 	width: inhert;
 	padding: 8px;
 	vertical-align: middle;
+}
+
+#table-row-panel {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#table-row-panel a.move-up-row, #table-row-panel a.move-down-row, #table-row-panel a.move-row, #table-row-panel a.delete-row  {
+	float: left;
+	font-size: 10px;
+	text-align: center;
+	padding: 2px;
+	color: #fff;
+	background: #585858;
+	width: 20px;
+	height: 20px;
+	transition: background-color 0.1s ease-out;
+}
+
+#table-row-panel a.move-up-row:hover, #table-row-panel a.move-down-row:hover, #table-row-panel a.move-row:hover, #table-row-panel a.delete-row:hover {
+	background: #434343;
+}
+
+#table-row-panel a.delete-row {
+	background: #F76D6A;
+}
+
+#table-row-panel a.delete-row:hover {
+	background: #eb4d4a;
+}
+
+#table-row-panel a.move-row {
+	background: #4EA5E0;
+}
+
+#table-row-panel a.move-row:hover {
+	background: #3092d0;
+}
+
+#table-row-panel a:first-child {
+	border-bottom-left-radius: 3px;
 }
 
 /* Data Tables */
