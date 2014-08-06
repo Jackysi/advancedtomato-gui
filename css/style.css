@@ -766,12 +766,12 @@ table tr.editor td textarea {
 /* Buttons design */
 .btn {
 	display: inline-block;
-	padding: 7px 14px;
+	padding: 8px 15px;
 	font-size: 12px;
 	font-weight: 500 !important;
 	line-height: 1.42857;
 	color: #f9f9f9 !important;
-	background-color: #585858;
+	background: #414141;
 	cursor: pointer;
 	transition: 0.1s ease-out;
 	-webkit-transition: 0.1s ease-out;
@@ -788,7 +788,7 @@ table tr.editor td textarea {
 .btn:hover,
 .btn:focus,
 .btn.active {
-	background: #414141;
+	background: #555555;
 	color: #fff;
 }
 
@@ -802,23 +802,23 @@ table tr.editor td textarea {
 
 .btn.btn-primary {
 	color: #fff !important;
-	background-color: #4EA5E0;
+	background-color: #3498DB;
 }
 
 .btn.btn-primary:hover,
 .btn.btn-primary:focus {
 	color: #fff !important;
-	background: #428bca;
+	background: #5DADE2;
 }
 
 .btn.btn-danger {
 	color: #fff !important;
-	background: #F76D6A;
+	background: #E74C3C;
 }
 
 .btn.btn-danger:hover,
 .btn.btn-danger:focus {
-	background: #F54121;
+	background: #EC7063;
 }
 
 .btn.btn-link {
@@ -838,6 +838,7 @@ table tr.editor td textarea {
 /* Other btn styles */
 button.btn { font-family: 'Open Sans', sans-serif; overflow: visible; color: inherit;  margin: 0px; line-height: 1.42857; padding: 6px 14px; vertical-align: middle; }
 .btn-small { font-size: 12px; padding: 4px 12px !important; }
+.btn i { font-size: 14px; margin-left: 2px; }
 
 .btn-group {
 	white-space: no-wrap;
@@ -968,6 +969,10 @@ ul.nav-tabs li a:focus,
 ul.nav-tabs li a.active {
 	color: #fff;
 	background: rgba(255,255,255,0.1);
+}
+
+ul.nav-tabs li a i {
+	margin-right: 2px;
 }
 
 /* Forms etc */

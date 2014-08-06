@@ -181,7 +181,7 @@ No part of this file may be used without permission.
 					/* LINUX26-END */
 				], { grid: ['col-sm-2', 'col-sm-10'] });
 			</script>
-			<button type="button" value="Drop Idle" onclick="expireClicked()" id="expire" class="btn"><i class="icon-disable"></i> Drop Idle</button>
+			<button type="button" value="Drop Idle" onclick="expireClicked()" id="expire" class="btn">Drop Idle <i class="icon-disable"></i></button>
 		</div>
 	</div>
 

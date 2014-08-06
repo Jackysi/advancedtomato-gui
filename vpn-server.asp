@@ -18,7 +18,7 @@ No part of this file may be used without permission.
 		function UsersGrid() {return this;}
 		UsersGrid.prototype = new TomatoGrid;
 
-		tabs = [['server1', '<i class="icon-tools"></i>&nbsp; VPN Server 1'],['server2', '<i class="icon-tools"></i>&nbsp; VPN Server 2']];
+		tabs = [['server1', 'VPN Server 1 <i class="icon-tools"></i>'],['server2', 'VPN Server 2 <i class="icon-tools"></i>']];
 		sections = [['basic', 'Basic'],['advanced', 'Advanced'],['keys','Keys'],['status','Status']];
 		ccdTables = [];
 		usersTables = [];

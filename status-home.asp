@@ -383,8 +383,8 @@
 					], null, 'data-table dataonly');
 
 				data += '<div class="btn-group">';
-				data += '<button type="button" class="btn" onclick="wlenable('+uidx+', 1)" id="b_wl'+uidx+'_enable" value="Enable" style="display:none"><i class="icon-check icon-green"></i> Enable</i></button>';
-				data += '<button type="button" class="btn" onclick="wlenable('+uidx+', 0)" id="b_wl'+uidx+'_disable" value="Disable" style="display:none"><i class="icon-disable icon-red"></i> Disable</i></button>';
+				data += '<button type="button" class="btn" onclick="wlenable('+uidx+', 1)" id="b_wl'+uidx+'_enable" value="Enable" style="display:none">Enable <i class="icon-check icon-green"></i></button>';
+				data += '<button type="button" class="btn" onclick="wlenable('+uidx+', 0)" id="b_wl'+uidx+'_disable" value="Disable" style="display:none">Disable <i class="icon-disable icon-red"></i></button>';
 				data += '</div></div></div>';
 				$('#LAN-settings').after(data);
 			}

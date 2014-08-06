@@ -173,10 +173,10 @@ No part of this file may be used without permission.
 
 				<div class="input-append pull-right">
 					<div id="spin" class="spinner" style="vertical-align:middle;visibility:hidden"></div> &nbsp;
-					<button type="button" value="Refresh" onclick="refreshClick()" id="refreshb" class="btn"><i class="icon-reboot"></i> Refresh</button>
+					<button type="button" value="Refresh" onclick="refreshClick()" id="refreshb" class="btn">Refresh <i class="icon-reboot"></i></button>
 				</div>
 
-				<button type="button" value="Wake Up" onclick="wake(null)" id="save-button" class="btn"><i class="icon-forward"></i> Wake Up</button>
+				<button type="button" value="Wake Up" onclick="wake(null)" id="save-button" class="btn">Wake Up <i class="icon-forward"></i></button>
 			</div>
 		</div>
 
@@ -188,5 +188,5 @@ No part of this file may be used without permission.
 
 	</form>
 
-	<script type="text/javascript">wg.setup();wg.populate(); init();</script>
+	<script type="text/javascript">wg.setup(); wg.populate(); init();</script>
 </content>
