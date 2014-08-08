@@ -258,8 +258,8 @@
 				</div>
 
 				<div class="btn-group">
-					<button type="button" class="btn" onclick="wan_connect()" value="Connect" id="b_connect" style="display:none"><i class="icon-check"></i> Connect</button>
-					<button type="button" class="btn" onclick="wan_disconnect()" value="Disconnect" id="b_disconnect" style="display:none"><i class="icon-cancel"></i> Disconnect</button>
+					<button type="button" class="btn" onclick="wan_connect()" value="Connect" id="b_connect" style="display:none">Connect <i class="icon-check"></i></button>
+					<button type="button" class="btn" onclick="wan_disconnect()" value="Disconnect" id="b_disconnect" style="display:none">Disconnect <i class="icon-cancel"></i></button>
 				</div>
 			</div>
 		</div>

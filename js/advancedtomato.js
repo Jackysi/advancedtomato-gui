@@ -226,9 +226,6 @@ function loadPage(page) {
 		// Loaded, clear state
 		window.ajaxLoadingState = false;
 
-		// Custom file inputs
-		$("input[type='file']").each(function() { $(this).customFileInput(); });
-
 		// Function that allows easy implementation of content hide/show on boxes
 		$('[data-box]').each(function() {
 
@@ -268,6 +265,9 @@ function loadPage(page) {
 
 		// Init Tooltips
 		$('[data-toggle="tooltip"]').tooltip({ placement: 'top auto' });
+
+		// Custom file inputs
+		$("input[type='file']").each(function() { $(this).customFileInput(); });
 
 		preloader('stop');
 	}
