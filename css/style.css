@@ -463,6 +463,7 @@ small { font-size: 80%; }
 
 .navigation.collapsed li ul li a {
 	width:200px;
+	padding: 6px 0 6px 45px;
 }
 
 .navigation.collapsed li ul {
