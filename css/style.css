@@ -88,7 +88,6 @@ small { font-size: 80%; }
 .align { display: block; }
 .align.center, .centered { text-align: center; }
 .bold, b { font-weight: 500; color: #656565; }
-* { box-sizing: border-box; }
 
 /* Fluids */
 .span1 { width: 10% !important; }
@@ -1447,7 +1446,6 @@ input[type=radio]:disabled + span:before {
 	width: 15px;
 	height: 15px;
 	vertical-align: middle;
-	box-sizing: border-box;
 
 	border: solid 1px #3498DB;
 	border-color: #3498DB #3498DB transparent transparent;
