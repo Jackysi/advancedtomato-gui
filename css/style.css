@@ -24,10 +24,14 @@
 
 @font-face {
 	font-family: "advancedtomato";
-	src:url("fonts/advancedtomato.svg#advancedtomato") format("svg"),
-	url("fonts/advancedtomato.woff") format("woff");
+	src:url("fonts/advancedtomato.eot");
+	src:url("fonts/advancedtomato.eot?#iefix") format("embedded-opentype"),
+	url("fonts/advancedtomato.woff") format("woff"),
+	url("fonts/advancedtomato.ttf") format("truetype"),
+	url("fonts/advancedtomato.svg#advancedtomato") format("svg");
 	font-weight: normal;
 	font-style: normal;
+
 }
 
 /* CSS */
@@ -332,14 +336,11 @@ small { font-size: 80%; }
 	transition: background 0.1s ease-out;
 	-webkit-transition: background 0.1s ease-out;
 	vertical-align: middle;
-	line-height: 100%;
 	font-weight: 500;
 }
 
 .navigation li a i {
 	margin-right: 2px;
-	line-height: 100%;
-	vertical-align: bottom;
 }
 
 .navigation li ul {
@@ -765,23 +766,30 @@ table tr.editor td textarea {
 /* Buttons design */
 .btn {
 	display: inline-block;
-	padding: 8px 15px;
-	font-size: 12px;
 	font-weight: 500 !important;
-	line-height: 1.42857;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 0;
+	white-space: nowrap;
+	padding: 8px 14px;
+	margin: 0;
+	font-size: 9pt;
+	line-height: 1.42857143;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	text-decoration:none;
+
 	color: #f9f9f9 !important;
 	background: #414141;
-	cursor: pointer;
 	transition: 0.1s ease-out;
 	-webkit-transition: 0.1s ease-out;
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
-	outline-style: none;
-	vertical-align: middle;
 	border: 1px solid rgba(0, 0, 0, 0.05);
-	box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.05) inset;
-	-webkit-box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.05) inset;
-	white-space: nowrap;
 }
 
 .btn:hover,
@@ -820,6 +828,16 @@ table tr.editor td textarea {
 	background: #EC7063;
 }
 
+.btn.btn-success {
+	color: #fff !important;
+	background: #449D44;
+}
+
+.btn.btn-success:hover,
+.btn.btn-success:focus {
+	background: #5CB85C;
+}
+
 .btn.btn-link {
 	color: #919293 !important;
 	box-shadow: none;
@@ -837,7 +855,6 @@ table tr.editor td textarea {
 /* Other btn styles */
 button.btn { font-family: 'Open Sans', sans-serif; overflow: visible; color: inherit;  margin: 0px; line-height: 1.42857; padding: 6px 14px; vertical-align: middle; }
 .btn-small { font-size: 12px; padding: 4px 12px !important; }
-.btn i { font-size: 14px; margin-left: 2px; }
 
 .btn-group {
 	white-space: no-wrap;
@@ -1267,10 +1284,8 @@ input[type=radio]:disabled + span:before {
 
 
 /* Retina Ready Icons */
-[class^="icon-"],
-[class*=" icon-"] {
+[class*="icon-"] {
 	display: inline-block;
-	font-size: inhert;
 	font-family: "advancedtomato" !important;
 	font-style: normal !important;
 	font-weight: normal !important;
@@ -1280,8 +1295,16 @@ input[type=radio]:disabled + span:before {
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+[class*="icon-"]:before {
+	font-family: "advancedtomato" !important;
+	display: inline-block;
+	top: -1px;
+	position: relative;
 	vertical-align: middle;
-	margin-top: -2px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* Colors */
@@ -1423,7 +1446,7 @@ input[type=radio]:disabled + span:before {
 	content: "\e00f";
 }
 .icon-move:before {
-  content: "\e007";
+	content: "\e007";
 }
 
 
