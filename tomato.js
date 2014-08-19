@@ -658,6 +658,31 @@ function v_iptip(e, quiet, multi)
 	return 1;
 }
 
+function _v_subnet(e, ip, quiet) {
+	var ma, oip;
+	oip = ip;
+	// x.x.x.x/nn
+	if (ip.match(/^(.*)\/(.*)$/)) {
+		ip = RegExp.$1;
+		ma = RegExp.$2;
+		if ((ma < 0) || (ma > 32)) {
+			ferror.set(e, oip + ' - invalid subnet', quiet);
+			return null;
+		}
+	}
+	else {
+		ferror.set(e, oip + ' - invalid subnet', quiet);
+		return null;
+	}
+	ferror.clear(e);
+	return ip + ((ma != '') ? ('/' + ma) : '');
+}
+
+function v_subnet(e, quiet) {
+	if ((_v_subnet(e, e.value, quiet)) == null) return 0;
+	return 1;
+}
+
 function _v_domain(e, dom, quiet)
 {
 	var s;
@@ -1579,6 +1604,11 @@ TomatoGrid.prototype = {
 						if ((which == 'edit') && (values[vi])) s += ' checked';
 						s += '><span class="icon-check"></span> </label></div>';
 						break;
+					case 'textarea':
+						if (which == 'edit'){
+							document.getElementById(f.proxy).value = values[vi];
+						}
+						break;
 					default:
 						s += f.custom.replace(/\$which\$/g, which);
 				}
@@ -2450,6 +2480,9 @@ function navi()
 			'PPTP Online':          'vpn-pptp-online.asp',
 			'PPTP Client':          'vpn-pptp.asp'
 			/* PPTPD-END */
+			/* TINC-BEGIN */
+			,'Tinc Daemon':			'vpn-tinc.asp'
+			/* TINC-END */
 		},
 		/* VPN-END */
 		'<i class="icon-wrench"></i> <span class="icons-desc">Administration</span>': {
