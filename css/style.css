@@ -332,7 +332,7 @@ small { font-size: 80%; }
 	color: #919293;
 	text-shadow: 0px 1px 3px #222;
 	font-size: 13px;
-	padding: 14px 25px;
+	padding: 10px 25px;
 	transition: background 0.1s ease-out;
 	-webkit-transition: background 0.1s ease-out;
 	vertical-align: middle;
@@ -355,7 +355,7 @@ small { font-size: 80%; }
 .navigation li ul li a {
 	font-size: 12px;
 	font-weight: normal;
-	padding: 10px 0 10px 45px;
+	padding: 8px 0 8px 45px;
 }
 
 .navigation li ul li a:after {
