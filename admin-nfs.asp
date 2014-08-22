@@ -50,7 +50,7 @@ No part of this file may be used without permission.
 				{ type: 'select', options: subtree },
 				{ type: 'text', maxlen: 50 }
 			]);
-			this.headerSet(['<b>Directory</b>', '<b>IP Address/Subnet</b>', '<b>Access</b>', '<b>Sync</b>', '<b>Subtree Check</b>', '<b>Other Options</b>']);
+			this.headerSet(['Directory', 'IP Address/Subnet', 'Access', 'Sync', 'Subtree Check', 'Other Options']);
 			var s = nvram.nfs_exports.split('>');
 			for (var i = 0; i < s.length; ++i) {
 				var t = s[i].split('<');

@@ -85,7 +85,7 @@ No part of this file may be used without permission.
 				{ type: 'text', maxlen: 16 },
 				{ type: 'text', maxlen: 16 },
 				{ type: 'text', maxlen: 32 }]);
-			this.headerSet(['<b>On</b>', '<b>Protocol</b>', '<b>Trigger Ports</b>', '<b>Forwarded Ports</b>', '<b>Description</b>']);
+			this.headerSet(['On', 'Protocol', 'Trigger Ports', 'Forwarded Ports', 'Description']);
 			var nv = nvram.trigforward.split('>');
 			for (var i = 0; i < nv.length; ++i) {
 				var r;

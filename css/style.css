@@ -763,6 +763,10 @@ table tr.editor td textarea {
 	width: 100%;
 }
 
+table .header {
+	font-weight: 500;
+	cursor: pointer;
+}
 
 /* Buttons design */
 .btn {

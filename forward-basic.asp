@@ -109,7 +109,7 @@ No part of this file may be used without permission.
 				{ type: 'text', maxlen: 5,  class : 'input-mini' },
 				{ type: 'text', maxlen: 15, class : 'input-medium' },
 				{ type: 'text', maxlen: 32, class : 'input-medium' }]);
-			this.headerSet(['<b>On</b>', '<b>Proto</b>', '<b>Src Address</b>', '<b>Ext Ports</b>', '<b>Int Port</b>', '<b>Int Address</b>', '<b>Description</b>']);
+			this.headerSet(['On', 'Proto', 'Src Address', 'Ext Ports', 'Int Port', 'Int Address', 'Description']);
 			var nv = nvram.portforward.split('>');
 			for (var i = 0; i < nv.length; ++i) {
 				var r;

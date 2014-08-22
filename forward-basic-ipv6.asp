@@ -78,7 +78,7 @@ No part of this file may be used without permission.
 				{ type: 'text', maxlen: 140, class : 'input-medium' },
 				{ type: 'text', maxlen: 16, class : 'input-small' },
 				{ type: 'text', maxlen: 32 }]);
-			this.headerSet(['<b>On</b>', '<b>Proto</b>', '<b>Src Address</b>', '<b>Dest Address</b>', '<b>Dest Ports</b>', '<b>Description</b>']);
+			this.headerSet(['On', 'Proto', 'Src Address', 'Dest Address', 'Dest Ports', 'Description']);
 			var nv = nvram.ipv6_portforward.split('>');
 			for (var i = 0; i < nv.length; ++i) {
 				var r;

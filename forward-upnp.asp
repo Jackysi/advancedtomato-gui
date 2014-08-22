@@ -59,7 +59,7 @@ No part of this file may be used without permission.
 
 		ug.setup = function() {
 			this.init('upnp-grid', 'sort delete');
-			this.headerSet(['<b>External</b>', '<b>Internal</b>', '<b>Internal Address</b>', '<b>Protocol</b>', '<b>Description</b>']);
+			this.headerSet(['External', '<b>Internal', '<b>Internal Address', '<b>Protocol', '<b>Description']);
 			ug.populate();
 		}
 

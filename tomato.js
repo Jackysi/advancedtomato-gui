@@ -1282,9 +1282,9 @@ TomatoGrid.prototype = {
 			c = cells[i];
 			if (typeof(c) == 'string') {
 				td = tr.insertCell(i);
-				td.className = 'co' + (i + 1);
+				td.className = ((header === true) ? 'header ' : '') + 'co' + (i + 1);
 				if (escCells) td.appendChild(document.createTextNode(c));
-				else td.innerHTML = (header === true) ? '<b>' + c + '</b>' : c;
+				else td.innerHTML = c;
 			}
 			else {
 				tr.appendChild(c);

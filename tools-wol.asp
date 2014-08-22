@@ -15,7 +15,7 @@ No part of this file may be used without permission.
 		var wg = new TomatoGrid();
 		wg.setup = function() {
 			this.init('wol-grid', 'sort');
-			this.headerSet(['<b>MAC Address</b>', '<b>IP Address</b>', '<b>Status</b>', '<b>Name</b>']);
+			this.headerSet(['MAC Address', 'IP Address', 'Status', 'Name']);
 			this.sort(3);
 		}
 		wg.sortCompare = function(a, b) {

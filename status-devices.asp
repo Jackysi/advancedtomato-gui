@@ -279,7 +279,7 @@
 		dg.setup = function()
 		{
 			this.init('dev-grid', 'sort');
-			this.headerSet(['<b>Interface</b>', '<b>MAC Address</b>', '<b>IP (Hostname)</b>', '<b>RSSI</b>', '<b>Quality (%)</b>', '<b>TX/RX Rate</b>', '<b>Lease</b>']);
+			this.headerSet(['Interface', 'MAC Address', 'IP (Hostname)', 'RSSI', 'Quality (%)', 'TX/RX Rate', 'Lease']);
 			this.populate();
 			this.sort(2);
 		}

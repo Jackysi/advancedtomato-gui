@@ -224,7 +224,7 @@ No part of this file may be used without permission.
 				{ type: 'checkbox', prefix: '<div class="centered">', suffix: '</div>' },
 				{ type: 'text', maxlen: 50 } ] );
 
-			this.headerSet(['<b>MAC Address</b>', '<b>Bound to</b>', '<b>IP Address</b>', '<b>IPTraffic</b>', '<b>Hostname</b>']);
+			this.headerSet(['MAC Address', 'Bound to', 'IP Address', 'IPTraffic', 'Hostname']);
 
 			var ipt = nvram.cstats_include.split(',');
 			var s = nvram.dhcpd_static.split('>');
