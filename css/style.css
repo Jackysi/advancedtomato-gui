@@ -404,7 +404,7 @@ small { font-size: 80%; }
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.navigation .nav-footer i { font-size: 18px; margin: -2px 0 0 -4px; }
+.navigation .nav-footer i:before { font-size: 18px; top: -1px; left: -1px }
 
 /* Collapse Logo/Navigation and extend content */
 .top-header .logo.collapsed {
