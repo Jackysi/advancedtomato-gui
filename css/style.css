@@ -68,9 +68,6 @@ a:hover, a:active {
     text-decoration: none;
 }
 
-.pull-right { float: right; }
-.pull-left { float: left; }
-
 h1, h2, h3, h4, h5 {
     font-family: inherit;
     font-weight: 500;
@@ -92,6 +89,12 @@ small { font-size: 80%; }
 .align { display: block; }
 .align.center, .centered { text-align: center; }
 .bold, b { font-weight: 500; color: #656565; }
+
+/* Reset all elements to box-sizing: border-box; sort of crossbrowser fix! */
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+*:before,*:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.pull-right { float: right; }
+.pull-left { float: left; }
 
 /* Fluids */
 .span1 { width: 10% !important; }
@@ -773,14 +776,13 @@ table .header {
 /* Buttons design */
 .btn {
     display: inline-block;
-    font-weight: 500 !important;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
     background-image: none;
     border: 0;
     white-space: nowrap;
-    padding: 8px 14px;
+    padding: 6px 14px;
     margin: 0;
     font-size: 9pt;
     line-height: 1.42857143;
@@ -860,7 +862,7 @@ table .header {
 }
 
 /* Other btn styles */
-button.btn { font-family: 'Open Sans', sans-serif; overflow: visible; color: inherit;  margin: 0px; line-height: 1.42857; padding: 6px 14px; vertical-align: middle; }
+button.btn { font-family: 'Open Sans', sans-serif; vertical-align: middle; }
 .btn-small { font-size: 12px; padding: 4px 12px !important; }
 
 .btn-group {
