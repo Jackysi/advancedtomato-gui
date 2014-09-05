@@ -171,7 +171,7 @@ No part of this file may be used without permission.
 				<table id="wol-grid" class="line-table"></table><br />
 				<div class="sectionmacs"></div>
 
-				<div class="input-append pull-right">
+				<div class="pull-right">
 					<div id="spin" class="spinner" style="vertical-align:middle;visibility:hidden"></div> &nbsp;
 					<button type="button" value="Refresh" onclick="refreshClick()" id="refreshb" class="btn">Refresh <i class="icon-reboot"></i></button>
 				</div>
