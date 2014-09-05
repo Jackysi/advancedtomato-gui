@@ -926,6 +926,7 @@ a.close:hover { color: #000; }
 .alert.info { background-color: #3498DB; }
 .alert.warning { background-color: #fa8700; }
 .alert.error, .alert.danger { background-color: #e43715; }
+#footer-msg { vertical-align: middle; padding: 7px 40px 7px 15px; }
 
 /* Progress Bars */
 .progress {
