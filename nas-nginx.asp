@@ -73,7 +73,7 @@ No part of this file may be used without permission.
 
 		function save()
 		{
-			var fom = $('_fom');
+			var fom = E('_fom');
 			if (!verifyFields(null, false)) return;
 
 			fom.nginx_enable.value = E('_f_nginx_enable').checked ? 1 : 0;
