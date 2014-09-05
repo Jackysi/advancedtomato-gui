@@ -314,12 +314,12 @@
 						if (wl_sunit(uidx)<0) {
 							var a = '';
 							if ((nvram['wl'+u+'_mode'] == 'ap') || (nvram['wl'+u+'_mode'] == 'wds'))
-								a = '&nbsp;&nbsp;&nbsp; <button type="button" class="btn" value="Measure" onclick="javascript:window.location=\'wlmnoise.cgi?_http_id=' + nvram.http_id + '&_wl_unit=' + u +'\'">\
+								a = '&nbsp; &nbsp; <button type="button" class="btn" value="Measure" onclick="javascript:window.location=\'wlmnoise.cgi?_http_id=' + nvram.http_id + '&_wl_unit=' + u +'\'">\
 								Measure <i class="icon-signal"></i></button>';
 							f.push( { title: '<b>Noise Floor (' + wl_ifaces[uidx][0] + ')&nbsp;:</b>',
 								prefix: '<span id="noise'+uidx+'">',
 								custom: wlnoise[uidx],
-								suffix: '</span>&nbsp;<small>dBm</small>' + a } );
+								suffix: '</span></span>&nbsp;<small>dBm</small>' + a } );
 						}
 					}
 				}
