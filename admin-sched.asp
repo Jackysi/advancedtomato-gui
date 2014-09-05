@@ -16,7 +16,7 @@ No part of this file may be used without permission.
 		}
 	</style>
 	<script type="text/javascript">
-		//	<% nvram("at_update,tomatoanon_answer,sch_rboot,sch_rcon,sch_c1,sch_c1_cmd,sch_c2,sch_c2_cmd,sch_c3,sch_c3_cmd"); %>
+		//	<% nvram("at_update,tomatoanon_answer,sch_rboot,sch_rcon,sch_c1,sch_c1_cmd,sch_c2,sch_c2_cmd,sch_c3,sch_c3_cmd,sch_c4,sch_c4_cmd,sch_c5,sch_c5_cmd"); %>
 
 		var dowNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 		var dowLow = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
@@ -227,6 +227,8 @@ No part of this file may be used without permission.
 		<input type="hidden" name="sch_c1" value="">
 		<input type="hidden" name="sch_c2" value="">
 		<input type="hidden" name="sch_c3" value="">
+		<input type="hidden" name="sch_c4" value="">
+		<input type="hidden" name="sch_c5" value="">
 
 		<div class="box" data-box="sched-reboot">
 			<div class="heading">Reboot</div>
@@ -266,6 +268,22 @@ No part of this file may be used without permission.
 			<div class="content c3"></div>
 			<script type="text/javascript">
 				makeSched("c3", 1);
+			</script>
+		</div>
+
+		<div class="box" data-box="sched-cust4">
+			<div class="heading">Custom 4</div>
+			<div class="content c4"></div>
+			<script type="text/javascript">
+				makeSched("c4", 1);
+			</script>
+		</div>
+
+		<div class="box" data-box="sched-cust5">
+			<div class="heading">Custom 5</div>
+			<div class="content c5"></div>
+			<script type="text/javascript">
+				makeSched("c5", 1);
 			</script>
 		</div>
 
