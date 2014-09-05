@@ -186,7 +186,7 @@
 				elem.display('wan-title', 'sesdiv_wan', 0);
 			for (var uidx = 0; uidx < wl_ifaces.length; ++uidx) {
 				if (wl_sunit(uidx)<0)
-					elem.display('b_wl'+wl_fface(uidx)+'_enable', 'b_wl'+wl_fface(uidx)+'_disable', show_radio[uidx]);
+					$('#b_wl'+wl_fface(uidx)+'_enable').closest('.btn-group').show();
 			}
 
 			show();
@@ -382,9 +382,9 @@
 					{ title: 'Signal Quality', rid: 'qual'+uidx, text: stats.qual[uidx] || '', ignore: ((!wlstats[uidx].client) || (wl_sunit(uidx)>=0)) }
 					], null, 'data-table dataonly');
 
-				data += '<div class="btn-group">';
-				data += '<button type="button" class="btn" onclick="wlenable('+uidx+', 1)" id="b_wl'+uidx+'_enable" value="Enable" style="display:none">Enable <i class="icon-check icon-green"></i></button>';
-				data += '<button type="button" class="btn" onclick="wlenable('+uidx+', 0)" id="b_wl'+uidx+'_disable" value="Disable" style="display:none">Disable <i class="icon-disable icon-red"></i></button>';
+				data += '<div class="btn-group" style="display: none;">';
+				data += '<button type="button" class="btn" onclick="wlenable('+uidx+', 1)" id="b_wl'+uidx+'_enable" value="Enable">Enable <i class="icon-check icon-green"></i></button>';
+				data += '<button type="button" class="btn" onclick="wlenable('+uidx+', 0)" id="b_wl'+uidx+'_disable" value="Disable">Disable <i class="icon-disable icon-red"></i></button>';
 				data += '</div></div></div>';
 				$('#LAN-settings').after(data);
 			}
