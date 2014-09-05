@@ -138,9 +138,8 @@ small { font-size: 80%; }
 .top-header .logo a h1 {
     display: inline-block;
     color: #fff;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
-    font-size: 16px;
-    margin: 12px 0 0 0;
+    font-size: 13pt;
+    margin: 10px 0 5px 0;
     padding: 0;
     font-weight: 500;
 }
@@ -148,13 +147,12 @@ small { font-size: 80%; }
 .top-header .logo h2 {
     color: #fff;
     display: block;
-    font-size: 13px;
+    font-size: 9pt;
     padding: 0;
     font-weight: normal;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.1);
 }
 
-.top-header .logo a svg { margin: 0; padding:0; vertical-align: bottom; }
+.top-header .logo a svg { margin: -8px 0 0; padding:0; vertical-align: middle; }
 
 .top-header .left-container {
     float: left;
