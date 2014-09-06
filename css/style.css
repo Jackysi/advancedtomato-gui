@@ -647,13 +647,15 @@ ul.dropdowns > li ul li a { display: block; padding: 5px 10px; }
 
 /* Style Tables */
 table {
+    position: relative;
+    display: table;
     width: 100%;
     margin: 0;
 }
 
 /* Nice Lined Tables */
 table.line-table tr {
-    position: relative;
+    display: table-row;
     border-bottom: 1px solid #EEE;
     box-shadow: 0 1px 0 #ffffff;
     -webkit-box-shadow: 0 1px 0 #ffffff;
@@ -675,22 +677,24 @@ table.line-table tr:first-child {
 }
 
 table.line-table tr th {
+    display: table-cell;
     padding: 8px;
     font-weight: 700;
     text-align: left;
 }
 
 table.line-table tr td {
+    display: table-cell;
     width: inhert;
     padding: 8px;
     vertical-align: middle;
 }
 
 #table-row-panel {
-    display: inline-block;
-    position: absolute;
-    top: 0;
+    text-align: right;
     right: 0;
+    display: block;
+    position: absolute;
 }
 
 #table-row-panel a.move-up-row, #table-row-panel a.move-down-row, #table-row-panel a.move-row, #table-row-panel a.delete-row  {
@@ -731,7 +735,7 @@ table.line-table tr td {
 
 /* Data Tables */
 table.data-table { margin: 0 0 15px; }
-table.data-table tr td { padding: 5px 0; }
+table.data-table tr td { display: table-cell; padding: 5px 0; }
 table.data-table.dataonly tr td:first-child { width: 40%; }
 table.data-table.other { margin: 5px 10px; }
 
@@ -742,6 +746,7 @@ table.fields-table {
 }
 
 table.fields-table tr td {
+    display: table-cell;
     padding: 8px 0;
     vertical-align: middle;
 }
