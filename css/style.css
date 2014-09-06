@@ -1537,5 +1537,5 @@ input[type=radio]:disabled + span:before {
 }
 
 @media (max-height: 900px) {
-    .navigation.collapsed li:hover ul { max-height: 240px; overflow-x: visible; overflow-y: scroll; }
+    .navigation.collapsed li:hover ul { max-height: 240px; overflow-x: hidden; overflow-y: scroll; }
 }
