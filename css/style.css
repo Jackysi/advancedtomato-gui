@@ -782,7 +782,7 @@ table .header {
     background-image: none;
     border: 0;
     white-space: nowrap;
-    padding: 7px 14px;
+    padding: 8px 16px;
     margin: 0;
     font-size: 9pt;
     line-height: normal;
@@ -926,7 +926,7 @@ a.close:hover { color: #000; }
 .alert.info { background-color: #3498DB; }
 .alert.warning { background-color: #fa8700; }
 .alert.error, .alert.danger { background-color: #e43715; }
-#footer-msg { vertical-align: middle; padding: 7px 40px 7px 15px; }
+#footer-msg { vertical-align: middle; padding: 8px 40px 8px 15px; }
 
 /* Progress Bars */
 .progress {
@@ -1188,7 +1188,7 @@ input[type=radio]:disabled + span:before {
 .input-append input,
 .input-append select {
     vertical-align: middle;
-    padding: 7px 10px;
+    padding: 8px 10px;
     margin: 0 -4px 0 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0; 
@@ -1234,7 +1234,7 @@ input[type=radio]:disabled + span:before {
     margin:  0 -1px 0 0;
     color:  #313131;
     font-style: normal;
-    padding: 7px 12px;
+    padding: 8px 12px;
     white-space:nowrap;
     overflow: hidden;
     background: #fff;
