@@ -285,6 +285,7 @@ small { font-size: 80%; }
 }
 
 .system-ui .inner-container .col-sm-2 {
+    text-align: center;
     padding: 5px 0;
     font-weight: 500;
 }
@@ -611,7 +612,7 @@ small { font-size: 80%; }
 }
 
 .box .content {
-    padding: 10px 20px;
+    padding: 10px 15px;
     display: block;
 }
 
@@ -937,12 +938,12 @@ a.close:hover { color: #000; }
 .progress {
     vertical-align: middle;
     display: block;
-    height: 3px;
+    height: 4px;
     padding: 0;
-    margin: 1px 0;
-    background: #D7D7D7;
-    border-radius: 1px;
-    -webkit-border-radius: 1px;
+    margin: 0;
+    background: #efefef;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
     overflow: hidden;
 }
 
