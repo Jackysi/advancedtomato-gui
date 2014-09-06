@@ -868,6 +868,7 @@ table .header {
 }
 
 /* Other btn styles */
+.btn b { color: #fff !important; }
 button.btn { font-family: 'Open Sans', sans-serif; vertical-align: middle; outline: 0; outline-style: none; }
 button::-moz-focus-inner { border:0; padding:0; } /* FF button fix */
 .btn-small { padding: 5px 12px !important; vertical-align: middle; }
@@ -1357,6 +1358,7 @@ input[type=radio]:disabled + span:before {
 /* Sizes */
 .icon-medium:before { font-size: 15pt; margin: 0; vertical-align: baseline; }
 .icon-sort:before { font-size: 11pt; margin-left: 5px; margin-top: -2px; }
+.icon-large:before { font-size: 14px; margin-right: 3px; }
 
 /* Fix VAlign */
 .icon-normal:before { vertical-align: baseline; }
@@ -1488,7 +1490,9 @@ input[type=radio]:disabled + span:before {
 .icon-move:before {
     content: "\e007";
 }
-
+.icon-paypal:before {
+  content: "\e01d";
+}
 
 /* Responsive stuff */
 @media (max-width: 960px) {
