@@ -13,7 +13,7 @@ No part of this file may be used without permission.
 <content>
 	<script type='text/javascript'>
 
-		//	<% nvram("nginx_enable,nginx_php,nginx_keepconf,nginx_port,nginx_fqdn,nginx_docroot,nginx_priority,nginx_custom"); %>
+		//	<% nvram("nginx_enable,nginx_php,nginx_user,nginx_keepconf,nginx_port,nginx_fqdn,nginx_docroot,nginx_priority,nginx_custom"); %>
 
 		changed = 0;
 		nginxup = parseInt ('<% psup("nginx"); %>');
@@ -97,7 +97,7 @@ No part of this file may be used without permission.
 			verifyFields(null, 1);
 			$('.nginx-status').html((!nginxup ? '<small style="color: red;">(Stopped)</small>' : '<small style="color: green;">(Running)</small>'));
 			$('.nginx-status').after('<a href="#" data-toggle="tooltip" class="pull-right nginx-control" title="' +
-			(nginxup ? 'Stop NGINX Server' : 'Start NGINX Server') + '" onclick="toggle(\'nginxfp\', nginxup); return false;" id="_nginxfp_button">' + (nginxup ? '<i class="icon-stop"></i>' : '<i class="icon-play"></i>') + '</a>');
+									 (nginxup ? 'Stop NGINX Server' : 'Start NGINX Server') + '" onclick="toggle(\'nginxfp\', nginxup); return false;" id="_nginxfp_button">' + (nginxup ? '<i class="icon-stop"></i>' : '<i class="icon-play"></i>') + '</a>');
 		}
 	</script>
 
@@ -130,7 +130,7 @@ No part of this file may be used without permission.
 					<li><b> Web Server Name:</b> Name that will appear on top of your Internet Browser.<br>
 					<li><b> Document Root Path:</b> The path in your router where documents are stored.<br>
 					<li><b> Examples:<br></b>
-					/tmp/mnt/HDD/www/ as you can find in USB mount path.<br>
+						/tmp/mnt/HDD/www/ as you can find in USB mount path.<br>
 					<li><b> NGINX Custom Configuration:</b> You can add other values to nginx.conf to suit your needs.</li>
 					<li>
 						<b> Server Priority:</b> Sets the service priority over other processes running on the router.<br>
@@ -152,6 +152,8 @@ No part of this file may be used without permission.
 		$('#config-section-div').forms([
 			{ title: 'Enable Server on Start', name: 'f_nginx_enable', type: 'checkbox', value: nvram.nginx_enable == '1'},
 			{ title: 'Enable PHP support', name: 'f_nginx_php', type: 'checkbox', value: (nvram.nginx_php != '0') },
+			{ title: 'Run As', name: 'nginx_user', type: 'select',
+			 options: [['root','Root'],['nobody','Nobody']], value: nvram.nginx_user },
 			{ title: 'Keep Config Files', name: 'f_nginx_keepconf', type: 'checkbox', value: (nvram.nginx_keepconf != '0') },
 			{ title: 'Web Server Port', name: 'f_nginx_port', type: 'text', maxlen: 5, size: 7, value: fixPort(nvram.nginx_port, 85), suffix: '<small> default: 85</small>' },
 			{ title: 'Web Server Name', name: 'f_nginx_fqdn', type: 'text', maxlen: 255, size: 20, value: nvram.nginx_fqdn },
