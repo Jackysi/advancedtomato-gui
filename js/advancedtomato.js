@@ -189,6 +189,7 @@ function loadPage(page) {
 	// Fix refreshers when switching pages
 	if (typeof (ref) != 'undefined') {
 		ref.destroy();
+		window.ref=undefined; delete window.ref;
 	}
 
 	// Some things that need to be done here =)
