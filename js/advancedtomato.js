@@ -298,11 +298,11 @@ function preloader (event) {
 
 	if (event == 'start') {
 
-		$('html,a,.btn').attr('style', 'cursor: wait !important');
+		$('html,body').attr('style', 'cursor: wait !important');
 
 	} else {
 
-		$('html,a,.btn').removeAttr('style');
+		$('html,body').removeAttr('style');
 
 	}
 
