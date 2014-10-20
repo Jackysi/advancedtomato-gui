@@ -381,7 +381,7 @@
 			if (cmdresult.match(/not found/) || typeof (cmdresult) == 'undefined') {
 				return false;
 			} else {
-				E('version').innerHTML = '(' + escapeText(cmdresult) + ')';
+				E('version').innerHTML = cmdresult.replace(' ', '').replace('<br>', '');
 			}
 			cmdresult = '';
 		}
