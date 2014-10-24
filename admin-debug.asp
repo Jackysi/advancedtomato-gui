@@ -98,7 +98,7 @@ No part of this file may be used without permission.
 				</script>
 				<hr>
 
-				&raquo; <a href="clearcookies.asp?_http_id=<% nv(http_id); %>">Clear Cookies</a><br>
+				&raquo; <a href="#clearcookies.asp">Clear Cookies</a><br>
 				&raquo; <a href="javascript:nvramCommit()">NVRAM Commit</a><br>
 				<br>
 
