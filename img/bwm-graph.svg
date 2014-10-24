@@ -14,8 +14,8 @@ No part of this file may be used without permission.
 			cursor: pointer;
 		}
 		line {
-			stroke: #d0d0d0;
-			stroke-width: 0.2;
+			stroke: #f0f0f0;
+			stroke-width: 0.1;
 		}
 		line.a {
 			stroke: #f0f0f0;
@@ -25,8 +25,8 @@ No part of this file may be used without permission.
 			stroke-width: 1;
 		}
 		text {
-			font: 11px Verdana;
-			fill: #000;
+			font: 11px 'Open Sans', Verdana;
+			fill: #696969;
 		}
 		.tickH {
 			text-anchor: middle;
@@ -37,7 +37,7 @@ No part of this file may be used without permission.
 		}
 		.back {
 			fill: none;
-			opacity: 0.8;
+			opacity: 1;
 		}
 	</style>
 	<script type='text/ecmascript'><![CDATA[
@@ -128,7 +128,7 @@ No part of this file may be used without permission.
 			if (data.length == 0) return;
 			x = 0;
 			if (mode == 0) {
-				poly.setAttribute('fill-opacity', '0.5');
+				poly.setAttribute('fill-opacity', '0.65');
 				pt = '0,' + vHeight;
 			}
 			else {
