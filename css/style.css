@@ -115,6 +115,11 @@ small { font-size: 80%; }
 	transform: translate3d(0, 0, 0);  /* Font Rendering FIX */
 	border-bottom: 1px solid #e0e0e0;
 	z-index: 3;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
 
 .top-header .logo {
@@ -177,7 +182,7 @@ small { font-size: 80%; }
 	color: #696969;
 
 	border-bottom: 2px solid transparent;
-	
+
 	padding: 0 15px;
 	height: 59px;
 	line-height: 60px;
@@ -314,6 +319,11 @@ small { font-size: 80%; }
 	transform: translate3d(0, 0, 0);  /* Font Rendering FIX */
 	transition: width 600ms cubic-bezier(1.000, -0.600, 0.000, 1.650);
 	-webkit-transition: width 600ms cubic-bezier(1.000, -0.600, 0.000, 1.650);
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
 
 .navigation ul {
