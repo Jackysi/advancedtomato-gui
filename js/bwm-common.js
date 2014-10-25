@@ -86,8 +86,10 @@ function switchDraw(n)
 function showColor()
 {
 	E('drawcolor').innerHTML = colors[drawColor][0] + ' &raquo;';
-	E('rx-name').style.borderBottom = '3px solid ' + colors[drawColor][1 + colorX];
-	E('tx-name').style.borderBottom = '3px solid ' + colors[drawColor][1 + (colorX ^ 1)];
+	E('rx-name').style.borderBottom = '2px solid ' + colors[drawColor][1 + colorX];
+	E('tx-name').style.borderBottom = '2px solid ' + colors[drawColor][1 + (colorX ^ 1)];
+	$('#tx-name').closest('td').find('i').css('color', colors[drawColor][1 + (colorX ^ 1)]);
+	$('#rx-name').closest('td').find('i').css('color', colors[drawColor][1 + (colorX)]); 
 }
 
 function switchColor(rev)
