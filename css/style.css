@@ -540,28 +540,28 @@ small { font-size: 80%; }
 .fluid-grid .box {
 	display: inline-block;
 	width: 100%;
-	margin: 5px 0;
+	margin: 8px 0;
 }
 
 .fluid-grid.x3 {
 	-moz-column-count:2;
-	-moz-column-gap: 10px;
+	-moz-column-gap: 15px;
 	-moz-column-width: 50%;
 	-webkit-column-count:2;
-	-webkit-column-gap: 10px;
+	-webkit-column-gap: 15px;
 	-webkit-column-width: 50%;
 	column-count: 2;
-	column-gap: 10px;
+	column-gap: 15px;
 	column-width: 50%;
 }
 
 .box {
 	display: block;
 	padding: 0;
-	margin: 0 0 20px;
+	margin: 0 0 15px;
 	border-width: 1px;
 	border-style: solid;
-	border-color: #eee #eee #D1D2D3;
+	border-color: #eee #eee #dedede;
 	background: #fff;
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
