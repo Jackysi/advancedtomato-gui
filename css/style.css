@@ -808,8 +808,8 @@ table .header {
 
 	color: #f9f9f9 !important;
 	background: #414141;
-	transition: 0.1s ease-out;
-	-webkit-transition: 0.1s ease-out;
+	transition: 150ms ease-out;
+	-webkit-transition: 150ms ease-out;
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border: 1px solid transparent;
@@ -878,6 +878,22 @@ table .header {
 	color: #fff !important;
 }
 
+/* BTN Tabs */
+.btn.btn-tab {
+	color: #535353 !important;
+	background: #FAFAFA;
+	box-shadow: none;
+	line-height: 1.2;
+	border: 1px solid #f0f0f0;
+	border-width: 1px 0 0 1px;
+}
+
+.btn.btn-tab:hover,
+.btn.btn-tab:focus,
+.btn.btn-tab.active {
+	background: #f0f0f0;
+}
+
 /* Other btn styles */
 .btn b { color: #fff !important; }
 button.btn { font-family: 'Open Sans', sans-serif; vertical-align: middle; outline: 0; outline-style: none; }
@@ -890,10 +906,9 @@ button::-moz-focus-inner { border:0; padding:0; } /* FF button fix */
 }
 
 .btn-group > .btn {
-	margin: 0;
+	margin: 0 -1px 0 0;
 	border-radius: 0;
 	-webkit-border-radius: 0;
-	margin-left: -1px;
 }
 
 .btn-group > .btn:first-child {
