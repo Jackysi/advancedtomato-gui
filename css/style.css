@@ -1377,7 +1377,6 @@ input[type=radio]:disabled + span:before {
 .icon-top:before { vertical-align: top; }
 
 /* Icons */
-
 .icon-chevron-left:before {
 	content: "\e000";
 }
@@ -1505,14 +1504,6 @@ input[type=radio]:disabled + span:before {
 	content: "\e01d";
 }
 
-/* Responsive stuff */
-@media (max-width: 960px) {
-	#wrapper > .container { padding: 5px 10px; }
-	.links ul li a { font-size: 0; }
-	.links ul li a i { font-size: 16px; }
-	.system-ui:before, .system-ui:after { display: none; }
-}
-
 .preloader {
 	vertical-align: middle;
 	margin: 0 10px;
@@ -1547,6 +1538,14 @@ input[type=radio]:disabled + span:before {
 
 	-webkit-animation: tomato-spinner 1s linear infinite;
 	animation: tomato-spinner 1s linear infinite;
+}
+
+/* Responsive stuff */
+@media (max-width: 960px) {
+	#wrapper > .container { padding: 5px 10px; }
+	.links ul li a { font-size: 0; }
+	.links ul li a i { font-size: 16px; }
+	.system-ui:before, .system-ui:after { display: none; }
 }
 
 @-webkit-keyframes tomato-spinner { 0%   { -webkit-transform: rotate(0deg); }  100% { -webkit-transform: rotate(360deg); } }
