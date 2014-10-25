@@ -94,14 +94,19 @@ function AdvancedTomato () {
 
 			$('#system-ui').removeClass('active');
 			$('.system-ui').fadeOut(250);
+			clearInterval(window.refTimer);
 
 		} else {
 
 			$(this).addClass('active');
 			$('.system-ui').fadeIn(250);
+			
+			// On open
+			$('.system-ui .datasystem').html('<br /><br /><div class="spinner"></div><br /><br />').addClass('align center');
 			systemUI();
+			window.refTimer = setInterval(systemUI, 1600);
 
-			$(document).click(function() {$('#system-ui').removeClass('active'); $('.system-ui').fadeOut(250); $(document).unbind('click'); });
+			$(document).click(function() {$('#system-ui').removeClass('active'); $('.system-ui').fadeOut(250); clearInterval(window.refTimer); $(document).unbind('click'); });
 		}
 
 		return false;
@@ -163,8 +168,6 @@ function AdvancedTomato () {
 
 // Get status of router and fill system-ui with it
 function systemUI () {
-
-	$('.system-ui .datasystem').html('<img width="32" height="32" src="img/preloader.svg"><br /><br />').addClass('align center');
 
 	systemAJAX = new XmlHttp();
 	systemAJAX.onCompleted = function (data, xml) {
