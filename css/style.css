@@ -508,7 +508,8 @@ small { font-size: 80%; }
 }
 
 #wrapper > .container .debug {
-	background: #fff;
+	font-size: 12px;
+	background: #fafafa;
 	border: 1px solid #F5F5F5;
 	padding: 10px;
 	border-radius: 3px;

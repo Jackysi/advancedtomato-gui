@@ -280,11 +280,13 @@ function loadPage(page) {
 	TomatoAJAX.onError = function (x) {
 
 		console.log(x);
-
-		$('h2.currentpage').text('Interface Error');
-		$('.container .ajaxwrap').hide().html('<h2>ERROR occured!<i class="icon-cancel" style="font-size: 20px; color: red; vertical-align: top;"></i></h2>\
-			<span style="font-size: 14px;">There has been error while loading a page, please review debug data bellow if this is isolated issue.<br />\
-			Otherwise please leave a message at <a target="_blank" href="http://advancedtomato.com/contact/">http://advancedtomato.com</a>. <br /><br /><pre class="debug">' + x + '</pre><br /><a href="/">Refreshing</a> browser window might help.</span>').fadeIn(200);
+		
+		$('h2.currentpage').text('ERROR');
+		$('.container .ajaxwrap').hide().html('<div class="box"><div class="heading">ERROR occured!</div><div class="content" style="font-size: 13px;">\
+			There has been error while loading a page, please review debug data bellow if this is isolated issue.<br />\
+			If this is not an isolated issue, please create issue with details bellow and how to reproduce the error at\
+			<a target="_blank" href="https://github.com/Jackysi/advancedtomato2/issues">https://github.com/Jackysi/advancedtomato2/issues</a>. <br /><br />\
+			<b>Detailed information:</b><br /><pre class="debug">' + x.stack + x.message + '</pre><br /><a href="/">Refreshing</a> browser window might help.</div></div>').fadeIn(200);
 
 		preloader('stop');
 		// Loaded, clear state
