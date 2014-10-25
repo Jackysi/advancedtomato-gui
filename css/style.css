@@ -872,7 +872,7 @@ table .header {
 .btn b { color: #fff !important; }
 button.btn { font-family: 'Open Sans', sans-serif; vertical-align: middle; outline: 0; outline-style: none; }
 button::-moz-focus-inner { border:0; padding:0; } /* FF button fix */
-.btn-small { padding: 5px 12px !important; vertical-align: middle; }
+.btn-small { font-size: 8pt; padding: 4px 10px !important; vertical-align: middle; }
 
 .btn-group {
 	white-space: no-wrap;
