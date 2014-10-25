@@ -7,20 +7,6 @@ For use with Tomato Firmware only.
 No part of this file may be used without permission.
 --><title>UPnP / NAT-PMP Forwarding</title>
 <content>
-	<style type="text/css">
-		#upnp-grid .co1, #upnp-grid .co2 {
-			width: 12%;
-		}
-		#upnp-grid .co3 {
-			width: 15%;
-		}
-		#upnp-grid .co4 {
-			width: 8%;
-		}
-		#upnp-grid .co5 {
-			width: 53%;
-		}
-	</style>
 	<script type="text/javascript">
 
 		/* REMOVE-BEGIN
