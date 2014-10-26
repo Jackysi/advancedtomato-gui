@@ -1556,6 +1556,10 @@ input[type=radio]:disabled + span:before {
 	animation: tomato-spinner 1s linear infinite;
 }
 
+/* Preloader */
+#nprogress { pointer-events: none;}
+#nprogress .bar {background: #3498DB;position: absolute;z-index: 99;top: 58px;left: 0;width: 100%;height: 2px;}
+
 /* Responsive stuff */
 @media (max-width: 960px) {
 	#wrapper > .container { padding: 5px 10px; }
