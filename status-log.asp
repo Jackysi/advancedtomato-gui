@@ -34,7 +34,7 @@
 
 <script type="text/javascript">
 	if (nvram.log_file != '1') {
-		$('#logging').after('<div class="alert alert-info">Internal logging disabled.</b><br><br><a href="admin-log.asp">Enable &raquo;</a></div>');
+		$('#logging').after('<div class="alert alert-info">Internal logging disabled.</b><br><br><a class="ajaxload" href="admin-log.asp">Enable &raquo;</a></div>');
 		E('logging').style.display = 'none';
 	}
 </script>
