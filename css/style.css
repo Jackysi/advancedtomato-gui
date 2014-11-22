@@ -1104,7 +1104,7 @@ form { margin-bottom: 20px; }
 input, select, textarea {
 	color: #656565;
 	padding: 6px 10px;
-	height: auto;
+	height: 35px;
 	line-height: normal;
 	font-size: 9pt;
 	font-family: inherit;
@@ -1270,6 +1270,7 @@ input[type=radio]:disabled + span:before {
 	display: block;
 	font-size: 9pt;
 	line-height: normal;
+	height: 35px;
 	float: left;
 	overflow: hidden;
 	width: 280px;
