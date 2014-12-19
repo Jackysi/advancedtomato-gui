@@ -2545,7 +2545,11 @@ function navi()
 
 		// Loop Through subcats
 		$.each(linksobj, function(name, link) {
-			category += '<li  class="' + ((activeURL == link) ? 'active' : '') + '"><a href="#' + link + '">' + name + '</a></li>';
+
+			if (/\//i.test(link) === false) { link = '#' + link; } 						// Add location hash for non-root links
+			if (/http(s)?:\/\//i.test(link)) { link = link + '" target="_blank'; }	// If link includes http or https, create new tab/window		
+			category += '<li class="' + ((activeURL == link) ? 'active' : '') + '"><a href="' + link + '">' + name + '</a></li>';
+
 		});
 
 		htmlmenu += '<li' + (($(category).filter('.active')[0] == null) ? '' : ' class="active"') + '><a href="#">' + groupname + '</a><ul>' + category + '</ul></li>';

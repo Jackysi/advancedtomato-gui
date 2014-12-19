@@ -57,8 +57,10 @@ function AdvancedTomato () {
 
 	// Handle ajax loading
 	$('.navigation li ul a, .header .links a[href!="#system"]').on('click', function(e) {
-		loadPage($(this).attr('href'));
-		return false;
+		if ($(this).attr('target') != '_blank') {
+			loadPage($(this).attr('href'));
+			return false;
+		}
 	});
 
 	// Toggle Navigation
@@ -198,7 +200,7 @@ function loadPage(page) {
 
 	// Some things that need to be done here =)
 	page = page.replace('#', '');
-	if (page == 'status-home.asp' || page == '/') { page = 'status-home.asp'; }
+	if (page == 'status-home.asp' || page == '/' || page == null) { page = 'status-home.asp'; }
 	if (window.ajaxLoadingState) { return false; } else { window.ajaxLoadingState = true; }
 
 	NProgress.start();
