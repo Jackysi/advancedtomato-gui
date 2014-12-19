@@ -2391,20 +2391,20 @@ function myName() {
 function navi_icons ($name) {
 	switch ($name) {
 		case 'Status': 				return 'home'; break;
-        case 'Basic Settings': 		return 'tools'; break;
-        case 'Advanced Settings': 	return 'shield'; break;
-        case 'Port Forwarding': 	return 'forward'; break;
-        case 'Quality of Service': 	return 'gauge'; break;
-        case 'USB & NAS': 			return 'drive'; break;
-        case 'VPN': 				return 'globe'; break;
-        case 'Administration': 		return 'wrench'; break;
-     	default: 					return 'plus'; break;
+		case 'Basic Settings': 		return 'tools'; break;
+		case 'Advanced Settings': 	return 'shield'; break;
+		case 'Port Forwarding': 	return 'forward'; break;
+		case 'Quality of Service': 	return 'gauge'; break;
+		case 'USB & NAS': 			return 'drive'; break;
+		case 'VPN': 				return 'globe'; break;
+		case 'Administration': 		return 'wrench'; break;
+		default: 					return 'plus'; break;
 	}
 }
 
 function navi()
 {
-	var htmlmenu = '', activeURL = myName();
+	var htmlmenu = '', activeURL = window.location.hash;
 	var menu = {
 		'Status': {
 			'Overview':            'status-home.asp',
