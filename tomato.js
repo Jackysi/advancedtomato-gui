@@ -2533,7 +2533,7 @@ function navi()
 	try { $.extend(true, menu, $.parseJSON(nvram.web_nav)); } catch (e) {  /* console.log('Failed to parse custom navigation (might not be set)'); */ }
 	
 	// Fix for first UI load
-	if (activeURL == '#') {
+	if (activeURL == null || activeURL == '') {
 		activeURL = '#status-home.asp';
 	}
 
