@@ -210,6 +210,13 @@ function loadPage(page) {
 		var dom = $(resp);
 		var title = dom.filter('title').text();
 		var html = dom.filter('content').html();
+
+		// Handle pages without title or content as normal (NO AJAX)
+		if (title == null || html == null) {
+			window.parent.location.href = page;
+			return false;
+		}
+		
 		$('title').text(window.routerName + title);
 		$('h2.currentpage').text(title);
 		$('.container .ajaxwrap').hide().html(html).fadeIn(400);
