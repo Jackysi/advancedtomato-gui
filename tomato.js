@@ -2531,6 +2531,11 @@ function navi()
 
 	// Add custom menu
 	try { $.extend(true, menu, $.parseJSON(nvram.web_nav)); } catch (e) {  /* console.log('Failed to parse custom navigation (might not be set)'); */ }
+	
+	// Fix for first UI load
+	if (activeURL == '#') {
+		activeURL = '#status-home.asp';
+	}
 
 	// Loop Through MENU
 	$.each(menu, function (key, linksobj) {
