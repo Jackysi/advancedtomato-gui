@@ -190,7 +190,7 @@ function systemUI () {
 }
 
 // Ajax Function to load pages
-function loadPage(page) {
+function loadPage(page, variables) {
 	
 	// Fix refreshers when switching pages
 	if (typeof (ref) != 'undefined') {
@@ -303,7 +303,7 @@ function loadPage(page) {
 	}
 
 	// Execute Prototype
-	TomatoAJAX.get(page);
+	TomatoAJAX.get(page, variables);
 
 }
 
