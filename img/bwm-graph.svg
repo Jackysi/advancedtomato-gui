@@ -181,6 +181,12 @@ No part of this file may be used without permission.
 					tickLines[i].setAttribute('x2', Math.round(x));
 					x += z;
 				}
+
+				// Hide other lines in the BW Mode
+				for (i = 4; i < 24; i++) {
+					tickLines[i].setAttribute('visibility', 'hidden');
+				}
+
 			}
 			else {
 				advM = (60 / interval) * advX;
