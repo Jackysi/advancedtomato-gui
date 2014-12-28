@@ -83,6 +83,13 @@ small { font-size: 80%; }
 .align.center, .centered { text-align: center; }
 .bold, b { font-weight: 500; color: #656565; }
 
+/* General Text styles */
+.text-center { display: block; text-align: center; }
+.text-orange { color: #c0392b; }
+.text-green { color: #27ae60; }
+.text-red { color: #c0392b; }
+.text-blue { color: #2980b9; }
+
 /* Reset all elements to box-sizing: border-box; sort of crossbrowser fix! */
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 *:before,*:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -581,7 +588,7 @@ small { font-size: 80%; }
 	margin: 0 0 15px;
 	border-width: 1px;
 	border-style: solid;
-	border-color: #eee #eee #dedede;
+	border-color: #eaeaea #eaeaea #dedede;
 	background: #fff;
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -592,12 +599,12 @@ small { font-size: 80%; }
 
 .box .heading {
 	display: block;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 500;
 	line-height: 1;
 	color: #656565;
 	background-color: #FAFAFA;
-	padding: 15px;
+	padding: 16px;
 	border-bottom: 1px solid #f0f0f0;
 	border-top-right-radius: 3px;
 	border-top-left-radius: 3px;
