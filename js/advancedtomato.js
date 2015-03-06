@@ -128,8 +128,8 @@ function AdvancedTomato () {
 
 		if (n < lastUpdate || n == null) {
 
-			$updateNotification = $('<div class="alert info"><a href="#" class="close" data-update="' + nvram.at_update.replace('.','') + '"><i class="icon-cancel"></i></a>\
-				AdvancedTomato <b>v' + nvram.at_update + '</b> is already available. <a target="_blank" href="http://advancedtomato.com/changelog/">Click here to find out more</a>.</div>');
+			$updateNotification = $('<div class="alert alert-info icon"><a href="#" class="close" data-update="' + nvram.at_update.replace('.','') + '"><i class="icon-cancel"></i></a>\
+				<h5>Update Available!</h5>AdvancedTomato update <b>v' + nvram.at_update + '</b> has been released. <a target="_blank" href="http://advancedtomato.com/changelog/">Click here to find out more</a>.</div>');
 
 			$($updateNotification).find('.close').on('click', function() {
 				if ($(this).attr('data-update')) { cookie.set('latest-update', $(this).attr('data-update')); }
@@ -147,7 +147,7 @@ function AdvancedTomato () {
 
 		if (nvram.tomatoanon_answer != '1') {
 
-			$('.container').prepend('<div class="alert warning"><h5>Attention</h5> You did not configure <b>TomatoAnon project</b> setting.\
+			$('.container').prepend('<div class="alert alert-warning icon"><h5>Attention</h5> You did not configure <b>TomatoAnon project</b> setting.\
 				Please go to <a onclick="loadPage(\'admin-tomatoanon.asp\')" href="#">TomatoAnon configuration page</a> and make a choice.</div>');
 
 		}

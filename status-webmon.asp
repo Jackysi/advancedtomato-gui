@@ -387,7 +387,7 @@ No part of this file may be used without permission.
 		</div>
 	</div>
 
-	<div id="wm-disabled" class="alert alert-info">
+	<div id="wm-disabled" class="alert alert-info icon">
 		<h5>Web Monitoring disabled</h5>
 		Please <a class="ajaxload" href="/#admin-log.asp">enable</a> web monitoring in order to view information on this page.
 	</div>
