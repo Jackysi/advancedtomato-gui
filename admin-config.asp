@@ -108,7 +108,6 @@ No part of this file may be used without permission.
 					{ title: 'Total / Free NVRAM:', text: scaleSize(nvstat.size) + ' / ' + scaleSize(nvstat.free) + ' <small>(' + (a).toFixed(2) + '%)</small>' }
 					], '#nvram', 'line-table');
 
-					a = 1;
 				if (a <= 5) {
 					$('#nvram').append('<div class="alert alert-warning">' +
 						'The NVRAM free space is very low. It is strongly recommended to ' +
