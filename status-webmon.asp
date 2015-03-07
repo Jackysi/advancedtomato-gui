@@ -340,7 +340,7 @@ No part of this file may be used without permission.
 		}
 	</script>
 	<div class="row" id="webmon" style="display:none">
-		<div class="col-sm-6">
+		<div class="col-lg-12">
 			<div id="webmon-domains" class="box">
 				<div class="heading">Recently Visited Web Sites</div>
 				<div class="content">
@@ -353,7 +353,7 @@ No part of this file may be used without permission.
 			</div>
 		</div>
 
-		<div class="col-sm-6">
+		<div class="col-lg-12">
 			<div id="webmon-searches" class="box">
 				<div class="heading">Recent Web Searches</div>
 				<div class="content">
