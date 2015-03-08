@@ -173,9 +173,9 @@ No part of this file may be used without permission.
 			this.sort(1);
 		}
 		function earlyInit() {
+			$('#last-box').after(genStdRefresh(1,0,'ref.toggle()'));
 			dg.setup();
 			init();
-			$('#last-box').after(genStdRefresh(1,0,'ref.toggle()'));
 		}
 		function init()
 		{
