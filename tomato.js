@@ -2145,7 +2145,7 @@ TomatoRefresh.prototype = {
 
 	destroy: function() {
 		this.running = 0;
-		this.updateUI('stop');
+		this.updateUI('wait');
 		this.timer.stop();
 		this.http = null;
 		this.once = undefined;
