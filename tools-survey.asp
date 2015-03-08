@@ -289,7 +289,6 @@ No part of this file may be used without permission.
 			sg.recolor();
 			$('#survey-controls .spinner').after('&nbsp; ' + genStdTimeList('expire-time', 'Auto Expire', 1) + genStdTimeList('refresh-time', 'Auto Refresh', 1));
 			ref.initPage();
-			ref.toggle();
 		}
 
 	</script>

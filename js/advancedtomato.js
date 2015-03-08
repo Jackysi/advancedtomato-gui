@@ -192,10 +192,11 @@ function systemUI () {
 // Ajax Function to load pages
 function loadPage(page, variables) {
 	
-	// Fix refreshers when switching pages
-	if (typeof (ref) != 'undefined') {
+	// Since we use ajax, functions and timers stay in memory. Here we undefine & stop them to prevent issues with other pages.
+	if (typeof(ref) != 'undefined') {
 		ref.destroy();
-		window.ref=undefined; delete window.ref;
+		ref=undefined; delete ref;
+		if ( typeof(wdog) != 'undefined' ) clearTimeout(wdog); // Stupid function that kills our refreshers!
 	}
 
 	// Some things that need to be done here =)

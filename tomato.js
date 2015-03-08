@@ -2022,11 +2022,12 @@ TomatoRefresh.prototype = {
 			if (this.cookieTag) cookie.set(this.cookieTag, e.value);
 			this.refreshTime = e.value * 1000;
 		}
+
 		e = undefined;
 
 		this.updateUI('start');
-
 		this.running = 1;
+		
 		if ((this.http = new XmlHttp()) == null) {
 			reloadPage();
 			return;
@@ -2048,8 +2049,7 @@ TomatoRefresh.prototype = {
 			if ((p.refreshTime > 0) && (!p.once)) {
 				p.updateUI('wait');
 				p.timer.start(Math.round(p.refreshTime));
-			}
-			else {
+			} else {
 				p.stop();
 			}
 
@@ -2149,6 +2149,7 @@ TomatoRefresh.prototype = {
 		this.timer.stop();
 		this.http = null;
 		this.once = undefined;
+		this.refresh = null;
 	}
 }
 
@@ -2221,6 +2222,7 @@ var cookie = {
 
 		document.cookie = 'tomato_' + encodeURIComponent(key) + '=' + encodeURIComponent(value) + '; expires=' +
 		new Date(2147483647000).toUTCString() + '; path=/';
+		
 	},
 
 	get: function(key) {
