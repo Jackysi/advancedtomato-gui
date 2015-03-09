@@ -682,18 +682,18 @@ table {
 /* Nice Lined Tables */
 table.line-table tr {
 	display: table-row;
-	border-bottom: 1px solid #EEE;
+	border-bottom: 0;
 	transition: 100ms ease-out;
 	-webkit-transition: 100ms ease-out;
 }
 
 table.line-table .progress { margin: 1px 15px; }
 table.line-table tr:nth-child(even) {
-	background: #fff;
+	background: #f7f7f7;
 }
 
 table.line-table tr:hover {
-	background: #f9f9f9;
+	background: #f0f0f0;
 }
 
 table.line-table tr:first-child,
