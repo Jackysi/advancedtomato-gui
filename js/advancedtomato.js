@@ -246,11 +246,19 @@ function loadPage(page, variables) {
 
 			var id 		= $(this).attr('data-box');
 			var parent	= $(this);
-			var status	= (((hs_cook = cookie.get(id + '_visibility')) != null) && (hs_cook != '1') || !$(this).is(':visible')) ? false : true;
+			var status	= (((hs_cook = cookie.get(id + '_visibility')) != null && (hs_cook != '1')) && $(this).is(':visible')) ? false : true;
 			var html	= $('<a class="pull-right" href="#" data-toggle="tooltip" title="Hide/Show"><i class="icon-chevron-' + ((status) ? 'down' : 'up') + '"></i></a>');
 
 			// Hide if hidden
-			if (!status) { $(this).find('.content').hide(); }
+			if (status) { 
+				
+				$(this).find('.content').show();
+				
+			} else { // Set display property no matter the preference (fixes defaults)
+			
+				$(this).find('.content').hide();
+				
+			}
 
 			// Now click handler
 			$(html).on('click', function() {
