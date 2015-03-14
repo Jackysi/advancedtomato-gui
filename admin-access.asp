@@ -169,11 +169,13 @@ No part of this file may be used without permission.
 			*/
 			fom.https_crt_gen.value = E("_f_https_crt_gen").checked ? 1 : 0;
 			fom.https_crt_save.value = E("_f_https_crt_save").checked ? 1 : 0;
+			fom.http_root.value = E('_f_http_root').checked ? 1 : 0;
 			fom.web_wl_filter.value = E("_f_http_wireless").checked ? 0 : 1;
 			fom.telnetd_eas.value = E("_f_telnetd_eas").checked ? 1 : 0;
 			fom.sshd_eas.value = E("_f_sshd_eas").checked ? 1 : 0;
 			fom.sshd_pass.value = E("_f_sshd_pass").checked ? 1 : 0;
 			fom.sshd_remote.value = E("_f_sshd_remote").checked ? 1 : 0;
+			fom.sshd_motd.value = E('_f_sshd_motd').checked ? 1 : 0;
 			fom.sshd_forwarding.value = E("_f_sshd_forwarding").checked ? 1 : 0;
 			fom.rmgt_sip.value = fom.f_rmgt_sip.value.split(/\s*,\s*/).join(",");
 			fom.ne_shlimit.value = ((E("_f_limit_ssh").checked ? 1 : 0) | (E("_f_limit_telnet").checked ? 2 : 0)) +
@@ -198,6 +200,7 @@ No part of this file may be used without permission.
 		<input type="hidden" name="https_enable">
 		<input type="hidden" name="https_crt_save">
 		<input type="hidden" name="https_crt_gen">
+		<input type="hidden" name="http_root">
 		<input type="hidden" name="remote_management">
 		<input type="hidden" name="remote_mgt_https">
 		<input type="hidden" name="web_wl_filter">
@@ -205,6 +208,7 @@ No part of this file may be used without permission.
 		<input type="hidden" name="sshd_eas">
 		<input type="hidden" name="sshd_pass">
 		<input type="hidden" name="sshd_remote">
+		<input type="hidden" name="sshd_motd">
 		<input type="hidden" name="ne_shlimit">
 		<input type="hidden" name="rmgt_sip">
 		<input type="hidden" name="sshd_forwarding">
