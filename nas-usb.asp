@@ -323,12 +323,12 @@ No part of this file may be used without permission.
 		<input type="hidden" name="usb_fs_ext3">
 		<input type="hidden" name="usb_fs_ext4">
 		<input type="hidden" name="usb_fs_fat">
-		<!-- NTFS-BEGIN
+		/* NTFS-BEGIN */
 		<input type="hidden" name="usb_fs_ntfs">
-		NTFS-END -->
-		<!-- HFS-BEGIN
+		/* NTFS-END */
+		/* HFS-BEGIN */
 		<input type="hidden" name="usb_fs_hfs">
-		HFS-END -->
+		/* HFS-END */
 		<input type="hidden" name="usb_automount">
 		/* LINUX26-BEGIN */
 		<input type="hidden" name="idle_enable">
