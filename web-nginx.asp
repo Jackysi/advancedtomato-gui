@@ -9,7 +9,7 @@ http://code.google.com/p/tomato-sdhc-vlan/
 
 For use with Tomato Firmware only.
 No part of this file may be used without permission.
---><title>Web Server Menu</title>
+--><title>NGINX Web Server</title>
 <content>
 	<script type='text/javascript'>
 
@@ -84,7 +84,7 @@ No part of this file may be used without permission.
 	</script>
 
 	<form id="_fom" method="post" action="tomato.cgi">
-		<input type="hidden" name="_nextpage" value="/#nas-nginx.asp">
+		<input type="hidden" name="_nextpage" value="/#web-nginx.asp">
 		<input type="hidden" name="_service" value="enginex-restart">
 		<input type="hidden" name="_nextwait" value="10">
 		<input type="hidden" name="_reboot" value="0">

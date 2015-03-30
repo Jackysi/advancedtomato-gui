@@ -192,7 +192,7 @@ No part of this file may be used without permission.
 	</script>
 
 	<form id="_fom" method="post" action="tomato.cgi">
-		<input type="hidden" name="_nextpage" value="/#nas-ftp.asp">
+		<input type="hidden" name="_nextpage" value="/#web-ftp.asp">
 		<input type="hidden" name="_service" value="ftpd-restart">
 
 		<input type="hidden" name="ftp_super">
@@ -204,9 +204,8 @@ No part of this file may be used without permission.
 		<div class="box" data-box="ftp-conf-main">
 			<div class="heading">FTP Server Configuration</div>
 			<div class="content">
-				<small style="color: red">Note: Avoid using this option when FTP server is enabled for WAN. IT PROVIDES FULL ACCESS TO THE ROUTER FILE SYSTEM!</small><br /><br />
 				<div id="ftpconf"></div>
-
+				<small style="color: red">Note: Avoid using this option when FTP server is enabled for WAN. IT PROVIDES FULL ACCESS TO THE ROUTER FILE SYSTEM!</small>
 				<script type="text/javascript">
 					$('#ftpconf').forms([
 						{ title: 'Enable FTP Server', name: 'ftp_enable', type: 'select',
