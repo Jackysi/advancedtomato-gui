@@ -1,23 +1,24 @@
 /* Fonts */
 @font-face {
-	font-family: 'Open Sans';
-	src: url('fonts/OpenSans-Regular-webfont.eot');
-	src: url('fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-		url('fonts/OpenSans-Regular-webfont.woff') format('woff'),
-		url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
-		url('fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+	font-family: 'Roboto';
+	src: url('fonts/Roboto-Regular-webfont.eot');
+	src: url('fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg'),
+		url('fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Roboto-Regular-webfont.woff') format('woff'),
+		url('fonts/Roboto-Regular-webfont.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 
 }
 
 @font-face {
-	font-family: 'Open Sans';
-	src: url('fonts/OpenSans-Semibold-webfont.eot');
-	src: url('fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
-		url('fonts/OpenSans-Semibold-webfont.woff') format('woff'),
-		url('fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
-		url('fonts/OpenSans-Semibold-webfont.svg#open_sansSemibold') format('svg');
+	font-family: 'Roboto';
+	src: url('fonts/Roboto-Medium-webfont.eot');
+	src: url('fonts/Roboto-Medium-webfont.svg#robotomedium') format('svg'),
+		url('fonts/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Roboto-Medium-webfont.woff') format('woff'),
+		url('fonts/Roboto-Medium-webfont.ttf') format('truetype');
+
 	font-weight: 500;
 	font-style: normal;
 }
@@ -37,8 +38,8 @@
 /* CSS */
 html { font-size: 62.5%; }
 body {
-	font-size: 12px;
-	font-family: 'Open Sans', "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 10pt;
+	font-family: 'Roboto', 'Segoe UI', sans-serif;
 	color: #888888;
 	line-height: 1.42857;
 	background-color: #efefef;
@@ -66,7 +67,6 @@ h1, h2, h3, h4, h5 {
 	font-weight: 500;
 	line-height: 1.1;
 	color: inherit;
-	font-weight: 500;
 	color:#585858;
 }
 
@@ -146,14 +146,14 @@ small { font-size: 80%; }
 .top-header .logo a h1 {
 	display: inline-block;
 	color: #fff;
-	font-size: 18px;
+	font-size: 14pt;
 	margin: 15px 0 5px 0;
 	padding: 0;
 	font-weight: 500;
 }
 
 .top-header .logo a h1 span {
-	font-weight: normal;
+	font-weight: 500;
 }
 
 .top-header .logo h2 {
@@ -492,7 +492,7 @@ small { font-size: 80%; }
 	text-align:left;
 	left:100%;
 	top:0;
-	font-weight:400;
+	font-weight:normal;
 	line-height:40px;
 	width:200px;
 	color:#FFF;
@@ -729,7 +729,7 @@ table.line-table.static tr {
 table.line-table tr th {
 	display: table-cell;
 	padding: 8px;
-	font-weight: 700;
+	font-weight: 500;
 	text-align: left;
 }
 
@@ -842,7 +842,7 @@ table .header {
 	white-space: nowrap;
 	padding: 8px 16px;
 	margin: 0;
-	font-size: 9pt;
+	font-size: 10pt;
 	font-weight: 500;
 	line-height: normal;
 	-webkit-user-select: none;
@@ -941,7 +941,7 @@ table .header {
 
 /* Other btn styles */
 .btn b { color: #fff !important; }
-button.btn { font-family: 'Open Sans', sans-serif; vertical-align: middle; outline: 0; outline-style: none; }
+button.btn { height: 34px; font-family: 'Roboto', 'Segoe UI', sans-serif; vertical-align: middle; outline: 0; outline-style: none; }
 button::-moz-focus-inner { border:0; padding:0; } /* FF button fix */
 .btn-small { font-size: 8pt; padding: 4px 10px !important; vertical-align: middle; }
 
@@ -970,7 +970,6 @@ button::-moz-focus-inner { border:0; padding:0; } /* FF button fix */
 .alert {
 	position: relative;
 	color: #96904D;
-	font-size: 9pt;
 	padding: 10px 40px 10px 15px;
 	margin: 0 0 15px;
 	border: 1px solid transparent;
@@ -1181,10 +1180,10 @@ form { margin-bottom: 20px; }
 input, select, textarea {
 	color: #656565;
 	padding: 6px 10px;
-	height: 35px;
+	height: 34px;
 	line-height: normal;
-	font-size: 9pt;
-	font-family: 'Open Sans', "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 10pt;
+	font-family: 'Roboto', 'Segoe UI', sans-serif;
 	border: 1px solid #f0f0f0;
 	box-shadow: 0 1px 1px 0 #fff;
 	-webkit-box-shadow: 0 1px 1px 0 #fff;
@@ -1362,9 +1361,9 @@ input[type=radio]:disabled + span:before {
 
 .customfile-text  {
 	display: block;
-	font-size: 9pt;
+	font-size: 10pt;
 	line-height: normal;
-	height: 35px;
+	height: 34px;
 	float: left;
 	overflow: hidden;
 	width: 280px;
@@ -1384,6 +1383,8 @@ input[type=radio]:disabled + span:before {
 
 .customfile .browse  {
 	float: left;
+	height: 34px;
+	line-height: 16px;
 	margin: 0;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
