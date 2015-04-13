@@ -709,12 +709,16 @@ table.line-table tr:nth-child(even) {
 	background: #fafafa;
 }
 
+table.line-table tr:hover {
+	background: #f0f0f0;
+}
+
 table.line-table tr.editor {
 	background: transparent !important;
 }
 
-table.line-table tr:hover {
-	background: #f0f0f0;
+table.line-table tr.controls {
+	background: #fafafa !important;
 }
 
 table.line-table tr:first-child,
