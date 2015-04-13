@@ -38,7 +38,7 @@
 html { font-size: 62.5%; }
 body {
 	font-size: 12px;
-	font-family: 'Open Sans', "Helvetica Neue",Helvetica, sans-serif;
+	font-family: 'Open Sans', "Helvetica Neue", Helvetica, sans-serif;
 	color: #888888;
 	line-height: 1.42857;
 	background-color: #EEF0F4;
@@ -409,6 +409,11 @@ small { font-size: 80%; }
 	background: rgba(255,255,255,0.05);
 }
 
+.navigation .active > a > i,
+.navigation > ul > li > a:hover > i {
+	color: #3498DB;
+}
+
 .navigation li ul li a:hover {
 	color: #fff;
 	background: rgba(0,0,0,0.1);
@@ -607,7 +612,7 @@ small { font-size: 80%; }
 	font-weight: 500;
 	line-height: 1;
 	color: #656565;
-	background-color: #FAFAFA;
+	background-color: #f9f9f9;
 	padding: 16px;
 	border-bottom: 1px solid #f0f0f0;
 	border-top-right-radius: 3px;
@@ -796,6 +801,7 @@ table tr.editor td { margin: 0;}
 table tr.editor td input:not([type='checkbox']),
 table tr.editor td select,
 table tr.editor td textarea {
+	background: #fff;
 	padding: 5px 4px;
 	width: 100%;
 }
@@ -1156,14 +1162,13 @@ input, select, textarea {
 	height: 35px;
 	line-height: normal;
 	font-size: 9pt;
-	font-family: inherit;
-	border: 1px solid #CCC;
+	font-family: 'Open Sans', "Helvetica Neue", Helvetica, sans-serif;
+	border: 1px solid #f0f0f0;
 	box-shadow: 0 1px 1px 0 #fff;
 	-webkit-box-shadow: 0 1px 1px 0 #fff;
-	background: #fff;
+	background: #f9f9f9;
 	transition: border-color 0.15s ease-in-out 0s, color 0.15s ease-in-out 0s;
 	-webkit-transition: border-color 0.15s ease-in-out 0s, color 0.15s ease-in-out 0s;
-	border-radius: 3px;
 	outline-style: none;
 	vertical-align: baseline;
 	margin: 2px 2px 0;
@@ -1171,7 +1176,14 @@ input, select, textarea {
 
 input:focus, select:focus, textarea:focus {
 	color: #000;
+	background: #fff;
 	border-color: #66AFE9;
+}
+
+input:disabled, select:disabled, textarea:disabled {
+	opacity: 0.65;
+	cursor: not-allowed;
+	color: #7c7c7c;
 }
 
 textarea { resize:vertical !important; }
