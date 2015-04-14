@@ -15,6 +15,15 @@
 	color: #27ae60;
 }
 
+/* Replace some general styles (b, h1-h6, etc...) */
+a {
+	color: #0d7237;
+}
+
+a:hover, a:active {
+	color: #27ae60;
+}
+
 /* Buttons */
 .btn.btn-primary {
 	color: #fff !important;

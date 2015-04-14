@@ -15,6 +15,14 @@
 	color: #16a085;
 }
 
+a {
+	color: #137662;
+}
+
+a:hover, a:active {
+	color: #16a085;
+}
+
 /* Buttons */
 .btn.btn-primary {
 	color: #fff !important;
