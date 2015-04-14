@@ -9,7 +9,7 @@
 
 @font-face {
 	font-family: 'Roboto';
-	src: local('Roboto Medium'), local('Roboto-Medium'), url('fonts/Roboto-Medium-webfont.woff') format('woff')
+	src: local('Roboto Medium'), local('Roboto-Medium'), url('fonts/Roboto-Medium-webfont.woff') format('woff');
 	font-weight: 500;
 	font-style: normal;
 }
@@ -62,10 +62,10 @@ h1, h2, h3, h4, h5 {
 }
 
 h1, .h1 { font-size: 24px; margin: 0 0 10px; }
-h2, .h2 { font-size: 18px; margin: 0 0 10px; }
-h3, .h3 { font-size: 16px; margin: 0 0 10px; }
-h4, .h4 { font-size: 15px; }
-h5, .h5 { font-size: 14px; }
+h2, .h2 { font-size: 20px; margin: 0 0 10px; }
+h3, .h3 { font-size: 18px; margin: 0 0 10px; }
+h4, .h4 { font-size: 16px; }
+h5, .h5 { font-size: 15px; }
 h6, .h6 { font-size: 12px; }
 
 hr { margin: -5px 0 15px; border: 0; border-bottom: 1px dashed #EEE; }
@@ -140,19 +140,20 @@ small { font-size: 80%; }
 	font-size: 14pt;
 	margin: 15px 0 5px 0;
 	padding: 0;
-	font-weight: 500;
+	font-weight: normal;
 }
 
 .top-header .logo a h1 span {
-	font-weight: 500;
+	font-weight: normal;
 }
 
 .top-header .logo h2 {
 	color: #fff;
 	display: block;
-	font-size: 9pt;
+	font-size: 10pt;
 	padding: 0;
 	margin: -4px 0 0;
+	text-shadow: 0 1px 0 rgba(0,0,0, 0.15);
 	font-weight: normal;
 }
 
@@ -615,9 +616,9 @@ small { font-size: 80%; }
 
 .box .heading {
 	display: block;
-	font-size: 15px;
+	font-size: 12pt;
 	font-weight: 500;
-	line-height: 1;
+	line-height: normal;
 	color: #656565;
 	background-color: #f9f9f9;
 	padding: 16px;
@@ -965,20 +966,19 @@ button::-moz-focus-inner { border:0; padding:0; } /* FF button fix */
 .alert {
 	position: relative;
 	color: #96904D;
-	padding: 10px 40px 10px 15px;
+	padding: 15px 40px 15px 15px;
 	margin: 0 0 15px;
-	border: 1px solid transparent;
 
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
 
-	box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05);
-	-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05);
+	box-shadow: inset 0 -2px 0 rgba(0,0,0,0.05);
+	-webkit-box-shadow: inset 0 -2px 0 rgba(0,0,0,0.05);
 	background-color: #3498DB;
 }
 
 .alert.icon {
-	padding: 10px 40px 10px 75px;
+	padding: 15px 40px 15px 75px;
 }
 
 .alert.icon:after {
@@ -1013,7 +1013,7 @@ a.close {
 
 .alert a { text-decoration: underline; }
 a.close:hover { opacity: 1; }
-.alert h5 { display: block;	margin: 0 0 5px; padding: 0; }
+.alert h5 { display: block; margin: 0 0 0; padding: 0; }
 
 /* Success */
 .alert.alert-success { background-color: #DEFCD5; color: #52A954; }
