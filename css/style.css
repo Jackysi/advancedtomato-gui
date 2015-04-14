@@ -1,11 +1,7 @@
 /* Fonts */
 @font-face {
 	font-family: 'Roboto';
-	src: url('fonts/Roboto-Regular-webfont.eot');
-	src: url('fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg'),
-		url('fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-		url('fonts/Roboto-Regular-webfont.woff') format('woff'),
-		url('fonts/Roboto-Regular-webfont.ttf') format('truetype');
+	src: local('Roboto'), local('Roboto-Regular'), url('fonts/Roboto-Regular-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 
@@ -13,12 +9,7 @@
 
 @font-face {
 	font-family: 'Roboto';
-	src: url('fonts/Roboto-Medium-webfont.eot');
-	src: url('fonts/Roboto-Medium-webfont.svg#robotomedium') format('svg'),
-		url('fonts/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
-		url('fonts/Roboto-Medium-webfont.woff') format('woff'),
-		url('fonts/Roboto-Medium-webfont.ttf') format('truetype');
-
+	src: local('Roboto Medium'), local('Roboto-Medium'), url('fonts/Roboto-Medium-webfont.woff') format('woff')
 	font-weight: 500;
 	font-style: normal;
 }
@@ -39,12 +30,12 @@
 html { font-size: 62.5%; }
 body {
 	font-size: 10pt;
-	font-family: 'Roboto', 'Segoe UI', sans-serif;
+	font-family: "Roboto", sans-serif, Helvetica, Arial, sans-serif;
 	color: #888888;
 	line-height: 1.42857;
 	background-color: #efefef;
-	-webkit-font-smoothing: antialiased;
 	min-width: 960px;
+	-webkit-font-smoothing: antialiased;
 }
 
 /* Replace some general styles (b, h1-h6, etc...) */
