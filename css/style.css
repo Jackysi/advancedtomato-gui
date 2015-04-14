@@ -704,6 +704,10 @@ table.line-table tr:hover {
 	background: #f0f0f0;
 }
 
+table.line-table tr:hover .progress {
+	background: #e0e0e0;
+}
+
 table.line-table tr.editor {
 	background: transparent !important;
 }
@@ -932,7 +936,7 @@ table .header {
 
 /* Other btn styles */
 .btn b { color: #fff !important; }
-button.btn { height: 34px; font-family: 'Roboto', 'Segoe UI', sans-serif; vertical-align: middle; outline: 0; outline-style: none; }
+button.btn { height: 34px; font-family: "Roboto", sans-serif, Helvetica, Arial, sans-serif; vertical-align: middle; outline: 0; outline-style: none; }
 button::-moz-focus-inner { border:0; padding:0; } /* FF button fix */
 .btn-small { font-size: 8pt; padding: 4px 10px !important; vertical-align: middle; }
 
@@ -1174,7 +1178,7 @@ input, select, textarea {
 	height: 34px;
 	line-height: normal;
 	font-size: 10pt;
-	font-family: 'Roboto', 'Segoe UI', sans-serif;
+	font-family: "Roboto", sans-serif, Helvetica, Arial, sans-serif;
 	border: 1px solid #f0f0f0;
 	box-shadow: 0 1px 1px 0 #fff;
 	-webkit-box-shadow: 0 1px 1px 0 #fff;
@@ -1191,11 +1195,11 @@ input, select, textarea {
 input:focus, select:focus, textarea:focus {
 	color: #000;
 	background: #fff;
-	border-color: #66AFE9;
+	border-color: #3498DB;
 }
 
 input:hover, select:hover, textarea:hover {
-	border-color: #66AFE9;
+	border-color: #3498DB;
 }
 
 input:disabled, select:disabled, textarea:disabled {
@@ -1238,7 +1242,9 @@ textarea { resize:vertical !important; }
 	vertical-align: middle;
 }
 .c-checkbox:hover span,
-.c-radio:hover span {
+.c-checkbox input:hover + span,
+.c-radio:hover span,
+.c-radio input:hover + span {
 	border-color: #3498db;
 	background: #fff;
 }
@@ -1384,14 +1390,8 @@ input[type=radio]:disabled + span:before {
 }
 
 .customfile-hover .customfile-text {
-	border-color: #66AFE9;
+	border-color: #3498db;
 }
-
-.customfile-hover .browse {
-	background: #428BCA;
-	color: #ffffff;
-}
-
 
 /* New Ethernet States */
 #ethPorts {
@@ -1438,7 +1438,7 @@ input[type=radio]:disabled + span:before {
 }
 
 .tomato-refresh .spinner { margin-right: 10px; vertical-align: middle; }
-.tomato-refresh select { padding: 7px 10px; width: 120px; vertical-align: middle; }
+.tomato-refresh select { padding: 7px 10px; width: 150px; vertical-align: middle; }
 
 #refresh-spinner {
 	vertical-align: middle;
