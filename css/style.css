@@ -1282,6 +1282,11 @@ input[type=radio]:checked + span {
 	border-color: #3498db;
 	background-color: #3498db;
 }
+
+input[type=radio]:checked + span {
+	background-color: transparent !important;
+}
+
 /* override for radio */
 input[type=radio]:checked + span {
 	background-color: #fff;
