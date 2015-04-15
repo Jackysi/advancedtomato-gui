@@ -688,6 +688,10 @@ table {
 	margin: 0;
 }
 
+table th {
+	font-weight: 500;
+}
+
 /* Nice Lined Tables */
 table.line-table tr {
 	display: table-row;
