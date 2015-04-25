@@ -22,6 +22,8 @@ do {
 		(sysinfo.loads[1] / 65536.0).toFixed(2) + '<small> / </small>' +
 		(sysinfo.loads[2] / 65536.0).toFixed(2));
 	stats.uptime = sysinfo.uptime_s;
+	
+	stats.wlsense = sysinfo.wlsense;
 	a = sysinfo.totalram;
 	b = sysinfo.totalfreeram;
 
