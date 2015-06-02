@@ -198,6 +198,7 @@ small { font-size: 80%; }
 .top-header > .links > ul > li > a:hover,
 .top-header > .links > ul > li a.active {
 	color: #000;
+	background: rgba(0, 0, 0, 0.02);
 	border-color: #3498DB;
 }
 
@@ -1196,13 +1197,13 @@ input, select, textarea {
 	-webkit-border-radius: 2px;
 }
 
+input:hover, select:hover, textarea:hover {
+	border-color: #d1e5f2;
+}
+
 input:focus, select:focus, textarea:focus {
 	color: #000;
 	background: #fff;
-	border-color: #3498DB;
-}
-
-input:hover, select:hover, textarea:hover {
 	border-color: #3498DB;
 }
 
