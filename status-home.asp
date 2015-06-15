@@ -253,7 +253,6 @@
 						{ title: 'Total / Free Memory', rid: 'memory', text: stats.memory + '<div class="progress"><div class="bar" style="width: ' + stats.memoryperc + ';"></div></div>' },
 						{ title: 'Total / Free Swap', rid: 'swap', text: stats.swap + '<div class="progress"><div class="bar" style="width: ' + stats.swapperc + ';"></div></div>', hidden: (stats.swap == '') },
 						{ title: 'Total / Free NVRAM', text: scaleSize(nvstat.size) + ' / ' + scaleSize(nvstat.free) + ' <small>(' + (a).toFixed(2) + '%)</small> <div class="progress"><div class="bar" style="width: ' + (a).toFixed(2) + '%;"></div></div>' },
-						{ title: 'Wireless Temperature', rid: 'wlsense', text: stats.wlsense }
 						], '#sesdiv_system', 'data-table dataonly');
 				</script>
 			</div>
