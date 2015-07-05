@@ -205,7 +205,11 @@ function loadPage(page, variables) {
 	if (page == 'status-home.asp' || page == '/' || page == null) { page = 'status-home.asp'; }
 	if (window.ajaxLoadingState) { return false; } else { window.ajaxLoadingState = true; }
 
+	// Start NProgress Preloader (small bar on top)
 	NProgress.start();
+	
+	// Remove animation class from container, for reseting it
+	$('.container .ajaxwrap').removeClass('ajax-animation');
 
 	// Tomato XMLHTTP/AJAX
 	TomatoAJAX = new XmlHttp();
@@ -223,7 +227,7 @@ function loadPage(page, variables) {
 
 		$('title').text(window.routerName + title);
 		$('h2.currentpage').text(title);
-		$('.container .ajaxwrap').hide().html(html).fadeIn(400);
+		$('.container .ajaxwrap').html(html).addClass('ajax-animation');
 
 		// Push History
 		if (history.pushState) { // Fix issue with IE9 or bellow

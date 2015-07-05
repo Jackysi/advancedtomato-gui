@@ -1642,6 +1642,24 @@ input[type=radio]:disabled + span:before {
 	margin: 0 10px;
 }
 
+/* Animate Page Loads & Changes */
+@-webkit-keyframes ajax-animation {
+	0%   { opacity: 0.5; -webkit-transform: scale(0.99); }
+	100% { opacity: 1; -webkit-transform: scale(1); }
+}
+@keyframes ajax-animation {
+	0%   { opacity: 0.5; transform: scale(0.99); }
+	100% { opacity: 1; transform: scale(1); }
+}
+
+.ajax-animation {
+	-webkit-animation: ajax-animation 350ms 1;
+	-moz-animation:    ajax-animation 350ms 1;
+	animation:         ajax-animation 350ms 1;
+	backface-visibility: hidden;  /* Performance Improvement */
+	transform: translate3d(0, 0, 0);  /* Font Rendering FIX */
+}
+
 /* Pure CSS preloader */
 .spinner {
 	display: inline-block;
