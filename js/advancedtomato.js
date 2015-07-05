@@ -1,8 +1,8 @@
 // Bind Navi etc.
 function AdvancedTomato () {
-	
+
 	/** Misc functions, calls, binds
-	************************************************************************************************/
+	 ************************************************************************************************/
 
 	// Call navi function in tomato.js to generate navigation
 	navi();
@@ -33,7 +33,7 @@ function AdvancedTomato () {
 
 
 	/** Click handlers
-	************************************************************************************************/
+	 ************************************************************************************************/
 
 	// Navigation slides
 	$('.navigation:not(.collapsed) > ul > li > a').on('click', function() {
@@ -103,9 +103,9 @@ function AdvancedTomato () {
 
 			$(this).addClass('active');
 			$('.system-ui').fadeIn(250);
-			
+
 			// On open
-			$('.system-ui .datasystem').html('<br /><br /><div class="spinner"></div><br /><br />').addClass('align center');
+			$('.system-ui .datasystem').html('<div class="inner-container row"><div style="margin: 45px auto 35px; width: 26px; height:26px;" class="spinner"></div></div>').addClass('align center');
 			systemUI();
 			window.refTimer = setInterval(systemUI, 1600);
 
@@ -117,7 +117,7 @@ function AdvancedTomato () {
 
 
 	/** Handle NVRAM global functions and notifications
-	************************************************************************************************/
+	 ************************************************************************************************/
 	if (typeof nvram == 'undefined') { return false; }
 
 	// Check for update
@@ -186,12 +186,13 @@ function systemUI () {
 			((nvram.swap != null) ? '<div class="col-sm-2">SWAP:</div><div class="col-sm-10">' + stats.swap + '<div class="progress"><div class="bar" style="width: ' + stats.swapperc + '"></div></div></div>':'') +
 			'<div class="col-sm-2">WAN:</div><div class="col-sm-10">' + stats.wanstatus + ' (' + stats.wanuptime + ')</div></div>').removeClass('align center');
 	}
+
 	systemAJAX.get('js/status-data.jsx');
 }
 
 // Ajax Function to load pages
 function loadPage(page, variables) {
-	
+
 	// Since we use ajax, functions and timers stay in memory. Here we undefine & stop them to prevent issues with other pages.
 	if (typeof(ref) != 'undefined') {
 		ref.destroy();
@@ -219,7 +220,7 @@ function loadPage(page, variables) {
 			window.parent.location.href = page;
 			return false;
 		}
-		
+
 		$('title').text(window.routerName + title);
 		$('h2.currentpage').text(title);
 		$('.container .ajaxwrap').hide().html(html).fadeIn(400);
@@ -251,13 +252,13 @@ function loadPage(page, variables) {
 
 			// Hide if hidden
 			if (status) { 
-				
+
 				$(this).find('.content').show();
-				
+
 			} else { // Set display property no matter the preference (fixes defaults)
-			
+
 				$(this).find('.content').hide();
-				
+
 			}
 
 			// Now click handler
@@ -298,7 +299,7 @@ function loadPage(page, variables) {
 	TomatoAJAX.onError = function (x) {
 
 		console.log(x);
-		
+
 		$('h2.currentpage').text('ERROR');
 		$('.container .ajaxwrap').hide().html('<div class="box"><div class="heading">ERROR occured!</div><div class="content" style="font-size: 13px;">\
 			There has been error while loading a page, please review debug data bellow if this is isolated issue.<br />\
