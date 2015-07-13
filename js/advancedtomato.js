@@ -299,8 +299,10 @@ function loadPage(page, variables) {
 		// Custom file inputs
 		$("input[type='file']").each(function() { $(this).customFileInput(); });
 
+		// Stop & Remove Preloader
 		$('#nprogress').find('.bar').css({ 'animation': 'none' }).width('100%');
 		setTimeout(function() { $('#nprogress .bar').remove(); }, 150);
+		
 	}
 
 	// ERROR Handler
