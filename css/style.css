@@ -1056,8 +1056,8 @@ a.close:hover { opacity: 1; }
 	padding:0;
 	margin: 0;
 	background: #3498DB;
-	transition: width 0.2s ease-out;
-	-webkit-transition: width 0.2s ease-out;
+	transition: all 400ms linear;
+	-webkit-transition: all 400ms linear;
 }
 .progress .bar.warning { background: #FB7D00; }
 .progress .bar.success { background: #38F00B; }
