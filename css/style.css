@@ -1684,8 +1684,27 @@ input[type=radio]:disabled + span:before {
 }
 
 /* Preloader */
-#nprogress { pointer-events: none; }
-#nprogress .bar { background: #3498DB; position: absolute; z-index: 99; top: 58px; left: 0; width: 100%; height: 2px; }
+#nprogress { pointer-events: none; -webkit-pointer-events: none; }
+#nprogress .bar { 
+	background: #3498DB;
+	position: absolute;
+	z-index: 99;
+	top: 58px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	-webkit-animation: nprogress-animation 5s linear 1;
+	animation: nprogress-animation 5s linear 1;
+}
+
+@-webkit-keyframes nprogress-animation {
+	0%   { width: 20%; }
+	100% { width: 100%; }
+}
+@keyframes nprogress-animation {
+	0%   { width: 20%; }
+	100% { width: 100%; }
+}
 
 /* Responsive stuff */
 @media (max-width: 960px) {
