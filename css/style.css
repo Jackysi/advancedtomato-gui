@@ -1208,6 +1208,7 @@ input:disabled, select:disabled, textarea:disabled {
 }
 
 textarea { resize:vertical !important; }
+select { cursor: pointer; }
 
 .c-checkbox,
 .c-radio {
