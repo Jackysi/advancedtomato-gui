@@ -217,33 +217,14 @@ small { font-size: 80%; }
 	background: #fff;
 	padding: 0;
 	width: 340px;
-	top: 50px;
+	top: 65px;
 	right: 10px;
-	border-radius: 2px;
+	border-radius: 4px;
 	display: none;
 	z-index: 1;
-	box-shadow: 0 1px 5px rgba(0,0,0,0.15);
-	-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.15);
-}
-
-.system-ui:before, .system-ui:after {
-	display: block;
-	position: absolute;
-	content: "";
-	top: -23px;
-	right: 32px;
-	border-width: 12px;
-	border-color: transparent transparent #FAFAFA transparent;
-	border-style: solid;
-	z-index: 12;
-}
-
-.system-ui:after {
-	top: -26px;
-	right: 31px;
-	border-width: 13px;
-	border-color: transparent transparent #f2f2f2 transparent;
-	z-index: 11;
+	border: 1px solid #e4eaec;
+	box-shadow: 0 3px 12px rgba(0,0,0,.05);
+	-webkit-box-shadow: 0 3px 12px rgba(0,0,0,.05);
 }
 
 .system-ui .router-name {
@@ -251,27 +232,25 @@ small { font-size: 80%; }
 	font-size: 14px;
 	font-weight: 500;
 	color: #656565;
-	background-color: #FAFAFA;
-	border-bottom: 1px solid #f0f0f0;
-	padding: 12px 16px;
+	border-bottom: 1px solid #e4eaec;
+	padding: 14px 18px;
 	border-top-right-radius: 3px;
 	border-top-left-radius: 3px;
-	vertical-align: middle;
 }
 
 .system-ui .router-name small {
-	vertical-align: middle !important;
+	margin-top: 2px;
 }
 
 .system-ui .router-control {
 	text-align: center;
-	padding: 5px 15px 15px;
+	padding: 15px 15px;
 }
 
 .system-ui .inner-container {
-	margin: 0 0 10px;
-	padding: 5px 15px;
-	border-bottom: 1px dashed #EEE;
+	margin: 0;
+	padding: 5px 18px;
+	border-bottom: 1px solid #e4eaec;
 }
 
 .system-ui .inner-container .col-sm-10 {
@@ -279,7 +258,6 @@ small { font-size: 80%; }
 }
 
 .system-ui .inner-container .col-sm-2 {
-	text-align: center;
 	padding: 5px 0;
 	font-weight: 500;
 }
@@ -289,7 +267,6 @@ small { font-size: 80%; }
 	display: inline-block;
 	width: 40px;
 	margin-right: 10px;
-	text-align: right;
 	padding: 7px 0;
 }
 
@@ -1029,8 +1006,8 @@ a.close:hover { opacity: 1; }
 	height: 4px;
 	padding: 0;
 	margin: 0;
-	background: #efefef;
-	border-radius: 2px;
+	background: #e4eaec;
+	border-radius: 1px;
 	overflow: hidden;
 }
 
@@ -1040,9 +1017,9 @@ a.close:hover { opacity: 1; }
 	height: 100%;
 	padding:0;
 	margin: 0;
-	background: #3498DB;
-	transition: all 400ms linear;
-	-webkit-transition: all 400ms linear;
+	background: #62a8ea;
+	transition: all 200ms linear;
+	-webkit-transition: all 200ms linear;
 }
 .progress .bar.warning { background: #FB7D00; }
 .progress .bar.success { background: #38F00B; }
