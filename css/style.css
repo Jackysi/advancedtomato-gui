@@ -803,7 +803,7 @@ table .header {
 	padding: 8px 16px;
 	margin: 0;
 	font-size: 10pt;
-	font-weight: 500;
+	font-weight: normal;
 	line-height: normal;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -900,7 +900,7 @@ table .header {
 
 /* Other btn styles */
 .btn b { color: #fff !important; }
-button.btn { height: 34px; font-weight: 500 !important; vertical-align: middle; outline: 0; outline-style: none; }
+button.btn { height: 34px; font-family: "Roboto"; font-weight: 400 !important; vertical-align: middle; outline: 0; outline-style: none; }
 button::-moz-focus-inner { border:0; padding:0; } /* FF button fix */
 .btn-small { font-size: 8pt; font-weight: normal; padding: 4px 10px !important; vertical-align: middle; }
 
@@ -1134,22 +1134,20 @@ fieldset .text-block {
 
 form { margin-bottom: 20px; }
 input, select, textarea {
-	color: #656565;
+	color: #76838f;
 	padding: 6px 10px;
 	height: 34px;
 	line-height: normal;
 	font-size: 10pt;
 	font-family: "Roboto", sans-serif, Helvetica, Arial, sans-serif;
-	border: 1px solid #f0f0f0;
-	box-shadow: 0 1px 1px 0 #fff;
-	-webkit-box-shadow: 0 1px 1px 0 #fff;
-	background: #f9f9f9;
+	border: 1px solid #e4eaec;
+	background-color: #fff;
 	transition: all 0.15s ease;
 	-webkit-transition: all 0.15s ease;
 	outline-style: none;
 	vertical-align: baseline;
 	margin: 2px 2px 0;
-	border-radius: 2px;
+	border-radius: 3px;
 }
 
 input:hover, select:hover, textarea:hover {
@@ -1198,11 +1196,12 @@ select { cursor: pointer; }
 	width: 22px;
 	height: 22px;
 	border-radius: 2px;
-	border: 1px solid #f0f0f0;
-	background: #f9f9f9;
-	transition: all 0.15s ease;
-	-webkit-transition: all 0.15s ease;
+	border: 1px solid #e4eaec;
+	background: #fff;
+	transition: all 250ms ease;
+	-webkit-transition: all 250ms ease;
 	vertical-align: middle;
+	margin-right: 2px;
 }
 
 .c-checkbox:hover span,
@@ -1221,6 +1220,7 @@ select { cursor: pointer; }
 /* the icon */
 .c-checkbox span:before,
 .c-radio span:before {
+	color: #fff;
 	position: absolute;
 	font-family: "advancedtomato" !important;
 	content: "\e006";
@@ -1233,6 +1233,10 @@ select { cursor: pointer; }
 	font-size: 12px;
 	line-height: 20px;
 	vertical-align: middle;
+	transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	transition: all 250ms ease;
+	-webkit-transition: all 250ms ease;
 }
 
 /* Checked state */
@@ -1240,6 +1244,8 @@ input[type=checkbox]:checked + span:before,
 input[type=radio]:checked + span:before {
 	color: #fff;
 	opacity: 1;
+	transform: scale(1);
+	-webkit-transform: scale(1);
 }
 
 input[type=checkbox]:checked + span,
@@ -1343,7 +1349,7 @@ input[type=radio]:disabled + span:before {
 	white-space:nowrap;
 	overflow: hidden;
 	background: #fff;
-	border: 1px solid #CCC;
+	border: 1px solid #e4eaec;
 
 	border-top-left-radius: 3px;
 	border-bottom-left-radius: 3px;
