@@ -771,7 +771,7 @@ table.fields-table tr td:first-child {
 table.fields-table select { min-width: 180px; }
 
 /* Other extra styles */
-table.td-large tr td { padding: 10px 0; }
+table.td-large tr td { }
 
 table .controls, table.line-table tr.controls { box-shadow: none; -webkit-box-shadow: none; border: 0; padding: 0; margin: 0; }
 table .controls:hover, table.line-table tr.controls:hover { background: transparent; }
@@ -1048,7 +1048,7 @@ ul.nav-tabs li a {
 	display: block;
 	padding: 0 15px;
 	height: 40px;
-	font-weight: 500;
+	font-weight: normal;
 	line-height: 40px;
 	color: #808080;
 	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
