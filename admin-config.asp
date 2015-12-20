@@ -120,4 +120,5 @@ No part of this file may be used without permission.
 			</script>
 		</div>
 	</div>
+	</div>	<!-- Bugfix Ratatosk: Closing div for box was missing!  -->
 </content>
