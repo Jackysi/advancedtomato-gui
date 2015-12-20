@@ -391,7 +391,7 @@ No part of this file may be used without permission.
 				var status = (!eval('vpn'+(i+1)+'up') ? '<small style="color: red">(Stopped)</small>' : '<small style="color: green;">(Running)</small>');
 
 				htmlOut += '</ul>'
-				+ '<div class="box"><div class="heading">VPN Client #'+(i+1) + status + ' <a id="_vpn' + t + '_button" class="pull-right" href="#" data-toggle="tooltip"' +
+				+ '<div class="box"><div class="heading">VPN Client #'+(i+1) + status + ' <a id="_vpn' + t + '_button" class="pull-right" href="#" data-toggle="tooltip" data-container="body" ' +
 				'onclick="toggle(\'vpn'+t+'\', vpn'+(i+1)+'up); return false;"' + action + '</a></div><div class="content">';
 
 				htmlOut += ('<div id=\''+t+'-basic\'>');

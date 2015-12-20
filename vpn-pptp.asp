@@ -111,7 +111,7 @@ No part of this file may be used without permission.
 				]);
 
 				$('#pptp-client .pptp-client-status').html((!pptpup ? '<small style="color: red;">(Stopped)</small>' : '<small style="color: green;">(Running)</small>'));
-				$('#pptp-client .pptp-client-status').after('<a href="#" data-toggle="tooltip" class="pull-right pptp-client-control" title="' +
+				$('#pptp-client .pptp-client-status').after('<a href="#" data-toggle="tooltip" data-container="body" class="pull-right pptp-client-control" title="' +
 					(pptpup ? 'Stop PPTP Client' : 'Start PPTP Client') + '" onclick="toggle(\'pptpclient\', pptpup); return false;" id="_pptpclient_button">' + (pptpup ? '<i class="icon-stop"></i>' : '<i class="icon-play"></i>') + '</a>');
 
 			</script>

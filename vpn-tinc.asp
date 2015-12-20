@@ -510,7 +510,7 @@
 				html += '</ul>\
 				<div class="box">\
 				<div class="heading">Tinc Configuration <span id="version"></span> ' + status + '\
-				<a id="_tinc_button" class="pull-right" href="#" data-toggle="tooltip" onclick="toggle(\'tinc\', tincup); return false;"' + action + '</a></div>\
+				<a id="_tinc_button" class="pull-right" href="#" data-toggle="tooltip" data-container="body" onclick="toggle(\'tinc\', tincup); return false;"' + action + '</a></div>\
 				<div class="content">'
 
 				var t = "config";
