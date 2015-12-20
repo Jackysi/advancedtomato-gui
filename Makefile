@@ -11,12 +11,13 @@ install:
 	mkdir -p $(INSTALLDIR)/www			
 	mkdir -p $(INSTALLDIR)/www/js
 	mkdir -p $(INSTALLDIR)/www/css
+	mkdir -p $(INSTALLDIR)/www/js/bootstrap
 
 # Copy files we don't want to modify to new install directory
 	cp *.ico *.html *.php robots.txt $(INSTALLDIR)/www
 
 # Copy JS files to the installdir and squish files by trimming whitespace
-	for F in $(wildcard js/*.js js/*.jsx *.js *.jsx); do \
+	for F in $(wildcard js/*.js js/bootstrap/*.js *.jsx); do \
 		sed '/^\/\*\s*$$/,/\*\//! { s/^\s\+//; s/\s\+$$//; /^\/\/ --\+\s*/d; /^$$/d }' < $$F > $(INSTALLDIR)/www/$$F; \
 	done
 
@@ -299,7 +300,7 @@ endif
 	
 # clean up compiler directives
 	cd $(INSTALLDIR)/www && \
-	for F in $(wildcard *.asp *.js *.jsx js/*.js js/*.jsx *.html); do \
+	for F in $(wildcard *.asp *.js js/bootstrap/*.js *.jsx *.html); do \
 		[ -f $(INSTALLDIR)/www/$$F ] && sed -i $$F \
 		-e "/LINUX26-BEGIN/d"	-e "/LINUX26-END/d" \
 		-e "/LINUX24-BEGIN/d"	-e "/LINUX24-END/d" \
