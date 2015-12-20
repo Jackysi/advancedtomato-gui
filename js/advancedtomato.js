@@ -290,7 +290,7 @@ function loadPage(page) {
 					} else {
 
 						$(parent).find('.content').stop(true, true).slideDown(350, 'easeInQuad');
-						$(html).find('i').removeClass('icon-chevron-uo').addClass('icon-chevron-down');
+						$(html).find('i').removeClass('icon-chevron-up').addClass('icon-chevron-down');
 						cookie.set(id + '_visibility', 1); status = true;
 
 					}
