@@ -1563,7 +1563,8 @@ TomatoGrid.prototype = {
 				var f = ef[j];
 
 				if (f.prefix) s += f.prefix;
-				var attrib = ' class="fi' + (vi + 1) + ' ' + (f.class ? f.class : '') + '" ' + (f.attrib || '');
+				/* RATATOSKEDITION: changed the f.class property call for yui-compressor */
+				var attrib = ' class="fi' + (vi + 1) + ' ' + (f['class'] ? f['class'] : '') + '" ' + (f.attrib || '');
 				var id = (this.tb ? ('_' + this.tb + '_' + (vi + 1)) : null);
 				if (id) attrib += ' id="' + id + '"';
 				switch (f.type) {
