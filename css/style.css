@@ -711,7 +711,7 @@ table.line-table tr th {
 
 table.line-table tr td {
 	display: table-cell;
-	width: inhert;
+	width: inherit;					/* Ratatosk Bugfix: Typo in 'inhert' */
 	padding: 10px 6px;
 	vertical-align: middle;
 }
