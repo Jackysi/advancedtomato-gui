@@ -1750,3 +1750,12 @@ input[type=radio]:disabled + span:before {
 		overflow-y: auto;
 	}
 }
+
+/* Multi-row editor default values. Should/can be overriden in every .asp page were a multirow editor field is used */
+.erow div[class^="x"] { margin-top:3px; float:left; display: inline-block; }
+.erow:first-child div[class^="x"] { margin-top:0px }
+
+.erow div[class^="x"]:first-child { clear: left; }
+
+.erow div.xa { width: 30%; padding: 0px 0px 0xp 2px; }
+.erow div.xb { width: 30%; padding-left: 5px; }
