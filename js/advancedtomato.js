@@ -72,7 +72,7 @@ function AdvancedTomato () {
 			
 			// Collapse the navigation
 			$('#wrapper').find('.container').css('margin-left', '60px');			// Move the content to the left
-			$('#wrapper').find('.navigation').addClass('collapsed');				// Hide the normal navigation		>> animated
+			$('#wrapper').find('.navigation').addClass('collapsed');				// Hide the normal navigation >> animated
 			$('#wrapper').find('.logo').addClass('collapsed');						// Show the log string
 			$('#wrapper').find('.nav-collapse-hide').hide();						// Hide the advanced tomato string
 
@@ -82,12 +82,8 @@ function AdvancedTomato () {
 			$('#wrapper').find('.container').css('margin-left', '240px');
 			$('#wrapper').find('.navigation').removeClass('collapsed');
 			$('#wrapper').find('.logo').removeClass('collapsed');
-			
-			/* Ratatosk: Added settimeout for better UI experience */
-			setTimeout(function() { 
-				$('#wrapper').find('.nav-collapse-hide').show();
-			}, 400);
-			
+			setTimeout(function() { $('#wrapper').find('.nav-collapse-hide').show(); }, 300);
+
 
 		}
 
@@ -297,7 +293,7 @@ function loadPage(page) {
 					} else {
 
 						$(parent).find('.content').stop(true, true).slideDown(350, 'easeInQuad');
-						$(html).find('i').removeClass('icon-chevron-up').addClass('icon-chevron-down');		/* Ratatosk: typo chevron-uo */
+						$(html).find('i').removeClass('icon-chevron-up').addClass('icon-chevron-down');
 						cookie.set(id + '_visibility', 1); status = true;
 
 					}
