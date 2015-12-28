@@ -83,7 +83,7 @@ function AdvancedTomato () {
 			$('#wrapper').find('.navigation').removeClass('collapsed');
 			$('#wrapper').find('.logo').removeClass('collapsed');
 			setTimeout(function() { $('#wrapper').find('.nav-collapse-hide').show(); }, 300);
-			
+
 
 		}
 
