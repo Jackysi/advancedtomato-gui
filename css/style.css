@@ -806,6 +806,15 @@ table .header {
 	cursor: pointer;
 }
 
+/* Multi-row editor default values. Should/can be overriden in every .asp page were a multirow editor field is used */
+.erow div[class^="x"] { margin-top:3px; float:left; display: inline-block; }
+.erow:first-child div[class^="x"] { margin-top:0px }
+
+.erow div[class^="x"]:first-child { clear: left; }
+
+.erow div.xa { width: 30%; padding: 0px 0px 0xp 2px; }
+.erow div.xb { width: 30%; padding-left: 5px; }
+
 /* Buttons design */
 .btn {
 	display: inline-block;
@@ -1675,7 +1684,7 @@ input[type=radio]:disabled + span:before {
 	animation: tomato-spinner 1s linear infinite;
 }
 
-/* Preloader */
+/* Preloader(s) */
 #nprogress { pointer-events: none; -webkit-pointer-events: none; }
 #nprogress .bar { 
 	background: #3498DB;
@@ -1698,10 +1707,10 @@ input[type=radio]:disabled + span:before {
 	100% { width: 100%; }
 }
 
-/* Responsive stuff */
-@-webkit-keyframes tomato-spinner { 0%   { -webkit-transform: rotate(0deg); }  100% { -webkit-transform: rotate(360deg); } }
-@keyframes tomato-spinner { 0%   { -webkit-transform: rotate(0deg); transform: rotate(0deg); }  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+@-webkit-keyframes tomato-spinner { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } }
+@keyframes tomato-spinner { 0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
 
+/* Responsive stuff */
 @media (max-width: 960px) {
 	#wrapper > .container {	padding: 5px 10px; }
 	.links ul li a { font-size: 0; }
