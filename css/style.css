@@ -1190,7 +1190,10 @@ input:disabled, select:disabled, textarea:disabled {
 	border: 1px solid #f0f0f0;
 }
 
-textarea { resize:vertical !important; }
+/* Some quick fixes */
+fieldset .help-block .btn { margin-top: 4px; }
+form { margin-bottom: 20px; }
+textarea { resize: vertical !important; }
 select, select option { cursor: pointer; }
 
 .c-checkbox,
@@ -1460,7 +1463,6 @@ input[type=radio]:disabled + span:before {
 /* Retina Ready Icons */
 [class*="icon-"] {
 	display: inline-block;
-	font-family: "advancedtomato" !important;
 	font-style: normal !important;
 	font-weight: normal !important;
 	font-variant: normal !important;
