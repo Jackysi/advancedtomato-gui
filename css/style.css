@@ -316,19 +316,17 @@ small { font-size: 80%; }
 	font-weight: 500;
 	padding: 10px 25px;
 	vertical-align: middle;
-	-webkit-transition: background 80ms ease, color 80ms ease;
-	        transition: background 80ms ease, color 80ms ease;
 }
 
 .navigation li a i {
-	font-size: 15px;
+	font-size: 16px;
 	margin-right: 7px;
 }
 
 .navigation li ul {
 	display: none;
 	margin: 0;
-	background: #2b323a;
+	background: #262c33;
 }
 
 /* Dropdown, or w/e */
@@ -367,21 +365,15 @@ small { font-size: 80%; }
 
 /* Hover & Active States */
 .navigation li ul li.active a:after { background-color: #3498DB; }
-.navigation .active > a { color: #fff; }
-.navigation li ul li.active > a { background: rgba(0,0,0,0.15); }
+.navigation .active > a { color: #e1e4e6; background-color: #262c33;  }
 .navigation > ul > li > a:hover {
-	color: #fff;
-	background: rgba(255,255,255,0.05);
-}
-
-.navigation .active > a > i,
-.navigation > ul > li > a:hover > i {
-	color: #3498DB;
+	color: #e1e4e6;
+	background: #2f363e;
 }
 
 .navigation li ul li a:hover {
-	color: #fff;
-	background: rgba(255,255,255,0.05);
+	color: #e1e4e6;
+	background: #2a3037;
 }
 
 /* Footer */
@@ -398,12 +390,15 @@ small { font-size: 80%; }
 	right: 0px;
 	min-height: 30px;
 	line-height: 1;
+	font-size: 13px;
 	padding: 10px;
+	color: #969ba0;
 	text-align: center;
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	background: #262c33;
 }
 
-.navigation .nav-footer i:before { font-size: 18px; top: -1px; left: -1px }
+.navigation .nav-footer i:before { font-size: 18px; top: -2px; left: -2px }
 
 /* Collapse Logo/Navigation and extend content */
 .top-header .logo.collapsed {
@@ -425,13 +420,14 @@ small { font-size: 80%; }
 }
 
 .navigation.collapsed li a i {
-	font-size:20px;
+	font-size: 20px;
 }
 
 .navigation.collapsed > ul > li > a {
 	text-align:center;
 	padding:14px 18px;
 	color: #919292;
+	background-color: transparent; 
 }
 
 .navigation.collapsed li:hover ul {
@@ -440,7 +436,6 @@ small { font-size: 80%; }
 }
 
 .navigation.collapsed li:hover > a {
-	color: #fff !important;
 	background: rgba(255,255,255,0.05);
 }
 
@@ -454,7 +449,7 @@ small { font-size: 80%; }
 	line-height: 40px;
 	width: 200px;
 	color: #FFF;
-	background: none repeat scroll 0 0 #2b323a;
+	background: none repeat scroll 0 0 #262c33;
 	z-index: 4;
 	padding: 0 20px;
 	border-top-right-radius: 3px;
@@ -483,9 +478,9 @@ small { font-size: 80%; }
 	width: 15px;
 }
 
-.navigation.collapsed .active > a > i,
-.navigation.collapsed > ul > li > a:hover > i {
-	color: #969ba0;
+.navigation.collapsed .active > a > i { color: #969ba0; }
+.navigation.collapsed > ul > li:hover > a > i {
+	color: #e1e4e6;
 }
 
 /* Content Design */
@@ -1155,7 +1150,6 @@ fieldset .text-block {
 	padding-top: 7px;
 }
 
-form { margin-bottom: 20px; }
 input, select, textarea {
 	color: #76838f;
 	padding: 6px 10px;
