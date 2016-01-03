@@ -1637,12 +1637,12 @@ input[type=radio]:disabled + span:before {
 
 /* Animate Page Loads & Changes */
 @-webkit-keyframes ajax-animation {
-	0%   { opacity: 0; filter: alpha(opacity=0); }
-	100% { opacity: 1; filter: alpha(opacity=100); }
+	from { opacity: 0; filter: alpha(opacity=0); }
+	to	 { opacity: 1; filter: alpha(opacity=100); }
 }
 @keyframes ajax-animation {
-	0%   { opacity: 0; filter: alpha(opacity=0); }
-	100% { opacity: 1; filter: alpha(opacity=100); }
+	from { opacity: 0; filter: alpha(opacity=0); }
+	to	 { opacity: 1; filter: alpha(opacity=100); }
 }
 
 .ajax-animation {
@@ -1699,16 +1699,16 @@ input[type=radio]:disabled + span:before {
 }
 
 @-webkit-keyframes nprogress-animation {
-	0%   { width: 20%; }
-	100% { width: 100%; }
+	from { width: 20%; }
+	to	 { width: 100%; }
 }
 @keyframes nprogress-animation {
-	0%   { width: 20%; }
-	100% { width: 100%; }
+	from { width: 20%; }
+	to   { width: 100%; }
 }
 
-@-webkit-keyframes tomato-spinner { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } }
-@keyframes tomato-spinner { 0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+@-webkit-keyframes tomato-spinner { from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); } }
+@keyframes tomato-spinner { from { -webkit-transform: rotate(0deg); transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
 
 /* Responsive stuff */
 @media (max-width: 960px) {
