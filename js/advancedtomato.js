@@ -28,62 +28,59 @@ function AdvancedTomato () {
 	$('.navigation > ul > li').each(function(key) {
 
 		if ($(this).hasClass('active')) {
+
 			$(this).find('ul').slideDown('350', 'easeInQuad');
+
 		} else {
+
 			$(this).find('ul').slideUp(350, 'easeOutBounce');
+
 		}
 
 	});
 
-	// First run, check hash for current page
-	if (window.location.hash.match(/#/)) { loadPage(window.location.hash); } else { loadPage('#status-home.asp'); }
 
-	// Bind for "back" state of browser
-	$(window).hashchange(function(e) {
-
-		// Prevent Missmatch on features page
-		((location.hash.replace('#', '') != '') ? loadPage(location.hash.replace('#', '')) : '');
-		return false;
-
-	});
-
-
-	/** Click handlers
-	 ************************************************************************************************/
-
+	/* Click handlers
+	************************************************************************************************/
 	// Navigation slides
-	$('.navigation:not(.collapsed) > ul > li > a').on('click', function() {
+	$('.navigation > ul > li > a').on('click', function() { 
 
-		if ($('.navigation').hasClass('collapsed')) { return; }
-		if ($(this).parent('li').hasClass('active')) { return false; }
+		if ($('.navigation').hasClass('collapsed')) { return; }				// Doesn't work in collapsed state
+		if ($(this).parent('li').hasClass('active')) { return false; }      // If already active, ignore click
 
 		$('.navigation > ul > li').removeClass('active').find('ul').slideUp('150');
 		$(this).parent('li').addClass('active');
-		$(this).closest('li').find('ul').slideDown('150');
+		$(this).closest('li').find('ul').slideDown('150'); 
 
-		return false;
+		return false; 
 	});
 
 	// Close click handler for updates
 	$('.ajaxwrap').on('click', '.alert .close', function() {
+
 		if ($(this).attr('data-update')) { cookie.set('latest-update', $(this).attr('data-update')); }
 		$(this).parent('.alert').slideUp();
+
 		return false;
 	});
 
 	// Handle ajax loading
 	$('.navigation li ul a, .header .links a[href!="#system"]').on('click', function(e) {
+
 		if ($(this).attr('target') != '_blank') {
+
 			loadPage($(this).attr('href'));
 			return false;
+
 		}
+
 	});
 
 	// Toggle Navigation
 	$('.toggle-nav').on('click', function() {
 
 		if (!$('.navigation').hasClass('collapsed')) {
-			
+
 			// Collapse the navigation
 			$('#wrapper').find('.container').css('margin-left', '60px');			// Move the content to the left
 			$('#wrapper').find('.navigation').addClass('collapsed');				// Hide the normal navigation >> animated
@@ -91,13 +88,13 @@ function AdvancedTomato () {
 			$('#wrapper').find('.nav-collapse-hide').hide();						// Hide the advanced tomato string
 
 		} else {
-			
+
 			// Show the normal navigation
 			$('#wrapper').find('.container').css('margin-left', '240px');
 			$('#wrapper').find('.navigation').removeClass('collapsed');
 			$('#wrapper').find('.logo').removeClass('collapsed');
 			setTimeout(function() { $('#wrapper').find('.nav-collapse-hide').show(); }, 300);
-			
+
 
 		}
 
@@ -105,8 +102,10 @@ function AdvancedTomato () {
 
 	// Handle Ajax Class Loading
 	$('.ajaxwrap').on('click', '.ajaxload', function(e) {
+
 		loadPage($(this).attr('href'));
 		return false;
+
 	});
 
 	// System Info box
@@ -125,8 +124,8 @@ function AdvancedTomato () {
 
 			// On open
 			$('.system-ui .datasystem').html('<div class="inner-container row"><div style="margin: 45px auto 35px; width: 26px; height:26px;" class="spinner"></div></div>').addClass('align center');
-			systemUI();
 			window.refTimer = setInterval(systemUI, 1600);
+			systemUI();
 
 			$(document).click(function() {$('#system-ui').removeClass('active'); $('.system-ui').fadeOut(250); clearInterval(window.refTimer); $(document).unbind('click'); });
 		}
@@ -135,8 +134,8 @@ function AdvancedTomato () {
 	});
 
 
-	/** Handle NVRAM global functions and notifications
-	 ************************************************************************************************/
+	/* Handle NVRAM global functions and notifications
+	************************************************************************************************/
 	if (typeof nvram == 'undefined') { return false; }
 
 	// Check for update
@@ -213,17 +212,62 @@ function systemUI () {
 
 	}).fail( function() { clearInterval(window.refTimer); });
 
-}
+};
+
+// Data boxes which allow showing / hiding box content, the behaviour happens here
+function databoxes() {
+
+	$('[data-box]').each(function() {
+
+		var id 		= $(this).attr('data-box');
+		var parent	= $(this);
+		var status	= (((hs_cook = cookie.get(id + '_visibility')) != null && (hs_cook != '1')) && $(this).is(':visible')) ? false : true;
+		var html	= $('<a class="pull-right" href="#" data-toggle="tooltip" title="Hide/Show"><i class="icon-chevron-' + ((status) ? 'down' : 'up') + '"></i></a>');
+
+		// Hide if hidden
+		if (status) { 
+
+			$(this).find('.content').show();
+
+		} else { // Set display property no matter the preference (fixes defaults)
+
+			$(this).find('.content').hide();
+
+		}
+
+		// Now click handler
+		$(html).on('click', function() {
+
+			if (status) {
+
+				$(parent).find('.content').stop(true, true).slideUp(700, 'easeOutBounce');
+				$(html).find('i').removeClass('icon-chevron-down').addClass('icon-chevron-up');
+				cookie.set(id + '_visibility', 0); status = false;
+
+			} else {
+
+				$(parent).find('.content').stop(true, true).slideDown(350, 'easeInQuad');
+				$(html).find('i').removeClass('icon-chevron-up').addClass('icon-chevron-down');
+				cookie.set(id + '_visibility', 1); status = true;
+
+			}
+
+			return false;
+
+		});
+
+		$(parent).find('.heading').prepend(html);
+
+	});
+
+};
 
 // Ajax Function to load pages
-function loadPage(page) {
+function loadPage( page, is_history ) {
 
 	// Since we use ajax, functions and timers stay in memory. Here we undefine & stop them to prevent issues with other pages.
-	if (typeof(ref) != 'undefined') {
-		ref.destroy();
-		ref=undefined; delete ref;
-		if ( typeof(wdog) != 'undefined' ) clearTimeout(wdog); // Stupid function that kills our refreshers!
-	}
+	if ( typeof( ref ) != 'undefined') { ref.destroy(); ref=undefined; delete ref; }
+	if ( typeof( wdog ) != 'undefined' ) { clearTimeout( wdog ); } // Stupid function that kills our refreshers!
 
 	// Some things that need to be done here =)
 	page = page.replace('#', '');
@@ -233,11 +277,10 @@ function loadPage(page) {
 	// Start page preloader
 	$('#nprogress').append('<div class="bar"></div>');
 
-	// Remove animation class from container, for reseting it
+	// Remove animation class from container, so we reset its anim count to 0
 	$('.container .ajaxwrap').removeClass('ajax-animation');
 
-
-	// Switch to JQUERY AJAX function call (doesn't capture all errors making it easier to debug)
+	// Switch to JQUERY AJAX function call (doesn't capture errors allowing much easier debugging)
 	$.ajax({
 
 		async: true,
@@ -275,59 +318,15 @@ function loadPage(page) {
 			// Loaded, clear state
 			window.ajaxLoadingState = false;
 
-			// Function that allows easy implementation of content hide/show on boxes
-			$('[data-box]').each(function() {
-
-				var id 		= $(this).attr('data-box');
-				var parent	= $(this);
-				var status	= (((hs_cook = cookie.get(id + '_visibility')) != null && (hs_cook != '1')) && $(this).is(':visible')) ? false : true;
-				var html	= $('<a class="pull-right" href="#" data-toggle="tooltip" title="Hide/Show"><i class="icon-chevron-' + ((status) ? 'down' : 'up') + '"></i></a>');
-
-				// Hide if hidden
-				if (status) { 
-
-					$(this).find('.content').show();
-
-				} else { // Set display property no matter the preference (fixes defaults)
-
-					$(this).find('.content').hide();
-
-				}
-
-				// Now click handler
-				$(html).on('click', function() {
-
-					if (status) {
-
-						$(parent).find('.content').stop(true, true).slideUp(700, 'easeOutBounce');
-						$(html).find('i').removeClass('icon-chevron-down').addClass('icon-chevron-up');
-						cookie.set(id + '_visibility', 0); status = false;
-
-					} else {
-
-						$(parent).find('.content').stop(true, true).slideDown(350, 'easeInQuad');
-						$(html).find('i').removeClass('icon-chevron-up').addClass('icon-chevron-down');
-						cookie.set(id + '_visibility', 1); status = true;
-
-					}
-
-					return false;
-
-				});
-
-				$(parent).find('.heading').prepend(html);
-
-			});
-
-			// Init Tooltips
-			$('[data-toggle="tooltip"]').tooltip({ placement: 'top auto' });
-
-			// Custom file inputs
-			$("input[type='file']").each(function() { $(this).customFileInput(); });
+			// Bind some functions, scripts etc... (Important: after every page change (ajax load))
+			$('[data-toggle="tooltip"]').tooltip({ placement: 'top auto' });			
+			$("input[type='file']").each(function() { $(this).customFileInput(); }); // Custom file inputs
+			databoxes();
 
 			// Stop & Remove Preloader
 			$('#nprogress').find('.bar').css({ 'animation': 'none' }).width('100%');
 			setTimeout(function() { $('#nprogress .bar').remove(); }, 150);
+			
 		}
 
 	}).fail( function( jqXHR, textStatus, errorThrown ) {
