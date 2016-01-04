@@ -14,6 +14,7 @@
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="tomato.js"></script>
 		<script type="text/javascript" src="js/advancedtomato.js"></script>
+		<script type="text/javascript" src="js/bootstrap/tooltips.js"></script>
 
 		<script type="text/javascript">
 

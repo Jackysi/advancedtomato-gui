@@ -20,7 +20,7 @@
 
 <div class="box">
 	<div class="heading">View Router Logs 
-		<a class="ajaxload pull-right" data-toggle="tooltip" title="Configure Logging" href="#admin-log.asp"><i class="icon-system"></i></a>
+		<a class="ajaxload pull-right" data-toggle="tooltip" data-container="body" title="Configure Logging" href="#admin-log.asp"><i class="icon-system"></i></a>
 	</div>
 	<div class="content">
 

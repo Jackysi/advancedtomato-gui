@@ -152,7 +152,7 @@ No part of this file may be used without permission.
 		</div>
 
 		<div class="box">
-			<div class="heading">Notes <a class="pull-right" data-toggle="tooltip" title="Hide/Show Notes" href="javascript:toggleVisibility('notes');"><span id="sesdivnotesshowhide"><i class="icon-chevron-up"></i></span></a></div>
+			<div class="heading">Notes <a class="pull-right" data-toggle="tooltip" data-container="body" title="Hide/Show Notes" href="javascript:toggleVisibility('notes');"><span id="sesdivnotesshowhide"><i class="icon-chevron-up"></i></span></a></div>
 			<div class="section content" id="sesdivnotes" style="display:none">
 
 				<i>DHCP / DNS Server (LAN):</i><br>

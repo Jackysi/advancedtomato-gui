@@ -297,7 +297,7 @@
 
 		<div class="box" id="ethernetPorts" data-box="home_ethports">
 			<div class="heading">Ethernet Ports State
-				<a class="ajaxload pull-right" data-toggle="tooltip" title="Configure Settings" href="#basic-network.asp"><i class="icon-system"></i></a>
+				<a class="ajaxload pull-right" data-toggle="tooltip" data-container="body" title="Configure Settings" href="#basic-network.asp"><i class="icon-system"></i></a>
 			</div>
 			<div class="content" id="sesdiv_lan-ports"></div>
 		</div>
