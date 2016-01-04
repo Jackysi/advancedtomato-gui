@@ -1,9 +1,23 @@
 // Bind Navi etc.
 function AdvancedTomato () {
 
-	/** Misc functions, calls, binds
-	 ************************************************************************************************/
+	/* First handle page loading, hash change events and other most important tasks
+	************************************************************************************************/
+	// Initial Page load, determine what to load
+	if ( window.location.hash.match(/#/) ) { loadPage( window.location.hash ); } else { loadPage( '#status-home.asp' ); }
 
+	// Bind "Hash Change" - Happens when hash in the "URL" changes (http://site.com/#hash-bind)
+	$(window).hashchange(function(e) {
+
+		// Prevent Missmatch on features page
+		( (location.hash.replace( '#', '' ) != '' ) ? loadPage( location.hash.replace( '#', '' ), true ) : '' );
+		return false;
+
+	});
+
+
+	/* Misc functions, calls, binds
+	************************************************************************************************/
 	// Call navi function in tomato.js to generate navigation
 	navi();
 
@@ -241,14 +255,13 @@ function loadPage(page) {
 				return false;
 			}
 
+			// Set page title, current page title and animate page switch
 			$('title').text(window.routerName + title);
 			$('h2.currentpage').text(title);
 			$('.container .ajaxwrap').html(html).addClass('ajax-animation');
 
-			// Push History
-			if (history.pushState) { // Fix issue with IE9 or bellow
-				window.history.pushState({"html":null,"pageTitle": window.routerName + title }, '#'+page, '#'+page);
-			}
+			// Push History (First check if using IE9 or not)
+			if ( history.pushState && is_history !== true ) { history.pushState({ "html": html, "pageTitle": window.routerName + title }, window.routerName + title, '#' + page ); }
 
 			// Go back to top
 			$('.container').scrollTop(0);
