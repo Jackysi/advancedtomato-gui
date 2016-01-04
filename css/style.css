@@ -1,4 +1,5 @@
-/* Fonts */
+/* Declare fonts
+*******************************************************************************************************/
 @font-face {
 	font-family: 'Roboto';
 	src: local('Roboto Medium'), local('Roboto-Medium'), url('fonts/Roboto-Medium-webfont.woff') format('woff');
@@ -25,7 +26,8 @@
 
 }
 
-/* CSS */
+/* General CSS
+*******************************************************************************************************/
 html { font-size: 62.5%; }
 body {
 	font-size: 10pt;
@@ -94,7 +96,8 @@ small { font-size: 80%; }
 .span10 { width: 100% !important; }
 
 
-/* Header Design */
+/* Header Design
+*******************************************************************************************************/
 .top-header {
 	display: block;
 	height: 60px;
@@ -208,7 +211,8 @@ small { font-size: 80%; }
 }
 
 
-/* System UI dropdown */
+/* System Info Box
+*******************************************************************************************************/
 .system-ui {
 	display: block;
 	position: absolute;
@@ -274,7 +278,9 @@ small { font-size: 80%; }
 	width: 245px;
 }
 
-/* Navigation */
+
+/* Navigation
+*******************************************************************************************************/
 .navigation {
 	display: block;
 	position: fixed;
@@ -483,7 +489,9 @@ small { font-size: 80%; }
 	color: #e1e4e6;
 }
 
-/* Content Design */
+
+/* Content Design
+*******************************************************************************************************/
 #wrapper > .container {
 	display: block;
 	position: absolute;
@@ -638,7 +646,9 @@ small { font-size: 80%; }
 	margin: 8px 0;
 }
 
-/* Dropdowns (here because of header) */
+
+/* Dropdowns (not in use currently) 
+*******************************************************************************************************/
 ul.dropdowns { list-style: none; }
 ul.dropdowns > li { position: relative; display: inline-block; }
 ul.dropdowns > li ul { display: none; position: absolute; left: -10px; z-index: 40; width: 200px; background: #fff; border-radius: 2px; overflow-y: hidden; overflow-x: auto; }
@@ -648,7 +658,9 @@ ul.dropdowns > li ul li a { display: block; padding: 5px 10px; }
 .dropdowns li:hover > ul { display: block; }
 .dropdowns li ul a:hover { background: #f0f0f0; }
 
-/* Style Tables */
+
+/* Table design
+*******************************************************************************************************/
 table {
 	position: relative;
 	display: table;
@@ -810,7 +822,9 @@ table .header {
 .erow div.xa { width: 30%; padding: 0px 0px 0xp 2px; }
 .erow div.xb { width: 30%; padding-left: 5px; }
 
-/* Buttons design */
+
+/* Buttons (using same prefix as bootstrap)
+*******************************************************************************************************/
 .btn {
 	display: inline-block;
 	text-align: center;
@@ -940,7 +954,9 @@ button.btn { height: 34px; font-family: "Roboto"; font-weight: 400 !important; v
 	border-bottom-right-radius: 3px;
 }
 
-/* Alert Boxes */
+
+/* Alerts
+*******************************************************************************************************/
 .alert {
 	position: relative;
 	color: #96904D;
@@ -1016,7 +1032,9 @@ a.close:hover { opacity: 1; filter: alpha(opacity=100); }
 
 #footer-msg { vertical-align: middle; padding: 10px 40px 10px 15px; min-height: 35px; }
 
-/* Progress Bars */
+
+/* Progress Bars
+*******************************************************************************************************/
 .progress {
 	vertical-align: middle;
 	display: block;
@@ -1092,7 +1110,9 @@ ul.nav-tabs li a i {
 	margin-right: 2px;
 }
 
-/* Forms etc */
+
+/* form, label, input, textarea, etc...
+*******************************************************************************************************/
 label {
 	display: inline-block;
 	color: #656565;
@@ -1306,6 +1326,7 @@ input[type=radio]:disabled + span:before {
 	color: #dddddd;
 }
 
+
 /* Input appends */
 .input-append { 
 	line-height: 0px;
@@ -1401,7 +1422,9 @@ input[type=radio]:disabled + span:before {
 	background: #60b7f4;
 }
 
-/* New Ethernet States */
+
+/* New Ethernet States 
+*******************************************************************************************************/
 #ethPorts {
 	position: relative;
 	display: table;
@@ -1454,7 +1477,8 @@ input[type=radio]:disabled + span:before {
 }
 
 
-/* Retina Ready Icons */
+/* Font Icons (for High Density displays (High DPI))
+*******************************************************************************************************/
 [class*="icon-"] {
 	display: inline-block;
 	font-style: normal !important;
@@ -1631,6 +1655,9 @@ input[type=radio]:disabled + span:before {
 	margin: 0 10px;
 }
 
+
+/* Animations, Keyframes and Preloaders
+*******************************************************************************************************/
 /* Animate Page Loads & Changes */
 @-webkit-keyframes ajax-animation {
 	from { opacity: 0; filter: alpha(opacity=0); }
@@ -1680,7 +1707,7 @@ input[type=radio]:disabled + span:before {
 	animation: tomato-spinner 1s linear infinite;
 }
 
-/* Preloader(s) */
+/* More Preloader(s) */
 #nprogress { pointer-events: none; -webkit-pointer-events: none; }
 #nprogress .bar { 
 	background: #3498DB;
@@ -1706,7 +1733,9 @@ input[type=radio]:disabled + span:before {
 @-webkit-keyframes tomato-spinner { from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); } }
 @keyframes tomato-spinner { from { -webkit-transform: rotate(0deg); transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
 
-/* Responsive stuff */
+
+/* Responsive code (Adapt to screen size)
+*******************************************************************************************************/
 @media (max-width: 960px) {
 	#wrapper > .container {	padding: 5px 10px; }
 	.links ul li a { font-size: 0; }
