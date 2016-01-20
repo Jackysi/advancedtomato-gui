@@ -319,7 +319,7 @@ function loadPage( page, is_history ) {
 			window.ajaxLoadingState = false;
 
 			// Bind some functions, scripts etc... (Important: after every page change (ajax load))
-			$('[data-toggle="tooltip"]').tooltip({ placement: 'top auto' });			
+			$('[data-toggle="tooltip"]').tooltip({ placement: 'top auto', container: 'body' });			
 			$("input[type='file']").each(function() { $(this).customFileInput(); }); // Custom file inputs
 			databoxes();
 

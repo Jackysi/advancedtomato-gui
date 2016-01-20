@@ -1724,14 +1724,8 @@ input[type=radio]:disabled + span:before {
 	animation: nprogress-animation 5s linear 1;
 }
 
-@-webkit-keyframes nprogress-animation {
-	from { width: 20%; }
-	to { width: 100%; }
-}
-@keyframes nprogress-animation {
-	from { width: 20%; }
-	to { width: 100%; }
-}
+@-webkit-keyframes nprogress-animation { from { width: 15%; } to { width: 100%; } }
+@keyframes nprogress-animation { from { width: 15%; } to { width: 100%; } }
 
 @-webkit-keyframes tomato-spinner { from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); } }
 @keyframes tomato-spinner { from { -webkit-transform: rotate(0deg); transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
