@@ -16,11 +16,11 @@
 
 @font-face {
 	font-family: "advancedtomato";
-	src:url("fonts/advancedtomato.eot");
+	src: url("fonts/advancedtomato.svg#advancedtomato") format("svg");
 	src:url("fonts/advancedtomato.eot?#iefix") format("embedded-opentype"),
 		url("fonts/advancedtomato.woff") format("woff"),
 		url("fonts/advancedtomato.ttf") format("truetype"),
-		url("fonts/advancedtomato.svg#advancedtomato") format("svg");
+		url("fonts/advancedtomato.eot");
 	font-weight: normal;
 	font-style: normal;
 
@@ -28,7 +28,7 @@
 
 /* General CSS
 *******************************************************************************************************/
-html { font-size: 62.5%; }
+html { font-size: 62.5%; -webkit-font-smoothing: antialiased; }
 body {
 	font-size: 10pt;
 	font-family: "Roboto", sans-serif;

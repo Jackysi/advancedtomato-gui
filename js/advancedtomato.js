@@ -1,4 +1,4 @@
-// Bind Navi etc.
+// Bind Navigation etc.
 function AdvancedTomato () {
 
 	/* First handle page loading, hash change events and other most important tasks
@@ -9,7 +9,7 @@ function AdvancedTomato () {
 	// Bind "Hash Change" - Happens when hash in the "URL" changes (http://site.com/#hash-bind)
 	$(window).bind( 'hashchange', function() {
 
-		// Prevent Missmatch on features page
+		// Prevent Mismatch on features page
 		( (location.hash.replace( '#', '' ) != '' ) ? loadPage( location.hash.replace( '#', '' ), true ) : '' );
 		return false;
 
@@ -18,10 +18,10 @@ function AdvancedTomato () {
 
 	/* Misc functions, calls, binds
 	************************************************************************************************/
-	// Call navi function in tomato.js to generate navigation
+	// Call navigation function in tomato.js to generate navigation
 	navi();
 
-	// Create preloader
+	// Create pre-loader
 	$('#wrapper').prepend('<div id="nprogress"></div>');
 
 	// Find current active link
@@ -215,7 +215,7 @@ function systemUI () {
 };
 
 // Data boxes which allow showing / hiding box content, the behaviour happens here
-function databoxes() {
+function data_boxes() {
 
 	$('[data-box]').each(function() {
 
@@ -274,7 +274,7 @@ function loadPage( page, is_history ) {
 	if (page == 'status-home.asp' || page == '/' || page == null) { page = 'status-home.asp'; }
 	if (window.ajaxLoadingState) { return false; } else { window.ajaxLoadingState = true; }
 
-	// Start page preloader
+	// Start page pre-loader
 	$('#nprogress').append('<div class="bar"></div>');
 
 	// Remove animation class from container, so we reset its anim count to 0
@@ -321,9 +321,9 @@ function loadPage( page, is_history ) {
 			// Bind some functions, scripts etc... (Important: after every page change (ajax load))
 			$('[data-toggle="tooltip"]').tooltip({ placement: 'top auto', container: 'body' });			
 			$("input[type='file']").each(function() { $(this).customFileInput(); }); // Custom file inputs
-			databoxes();
+			data_boxes();
 
-			// Stop & Remove Preloader
+			// Stop & Remove Pre-loader
 			$('#nprogress').find('.bar').css({ 'animation': 'none' }).width('100%');
 			setTimeout(function() { $('#nprogress .bar').remove(); }, 150);
 			
