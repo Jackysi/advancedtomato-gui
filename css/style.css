@@ -1448,7 +1448,7 @@ input[type=radio]:disabled + span:before {
 	position: absolute;
 	display: block;
 	width: 64px;
-	bottom: 10px;
+	bottom: 8px;
 	text-align: center;
 }
 
