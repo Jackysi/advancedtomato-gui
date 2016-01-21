@@ -302,15 +302,40 @@
 			<div class="content" id="sesdiv_lan-ports"></div>
 		</div>
 
+
 		<div class="box" id="LAN-settings" data-box="home_lanbox">
 			<div class="heading">LAN </div>
 			<div class="content" id="sesdiv_lan">
 				<script type="text/javascript">
 
-					/* VLAN-BEGIN */
+					function h_countbitsfromleft(num) {
+						if (num == 255 ){
+							return(8);
+						}
+						var i = 0;
+						var bitpat=0xff00; 
+						while (i < 8){
+							if (num == (bitpat & 0xff)){
+								return(i);
+							}
+							bitpat=bitpat >> 1;
+							i++;
+						}
+						return(Number.NaN);
+					}
+
+					function numberOfBitsOnNetMask(netmask) {
+						var total = 0;
+						var t = netmask.split('.');
+						for (var i = 0; i<= 3 ; i++) {
+							total += h_countbitsfromleft(t[i]);
+						}
+						return total;
+					}
+
 					var s='';
 					var t='';
-					for (var i = 0 ; i <= MAX_BRIDGE_ID; i++) {
+					for (var i = 0 ; i <= MAX_BRIDGE_ID ; i++) {
 						var j = (i == 0) ? '' : i.toString();
 						if (nvram['lan' + j + '_ifname'].length > 0) {
 							if (nvram['lan' + j + '_proto'] == 'dhcp') {
@@ -319,44 +344,21 @@
 									nvram['dhcpd' + j + '_startip'] = x + nvram['dhcp' + j + '_start'];
 									nvram['dhcpd' + j + '_endip'] = x + ((nvram['dhcp' + j + '_start'] * 1) + (nvram['dhcp' + j + '_num'] * 1) - 1);
 								}
-								s += ((s.length>0)&&(s.charAt(s.length-1) != ' ')) ? ', ' : '';
-								s += '<a class="ajaxload" href="#status-devices.asp">' + nvram['dhcpd' + j + '_startip'] + ' - ' + nvram['dhcpd' + j + '_endip'] + '</a> on LAN' + j + ' (br' + i + ')';
+								s += ((s.length>0)&&(s.charAt(s.length-1) != ' ')) ? '<br>' : '';
+								s += '<b>br' + i + '</b> (LAN' + j + ') - ' + nvram['dhcpd' + j + '_startip'] + ' - ' + nvram['dhcpd' + j + '_endip'];
 							} else {
-								s += ((s.length>0)&&(s.charAt(s.length-1) != ' ')) ? ', ' : '';
-								s += 'Disabled on LAN' + j + ' (br' + i + ')';
+								s += ((s.length>0)&&(s.charAt(s.length-1) != ' ')) ? '<br>' : '';
+								s += '<b>br' + i + '</b> (LAN' + j + ') - Disabled';
 							}
-							t += ((t.length>0)&&(t.charAt(t.length-1) != ' ')) ? ', ' : '';
-							t += nvram['lan' + j + '_ipaddr'] + '/' + numberOfBitsOnNetMask(nvram['lan' + j + '_netmask']) + ' on LAN' + j + ' (br' + i + ')';
+							t += ((t.length>0)&&(t.charAt(t.length-1) != ' ')) ? '<br>' : '';
+							t += '<b>br' + i + '</b> (LAN' + j + ') - ' + nvram['lan' + j + '_ipaddr'] + '/' + numberOfBitsOnNetMask(nvram['lan' + j + '_netmask']);
+
 						}
 					}
 
-					createFieldTable('', [
-						{ title: 'Gateway', text: nvram.lan_gateway, ignore: nvram.wan_proto != 'disabled' },
-						/* IPV6-BEGIN */
-						{ title: 'Router IPv6 Address', rid: 'ip6_lan', text: stats.ip6_lan, ignore: stats.ip6_lan == '' },
-						{ title: 'IPv6 Link-local Address', rid: 'ip6_lan_ll', text: stats.ip6_lan_ll, ignore: stats.ip6_lan_ll == '' },
-						/* IPV6-END */
-						{ title: 'DNS', rid: 'dns', text: stats.dns, ignore: nvram.wan_proto != 'disabled' },
-						{ title: 'DHCP', text: s }
-						], '#sesdiv_lan', 'data-table dataonly');
-					/* VLAN-END */
-
-					/* NOVLAN-BEGIN */
-					if (nvram.lan_proto == 'dhcp') {
-						if ((!fixIP(nvram.dhcpd_startip)) || (!fixIP(nvram.dhcpd_endip))) {
-							var x = nvram.lan_ipaddr.split('.').splice(0, 3).join('.') + '.';
-							nvram.dhcpd_startip = x + nvram.dhcp_start;
-							nvram.dhcpd_endip = x + ((nvram.dhcp_start * 1) + (nvram.dhcp_num * 1) - 1);
-						}
-						s = '<a class="ajaxload" href="#status-devices.asp">' + nvram.dhcpd_startip + ' - ' + nvram.dhcpd_endip + '</a>';
-					}
-					else {
-						s = 'Disabled';
-					}
 					createFieldTable('', [
 						{ title: 'Router MAC Address', text: nvram.et0macaddr },
-						{ title: 'Router IP Address', text: nvram.lan_ipaddr },
-						{ title: 'Subnet Mask', text: nvram.lan_netmask },
+						{ title: 'Router IP Addresses', text: t },
 						{ title: 'Gateway', text: nvram.lan_gateway, ignore: nvram.wan_proto != 'disabled' },
 						/* IPV6-BEGIN */
 						{ title: 'Router IPv6 Address', rid: 'ip6_lan', text: stats.ip6_lan, hidden: (stats.ip6_lan == '') },
@@ -364,8 +366,7 @@
 						/* IPV6-END */
 						{ title: 'DNS', rid: 'dns', text: stats.dns, ignore: nvram.wan_proto != 'disabled' },
 						{ title: 'DHCP', text: s }
-						], '#sesdiv_lan', 'data-table dataonly');
-					/* NOVLAN-END */
+						], '#sesdiv_lan', 'data-table dataonly' );
 
 				</script>
 			</div>
