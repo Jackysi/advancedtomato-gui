@@ -1208,7 +1208,7 @@ input:disabled, select:disabled, textarea:disabled {
 }
 
 /* Some quick fixes */
-fieldset .help-block .btn { margin-top: 4px; }
+fieldset .help-block .btn { margin-top: 1px; }
 form { margin-bottom: 20px; }
 textarea { resize: vertical !important; }
 select, select option { cursor: pointer; }
