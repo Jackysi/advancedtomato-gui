@@ -62,6 +62,20 @@ else
 	done
 endif
 
+#only include  MultiWAN options if MULTIWAN is configured in.
+ifneq ($(TCONFIG_MULTIWAN),y)
+	cd $(INSTALLDIR)/www && \
+	for F in $(wildcard *.asp *.js *.jsx); do \
+		sed -i $$F -e "/MULTIWAN-BEGIN/,/MULTIWAN-END/d"; \
+	done
+# or remove dualwan options
+else
+	cd $(INSTALLDIR)/www && \
+	for F in $(wildcard *.asp *.js *.jsx); do \
+		sed -i $$F -e "/DUALWAN-BEGIN/,/DUALWAN-END/d"; \
+	done
+endif
+
 # Only include the CIFS pages if CIFS is configured in.
 ifneq ($(TCONFIG_CIFS),y)
 	rm -f $(INSTALLDIR)/www/admin-cifs.asp
@@ -331,7 +345,8 @@ endif
 		-e "/DNSSEC-BEGIN/d"	-e "/DNSSEC-END/d"\
 		-e "/TOR-BEGIN/d"	-e "/TOR-END/d"\
 		-e "/TINC-BEGIN/d"	-e "/TINC-END/d"\
-		-e "/MICROSD-BEGIN/d" -e "/MICROSD-END/d"\
+		-e "/MULTIWAN-BEGIN/d"	-e "/MULTIWAN-END/d"\
+		-e "/DUALWAN-BEGIN/d"	-e "/DUALWAN-END/d"\
 		|| true; \
 	done
 
@@ -351,23 +366,25 @@ endif
 		|| true; \
 	done
 
-# Copy YUI Compressor into WWW directory
-	cp tools/yuicompressor-2.4.8.jar $(INSTALLDIR)/www
-		
-# Compress JAVASCRIPT files
-	cd $(INSTALLDIR)/www && \
-	for F in $(wildcard js/*.js *.js ); do \
-		[ -f $(INSTALLDIR)/www/$$F ] && java -jar yuicompressor-2.4.8.jar --type js -v -o $$F $$F || true; \
-	done 
+# Prepare yuicompressor (will be removed from installdir after execution)
+# Yuicompressor dowloaded from: https://github.com/yui/yuicompressor/releases
+		cp tools/yuicompressor-2.4.8.jar $(INSTALLDIR)/www
 
-# Compress CSS files
-	cd $(INSTALLDIR)/www && \
-	for F in $(wildcard css/*.css *.css ); do \
+# Compress installed javascript with yui-compressor
+# TODO: jsx files have nvram actions, these are removed with yui-compressor, so these files are excluded!
+		cd $(INSTALLDIR)/www && \
+		for F in $(wildcard js/*.js *.js ); do \
+			[ -f $(INSTALLDIR)/www/$$F ] && java -jar yuicompressor-2.4.8.jar --type js -v -o $$F $$F || true; \
+		done 
+
+# Compress css with yui-compressor
+		cd $(INSTALLDIR)/www && \
+		for F in $(wildcard css/*.css *.css ); do \
 			[ -f $(INSTALLDIR)/www/$$F ] && java -jar yuicompressor-2.4.8.jar --type css -v -o $$F $$F || true; \
-	done 
+		done 
 
 # Remove yuicompressor
-	rm 	$(INSTALLDIR)/www/yuicompressor-2.4.8.jar
+		rm 	$(INSTALLDIR)/www/yuicompressor-2.4.8.jar
 
 # make sure old and debugging crap is gone
 	@rm -f $(INSTALLDIR)/www/debug.js
