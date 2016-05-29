@@ -79,7 +79,7 @@
 				</a>
 
 				<div class="left-container">
-					<a data-toggle="tooltip" title="Toggle Collapsed Navigation" href="#" class="toggle-nav"><i class="icon-align-left"></i></a>
+					<a title="Toggle Collapsed Navigation" href="#" class="toggle-nav"><i class="icon-align-left"></i></a>
 				</div>
 
 				<div class="pull-right links">
