@@ -28,7 +28,7 @@
 
 /* General CSS
 *******************************************************************************************************/
-html { font-size: 62.5%; -webkit-font-smoothing: antialiased; }
+html { font-size: 62.5%; }
 body {
 	font-size: 10pt;
 	font-family: "Roboto", sans-serif;
@@ -408,11 +408,11 @@ small { font-size: 80%; }
 .navigation .nav-footer i:before { font-size: 18px; top: -2px; left: -2px }
 
 /* Collapse Logo/Navigation and extend content */
-.top-header .logo.collapsed {
+.top-header.collapsed .logo {
 	width:60px;
 }
 
-.top-header .logo.collapsed svg {
+.top-header.collapsed .logo svg {
 	margin:15px 0 0;
 	display: inline-block;
 }
@@ -505,7 +505,6 @@ small { font-size: 80%; }
 	overflow-y: auto;
 	overflow-x: visible;
 	z-index: 1;
-	min-width: 720px;
 	margin-left: 240px;
 	transition: margin 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550) 150ms;
 	-webkit-transition: margin 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550) 150ms;
@@ -646,6 +645,10 @@ small { font-size: 80%; }
 	padding: 0;
 	margin: 8px 0;
 }
+
+/* Collapsed Navigation, also content */
+#wrapper > .container.collapsed { margin-left: 60px; }
+#wrapper > .container .ajaxwrap { min-width: 720px; }
 
 
 /* Dropdowns (not in use currently) 
@@ -1742,6 +1745,7 @@ input[type=radio]:disabled + span:before {
 	.system-ui:before, .system-ui:after { display: none; }
 }
 
+/* Grids */
 @media (min-width: 1200px) {
 	.fluid-grid {
 		-moz-column-count: 2;
@@ -1776,10 +1780,19 @@ input[type=radio]:disabled + span:before {
 	}
 }
 
+/* Navigation */
 @media (max-height: 990px) {
 	.navigation.collapsed li:hover ul {
 		max-height: 240px;
 		overflow-x: hidden;
 		overflow-y: auto;
 	}
+}
+
+@media (max-width: 768px) {
+	.top-header .links { visibility: hidden; opacity: 0; transition: all 200ms ease-out; }
+	.top-header.collapsed .links { visibility: visible; opacity: 1; transition-delay: 350ms; }
+	.top-header.collapsed .logo { width: 0; }
+	.navigation.collapsed { width: 0; overflow: hidden; }
+	#wrapper > .container.collapsed, #wrapper > .container { margin-left: 0; }
 }
