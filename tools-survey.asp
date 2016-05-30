@@ -314,7 +314,7 @@ No part of this file may be used without permission.
 
 	<div id="survey-controls">
 		<div class="spinner"></div>
-		<button type="button" value="Refresh" onclick="ref.toggle();" id="refresh-button" class="btn">Refresh <i class="icon-reboot"></i></button>
+		<button type="button" value="Refresh" onclick="ref.toggle();" id="refresh-button" class="btn">Refresh <i class="icon-refresh"></i></button>
 	</div>
 
 	<div class="clearfix"></div><br />

@@ -2152,7 +2152,7 @@ TomatoRefresh.prototype = {
 
 		b = (mode != 'stop') && (this.refreshTime > 0);
 		if ((e = E('refresh-button')) != null) {
-			e.innerHTML = b ? 'Stop' : 'Refresh';
+			e.innerHTML = b ? 'Stop <i class="icon-cancel"></i>' : 'Refresh <i class="icon-refresh"></i>';
 			e.disabled = ((mode == 'start') && (!b));
 		}
 		if ((e = E('refresh-time')) != null) e.disabled = b;
@@ -2224,7 +2224,7 @@ function genStdRefresh(spin, min, exec)
 	var html = '<div class="tomato-refresh form-inline input-append">';
 	if (spin) html += '<div class="spinner spinner-small"></div>';
 	html += genStdTimeList('refresh-time', 'Auto Refresh', min);
-	html += '<button value="Refresh" onclick="' + (exec ? exec : 'refreshClick()') + '; return false;" id="refresh-button" class="btn">Refresh <i class="icon-reboot"></i></button></div>';
+	html += '<button value="Refresh" onclick="' + (exec ? exec : 'refreshClick()') + '; return false;" id="refresh-button" class="btn">Refresh <i class="icon-refresh"></i></button></div>';
 	return html;
 }
 

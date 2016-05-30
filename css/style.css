@@ -1007,7 +1007,7 @@ a.close:hover { opacity: 1; filter: alpha(opacity=100); }
 /* Warning */
 .alert.alert-warning { background-color: #F6F3D5; color: #96904D; }
 .alert.alert-warning * { color: #96904D; }
-.alert.icon.alert-warning:after { content: "\e01e"; }
+.alert.icon.alert-warning:after { content: "\e00b"; }
 
 /* ERROR */
 .alert.alert-error { background-color: #F1D7D7; color: #A95252; }
@@ -1260,9 +1260,9 @@ select, select option { cursor: pointer; }
 	font-size: 12px;
 	line-height: 20px;
 	vertical-align: middle;
-	-ms-transform: scale(1.5);
-	transform: scale(1.5);
-	-webkit-transform: scale(1.5);
+	-ms-transform: scale(0);
+	transform: scale(0);
+	-webkit-transform: scale(0);
 	transition: all 250ms ease;
 	-webkit-transition: all 250ms ease;
 }
@@ -1614,12 +1614,6 @@ input[type=radio]:disabled + span:before {
 .icon-arrow-down:before {
     content: "\e012";
 }
-.icon-signal:before {
-    content: "\e00c";
-}
-.icon-warning:before {
-    content: "\e01e";
-}
 .icon-graphs:before {
     content: "\e00f";
 }
@@ -1674,8 +1668,14 @@ input[type=radio]:disabled + span:before {
 .icon-power:before {
     content: "\e004";
 }
+.icon-refresh:before {
+    content: "\e5d5";
+}
 .icon-minus:before {
     content: "\e019";
+}
+.icon-warning:before {
+    content: "\e00b";
 }
 .icon-search:before {
     content: "\e010";
@@ -1688,6 +1688,9 @@ input[type=radio]:disabled + span:before {
 }
 .icon-system:before {
     content: "\e01c";
+}
+.icon-signal:before {
+    content: "\e63e";
 }
 .icon-chevron-down:before {
     content: "\e003";
