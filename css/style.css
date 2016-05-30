@@ -1435,7 +1435,7 @@ input[type=radio]:disabled + span:before {
 }
 
 #ethPorts .eth {
-	display:table-cell;
+	display: table-cell;
 	z-index: 15;
 	width: auto;
 	padding: 0 10px;
