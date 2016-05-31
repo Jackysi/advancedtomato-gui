@@ -40,7 +40,7 @@
 		var cmd = null;
 		var cmdresult = '';
 
-		tabs = [['config', 'Config'],['hosts', 'Hosts'],['scripts', 'Scripts'],['keys', 'Generate Keys'],['status', 'Status']];
+		tabs = [['config', '<i class="icon-system"></i> Config'],['hosts', '<i class="icon-globe"></i> Hosts'],['scripts', '<i class="icon-hammer"></i> Scripts'],['keys', '<i class="icon-lock"></i> Generate Keys'],['status', '<i class="icon-info"></i> Status']];
 		changed = 0;
 		tincup = parseInt ('<% psup("tincd"); %>');
 
