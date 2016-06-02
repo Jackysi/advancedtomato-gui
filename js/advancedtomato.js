@@ -174,7 +174,7 @@ function AdvancedTomato() {
 	// Check for Navigation State NVRAM value
 	if ( typeof nvram.at_navi !== 'undefined' ) {
 
-		if ( nvram.at_navi == 'collapsed' ) {
+		if ( nvram.at_navi == 'collapsed' || $(window).width() <= 768 ) {
 
 			$( '#wrapper' ).find( '.container, .top-header, .navigation' ).addClass( 'collapsed' );
 			$( '#wrapper' ).find( '.nav-collapse-hide' ).hide();
@@ -264,14 +264,14 @@ function data_boxes() {
 // Ajax Function to load pages
 function loadPage( page, is_history ) {
 
-	// Since we use ajax, functions and timers stay in memory. Here we undefine & stop them to prevent issues with other pages.
-	if ( typeof( ref ) != 'undefined') { ref.destroy(); ref=undefined; delete ref; }
-	if ( typeof( wdog ) != 'undefined' ) { clearTimeout( wdog ); } // Stupid function that kills our refreshers!
-
 	// Some things that need to be done here =)
 	page = page.replace( '#', '' );
 	if ( page == 'status-home.asp' || page == '/' || page == null ) { page = 'status-home.asp'; }
 	if ( window.ajaxLoadingState ) { return false; } else { window.ajaxLoadingState = true; }
+
+	// Since we use ajax, functions and timers stay in memory/cache. Here we undefine & stop them to prevent issues with other pages.
+	if ( typeof( ref ) != 'undefined') { ref.destroy(); ref=undefined; delete ref; }
+	if ( typeof( wdog ) != 'undefined' ) { clearTimeout( wdog ); } // Delayed function that kills our refreshers!
 
 	// Start page pre-loader
 	$( '#nprogress' ).append( '<div class="bar"></div>' );
@@ -279,54 +279,65 @@ function loadPage( page, is_history ) {
 	// Remove animation class from container, so we reset its anim count to 0
 	$( '.container .ajaxwrap' ).removeClass( 'ajax-animation' );
 
+
 	// Switch to JQUERY AJAX function call (doesn't capture errors allowing much easier debugging)
 	$.ajax({
 
-	   async  : true,
-	   url    : page,
-	   cache  : false,
-	   success: function( resp ) {
+        url    : page,
+        async  : true,
+        cache  : false,
+        success: function( resp ) {
 
-	       var dom   = $( resp );
-	       var title = dom.filter( 'title' ).text();
-	       var html  = dom.filter( 'content' ).html();
+	        var dom   = $( resp );
+	        var title = dom.filter( 'title' ).text();
+	        var html  = dom.filter( 'content' ).html();
 
-	       // Handle pages without title or content as normal (NO AJAX)
-	       if ( title == null || html == null ) {
-		       window.parent.location.href = page;
-		       return false;
-	       }
+	        // Handle pages without title or content as normal (NO AJAX)
+	        if ( title == null || html == null ) {
+		        window.parent.location.href = page;
+		        return false;
+	        }
 
-	       // Set page title, current page title and animate page switch
-	       $( 'title' ).text( window.routerName + title );
-	       $( 'h2.currentpage' ).text( title );
-	       $( '.container .ajaxwrap' ).html( html ).addClass( 'ajax-animation' );
+	        // Set page title, current page title and animate page switch
+	        $( 'title' ).text( window.routerName + title );
+	        $( 'h2.currentpage' ).text( title );
+	        $( '.container .ajaxwrap' ).html( html ).addClass( 'ajax-animation' );
 
-	       // Push History (First check if using IE9 or not)
-	       if ( history.pushState && is_history !== true ) { history.pushState( { "html": html, "pageTitle": window.routerName + title }, window.routerName + title, '#' + page ); }
+	        // Push History (First check if using IE9 or not)
+	        if ( history.pushState && is_history !== true ) {
 
-	       // Go back to top
-	       $( '.container' ).scrollTop( 0 );
+		        history.pushState(
+			        {
+				        "html"     : html,
+				        "pageTitle": window.routerName + title
+			        },
+			        window.routerName + title, '#' + page
+		        );
 
-	       // Handle Navigation
-	       $( '.navigation li ul li' ).removeClass( 'active' ); // Reset all
+	        }
 
-	       var naviLinks = $( ".navigation a[href='#" + page + "']" );
-	       $( naviLinks ).parent( 'li' ).addClass( 'active' );
+	        // Go back to top
+	        $( '.container' ).scrollTop( 0 );
 
-	       // Loaded, clear state
-	       window.ajaxLoadingState = false;
+	        // Handle Navigation
+	        $( '.navigation li ul li' ).removeClass( 'active' ); // Reset all
 
-	       // Bind some functions, scripts etc... (Important: after every page change (ajax load))
-	       $( '[data-toggle="tooltip"]' ).tooltip( { placement: 'top auto', container: 'body' } );
-	       $( "input[type='file']" ).each( function() { $( this ).customFileInput(); } ); // Custom file inputs
-	       data_boxes();
+	        var naviLinks = $( ".navigation a[href='#" + page + "']" );
+	        $( naviLinks ).parent( 'li' ).addClass( 'active' );
 
-	       // Stop & Remove Pre-loader
-	       $( '#nprogress' ).find( '.bar' ).css( { 'animation': 'none' } ).width( '100%' );
-	       setTimeout( function() { $( '#nprogress .bar' ).remove(); }, 150 );
+	        // Bind some functions, scripts etc... (Important: after every page change (ajax load))
+	        $( '[data-toggle="tooltip"]' ).tooltip( { placement: 'top auto', container: 'body' } );
+	        $( "input[type='file']" ).each( function() { $( this ).customFileInput(); } ); // Custom file inputs
+	        data_boxes();
 
-	   }
+	        // Stop & Remove Pre-loader
+	        $( '#nprogress' ).find( '.bar' ).css( { 'animation': 'none' } ).width( '100%' );
+	        setTimeout( function() { $( '#nprogress .bar' ).remove(); }, 250 );
+
+	        // Reset loading state to false.
+	        window.ajaxLoadingState = false;
+
+        }
 
 	}).fail( function( jqXHR, textStatus, errorThrown ) {
 
@@ -334,7 +345,7 @@ function loadPage( page, is_history ) {
 
 		$( 'h2.currentpage' ).text( jqXHR.status + ' ERROR' );
 		$( '.container .ajaxwrap' ).html( '<div class="box"><div class="heading">ERROR - ' + jqXHR.status + '</div><div class="content">\
-			<p>Connection to the router failed! <br>These issues usually occur when a file is missing or the router is unavailable to accept new connections.</p>\
+			<p>Interface was unable to communicate with the router! <br>These issues usually occur when a file is missing, web handler is busy or the router is unavailable.</p>\
 			<a href="/">Refreshing</a> browser window might help.</div></div>' ).addClass( 'ajax-animation' );
 
 		// Loaded, clear state
@@ -342,7 +353,7 @@ function loadPage( page, is_history ) {
 
 		// Remove Preloader
 		$( '#nprogress' ).find( '.bar' ).css( { 'animation': 'none' } ).width( '100%' );
-		setTimeout( function() { $( '#nprogress .bar' ).remove(); }, 150 );
+		setTimeout( function() { $( '#nprogress .bar' ).remove(); }, 250 );
 
 	});
 
