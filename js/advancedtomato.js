@@ -202,10 +202,10 @@ function systemUI () {
 	        $( '.system-ui .datasystem' ).html(
 		        '<div class="router-name">' + nvram.t_model_name + ' <small class="pull-right">(' + stats.uptime + ')</small></div>' +
 		        '<div class="inner-container row">' +
-		        '<div class="col-sm-2">CPU:</div><div class="col-sm-10">' + stats.cpuload + '</div>' +
-		        '<div class="col-sm-2">RAM:</div><div class="col-sm-10">' + stats.memory + '<div class="progress"><div class="bar" style="width: ' + stats.memoryperc + '"></div></div></div>' +
-		        ((nvram.swap != null) ? '<div class="col-sm-2">SWAP:</div><div class="col-sm-10">' + stats.swap + '<div class="progress"><div class="bar" style="width: ' + stats.swapperc + '"></div></div></div>' : '') +
-		        '<div class="col-sm-2">WAN:</div><div class="col-sm-10">' + wanstatus + ' (' + stats.wanuptime[ 0 ] + ')</div></div>' ).removeClass( 'align center'
+		        '<div class="desc">CPU:</div><div class="value">' + stats.cpuload + '</div>' +
+		        '<div class="desc">RAM:</div><div class="value">' + stats.memory + '<div class="progress"><div class="bar" style="width: ' + stats.memoryperc + '"></div></div></div>' +
+		        ((nvram.swap != null) ? '<div class="desc">SWAP:</div><div class="value">' + stats.swap + '<div class="progress"><div class="bar" style="width: ' + stats.swapperc + '"></div></div></div>' : '') +
+		        '<div class="desc">WAN:</div><div class="value">' + wanstatus + ' (' + stats.wanuptime[ 0 ] + ')</div></div>' ).removeClass( 'align center'
 	        );
         }
 
