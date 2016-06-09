@@ -205,7 +205,7 @@ function systemUI () {
 		        '<div class="desc">CPU:</div><div class="value">' + stats.cpuload + '</div>' +
 		        '<div class="desc">RAM:</div><div class="value">' + stats.memory + '<div class="progress"><div class="bar" style="width: ' + stats.memoryperc + '"></div></div></div>' +
 		        ((nvram.swap != null) ? '<div class="desc">SWAP:</div><div class="value">' + stats.swap + '<div class="progress"><div class="bar" style="width: ' + stats.swapperc + '"></div></div></div>' : '') +
-		        '<div class="desc">WAN:</div><div class="value">' + wanstatus + ' (' + stats.wanuptime[ 0 ] + ')</div></div>' ).removeClass( 'align center'
+		        '<div class="desc ">WAN:</div><div class="value">' + wanstatus + ' (' + stats.wanuptime[ 0 ] + ')</div></div>' ).removeClass( 'align center'
 	        );
         }
 
