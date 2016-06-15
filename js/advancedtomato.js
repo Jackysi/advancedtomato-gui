@@ -13,11 +13,11 @@ function AdvancedTomato() {
 		( (location.hash.replace( '#', '' ) != '' ) ? loadPage( location.hash.replace( '#', '' ), true ) : '' );
 		return false;
 
-	});
+	} );
 
 
 	/* Misc functions, calls, binds
-	************************************************************************************************/
+	 ************************************************************************************************/
 	// Call navigation function in tomato.js to generate navigation
 	navi();
 
@@ -37,11 +37,11 @@ function AdvancedTomato() {
 
 		}
 
-	});
+	} );
 
 
 	/* Click handlers
-	************************************************************************************************/
+	 ************************************************************************************************/
 	// Navigation slides
 	$( '.navigation > ul > li > a' ).on( 'click', function() {
 
@@ -54,20 +54,20 @@ function AdvancedTomato() {
 
 		return false;
 
-	});
+	} );
 
 	// Close click handler for updates
-	$('.ajaxwrap').on('click', '.alert .close', function() {
+	$( '.ajaxwrap' ).on( 'click', '.alert .close', function() {
 
 		if ( $( this ).attr( 'data-update' ) ) { cookie.set( 'latest-update', $( this ).attr( 'data-update' ) ); }
 		$( this ).parent( '.alert' ).slideUp();
 
 		return false;
 
-	});
+	} );
 
 	// Handle ajax loading
-	$('.navigation li ul a, .header .links a[href!="#system"]').on('click', function(e) {
+	$( '.navigation li ul a, .header .links a[href!="#system"]' ).on( 'click', function( e ) {
 
 		if ( $( this ).attr( 'target' ) != '_blank' ) {
 
@@ -76,7 +76,7 @@ function AdvancedTomato() {
 
 		}
 
-	});
+	} );
 
 	// Toggle Navigation
 	$( '.toggle-nav' ).on( 'click', function() {
@@ -95,7 +95,7 @@ function AdvancedTomato() {
 
 		}
 
-	});
+	} );
 
 	// Handle Ajax Class Loading
 	$( '.ajaxwrap' ).on( 'click', '.ajaxload', function( e ) {
@@ -103,7 +103,7 @@ function AdvancedTomato() {
 		loadPage( $( this ).attr( 'href' ) );
 		return false;
 
-	});
+	} );
 
 	// System Info box
 	$( '#system-ui' ).on( 'click', function() {
@@ -124,13 +124,18 @@ function AdvancedTomato() {
 			window.refTimer = setInterval( systemUI, 1600 );
 			systemUI();
 
-			$( document ).click( function() { $( '#system-ui' ).removeClass( 'active' ); $( '.system-ui' ).fadeOut( 250 ); clearInterval( window.refTimer ); $( document ).unbind( 'click' ); });
+			$( document ).click( function() {
+				$( '#system-ui' ).removeClass( 'active' );
+				$( '.system-ui' ).fadeOut( 250 );
+				clearInterval( window.refTimer );
+				$( document ).unbind( 'click' );
+			} );
 
 		}
 
 		return false;
 
-	});
+	} );
 
 
 	/* Handle NVRAM global functions and notifications
@@ -174,7 +179,7 @@ function AdvancedTomato() {
 	// Check for Navigation State NVRAM value
 	if ( typeof nvram.at_navi !== 'undefined' ) {
 
-		if ( nvram.at_navi == 'collapsed' || $(window).width() <= 768 ) {
+		if ( nvram.at_navi == 'collapsed' || $( window ).width() <= 768 ) {
 
 			$( '#wrapper' ).find( '.container, .top-header, .navigation' ).addClass( 'collapsed' );
 			$( '#wrapper' ).find( '.nav-collapse-hide' ).hide();
@@ -186,30 +191,30 @@ function AdvancedTomato() {
 }
 
 // Get status of router and fill system-ui with it
-function systemUI () {
+function systemUI() {
 
-	$.ajax({
+	$.ajax(
+		{
+			url   : 'js/status-data.jsx',
+			method: 'POST',
+			data  : { '_http_id': escapeCGI( nvram.http_id ) }
 
-        url    : 'js/status-data.jsx',
-        method : 'POST',
-        data   : { '_http_id': escapeCGI( nvram.http_id ) },
-        success: function( data ) {
+		} ).done( function( data ) {
 
-	        stats = {};
-	        try { eval( data ); } catch ( ex ) { stats = {}; }
+		stats = {};
+		try { eval( data ); } catch ( ex ) { stats = {}; }
 
-	        var wanstatus = '<a title="Go to Status Overview" href="#" onclick="loadPage(\'#status-home.asp\');">' + ( ( stats.wanstatus[ 0 ] == 'Connected' ) ? '<span style="color: green;">' + stats.wanstatus[ 0 ] + '</span>' : stats.wanstatus[ 0 ] ) + '</a>';
-	        $( '.system-ui .datasystem' ).html(
-		        '<div class="router-name">' + nvram.t_model_name + ' <small class="pull-right">(' + stats.uptime + ')</small></div>' +
-		        '<div class="inner-container row">' +
-		        '<div class="desc">CPU:</div><div class="value">' + stats.cpuload + '</div>' +
-		        '<div class="desc">RAM:</div><div class="value">' + stats.memory + '<div class="progress"><div class="bar" style="width: ' + stats.memoryperc + '"></div></div></div>' +
-		        ((nvram.swap != null) ? '<div class="desc">SWAP:</div><div class="value">' + stats.swap + '<div class="progress"><div class="bar" style="width: ' + stats.swapperc + '"></div></div></div>' : '') +
-		        '<div class="desc ">WAN:</div><div class="value">' + wanstatus + ' (' + stats.wanuptime[ 0 ] + ')</div></div>' ).removeClass( 'align center'
-	        );
-        }
+		var wanstatus = '<a title="Go to Status Overview" href="#" onclick="loadPage(\'#status-home.asp\');">' + ( ( stats.wanstatus[ 0 ] == 'Connected' ) ? '<span style="color: green;">' + stats.wanstatus[ 0 ] + '</span>' : stats.wanstatus[ 0 ] ) + '</a>';
+		$( '.system-ui .datasystem' ).html(
+			'<div class="router-name">' + nvram.t_model_name + ' <small class="pull-right">(' + stats.uptime + ')</small></div>' +
+			'<div class="inner-container row">' +
+			'<div class="desc">CPU:</div><div class="value">' + stats.cpuload + '</div>' +
+			'<div class="desc">RAM:</div><div class="value">' + stats.memory + '<div class="progress"><div class="bar" style="width: ' + stats.memoryperc + '"></div></div></div>' +
+			((nvram.swap != null) ? '<div class="desc">SWAP:</div><div class="value">' + stats.swap + '<div class="progress"><div class="bar" style="width: ' + stats.swapperc + '"></div></div></div>' : '') +
+			'<div class="desc ">WAN:</div><div class="value">' + wanstatus + ' (' + stats.wanuptime[ 0 ] + ')</div></div>' ).removeClass( 'align center'
+		);
 
-	}).fail( function() { clearInterval( window.refTimer ); });
+	} ).fail( function() {clearInterval( window.refTimer ); } );
 
 }
 
@@ -281,81 +286,75 @@ function loadPage( page, is_history ) {
 
 
 	// Switch to JQUERY AJAX function call (doesn't capture errors allowing much easier debugging)
-	$.ajax({
+	$.ajax( { url: page, async: true, cache: false } )
+		.done( function( resp ) {
 
-        url    : page,
-        async  : true,
-        cache  : false,
-        success: function( resp ) {
+			var dom   = $( resp );
+			var title = dom.filter( 'title' ).text();
+			var html  = dom.filter( 'content' ).html();
 
-	        var dom   = $( resp );
-	        var title = dom.filter( 'title' ).text();
-	        var html  = dom.filter( 'content' ).html();
+			// Handle pages without title or content as normal (NO AJAX)
+			if ( title == null || html == null ) {
+				window.parent.location.href = page;
+				return false;
+			}
 
-	        // Handle pages without title or content as normal (NO AJAX)
-	        if ( title == null || html == null ) {
-		        window.parent.location.href = page;
-		        return false;
-	        }
+			// Set page title, current page title and animate page switch
+			$( 'title' ).text( window.routerName + title );
+			$( 'h2.currentpage' ).text( title );
+			$( '.container .ajaxwrap' ).html( html ).addClass( 'ajax-animation' );
 
-	        // Set page title, current page title and animate page switch
-	        $( 'title' ).text( window.routerName + title );
-	        $( 'h2.currentpage' ).text( title );
-	        $( '.container .ajaxwrap' ).html( html ).addClass( 'ajax-animation' );
+			// Push History (First check if using IE9 or not)
+			if ( history.pushState && is_history !== true ) {
 
-	        // Push History (First check if using IE9 or not)
-	        if ( history.pushState && is_history !== true ) {
+				history.pushState(
+					{
+						"html"     : html,
+						"pageTitle": window.routerName + title
+					},
+					window.routerName + title, '#' + page
+				);
 
-		        history.pushState(
-			        {
-				        "html"     : html,
-				        "pageTitle": window.routerName + title
-			        },
-			        window.routerName + title, '#' + page
-		        );
+			}
 
-	        }
+			// Go back to top
+			$( '.container' ).scrollTop( 0 );
 
-	        // Go back to top
-	        $( '.container' ).scrollTop( 0 );
+			// Handle Navigation
+			$( '.navigation li ul li' ).removeClass( 'active' ); // Reset all
 
-	        // Handle Navigation
-	        $( '.navigation li ul li' ).removeClass( 'active' ); // Reset all
+			var naviLinks = $( ".navigation a[href='#" + page + "']" );
+			$( naviLinks ).parent( 'li' ).addClass( 'active' );
 
-	        var naviLinks = $( ".navigation a[href='#" + page + "']" );
-	        $( naviLinks ).parent( 'li' ).addClass( 'active' );
+			// Bind some functions, scripts etc... (Important: after every page change (ajax load))
+			$( '[data-toggle="tooltip"]' ).tooltip( { placement: 'top auto', container: 'body' } );
+			$( "input[type='file']" ).each( function() { $( this ).customFileInput(); } ); // Custom file inputs
+			data_boxes();
 
-	        // Bind some functions, scripts etc... (Important: after every page change (ajax load))
-	        $( '[data-toggle="tooltip"]' ).tooltip( { placement: 'top auto', container: 'body' } );
-	        $( "input[type='file']" ).each( function() { $( this ).customFileInput(); } ); // Custom file inputs
-	        data_boxes();
+			// Stop & Remove Pre-loader
+			$( '#nprogress' ).find( '.bar' ).css( { 'animation': 'none' } ).width( '100%' );
+			setTimeout( function() { $( '#nprogress .bar' ).remove(); }, 250 );
 
-	        // Stop & Remove Pre-loader
-	        $( '#nprogress' ).find( '.bar' ).css( { 'animation': 'none' } ).width( '100%' );
-	        setTimeout( function() { $( '#nprogress .bar' ).remove(); }, 250 );
+			// Reset loading state to false.
+			window.ajaxLoadingState = false;
 
-	        // Reset loading state to false.
-	        window.ajaxLoadingState = false;
+		} ).fail( function( jqXHR, textStatus, errorThrown ) {
 
-        }
+			console.log( jqXHR );
 
-	}).fail( function( jqXHR, textStatus, errorThrown ) {
+			$( 'h2.currentpage' ).text( jqXHR.status + ' ERROR' );
+			$( '.container .ajaxwrap' ).html( '<div class="box"><div class="heading">ERROR - ' + jqXHR.status + '</div><div class="content">\
+				<p>Interface was unable to communicate with the router! <br>These issues usually occur when a file is missing, web handler is busy or the router is unavailable.</p>\
+				<a href="/">Refreshing</a> browser window might help.</div></div>' ).addClass( 'ajax-animation' );
 
-		console.log( jqXHR );
+			// Loaded, clear state
+			window.ajaxLoadingState = false;
 
-		$( 'h2.currentpage' ).text( jqXHR.status + ' ERROR' );
-		$( '.container .ajaxwrap' ).html( '<div class="box"><div class="heading">ERROR - ' + jqXHR.status + '</div><div class="content">\
-			<p>Interface was unable to communicate with the router! <br>These issues usually occur when a file is missing, web handler is busy or the router is unavailable.</p>\
-			<a href="/">Refreshing</a> browser window might help.</div></div>' ).addClass( 'ajax-animation' );
+			// Remove Preloader
+			$( '#nprogress' ).find( '.bar' ).css( { 'animation': 'none' } ).width( '100%' );
+			setTimeout( function() { $( '#nprogress .bar' ).remove(); }, 250 );
 
-		// Loaded, clear state
-		window.ajaxLoadingState = false;
-
-		// Remove Preloader
-		$( '#nprogress' ).find( '.bar' ).css( { 'animation': 'none' } ).width( '100%' );
-		setTimeout( function() { $( '#nprogress .bar' ).remove(); }, 250 );
-
-	});
+	} );
 
 }
 
