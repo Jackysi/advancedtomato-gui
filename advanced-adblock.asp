@@ -116,8 +116,7 @@
 			<div class="heading">Adblock Settings</div>
 			<div class="content">
 
-				<div class="adblock-setting"></div>
-				<hr>
+				<div class="adblock-setting"></div><hr><br>
 				<script type="text/javascript">
 					$( '.adblock-setting' ).forms(
 							[
@@ -131,18 +130,15 @@
 				<table class="line-table" cellspacing=1 id="adblockg-grid"></table>
 				<script type="text/javascript">adblockg.setup();</script>
 
-				<br>
-				<hr>
+				<br><hr>
 				<h4>Custom List</h4>
-				<div class="blacklist_custom"></div>
-				<hr>
+				<div class="blacklist_custom"></div><hr>
 				<script type='text/javascript'>
 					$( '.blacklist_custom' ).forms( [ { title: 'Blacklisted domains', name: 'adblock_blacklist_custom', type: 'textarea', value: nvram.adblock_blacklist_custom } ] );
 				</script>
 
 				<h4>Whitelist</h4>
-				<div class="whitelist"></div>
-				<hr>
+				<div class="whitelist"></div><hr>
 				<script type="text/javascript">
 					$( '.whitelist' ).forms( [ { title: 'Whitelisted domains', name: 'adblock_whitelist', type: 'textarea', value: nvram.adblock_whitelist } ] );
 				</script>
