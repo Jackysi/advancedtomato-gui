@@ -2475,6 +2475,7 @@ function navi()
 			'Conntrack/Netfilter':  'advanced-ctnf.asp',
 			'DHCP/DNS':             'advanced-dhcpdns.asp',
 			'Firewall':             'advanced-firewall.asp',
+			'Adblock':              'advanced-adblock.asp',
 			/* NOCAT-BEGIN */
 			'Captive Portal':       'advanced-splashd.asp',
 			/* NOCAT-END */
