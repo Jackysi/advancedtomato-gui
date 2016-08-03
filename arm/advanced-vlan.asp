@@ -19,7 +19,7 @@
 	March 2015 Tvlz
 	https://bitbucket.org/tvlz/tvlz-advanced-vlan/
 
-	** Last Updated - MAR 30 2016 - Tvlz **
+	** Last Updated - JULY 22 2016 - Tvlz **
 
 	For use with Tomato Firmware only.
 	No part of this file may be used without permission.
@@ -50,7 +50,7 @@
 	<script type="text/javascript" src="js/wireless.jsx?_http_id=<% nv(http_id); %>"></script>
 	<script type="text/javascript" src="js/interfaces.js"></script>
 	<script type="text/javascript">
-		//<% nvram ("t_model_name,vlan0ports,vlan1ports,vlan2ports,vlan3ports,vlan4ports,vlan5ports,vlan6ports,vlan7ports,vlan8ports,vlan9ports,vlan10ports,vlan11ports,vlan12ports,vlan13ports,vlan14ports,vlan15ports,vlan0hwname,vlan1hwname,vlan2hwname,vlan3hwname,vlan4hwname,vlan5hwname,vlan6hwname,vlan7hwname,vlan8hwname,vlan9hwname,vlan10hwname,vlan11hwname,vlan12hwname,vlan13hwname,vlan14hwname,vlan15hwname,wan_ifnameX,wan2_ifnameX,wan3_ifnameX,wan4_ifnameX,manual_boot_nv,boardtype,boardflags,lan_ifname,lan_ifnames,lan1_ifname,lan1_ifnames,lan2_ifname,lan2_ifnames,lan3_ifname,lan3_ifnames,vlan0tag,vlan0vid,vlan1vid,vlan2vid,vlan3vid,vlan4vid,vlan5vid,vlan6vid,vlan7vid,vlan8vid,vlan9vid,vlan10vid,vlan11vid,vlan12vid,vlan13vid,vlan14vid,vlan15vid");%>
+		//<% nvram ("t_model_name,vlan0ports,vlan1ports,vlan2ports,vlan3ports,vlan4ports,vlan5ports,vlan6ports,vlan7ports,vlan8ports,vlan9ports,vlan10ports,vlan11ports,vlan12ports,vlan13ports,vlan14ports,vlan15ports,vlan0hwname,vlan1hwname,vlan2hwname,vlan3hwname,vlan4hwname,vlan5hwname,vlan6hwname,vlan7hwname,vlan8hwname,vlan9hwname,vlan10hwname,vlan11hwname,vlan12hwname,vlan13hwname,vlan14hwname,vlan15hwname,wan_ifnameX,wan2_ifnameX,wan3_ifnameX,wan4_ifnameX,boardtype,boardflags,lan_ifname,lan_ifnames,lan1_ifname,lan1_ifnames,lan2_ifname,lan2_ifnames,lan3_ifname,lan3_ifnames,vlan0tag,vlan0vid,vlan1vid,vlan2vid,vlan3vid,vlan4vid,vlan5vid,vlan6vid,vlan7vid,vlan8vid,vlan9vid,vlan10vid,vlan11vid,vlan12vid,vlan13vid,vlan14vid,vlan15vid");%>
 
 		var port_vlan_supported = 0;
 		var trunk_vlan_supported = 1; //Enable on all routers
@@ -71,13 +71,12 @@
 		// http://wiki.openwrt.org/toh/asus/start
 		// http://wiki.openwrt.org/toh/linksys/start
 		// http://wiki.openwrt.org/toh/start
-		switch ( nvram[ 't_model_name' ] ) { //Added by Tvlz, June 2014, ARM March 2015
+		switch ( nvram[ 't_model_name' ] ) {
 			case 'vlan-testid0':
 			case 'Asus RT-AC56U':
 			case 'D-Link DIR868L':
 			case 'Cisco Linksys EA6500v2':
 			case 'Cisco Linksys EA6700':
-			case 'Xiaomi MiWiFi':
 				COL_P0N = '0';
 				COL_P1N = '1';
 				COL_P2N = '2';
@@ -91,7 +90,8 @@
 			case 'Asus RT-AC68P/U B1':
 			case 'Huawei WS880':
 			case 'Linksys EA6900':
-			case 'Netgear R7000': // newer versions
+			case 'Netgear R6400':
+			case 'Netgear R7000':
 				COL_P0N = '1';
 				COL_P1N = '2';
 				COL_P2N = '3';
@@ -113,6 +113,13 @@
 				COL_P2N = '2';
 				COL_P3N = '1';
 				COL_P4N = '0';
+				break;
+			case 'Xiaomi MiWiFi': //only has 2 Lan Ports
+				COL_P0N = '0';
+				COL_P1N = '2';
+				COL_P2N = '1';
+				COL_P3N = '3';
+				COL_P4N = '4';
 				break;
 			default:
 				COL_P0N = '1';
@@ -277,24 +284,14 @@
 			 //        'lan3_ifnames=' + fom['lan3_ifnames'].value);
 			 REMOVE-END */
 
-// for some models, Tomato checks for a few vital/crucial nvram settings at init time
-// in some cases, if some/any of them are not found, a full nvram reset/clean could be triggered
-// so, to (try to) play it safe, we check for the 1st needed/available/required
-// VLAN for FastE (vlan0 is usually LAN) and GigE routers (vlan1 is usually LAN)
-			if ( (fom[ 'vlan0ports' ].value.length < 1) || (fom[ 'vlan0hwname' ].value.length < 1) ||
-			     (fom[ 'vlan1ports' ].value.length < 1) || (fom[ 'vlan1hwname' ].value.length < 1) )
-				fom[ 'manual_boot_nv' ].value = '1';
-			else
-				fom[ 'manual_boot_nv' ].value = nvram[ 'manual_boot_nv' ];
-
 			var e = E( 'footer-msg' );
 
 			if ( vlg.countWan() != 1 ) {
-				e.innerHTML        = 'Cannot proceed: one VID must be assigned to WAN.';
+				e.innerHTML = 'Cannot proceed: one VID must be assigned to WAN.';
 				e.style.visibility = 'visible';
 				setTimeout(
 						function() {
-							e.innerHTML        = '';
+							e.innerHTML = '';
 							e.style.visibility = 'hidden';
 						}, 5000 );
 				return;
@@ -881,7 +878,6 @@
 		<input type="hidden" name="wan3_ifnameX">
 		<input type="hidden" name="wan4_ifnameX">
 		/* MULTIWAN-END */
-		<input type="hidden" name="manual_boot_nv">
 		<input type="hidden" name="lan_ifnames">
 		<input type="hidden" name="lan1_ifnames">
 		<input type="hidden" name="lan2_ifnames">
@@ -906,7 +902,7 @@
 		<div style="display: none;" class="alert alert-warning" id='unknown_router'>
 			<h5>Unknown Port Mapping!</h5>
 			<a href='http://www.linksysinfo.org/index.php?threads/can-vlan-gui-port-order-be-corrected.70160/#post-247634/'>Please follow these instructions to get it corrected.</a>
-			Include Router Brand/Model (<% nv('t_model_name'); %>), Results from "robocfg show" - VLANs section only &amp; and Port Numbers on Router Case (Left -> Right viewed from Front).
+			Include Router Brand/Model (<% nv('t_model_name'); %>), Results from "nvram show | grep vlan1ports" - VLANs section only &amp; and Port Numbers on Router Case (Left -> Right viewed from Front).
 		</div>
 
 		<div id="sesdiv" class="box" style="display:none">
