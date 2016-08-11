@@ -1,0 +1,23 @@
+// Declare fonts
+// *******************************************************************************************************/
+@font-face {
+	font-family: 'Roboto';
+	src: local('Roboto Medium'), local('Roboto-Medium'), url('fonts/Roboto-Medium-webfont.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: local('Roboto'), local('Roboto Regular'), local('Roboto-Regular'), url('fonts/Roboto-Regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "advancedtomato";
+	src: url("fonts/advancedtomato.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+
+}

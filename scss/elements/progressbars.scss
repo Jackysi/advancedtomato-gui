@@ -1,0 +1,27 @@
+/* Progress Bars
+*******************************************************************************************************/
+.progress {
+	vertical-align: middle;
+	display: block;
+	height: 4px;
+	padding: 0;
+	margin: 0;
+	background: #e4eaec;
+	border-radius: 1px;
+	overflow: hidden;
+}
+
+.progress .bar {
+	display: block;
+	width: 20%;
+	height: 100%;
+	padding:0;
+	margin: 0;
+	background: #62a8ea;
+	transition: width 200ms ease;
+	-webkit-transition: width 200ms ease;
+}
+
+.progress .bar.warning { background: #FB7D00; }
+.progress .bar.success { background: #38F00B; }
+.progress .bar.danger {	background: #E24618; }

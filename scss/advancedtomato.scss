@@ -1,0 +1,27 @@
+// =====================================================================================================
+// AdvancedTomato - Graphical User Interface
+// This file simply loads other scss files from elements directory
+// =====================================================================================================
+
+// Some variables
+$font-family: 'Segoe UI', 'Roboto', sans-serif;
+
+
+// Imports
+@import 'elements/reset';
+@import 'elements/fonts';
+@import 'elements/general';
+@import 'elements/body';
+@import 'elements/alerts';
+@import 'elements/buttons';
+@import 'elements/icons';
+@import 'elements/grids';
+@import 'elements/navigation';
+@import 'elements/forms';
+@import 'elements/icons';
+@import 'elements/tables';
+@import 'elements/progressbars';
+@import 'elements/animations';
+@import 'elements/tooltips';
+//@import 'elements/dropdowns';
+@import 'elements/responsive';

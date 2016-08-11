@@ -7,9 +7,8 @@
 		<meta name="robots" content="noindex,nofollow">
 		<title>[<% ident(); %>]: Home</title>
 
-		<!-- Stylesheets -->
-		<link href="css/reset.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
+		<!-- Interface Design -->
+		<link href="css/interface.css" rel="stylesheet">
 		<% css(); %>
 
 		<!-- Load Favicon (icon) -->
