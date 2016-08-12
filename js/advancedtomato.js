@@ -13,7 +13,7 @@ function AdvancedTomato() {
 		( (location.hash.replace( '#', '' ) != '' ) ? loadPage( location.hash.replace( '#', '' ), true ) : '' );
 		return false;
 
-	} );
+	});
 
 
 	/* Misc functions, calls, binds
@@ -37,24 +37,43 @@ function AdvancedTomato() {
 
 		}
 
-	} );
+	});
 
 
 	/* Click handlers
 	 ************************************************************************************************/
 	// Navigation slides
-	$( '.navigation > ul > li > a' ).on( 'click', function() {
+	$( '.navigation > ul > li > a' ).on( gui.nav_action, function() {
 
-		if ( $( '.navigation' ).hasClass( 'collapsed' ) ) { return; }				// Doesn't work in collapsed state
-		if ( $( this ).parent( 'li' ).hasClass( 'active' ) ) { return false; }      // If already active, ignore click
+		var elm = $( this );
 
-		$( '.navigation > ul > li' ).removeClass( 'active' ).find( 'ul' ).slideUp( '150' );
-		$( this ).parent( 'li' ).addClass( 'active' );
-		$( this ).closest( 'li' ).find( 'ul' ).slideDown( '150' );
+		// This is just temporary function for navigation
+		function reveal_navigation() {
 
-		return false;
+			if ( $( '.navigation' ).hasClass( 'collapsed' ) ) { return; }				// Doesn't work in collapsed state
+			if ( $( elm ).parent( 'li' ).hasClass( 'active' ) ) { return false; }      // If already active, ignore click
 
-	} );
+			$( '.navigation > ul > li' ).removeClass( 'active' ).find( 'ul' ).slideUp( '100' );
+			$( elm ).parent( 'li' ).addClass( 'active' );
+			$( elm ).closest( 'li' ).find( 'ul' ).slideDown( '100' );
+
+			return false;
+
+		}
+
+		// New since 133 (Allow switch to use navigation as "HOVER" or "CLICK"
+		if ( gui.nav_action == 'mouseover' ) {
+
+			clearTimeout( gui.nav_delay );
+			gui.nav_delay = setTimeout( reveal_navigation, 100 );
+
+		} else {
+
+			reveal_navigation();
+
+		}
+
+	});
 
 	// Close click handler for updates
 	$( '.ajaxwrap' ).on( 'click', '.alert .close', function() {
@@ -64,7 +83,7 @@ function AdvancedTomato() {
 
 		return false;
 
-	} );
+	});
 
 	// Handle ajax loading
 	$( '.navigation li ul a, .header .links a[href!="#system"]' ).on( 'click', function( e ) {
@@ -76,7 +95,7 @@ function AdvancedTomato() {
 
 		}
 
-	} );
+	});
 
 	// Toggle Navigation
 	$( '.toggle-nav' ).on( 'click', function() {
@@ -95,7 +114,7 @@ function AdvancedTomato() {
 
 		}
 
-	} );
+	});
 
 	// Handle Ajax Class Loading
 	$( '.ajaxwrap' ).on( 'click', '.ajaxload', function( e ) {
@@ -103,7 +122,7 @@ function AdvancedTomato() {
 		loadPage( $( this ).attr( 'href' ) );
 		return false;
 
-	} );
+	});
 
 	// System Info box
 	$( '#system-ui' ).on( 'click', function() {
@@ -112,7 +131,7 @@ function AdvancedTomato() {
 
 			$( '#system-ui' ).removeClass( 'active' );
 			$( '.system-ui' ).fadeOut( 250 );
-			clearInterval( window.refTimer );
+			clearInterval( gui.refresh_timer );
 
 		} else {
 
@@ -121,21 +140,23 @@ function AdvancedTomato() {
 
 			// On open
 			$( '.system-ui .datasystem' ).html( '<div class="inner-container row"><div style="margin: 45px auto 35px; width: 26px; height:26px;" class="spinner"></div></div>' ).addClass( 'align center' );
-			window.refTimer = setInterval( systemUI, 1600 );
+			gui.refresh_timer = setInterval( systemUI, 1600 );
 			systemUI();
 
 			$( document ).click( function() {
+
 				$( '#system-ui' ).removeClass( 'active' );
 				$( '.system-ui' ).fadeOut( 250 );
-				clearInterval( window.refTimer );
+				clearInterval( gui.refresh_timer );
 				$( document ).unbind( 'click' );
-			} );
+
+			});
 
 		}
 
 		return false;
 
-	} );
+	});
 
 
 	/* Handle NVRAM global functions and notifications
@@ -177,9 +198,9 @@ function AdvancedTomato() {
 	}
 
 	// Check for Navigation State NVRAM value
-	if ( typeof nvram.at_navi !== 'undefined' ) {
+	if ( typeof nvram.at_nav_state !== 'undefined' ) {
 
-		if ( nvram.at_navi == 'collapsed' || $( window ).width() <= 768 ) {
+		if ( nvram.at_nav_state == 'collapsed' || $( window ).width() <= 768 ) {
 
 			$( '#wrapper' ).find( '.container, .top-header, .navigation' ).addClass( 'collapsed' );
 			$( '#wrapper' ).find( '.nav-collapse-hide' ).hide();
@@ -214,7 +235,7 @@ function systemUI() {
 			'<div class="desc ">WAN:</div><div class="value">' + wanstatus + ' (' + stats.wanuptime[ 0 ] + ')</div></div>' ).removeClass( 'align center'
 		);
 
-	} ).fail( function() {clearInterval( window.refTimer ); } );
+	} ).fail( function() {clearInterval( gui.refresh_timer ); } );
 
 }
 
@@ -246,25 +267,27 @@ function data_boxes() {
 
 				$( parent ).find( '.content' ).stop( true, true ).slideUp( 700, 'easeOutBounce' );
 				$( html ).find( 'i' ).removeClass( 'icon-chevron-down' ).addClass( 'icon-chevron-up' );
-				cookie.set( id + '_visibility', 0 ); status = false;
+				cookie.set( id + '_visibility', 0 );
+				status = false;
 
 			} else {
 
 				$( parent ).find( '.content' ).stop( true, true ).slideDown( 350, 'easeInQuad' );
 				$( html ).find( 'i' ).removeClass( 'icon-chevron-up' ).addClass( 'icon-chevron-down' );
-				cookie.set( id + '_visibility', 1 ); status = true;
+				cookie.set( id + '_visibility', 1 );
+				status = true;
 
 			}
 
 			return false;
 
-		});
+		} );
 
 		$( parent ).find( '.heading' ).prepend( html );
 
 	});
 
-};
+}
 
 // Ajax Function to load pages
 function loadPage( page, is_history ) {
@@ -275,7 +298,11 @@ function loadPage( page, is_history ) {
 	if ( window.ajaxLoadingState ) { return false; } else { window.ajaxLoadingState = true; }
 
 	// Since we use ajax, functions and timers stay in memory/cache. Here we undefine & stop them to prevent issues with other pages.
-	if ( typeof( ref ) != 'undefined') { ref.destroy(); ref=undefined; delete ref; }
+	if ( typeof( ref ) != 'undefined' ) {
+		ref.destroy();
+		ref = undefined;
+		delete ref;
+	}
 	if ( typeof( wdog ) != 'undefined' ) { clearTimeout( wdog ); } // Delayed function that kills our refreshers!
 
 	// Start page pre-loader
@@ -293,10 +320,12 @@ function loadPage( page, is_history ) {
 			var title = dom.filter( 'title' ).text();
 			var html  = dom.filter( 'content' ).html();
 
-			// Handle pages without title or content as normal (NO AJAX)
+			// Handle pages without title or content as normal (HTTP Redirect)
 			if ( title == null || html == null ) {
+
 				window.parent.location.href = page;
 				return false;
+
 			}
 
 			// Set page title, current page title and animate page switch
@@ -307,6 +336,7 @@ function loadPage( page, is_history ) {
 			// Push History (First check if using IE9 or not)
 			if ( history.pushState && is_history !== true ) {
 
+				// IE9+ function that's awesome for AJAX stuff
 				history.pushState(
 					{
 						"html"     : html,
@@ -338,7 +368,8 @@ function loadPage( page, is_history ) {
 			// Reset loading state to false.
 			window.ajaxLoadingState = false;
 
-		} ).fail( function( jqXHR, textStatus, errorThrown ) {
+		})
+		.fail( function( jqXHR, textStatus, errorThrown ) {
 
 			console.log( jqXHR );
 
@@ -354,7 +385,7 @@ function loadPage( page, is_history ) {
 			$( '#nprogress' ).find( '.bar' ).css( { 'animation': 'none' } ).width( '100%' );
 			setTimeout( function() { $( '#nprogress .bar' ).remove(); }, 250 );
 
-	} );
+		});
 
 }
 

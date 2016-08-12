@@ -22,30 +22,39 @@
 		<!-- Variables which we keep through whole GUI, also determine Tomato version here -->
 		<script type="text/javascript">
 
+			var wl_ifaces = {};
 			var routerName = '[<% ident(); %>] ';
-			//<% nvram("web_nav,at_update,at_navi,tomatoanon_answer"); %>
+			//<% nvram("at_nav,at_nav_action,at_nav_state,at_update,tomatoanon_answer"); %>
 			//<% anonupdate(); %>
 
-			// Fix for system data display
-			var refTimer, wl_ifaces = {}, ajaxLoadingState = false, gui_version = "<% version(0); %>";
+			// AdvancedTomato related object
+			var gui = {
+				'ajax_state'   : false,
+				'nav_delay'    : null,
+				'nav_action'   : ( ( typeof(nvram.at_nav_action) != 'undefined' && nvram.at_nav_action == 'hover' ) ? 'mouseover' : 'click' ),
+				'refresh_timer': null,
+				'version'      : "<% version(0); %>",
+			};
+
+			// On DOM Ready, parse GUI version and create navigation
 			$( document ).ready( function() {
 
 				// Attempt match
-				match_regex = gui_version.match( /^1\.28\.0000.*?([0-9]{1,3}\.[0-9]{1}\-[0-9]{3}).* ([a-z0-9\-]+)$/i );
+				match_regex = gui.version.match( /^1\.28\.0000.*?([0-9]{1,3}\.[0-9]{1}\-[0-9]{3}).* ([a-z0-9\-]+)$/i );
 
 				// Check matches
 				if ( match_regex == null || match_regex[ 1 ] == null ) {
 
-					gui_version = 'More Info'
+					gui.version = 'More Info'
 
 				} else {
 
-					gui_version = 'v' + match_regex[ 1 ] + ' ' + match_regex[ 2 ];
+					gui.version = 'v' + match_regex[ 1 ] + ' ' + match_regex[ 2 ];
 
 				}
 
 				// Write version & initiate GUI functions & binds
-				$( '#gui-version' ).html( '<i class="icon-info-alt"></i> <span class="nav-collapse-hide">' + gui_version + '</span>' );
+				$( '#gui-version' ).html( '<i class="icon-info-alt"></i> <span class="nav-collapse-hide">' + gui.version + '</span>' );
 				AdvancedTomato();
 
 			});
