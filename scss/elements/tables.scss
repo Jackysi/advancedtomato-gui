@@ -15,8 +15,6 @@ table th {
 table.line-table tr {
 	display: table-row;
 	border-top: 1px solid #e4eaec;
-	transition: background-color 75ms ease;
-	-webkit-transition: background-color 75ms ease;
 }
 
 table.line-table tr:first-child { border: 0; }
@@ -60,6 +58,8 @@ table.line-table tr td {
 	vertical-align: middle;
 }
 
+
+/* Table ROW options panel */
 #table-row-panel {
 	text-align: right;
 	right: 0;
@@ -67,20 +67,26 @@ table.line-table tr td {
 	position: absolute;
 }
 
-#table-row-panel a.move-up-row, #table-row-panel a.move-down-row, #table-row-panel a.move-row, #table-row-panel a.delete-row  {
+#table-row-panel a.move-up-row,
+#table-row-panel a.move-down-row, 
+#table-row-panel a.move-row, 
+#table-row-panel a.delete-row  {
 	float: left;
-	font-size: 10px;
+	font-size: 10pt;
 	text-align: center;
-	padding: 2px;
+	padding: 4px 6px;
+	line-height: 1;
 	color: #fff;
 	background: #585858;
-	width: 20px;
-	height: 20px;
+	z-index:1;
 	transition: background-color 80ms ease;
-	-webkit-transition: background-color 80ms ease;
+	
+	&:hover {
+		 z-index: 10; 
+		background: #434343;
+	}
 }
 
-#table-row-panel a.move-up-row:hover, #table-row-panel a.move-down-row:hover, #table-row-panel a.move-row:hover, #table-row-panel a.delete-row:hover { background: #434343; }
 #table-row-panel a.delete-row {	background: #F76D6A; }
 #table-row-panel a.delete-row:hover { background: #eb4d4a; }
 #table-row-panel a.move-row { background: #4EA5E0; }
