@@ -1,11 +1,23 @@
-// =====================================================================================================
-// AdvancedTomato - Graphical User Interface
-// This file simply loads other scss files from elements directory
-// =====================================================================================================
+/* =====================================================================================================
+* AdvancedTomato - Graphical User Interface
+* Copyright (C) 2014-2016 Jaka Prasnikar @ https://prahec.com/
+* https://advancedtomato.com/
+*
+* Tomato GUI
+* Copyright (C) 2006-2007 Jonathan Zarate
+* http://www.polarcloud.com/tomato/
+* ===================================================================================================== */
 
 // Some variables
-$font-family: 'Segoe UI', 'Roboto', sans-serif;
+$font-normal: 	400;
+$font-bold: 	500;
+$font-family: 	'Segoe UI', 'Roboto', sans-serif;
 
+// Some colors
+$navi-background: #263238;
+
+// Animations
+$overflow-anim: cubic-bezier(1.000, -0.600, 0.000, 1.650);
 
 // Imports
 @import 'elements/reset';

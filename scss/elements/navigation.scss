@@ -7,7 +7,7 @@
 	top: 60px;
 	bottom: 0;
 	width: 240px;
-	background: #2b323a;
+	background: $navi-background;
 	z-index: 2;
 	overflow: auto;
 	-webkit-backface-visibility: hidden;
@@ -35,12 +35,32 @@
 .navigation li a {
 	position: relative;
 	display: block;
-	color: #969ba0;
-	text-shadow: 0px 1px 3px #222;
+	color: #a6adb3;
 	font-size: 10pt;
-	font-weight: 500;
+	font-weight: $font-bold;
 	padding: 10px 25px;
 	vertical-align: middle;
+}
+
+.navigation > ul > li {
+
+	> a:after {
+		font-family: 'advancedtomato';
+		content: "\e001";
+		position: absolute;
+		right: 30px;
+		transition: transform 250ms ease-out, right 150ms ease-out;
+	}
+
+	> a:hover::after {
+		right: 25px;
+	}
+
+	&.active > a:after {
+		transition-delay: 200ms;
+		transform: rotate(90deg);
+	}
+
 }
 
 .navigation li a i {
@@ -51,7 +71,7 @@
 .navigation li ul {
 	display: none;
 	margin: 0;
-	background: #262c33;
+	background: darken($navi-background, 1%);
 }
 
 /* Dropdown, or w/e */
@@ -61,24 +81,24 @@
 
 .navigation li ul li:before {
 	content: "";
-	left: 30px;
-	top: -15px;
-	bottom: 15px;
+	left: 32px;
+	top: -11px;
+	bottom: 13px;
 	position: absolute;
 	display: block;
 	width: 1px;
-	border-left: 1px dashed #606c77;
+	border-left: 1px dotted #3e474e;
 	z-index: 1;
 }
 
 .navigation li ul li a:before {
 	content: "";
-	left: 30px;
-	top: 15px;
+	left: 32px;
+	top: 13px;
 	position: absolute;
 	display: block;
-	width: 15px;
-	border-bottom: 1px dashed #606c77;
+	width: 12px;
+	border-bottom: 1px dotted #3e474e;
 	z-index: 1;
 }
 
@@ -86,19 +106,37 @@
 	font-size: 12px;
 	font-weight: normal;
 	padding: 5px 0 5px 55px;
+	transition: padding-left 150ms ease-out;
 }
 
 /* Hover & Active States */
-.navigation li ul li.active a:after { background-color: #3498DB; }
-.navigation .active > a { color: #e1e4e6; background-color: #262c33;  }
 .navigation > ul > li > a:hover {
 	color: #e1e4e6;
-	background: #2f363e;
+	background: rgba(#fff,0.02);
 }
 
 .navigation li ul li a:hover {
 	color: #e1e4e6;
-	background: #2a3037;
+	padding-left: 58px;
+	background: rgba(#fff, 0.02);
+}
+
+.navigation li ul li.active a {
+	color: #e1e4e6; 
+	
+	&::after {
+		background-color: #3498DB; 
+	}
+	
+}
+
+.navigation > ul > li.active > a { 
+	color: #e1e4e6; 
+	background-color: darken($navi-background, 1%);
+
+	&::after {
+		right: 30px;
+	}
 }
 
 /* Footer */
@@ -115,16 +153,20 @@
 	right: 0px;
 	min-height: 30px;
 	line-height: 1;
+	font-weight: $font-bold;
 	font-size: 13px;
 	padding: 10px;
-	color: #969ba0;
+	color: #a6adb3;
 	text-align: center;
-	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
-	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
-	background: #262c33;
+	box-shadow: inset 0 1px 0 rgba(#000, 0.05);
+	background: darken($navi-background, 3%);
 }
 
-.navigation .nav-footer i:before { font-size: 18px; top: -2px; left: -2px }
+.navigation .nav-footer i:before { 
+	font-size: 18px; 
+	top: -2px; 
+	left: -2px 
+}
 
 /* Collapse Logo/Navigation and extend content */
 .top-header.collapsed .logo {
@@ -152,7 +194,6 @@
 .navigation.collapsed > ul > li > a {
 	text-align:center;
 	padding:14px 18px;
-	color: #919292;
 	background-color: transparent; 
 }
 
@@ -174,8 +215,8 @@
 	font-weight: normal;
 	line-height: 40px;
 	width: 200px;
-	color: #FFF;
-	background: none repeat scroll 0 0 #262c33;
+	color: #fff;
+	background: none repeat scroll 0 0 $navi-background;
 	z-index: 4;
 	padding: 0 20px;
 	border-top-right-radius: 3px;
@@ -205,11 +246,10 @@
 }
 
 .navigation.collapsed .active > a > i { color: #969ba0; }
-.navigation.collapsed > ul > li:hover > a > i {
-	color: #e1e4e6;
-}
+.navigation.collapsed > ul > li:hover > a > i { color: #e1e4e6; }
+.navigation.collapsed > ul > li > a:after { display: none; }
 
-/* Collapsed Navigation, also content */
+/* Other major changes when the  */
 #wrapper > .container.collapsed { margin-left: 60px; }
 #wrapper > .container .ajaxwrap { min-width: 720px; }
 
