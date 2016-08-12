@@ -11,6 +11,7 @@ install:
 	mkdir -p $(INSTALLDIR)/www			
 	mkdir -p $(INSTALLDIR)/www/js
 	mkdir -p $(INSTALLDIR)/www/css
+	mkdir -p $(INSTALLDIR)/www/css/schemes
 
 # Copy files we don't want to modify to new install directory
 	cp *.ico *.html *.php robots.txt $(INSTALLDIR)/www
@@ -74,6 +75,14 @@ else
 	for F in $(wildcard *.asp *.js *.jsx); do \
 		sed -i $$F -e "/DUALWAN-BEGIN/,/DUALWAN-END/d"; \
 	done
+endif
+
+ifeq ($(TCONFIG_MIPSR2),y)
+	sed -i $(INSTALLDIR)/www/tomato.js -e "/MIPSR1-BEGIN/,/MIPSR1-END/d"
+	rm -f $(INSTALLDIR)/www/advanced-vlan-r1.asp
+else
+	sed -i $(INSTALLDIR)/www/tomato.js -e "/MIPSR2-BEGIN/,/MIPSR2-END/d"
+	rm -f $(INSTALLDIR)/www/advanced-vlan.asp
 endif
 
 # Only include the CIFS pages if CIFS is configured in.
@@ -317,6 +326,8 @@ endif
 		[ -f $(INSTALLDIR)/www/$$F ] && sed -i $$F \
 		-e "/LINUX26-BEGIN/d"	-e "/LINUX26-END/d" \
 		-e "/LINUX24-BEGIN/d"	-e "/LINUX24-END/d" \
+		-e "/MIPSR2-BEGIN/d"	-e "/MIPSR2-END/d" \
+		-e "/MIPSR1-BEGIN/d"	-e "/MIPSR1-END/d" \
 		-e "/USB-BEGIN/d"	-e "/USB-END/d" \
 		-e "/EXTRAS-BEGIN/d"	-e "/EXTRAS-END/d" \
 		-e "/NTFS-BEGIN/d"	-e "/NTFS-END/d" \
