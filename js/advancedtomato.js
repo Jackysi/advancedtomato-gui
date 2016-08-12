@@ -29,11 +29,11 @@ function AdvancedTomato() {
 
 		if ( $( this ).hasClass( 'active' ) ) {
 
-			$( this ).find( 'ul' ).slideDown( '350', 'easeInQuad' );
+			$( this ).find( 'ul' ).slideDown( 250, 'easeOutCirc' );
 
 		} else {
 
-			$( this ).find( 'ul' ).slideUp( 350, 'easeOutBounce' );
+			$( this ).find( 'ul' ).slideUp( 250, 'easeOutCirc' );
 
 		}
 
