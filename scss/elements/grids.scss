@@ -17,18 +17,15 @@
 	column-gap: none;
 	column-width: auto;
 	margin: 0 0 10px;
-
-	// Fix column breaking
-	column-span: none;
-	break-before: avoid;
-	break-after: avoid;
-	break-inside:avoid;
 }
 
 .fluid-grid .box {
 	display: block;
-	width: 100%;
 	margin: 0 0 15px;
+	
+	// Fix column breaking
+	break-inside: avoid;
+	column-break-inside: avoid;
 }
 
 .fluid-grid.x3 {
