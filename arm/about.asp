@@ -1,5 +1,8 @@
 <title>About</title>
 <content>
+	<style>
+		p { margin-top: 0; padding-top: 0; }
+	</style>
 	<div class="fluid-grid x3">
 		<div class="box"><div class="heading">Tomato Firmware <% version(1); %></div>
 			<div class="content">
@@ -31,7 +34,7 @@
 					- AdvancedTomato logo by Jacky, re-vectored by <a href="http://www.linksysinfo.org/index.php?members/wally3k.52990/">WaLLy3K</a><br />
 					- Based on Tomato by Shibby
 				</p>
-				Copyright (C) 2014 <a href="http://prahec.com/">Jacky Prahec</a>
+				Copyright (C) 2014 <a href="https://prahec.com/">Jacky Prahec</a>
 			</div>
 		</div>
 
@@ -235,7 +238,7 @@
 			</p>
 
 			<p>
-				Built on <% build_time(); %> by Jacky, <a href='http://advancedtomato.com/' target='_new'>http://advancedtomato.com/</a>
+				Built on <% build_time(); %> by Jacky, <a href='https://advancedtomato.com/' target='_new'>https://advancedtomato.com</a>.
 				<br /><b>Thanks to everyone who risked their routers, tested, reported bugs, made suggestions and contributed to this project. ^ _ ^</b>
 			</p>
 
