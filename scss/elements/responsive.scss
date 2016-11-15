@@ -4,7 +4,7 @@
 	#wrapper > .container {	padding: 5px 10px; }
 	.links ul li a { font-size: 0; }
 	.links ul li a i { font-size: 16px; }
-	.system-ui:before, .system-ui:after { display: none; }
+	.system-ui::before, .system-ui::after { right: 15px; }
 }
 
 /* Grids */
