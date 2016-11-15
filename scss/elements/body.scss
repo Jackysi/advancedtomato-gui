@@ -1,345 +1,341 @@
 /* Header Design
 *******************************************************************************************************/
 .top-header {
-  display:             block;
-  height:              60px;
-  position:            fixed;
-  top:                 0;
-  left:                0;
-  right:               0;
-  background:          #fff;
-  backface-visibility: hidden; /* Performance Improvement */
-  transform:           translate3d(0, 0, 0); /* Font Rendering FIX */
-  z-index:             3;
-  box-shadow:          0 2px 4px rgba(0, 0, 0, 0.08);
-  user-select:         none;
+	display: block;
+	height: 60px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: #fff;
+	backface-visibility: hidden; /* Performance Improvement */
+	transform: translate3d(0, 0, 0); /* Font Rendering FIX */
+	z-index: 3;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+	user-select: none;
 }
 
 .top-header .logo {
-  display:     inline-block;
-  float:       left;
-  height:      60px;
-  width:       240px;
-  line-height: normal;
-  background:  #3498db;
-  text-align:  center;
-  overflow:    hidden;
-  box-shadow:  0 2px 4px rgba(0, 0, 0, 0.1);
-  transition:  width 600ms $overflow-anim;
+	display: inline-block;
+	float: left;
+	height: 60px;
+	width: 240px;
+	line-height: normal;
+	background: #3498db;
+	text-align: center;
+	overflow: hidden;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: width 600ms $overflow-anim;
 }
 
 .top-header .logo h1 {
-  display:     inline-block;
-  color:       #fff;
-  font-weight: 500;
-  font-size:   14pt;
-  margin:      12px 0 4px 0;
-  padding:     0;
+	display: inline-block;
+	color: #fff;
+	font-weight: 500;
+	font-size: 14pt;
+	margin: 12px 0 4px 0;
+	padding: 0;
 }
 
 .top-header .logo h2 {
-  color:       #fff;
-  font-weight: normal;
-  display:     block;
-  font-size:   10pt;
-  padding:     0;
-  margin:      -4px 0 0;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+	color: #fff;
+	font-weight: normal;
+	display: block;
+	font-size: 10pt;
+	padding: 0;
+	margin: -4px 0 0;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
 }
 
 .top-header .logo svg {
-  display:        none;
-  margin:         -8px 0 0 -10px;
-  padding:        0;
-  vertical-align: middle;
+	display: none;
+	margin: -8px 0 0 -10px;
+	padding: 0;
+	vertical-align: middle;
 }
 
 .top-header .left-container a {
-  display:     inline-block;
-  float:       left;
-  height:      100%;
-  width:       40px;
-  text-align:  center;
-  line-height: 60px;
-  font-size:   14px;
-  font-weight: normal;
-  color:       #526069;
+	display: inline-block;
+	float: left;
+	height: 100%;
+	width: 40px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 14px;
+	font-weight: normal;
+	color: #526069;
 }
 
 .top-header .left-container a:hover {
-  color: #000;
+	color: #000;
 }
 
 .top-header .links {
-  position: relative;
+	position: relative;
 }
 
 .top-header > .links > ul > li > a {
-  display:            inline-block;
-  color:              #526069;
-  padding:            0 22px;
-  height:             60px;
-  line-height:        60px;
-  transition:         all 150ms ease;
-  -webkit-transition: all 150ms ease;
+	display: inline-block;
+	color: #526069;
+	padding: 0 22px;
+	height: 60px;
+	line-height: 60px;
+	transition: all 150ms ease;
+	-webkit-transition: all 150ms ease;
 }
 
 .top-header > .links > ul > li > a:hover,
 .top-header > .links > ul > li a.active {
-  color:      #000;
-  background: #fafafa;
+	color: #000;
+	background: #fafafa;
 }
 
 .top-header .links > ul {
-  list-style: none;
+	list-style: none;
 }
 
 .top-header .links > ul > li {
-  margin:  0 0 0 -4px;
-  padding: 0;
-  display: inline-block;
+	margin: 0 0 0 -4px;
+	padding: 0;
+	display: inline-block;
 }
 
 .top-header .links li a i {
-  padding-left:   2px;
-  font-size:      16px;
-  margin-top:     -2px;
-  vertical-align: middle;
+	padding-left: 2px;
+	font-size: 16px;
+	margin-top: -2px;
+	vertical-align: middle;
 }
 
 /* System Info Box
 *******************************************************************************************************/
 .system-ui {
-  display:            block;
-  position:           absolute;
-  background:         #fff;
-  padding:            0;
-  width:              340px;
-  top:                65px;
-  right:              10px;
-  border-radius:      4px;
-  display:            none;
-  z-index:            1;
-  border:             1px solid #e4eaec;
-  box-shadow:         0 3px 12px rgba(0, 0, 0, .05);
-  -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, .05);
+	position: absolute;
+	background: #fff;
+	padding: 0;
+	width: 340px;
+	top: 65px;
+	right: 10px;
+	border-radius: 5px;
+	display: none;
+	z-index: 1;
+	border: 1px solid #e4eaec;
+	box-shadow: 0 3px 12px rgba(0, 0, 0, .05);
+	-webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, .05);
 }
 
 .system-ui .router-name {
-  display:                 block;
-  font-size:               14px;
-  font-weight:             500;
-  color:                   #656565;
-  border-bottom:           1px solid #e4eaec;
-  padding:                 12px 18px;
-  border-top-right-radius: 3px;
-  border-top-left-radius:  3px;
+	display: block;
+	font-size: 14px;
+	font-weight: 500;
+	color: #656565;
+	border-bottom: 1px solid #e4eaec;
+	padding: 12px 18px;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
 }
 
 .system-ui .router-name small {
-  margin-top: 2px;
+	margin-top: 2px;
 }
 
 .system-ui .router-control {
-  text-align: center;
-  padding:    15px 15px;
+	text-align: center;
+	padding: 15px 15px;
 }
 
 .system-ui .inner-container {
-  margin:        0;
-  padding:       5px 18px;
-  border-bottom: 1px solid #e4eaec;
+	margin: 0;
+	padding: 5px 18px;
+	border-bottom: 1px solid #e4eaec;
 }
 
 .system-ui .inner-container .desc {
-  display:        inline-block;
-  vertical-align: middle;
-  text-align:     right;
-  padding:        5px 15px 5px 0;
-  width:          50px;
-  font-weight:    500;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: right;
+	padding: 5px 15px 5px 0;
+	width: 50px;
+	font-weight: 500;
 }
 
 .system-ui .inner-container .value {
-  display:        inline-block;
-  vertical-align: middle;
-  width:          240px;
-  padding:        5px 0;
+	display: inline-block;
+	vertical-align: middle;
+	width: 240px;
+	padding: 5px 0;
 }
 
 /* Content Design
 *******************************************************************************************************/
 #wrapper > .container {
-  display:                     block;
-  position:                    absolute;
-  left:                        0;
-  right:                       0;
-  bottom:                      0;
-  top:                         60px;
-  padding:                     20px 40px;
-  height:                      auto;
-  overflow-y:                  auto;
-  overflow-x:                  visible;
-  z-index:                     1;
-  margin-left:                 240px;
-  transition:                  margin 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550) 150ms;
-  -webkit-transition:          margin 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550) 150ms;
-  -webkit-backface-visibility: hidden;
-  backface-visibility:         hidden; /* Performance Improvement */
-  -webkit-transform:           translate3d(0, 0, 0);
-  transform:                   translate3d(0, 0, 0); /* Font Rendering FIX */
-;
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 60px;
+	padding: 20px 40px;
+	height: auto;
+	overflow-y: auto;
+	overflow-x: visible;
+	z-index: 1;
+	margin-left: 240px;
+	transition: margin 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550) 150ms;
+	backface-visibility: hidden; /* Performance Improvement */
+	transform: translate3d(0, 0, 0); /* Font Rendering FIX */
 }
 
 #wrapper > .container .debug {
-  font-size:     12px;
-  background:    #fafafa;
-  border:        1px solid #f5f5f5;
-  padding:       10px;
-  border-radius: 2px;
+	font-size: 12px;
+	background: #fafafa;
+	border: 1px solid #f5f5f5;
+	padding: 10px;
+	border-radius: 2px;
 }
 
 #wrapper > .container:after {
-  content: "";
-  display: table;
-  clear:   both;
+	content: "";
+	display: table;
+	clear: both;
 }
 
 #wrapper .container ul {
-  margin: 10px 15px;
+	margin: 10px 15px;
 }
 
 #wrapper .container ul li {
-  margin: 0 20px;
+	margin: 0 20px;
 }
 
 #wrapper > .container .container-center {
-  position:    absolute;
-  top:         25%;
-  left:        50%;
-  width:       350px;
-  margin-left: -175px;
-  text-align:  center;
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	width: 350px;
+	margin-left: -175px;
+	text-align: center;
 }
 
 .action-area {
-  float:   right;
-  display: inline-block;
+	float: right;
+	display: inline-block;
 }
 
 .box {
-  display:        block;
-  padding:        0;
-  margin:         0 0 15px;
-  background:     #fff;
-  vertical-align: top;
-  border:         1px solid transparent;
-  border-radius:  3px;
-  box-shadow:     0 1px 1px rgba(0, 0, 0, .05);
+	display: block;
+	padding: 0;
+	margin: 0 0 15px;
+	background: #fff;
+	vertical-align: top;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
 
 .box .heading {
-  display:        block;
-  font-size:      17px;
-  font-weight:    500;
-  line-height:    normal;
-  color:          #656565;
-  padding:        15px 10px 15px 20px;
-  vertical-align: middle;
+	display: block;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: normal;
+	color: #656565;
+	padding: 15px 10px 15px 20px;
+	vertical-align: middle;
 }
 
 .box .heading small {
-  margin-left:    5px;
-  vertical-align: baseline;
+	margin-left: 5px;
 }
 
 .box .heading a {
-  color:         #838c91;
-  margin:        -10px 0 0 0;
-  padding:       8px 12px;
-  border-radius: 50%;
-  transition:    color 150ms ease-out;
+	color: #838c91;
+	margin: -8px 0 0 0;
+	padding: 8px 12px;
+	border-radius: 50%;
+	transition: color 150ms ease-out;
 }
 
 .box .heading a:hover {
-  color: #3498db;
+	color: #3498db;
 }
 
 .box .content {
-  padding: 0 20px 15px;
-  display: block;
+	padding: 0 20px 15px;
+	display: block;
 }
 
 .box .content:after {
-  display: table;
-  content: "";
-  clear:   both;
+	display: table;
+	content: "";
+	clear: both;
 }
 
 .box.small {
-  max-width: 960px;
+	max-width: 960px;
 }
 
 .box.box-fluid {
-  width:   auto !important;
-  display: block;
+	width: auto !important;
+	display: block;
 }
 
 .box h2, .box h3, .box h4 {
-  padding: 0;
-  margin:  8px 0;
+	padding: 0;
+	margin: 8px 0;
 }
 
 /* New Ethernet States 
 *******************************************************************************************************/
 #ethPorts {
-  position:  relative;
-  display:   table;
-  padding:   30px 10px;
-  width:     100%;
-  font-size: 12px;
+	position: relative;
+	display: table;
+	padding: 30px 10px;
+	width: 100%;
+	font-size: 12px;
 }
 
 #ethPorts .title {
-  position:   absolute;
-  display:    block;
-  width:      64px;
-  top:        10px;
-  text-align: center;
+	position: absolute;
+	display: block;
+	width: 64px;
+	top: 10px;
+	text-align: center;
 }
 
 #ethPorts .speed {
-  position:   absolute;
-  display:    block;
-  width:      64px;
-  bottom:     8px;
-  text-align: center;
+	position: absolute;
+	display: block;
+	width: 64px;
+	bottom: 8px;
+	text-align: center;
 }
 
 #ethPorts .eth {
-  display: table-cell;
-  z-index: 15;
-  width:   auto;
-  padding: 0 10px;
-  height:  48px;
+	display: table-cell;
+	z-index: 15;
+	width: auto;
+	padding: 0 10px;
+	height: 48px;
 }
 
 #ethPorts .eth.off { background: url('/img/ethernet.x.svg') 20px center no-repeat; }
+
 #ethPorts .eth.on { background: url('/img/ethernet.svg') 20px center no-repeat; }
+
 #ethPorts .eth.wan { width: 30%; }
 
 /* Style Refresh timers */
 .tomato-refresh {
-  float:  right;
-  margin: 5px 0 10px 10px;
+	float: right;
+	margin: 5px 0 10px 10px;
 }
 
 .tomato-refresh .spinner {
-  margin-right:   10px;
-  vertical-align: middle;
+	margin-right: 10px;
+	vertical-align: middle;
 }
 
 #refresh-spinner {
-  vertical-align: middle;
-  margin-top:     -4px;
+	vertical-align: middle;
+	margin-top: -4px;
 }
