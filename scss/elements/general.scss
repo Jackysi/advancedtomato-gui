@@ -1,6 +1,6 @@
 /* General CSS
 *******************************************************************************************************/
-html { 
+html {
 	font-size: 62.5%;
 }
 
@@ -10,6 +10,14 @@ body {
 	color: #76838f;
 	line-height: 1.42857;
 	background-color: #f1f4f5;
+}
+
+body.login-screen {
+	background: #63b7fa;
+	background-image: linear-gradient(to bottom, #62a8ea 0, #3583ca 100%);
+	background-repeat: repeat-x;
+	background-position: center top;
+	background-size: cover;
 }
 
 // Reset all elements box sizing to border-box
@@ -59,12 +67,12 @@ ul { margin: 0; padding: 0; }
 /* Fix firefox inner focus for input,select,textarea and button elements */
 button::-moz-focus-inner,
 textarea::-moz-focus-inner,
-select::-moz-focus-inner, 
-input::-moz-focus-inner { 
-	border: 0; 
-	padding: 0; 
-	margin-top:-2px; 
-	margin-bottom: -2px; 
+select::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+	margin-top:-2px;
+	margin-bottom: -2px;
 }
 
 /* Other cool classes we may need */

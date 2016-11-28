@@ -352,7 +352,6 @@ function loadPage( page, is_history ) {
 
 			// Handle Navigation
 			$( '.navigation li ul li' ).removeClass( 'active' ); // Reset all
-
 			var naviLinks = $( ".navigation a[href='#" + page + "']" );
 			$( naviLinks ).parent( 'li' ).addClass( 'active' );
 
