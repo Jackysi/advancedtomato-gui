@@ -2,6 +2,7 @@
 *******************************************************************************************************/
 html {
 	font-size: 62.5%;
+	height: 100%;
 }
 
 body {
@@ -9,15 +10,8 @@ body {
 	font-family: "Segoe UI", "Roboto", sans-serif;
 	color: #76838f;
 	line-height: 1.42857;
+	height: 100%;
 	background-color: #f1f4f5;
-}
-
-body.login-screen {
-	background: #63b7fa;
-	background-image: linear-gradient(to bottom, #62a8ea 0, #3583ca 100%);
-	background-repeat: repeat-x;
-	background-position: center top;
-	background-size: cover;
 }
 
 // Reset all elements box sizing to border-box

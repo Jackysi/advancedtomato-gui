@@ -8,11 +8,11 @@
 		<title>[<% ident(); %>]: Home</title>
 
 		<!-- Interface Design -->
-		<link href="css/interface.css" rel="stylesheet">
+		<link href="/css/interface.css" rel="stylesheet">
 		<% css(); %>
 
 		<!-- Load Favicon (icon) -->
-		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="shortcut icon" href="/favicon.ico">
 
 		<!-- Variables which we keep through whole GUI, also determine Tomato version here -->
 		<script type="text/javascript">
@@ -38,77 +38,30 @@
 				// Write version & initiate GUI functions & binds
 				document.getElementById('version_container').innerHTML = gui.version;
 
+				// Animate login
+				var div_elm = document.getElementById('login-container-div');
+				div_elm.className += ' login-form-onload';
+
+				// Set redirect if browser will show url
+				if ( window.location.hash != '' ) {
+
+					document.getElementById('redirect_to').value = '/' + window.location.hash;
+
+				}
+
 			};
 
 		</script>
-		<style>
-
-        	/* Change position of the logo icon */
-            #logo-icon {
-                display: inline-block;
-                vertical-align: middle;
-                margin-top: -4px;
-            }
-
-        	/* Move login to center of screen */
-        	.login-form {
-        		position: absolute;
-        		left: 50%;
-        		top: 25%;
-        		margin-left: -200px;
-        		width: 400px;
-        	}
-
-           	.login-container {
-        		background: #fff;
-        		overflow: hidden;
-        		border-radius: 3px;
-        		border: 1px solid transparent;
-        		box-shadow: 0 2px 1px rgba(0,0,0,.1);
-        		margin-bottom: 10px;
-        	}
-
-        	.login-content {
-        		padding: 20px 25px;
-        	}
-
-        	.login-header {
-        		color: #464646;
-        		margin: 30px 0 15px;
-        	}
-
-        	.login-header h2 {
-        		text-align: center;
-        		margin: 0;
-        		padding: 0;
-        		font-size: 20px;
-        	}
-
-        	.form-control {
-        	    display:block;
-        		background: #f1f1f1;
-        		border-color: #f1f1f1;
-        		box-shadow: none;
-        		width: 100%;
-        		-webkit-box-shadow: 0 0 0 1000px #f1f1f1 inset;
-        	}
-
-        	.form-group { margin: 0 0 15px; border-color: transparent; }
-        	.form-control:focus { border-color: #f0f0f0; }
-        	.version-info { color: #fff; margin-top: 10px; text-shadow: 0 1px 0 rgba( 0, 0, 0, .2 ); }
-        	.divider { margin: 15px 0 0; border: 0; content: ""; }
-        	.login-form-onload { animation: loginate 500ms ease 1; }
-        	@keyframes loginate { from { opacity: 0.6; top: 23%; } to { opacity: 1; top: 25%; } }
-        	@media (max-width: 768px) { .login-form { top: 5% !important; } }
-        </style>
 	</head>
 
 	<body class="login-screen">
 
-		<section class="col-sm-6 login-form">
+		<section class="col-sm-6 login-form" id="login-container-div">
 
-			<form class="form-horizontal" method="POST" action="/">
-				<div class="login-container">
+			<form class="form-horizontal" method="POST" action="/login.cgi">
+				<input type="hidden" name="_redirect" value="" id="redirect_to">
+
+				<div class="login-container" >
 
 					<div class="login-header">
 						<h2><svg version="1.1" id="logo-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
