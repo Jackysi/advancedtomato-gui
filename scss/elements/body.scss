@@ -353,3 +353,27 @@
 	vertical-align: middle;
 	margin-top: -4px;
 }
+
+/* Unresponsive interface problem
+*******************************************************************************************************/
+.body-overwrite {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.94);
+	z-index: 999;
+
+	.body-overwrite-text {
+		display: block;
+		width: 400px;
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		margin-left: -200px;
+	}
+
+}
