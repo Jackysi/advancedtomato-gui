@@ -1,27 +1,14 @@
 /* Animations, Keyframes and Preloaders
 *******************************************************************************************************/
-/* Animate Page Loads & Changes */
-@-webkit-keyframes ajax-animation {
-	from { opacity: 0; filter: alpha(opacity=0); }
-	to 	 { opacity: 1; filter: alpha(opacity=100); }
-}
-@keyframes ajax-animation {
-	from { opacity: 0; filter: alpha(opacity=0); }
-	to 	 { opacity: 1; filter: alpha(opacity=100); }
-}
-
 .preloader {
 	vertical-align: middle;
 	margin: 0 10px;
 }
 
 .ajax-animation {
-	-webkit-animation: ajax-animation 450ms ease-out 1;
-	animation:         ajax-animation 450ms ease-out 1;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;  /* Performance Improvement */
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);  /* Font Rendering FIX */
+	animation: ajax-animation 450ms ease-out 1;
+	backface-visibility: hidden; /* Performance Improvement */
+	transform: translate3d(0, 0, 0); /* Font Rendering FIX */
 }
 
 /* Pure CSS preloader */
@@ -30,13 +17,10 @@
 	width: 15px;
 	height: 15px;
 	vertical-align: middle;
-
-	border: solid 1px #3498DB;
-	border-color: #3498DB #3498DB transparent transparent;
+	border: solid 1px #3498db;
+	border-color: #3498db #3498db transparent transparent;
 	border-width: 0 1px 1px;
 	border-radius: 50%;
-
-	-webkit-animation: tomato-spinner 600ms linear infinite;
 	animation: tomato-spinner 600ms linear infinite;
 }
 
@@ -49,29 +33,38 @@
 	width: 36px;
 	height: 36px;
 	border-width: 0 3px 3px;
-
-	-webkit-animation: tomato-spinner 1s linear infinite;
 	animation: tomato-spinner 1s linear infinite;
 }
 
 /* More Preloader(s) */
-#nprogress { pointer-events: none; -webkit-pointer-events: none; }
-#nprogress .bar { 
-	background: #3498DB;
+#nprogress {
+	pointer-events: none;
+}
+
+#nprogress .bar {
+	background: #3498db;
 	position: absolute;
 	z-index: 99;
 	top: 58px;
 	left: 0;
 	width: 0;
 	height: 2px;
-	-webkit-animation: nprogress-animation 5s ease-out 1;
 	animation: nprogress-animation 5s ease-out 1;
 	animation-fill-mode: forwards;
-	-webkit-animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes nprogress-animation { from { width: 15%; } to { width: 100%; } }
-@keyframes nprogress-animation { from { width: 15%; } to { width: 100%; } }
+/* Animate Page Loads & Changes */
+@keyframes ajax-animation {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
 
-@-webkit-keyframes tomato-spinner { from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); } }
-@keyframes tomato-spinner { from { -webkit-transform: rotate(0deg); transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+@keyframes nprogress-animation {
+	from { width: 15%; }
+	to { width: 100%; }
+}
+
+@keyframes tomato-spinner {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
