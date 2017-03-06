@@ -1599,7 +1599,7 @@ TomatoGrid.prototype = {
 						for (var k = 0; k < f.options.length; ++k) {
 							a = f.options[k];
 							if (which == 'edit') {
-								s += '<option value="' + a[0] + '"' + ((a[0] == values[vi]) ? ' selected>' : '>') + a[1] + '</option>';
+								s += '<option value="' + a[0] + '"' + ((a[1] == values[vi]) ? ' selected>' : '>') + a[1] + '</option>';
 							}
 							else {
 								s += '<option value="' + a[0] + '">' + a[1] + '</option>';
