@@ -1,119 +1,134 @@
 .tooltip {
-	position: absolute;
-	z-index: 99;
-	display: block;
-	visibility: visible;
-	font-size: 11px;
-	line-height: 1.4;
-	opacity: 0;
-	filter: alpha(opacity=0);
+    position: absolute;
+    z-index: 99;
+    display: block;
+    visibility: visible;
+    font-size: 11px;
+    line-height: 1.4;
+    opacity: 0;
+    filter: alpha(opacity=0);
 }
+
 .tooltip.in {
-	opacity: 0.9;
-	filter: alpha(opacity=90);
+    opacity: 0.9;
+    filter: alpha(opacity=90);
 }
+
 .tooltip.top {
-	margin-top: -3px;
-	padding: 5px 0;
+    margin-top: -3px;
+    padding: 5px 0;
 }
+
 .tooltip.right {
-	margin-left: 3px;
-	padding: 0 5px;
+    margin-left: 3px;
+    padding: 0 5px;
 }
+
 .tooltip.bottom {
-	margin-top: 3px;
-	padding: 5px 0;
+    margin-top: 3px;
+    padding: 5px 0;
 }
+
 .tooltip.left {
-	margin-left: -3px;
-	padding: 0 5px;
+    margin-left: -3px;
+    padding: 0 5px;
 }
+
 .tooltip-inner {
-	max-width: 300px;
-	padding: 3px 8px;
-	font-weight: normal;
-	color: #ffffff;
-	text-align: center;
-	text-decoration: none;
-	background-color: #000000;
-	background-color: rgba(0,0,0,0.8);
-	border-radius: 4px;
+    max-width: 300px;
+    padding: 3px 8px;
+    font-weight: normal;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
 }
+
 .tooltip-arrow {
-	position: absolute;
-	width: 0;
-	height: 0;
-	border-color: transparent;
-	border-style: solid;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
 }
+
 .tooltip.top .tooltip-arrow {
-	bottom: 0;
-	left: 50%;
-	margin-left: -5px;
-	border-width: 5px 5px 0;
-	border-top-color: #000000;
-	border-top-color: rgba(0,0,0,0.8);
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000000;
+    border-top-color: rgba(0, 0, 0, 0.8);
 }
+
 .tooltip.top-left .tooltip-arrow {
-	bottom: 0;
-	left: 5px;
-	border-width: 5px 5px 0;
-	border-top-color: #000000;
-	border-top-color: rgba(0,0,0,0.8);
+    bottom: 0;
+    left: 5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000000;
+    border-top-color: rgba(0, 0, 0, 0.8);
 }
+
 .tooltip.top-right .tooltip-arrow {
-	bottom: 0;
-	right: 5px;
-	border-width: 5px 5px 0;
-	border-top-color: #000000;
-	border-top-color: rgba(0,0,0,0.8);
+    bottom: 0;
+    right: 5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000000;
+    border-top-color: rgba(0, 0, 0, 0.8);
 }
+
 .tooltip.right .tooltip-arrow {
-	top: 50%;
-	left: 0;
-	margin-top: -5px;
-	border-width: 5px 5px 5px 0;
-	border-right-color: #000000;
-	border-right-color: rgba(0,0,0,0.8);
+    top: 50%;
+    left: 0;
+    margin-top: -5px;
+    border-width: 5px 5px 5px 0;
+    border-right-color: #000000;
+    border-right-color: rgba(0, 0, 0, 0.8);
 }
+
 .tooltip.left .tooltip-arrow {
-	top: 50%;
-	right: 0;
-	margin-top: -5px;
-	border-width: 5px 0 5px 5px;
-	border-left-color: #000000;
-	border-left-color: rgba(0,0,0,0.8);
+    top: 50%;
+    right: 0;
+    margin-top: -5px;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #000000;
+    border-left-color: rgba(0, 0, 0, 0.8);
 }
+
 .tooltip.bottom .tooltip-arrow {
-	top: 0;
-	left: 50%;
-	margin-left: -5px;
-	border-width: 0 5px 5px;
-	border-bottom-color: #000000;
-	border-bottom-color: rgba(0,0,0,0.8);
+    top: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000000;
+    border-bottom-color: rgba(0, 0, 0, 0.8);
 }
+
 .tooltip.bottom-left .tooltip-arrow {
-	top: 0;
-	left: 5px;
-	border-width: 0 5px 5px;
-	border-bottom-color: #000000;
-	border-bottom-color: rgba(0,0,0,0.8);
+    top: 0;
+    left: 5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000000;
+    border-bottom-color: rgba(0, 0, 0, 0.8);
 }
+
 .tooltip.bottom-right .tooltip-arrow {
-	top: 0;
-	right: 5px;
-	border-width: 0 5px 5px;
-	border-bottom-color: #000000;
-	border-bottom-color: rgba(0,0,0,0.8);
+    top: 0;
+    right: 5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000000;
+    border-bottom-color: rgba(0, 0, 0, 0.8);
 }
 
 .fade {
-	opacity: 0;
-	-webkit-transition: opacity 0.15s linear;
-	-o-transition: opacity 0.15s linear;
-	transition: opacity 0.15s linear;
+    opacity: 0;
+    -webkit-transition: opacity 0.15s linear;
+    -o-transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear;
 }
 
 .fade.in {
-	opacity: 1;
+    opacity: 1;
 }

@@ -1,34 +1,34 @@
 /* Progress Bars
 *******************************************************************************************************/
 .progress {
-	vertical-align: middle;
-	display: block;
-	height: 8px;
-	padding: 0;
-	margin: 0;
-	background: #e4eaec;
-	border-radius: 2px;
-	overflow: hidden;
-	
-	// We use this as addon to texts
-	&.small {
-		border-radius: 1px;
-		height: 2px;
-	}
+    vertical-align: middle;
+    display: block;
+    height: 8px;
+    padding: 0;
+    margin: 0;
+    background: #e4eaec;
+    border-radius: 2px;
+    overflow: hidden;
 
-	.bar {
-		display: block;
-		width: 20%;
-		height: 100%;
-		padding:0;
-		margin: 0;
-		background: #62a8ea;
-		transition: width 200ms ease;
-		-webkit-transition: width 200ms ease;
+    // We use this as addon to texts
+    &.small {
+        border-radius: 1px;
+        height: 2px;
+    }
 
-		// Different colors
-		&.warning { background: #FB7D00; }
-		&.success { background: #38F00B; }
-		&.danger {	background: #E24618; }
-	}
+    .bar {
+        display: block;
+        width: 20%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        background: #62a8ea;
+        transition: width 200ms ease;
+        -webkit-transition: width 200ms ease;
+
+        // Different colors
+        &.warning { background: #fb7d00; }
+        &.success { background: #38f00b; }
+        &.danger { background: #e24618; }
+    }
 }

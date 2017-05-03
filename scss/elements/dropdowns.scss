@@ -1,10 +1,41 @@
 /* Dropdowns
 *******************************************************************************************************/
-ul.dropdowns { list-style: none; }
-ul.dropdowns > li { position: relative; display: inline-block; }
-ul.dropdowns > li ul { display: none; position: absolute; left: -10px; z-index: 40; width: 200px; background: #fff; border-radius: 2px; overflow-y: hidden; overflow-x: auto; }
-ul.dropdowns > li ul li { display: block; line-height: normal; margin: 0; }
-ul.dropdowns > li ul li a { display: block; padding: 5px 10px; }
+ul.dropdowns {
+    list-style: none;
+}
 
-.dropdowns li:hover > ul { display: block; }
-.dropdowns li ul a:hover { background: #f0f0f0; }
+ul.dropdowns > li {
+    position: relative;
+    display: inline-block;
+}
+
+ul.dropdowns > li ul {
+    display: none;
+    position: absolute;
+    left: -10px;
+    z-index: 40;
+    width: 200px;
+    background: #fff;
+    border-radius: 2px;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+ul.dropdowns > li ul li {
+    display: block;
+    line-height: normal;
+    margin: 0;
+}
+
+ul.dropdowns > li ul li a {
+    display: block;
+    padding: 5px 10px;
+}
+
+.dropdowns li:hover > ul {
+    display: block;
+}
+
+.dropdowns li ul a:hover {
+    background: #f0f0f0;
+}

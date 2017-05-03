@@ -1,72 +1,128 @@
 /* General CSS
 *******************************************************************************************************/
 html {
-	font-size: 62.5%;
-	height: 100%;
+    font-size: 62.5%;
+    height: 100%;
 }
 
 body {
-	font-size: 10pt;
-	font-family: "Segoe UI", "Roboto", sans-serif;
-	color: #76838f;
-	line-height: 1.42857;
-	height: 100%;
-	background-color: #f1f4f5;
+    font-size: 10pt;
+    font-family: "Segoe UI", "Roboto", sans-serif;
+    color: #76838f;
+    line-height: 1.42857;
+    height: 100%;
+    background-color: #f1f4f5;
 }
 
 // Reset all elements box sizing to border-box
 * { box-sizing: border-box; }
+
 *:before, *:after { box-sizing: inherit; }
 
 /* Replace some general styles (b, h1-h6, etc...) */
 a {
-	color: #45657C;
-	text-decoration: none;
-	outline-style: none;
-	outline-width: 0;
+    color: #45657c;
+    text-decoration: none;
+    outline-style: none;
+    outline-width: 0;
 }
 
 a:hover, a:active {
-	color: #8DBDF1;
-	text-decoration: none;
+    color: #8dbdf1;
+    text-decoration: none;
 }
 
 h1, h2, h3, h4, h5 {
-	font-weight: 500;
-	line-height: 1.1;
-	color: #37474f;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #37474f;
 }
 
-h1, .h1 { font-size: 24px; margin: 0 0 10px; }
-h2, .h2 { font-size: 20px; margin: 0 0 10px; }
-h3, .h3 { font-size: 16px; margin: 0 0 10px; }
-h4, .h4 { font-size: 16px; }
-h5, .h5 { font-size: 15px; }
-h6, .h6 { font-size: 12px; }
+h1, .h1 {
+    font-size: 24px;
+    margin: 0 0 10px;
+}
 
-hr { margin: -5px 0 15px; border: 0; border-bottom: 1px dashed #EEE; }
-small { font-size: 80%; }
-.align { display: block; }
-.align.center, .centered { text-align: center; }
-.bold, b { font-weight: 500; }
-ul { margin: 0; padding: 0; }
+h2, .h2 {
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+h3, .h3 {
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+
+h4, .h4 {
+    font-size: 16px;
+}
+
+h5, .h5 {
+    font-size: 15px;
+}
+
+h6, .h6 {
+    font-size: 12px;
+}
+
+hr {
+    margin: -5px 0 15px;
+    border: 0;
+    border-bottom: 1px dashed #eee;
+}
+
+small {
+    font-size: 80%;
+}
+
+.align {
+    display: block;
+}
+
+.align.center, .centered {
+    text-align: center;
+}
+
+.bold, b {
+    font-weight: 500;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
 
 /* General Text styles */
-.text-center { display: block; text-align: center; }
-.text-orange { color: #c0392b; }
-.text-green { color: #27ae60; }
-.text-red { color: #c0392b; }
-.text-blue { color: #2980b9; }
+.text-center {
+    display: block;
+    text-align: center;
+}
+
+.text-orange {
+    color: #c0392b;
+}
+
+.text-green {
+    color: #27ae60;
+}
+
+.text-red {
+    color: #c0392b;
+}
+
+.text-blue {
+    color: #2980b9;
+}
 
 /* Fix firefox inner focus for input,select,textarea and button elements */
 button::-moz-focus-inner,
 textarea::-moz-focus-inner,
 select::-moz-focus-inner,
 input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-	margin-top:-2px;
-	margin-bottom: -2px;
+    border: 0;
+    padding: 0;
+    margin-top: -2px;
+    margin-bottom: -2px;
 }
 
 /* Other cool classes we may need */
@@ -78,48 +134,58 @@ input::-moz-focus-inner {
 .container-fluid:after,
 .row:before,
 .row:after {
-	content: " ";
-	display: table;
+    content: " ";
+    display: table;
 }
+
 .clearfix:after,
 .container:after,
 .container-fluid:after,
 .row:after {
-	clear: both;
+    clear: both;
 }
+
 .center-block {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 .pull-right {
-	float: right !important;
+    float: right !important;
 }
+
 .pull-left {
-	float: left !important;
+    float: left !important;
 }
+
 .hide {
-	display: none !important;
+    display: none !important;
 }
+
 .show {
-	display: block !important;
+    display: block !important;
 }
+
 .invisible {
-	visibility: hidden;
+    visibility: hidden;
 }
+
 .text-hide {
-	font: 0/0 a;
-	color: transparent;
-	text-shadow: none;
-	background-color: transparent;
-	border: 0;
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
 }
+
 .hidden {
-	display: none !important;
-	visibility: hidden !important;
+    display: none !important;
+    visibility: hidden !important;
 }
+
 .affix {
-	position: fixed;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
+    position: fixed;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }

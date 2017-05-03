@@ -1,122 +1,137 @@
 /* Tables design
 *******************************************************************************************************/
 table {
-	position: relative;
-	display: table;
-	width: 100%;
-	margin: 0;
+    position: relative;
+    display: table;
+    width: 100%;
+    margin: 0;
 }
 
 table th {
-	font-weight: 500;
+    font-weight: 500;
 }
 
 /* Nice Lined Tables */
 table.line-table tr {
-	display: table-row;
-	border-top: 1px solid #e4eaec;
+    display: table-row;
+    border-top: 1px solid #e4eaec;
 }
 
-table.line-table tr:first-child { border: 0; }
-table.line-table .progress { margin: 1px 15px; }
+table.line-table tr:first-child {
+    border: 0;
+}
+
+table.line-table .progress {
+    margin: 1px 15px;
+}
+
 table.line-table tr:nth-child(even) {
-	background: rgba(243,247,249,.3);
+    background: rgba(243, 247, 249, .3);
 }
 
 table.line-table tr:hover {
-	background: #f3f7f9;
+    background: #f3f7f9;
 }
 
 table.line-table tr:hover .progress {
-	background: #e0e0e0;
+    background: #e0e0e0;
 }
 
 table.line-table tr.editor {
-	background: transparent !important;
+    background: transparent !important;
 }
 
 table.line-table tr.controls {
-	background: rgba(243,247,249,.3) !important;
+    background: rgba(243, 247, 249, .3) !important;
 }
 
 table.line-table tr:first-child,
 table.line-table.static tr {
-	background: transparent;
+    background: transparent;
 }
 
 table.line-table tr th {
-	display: table-cell;
-	padding: 8px;
-	font-weight: 500;
-	text-align: left;
+    display: table-cell;
+    padding: 8px;
+    font-weight: 500;
+    text-align: left;
 }
 
 table.line-table tr td {
-	display: table-cell;
-	width: inherit;
-	padding: 10px 6px;
-	vertical-align: middle;
+    display: table-cell;
+    width: inherit;
+    padding: 10px 6px;
+    vertical-align: middle;
 }
-
 
 /* Table ROW options panel */
 #table-row-panel {
-	text-align: right;
-	right: 0;
-	display: block;
-	position: absolute;
+    text-align: right;
+    right: 0;
+    display: block;
+    position: absolute;
 }
 
 #table-row-panel a.move-up-row,
-#table-row-panel a.move-down-row, 
-#table-row-panel a.move-row, 
-#table-row-panel a.delete-row  {
-	float: left;
-	font-size: 10pt;
-	text-align: center;
-	padding: 4px 6px;
-	line-height: 1;
-	color: #fff;
-	background: #585858;
-	z-index:1;
-	transition: background-color 80ms ease;
-	
-	&:hover {
-		 z-index: 10; 
-		background: #434343;
-	}
+#table-row-panel a.move-down-row,
+#table-row-panel a.move-row,
+#table-row-panel a.delete-row {
+    float: left;
+    font-size: 10pt;
+    text-align: center;
+    padding: 4px 6px;
+    line-height: 1;
+    color: #fff;
+    background: #585858;
+    z-index: 1;
+    transition: background-color 80ms ease;
+
+    &:hover {
+        z-index: 10;
+        background: #434343;
+    }
 }
 
-#table-row-panel a.delete-row {	background: #F76D6A; }
+#table-row-panel a.delete-row { background: #f76d6a; }
+
 #table-row-panel a.delete-row:hover { background: #eb4d4a; }
-#table-row-panel a.move-row { background: #4EA5E0; }
-#table-row-panel a.move-row:hover {	background: #3092d0; }
+
+#table-row-panel a.move-row { background: #4ea5e0; }
+
+#table-row-panel a.move-row:hover { background: #3092d0; }
+
 #table-row-panel a:first-child { border-bottom-left-radius: 3px; }
+
 #table-row-panel i:before { top: 0 }
 
 /* Data Tables */
 table.data-table { margin: 0; }
+
 table.data-table tr td { display: table-cell; padding: 5px 0; }
+
 table.data-table.dataonly tr td:first-child { width: 40%; }
+
 table.data-table.other { margin: 5px 10px; }
+
 table.data-table.bwm-info { margin: 15px 5px; }
+
 table.data-table.bwm-info tr td { vertical-align: middle; }
 
 /* Field Tables */
 table.fields-table {
-	width: 100%;
-	max-width: 800px;
+    width: 100%;
+    max-width: 800px;
 }
 
 table.fields-table tr td {
-	display: table-cell;
-	padding: 8px 0;
-	vertical-align: middle;
+    display: table-cell;
+    padding: 8px 0;
+    vertical-align: middle;
 }
 
 table.fields-table tr td:first-child {
-	width: 25%;
-	min-width: 200px;
+    width: 25%;
+    min-width: 200px;
 }
 
 table.fields-table select { min-width: 180px; }
@@ -125,28 +140,33 @@ table.fields-table select { min-width: 180px; }
 table.td-large tr td { }
 
 table .controls, table.line-table tr.controls { box-shadow: none; -webkit-box-shadow: none; border: 0; padding: 0; margin: 0; }
+
 table .controls:hover, table.line-table tr.controls:hover { background: transparent; }
+
 table .controls td, table.line-table tr.controls td { padding: 8px 4px; }
 
-table tr.editor td { margin: 0;}
+table tr.editor td { margin: 0; }
+
 table tr.editor td input:not([type='checkbox']),
 table tr.editor td select,
 table tr.editor td textarea {
-	padding: 5px 4px;
-	width: 100%;
+    padding: 5px 4px;
+    width: 100%;
 }
 
 table .header {
-	color: #646464; 
-	font-weight: 500;
-	cursor: pointer;
+    color: #646464;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 /* Multi-row editor default values. Should/can be overriden in every .asp page were a multirow editor field is used */
-.erow div[class^="x"] { margin-top:3px; float:left; display: inline-block; }
-.erow:first-child div[class^="x"] { margin-top:0px }
+.erow div[class^="x"] { margin-top: 3px; float: left; display: inline-block; }
+
+.erow:first-child div[class^="x"] { margin-top: 0px }
 
 .erow div[class^="x"]:first-child { clear: left; }
 
-.erow div.xa { width: 30%; padding: 0px 0px 0xp 2px; }
+.erow div.xa { width: 30%; padding: 0px 0px 0 xp 2px; }
+
 .erow div.xb { width: 30%; padding-left: 5px; }

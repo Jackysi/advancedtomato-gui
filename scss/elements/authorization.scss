@@ -1,56 +1,56 @@
 body.login-screen {
-	background: #63b7fa;
-	background-image: radial-gradient(ellipse, #63b7fa 0, #3583ca 100%);
+    background: #63b7fa;
+    background-image: radial-gradient(ellipse, #63b7fa 0, #3583ca 100%);
 }
 
 /* Change position of the logo icon */
 #logo-icon {
-	display: inline-block;
-	vertical-align: middle;
-	margin-top: -4px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -4px;
 }
 
 /* Move login to center of screen */
 .login-form {
-	position: absolute;
-	left: 50%;
-	top: 25%;
-	margin-left: -200px;
-	width: 400px;
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    margin-left: -200px;
+    width: 400px;
 }
 
 .login-container {
-	background: #fff;
-	overflow: hidden;
-	border-radius: 3px;
-	border: 1px solid transparent;
-	box-shadow: 0 2px 1px rgba(0, 0, 0, .1);
-	margin-bottom: 10px;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, .1);
+    margin-bottom: 10px;
 }
 
 .login-content {
-	padding: 20px 25px;
+    padding: 20px 25px;
 }
 
 .login-header {
-	color: #464646;
-	margin: 30px 0 15px;
+    color: #464646;
+    margin: 30px 0 15px;
 }
 
 .login-header h2 {
-	text-align: center;
-	margin: 0;
-	padding: 0;
-	font-size: 20px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
 }
 
 .form-control {
-	display: block;
-	background: #f1f1f1;
-	border-color: #f1f1f1;
-	box-shadow: none;
-	width: 100%;
-	-webkit-box-shadow: 0 0 0 1000px #f1f1f1 inset;
+    display: block;
+    background: #f1f1f1;
+    border-color: #f1f1f1;
+    box-shadow: none;
+    width: 100%;
+    -webkit-box-shadow: 0 0 0 1000px #f1f1f1 inset;
 }
 
 .form-group { margin: 0 0 15px; border-color: transparent; }
@@ -66,10 +66,10 @@ body.login-screen {
 .text-center { text-align: center; }
 
 @keyframes loginate {
-	from { opacity: 0.4; transform: scale(0.98); top: 20%; }
-	to { opacity: 1; transform: scale(1); top: 25%; }
+    from { opacity: 0.4; transform: scale(0.98); top: 20%; }
+    to { opacity: 1; transform: scale(1); top: 25%; }
 }
 
 @media (max-width: 768px) {
-	.login-form { top: 5% !important; }
+    .login-form { top: 5% !important; }
 }
