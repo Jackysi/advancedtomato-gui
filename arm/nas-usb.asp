@@ -9,7 +9,7 @@ No part of this file may be used without permission.
 	<style>textarea { width: 100%; }</style>
 	<script type="text/javascript">
 
-		//<% nvram("usb_enable,usb_uhci,usb_ohci,usb_usb2,usb_usb3,usb_mmc,usb_storage,usb_printer,usb_printer_bidirect,usb_automount,usb_fs_ext4,usb_fs_fat,usb_fs_exfat,usb_fs_ntfs,usb_ntfs_driver,usb_fs_hfs,script_usbmount,script_usbumount,script_usbhotplug,idle_enable,usb_3g"); %>
+		//<% nvram("usb_enable,usb_uhci,usb_ohci,usb_usb2,usb_usb3,usb_mmc,usb_storage,usb_printer,usb_printer_bidirect,usb_automount,usb_fs_ext4,usb_fs_fat,usb_fs_exfat,usb_fs_ntfs,usb_ntfs_driver,usb_fs_hfs,script_usbmount,script_usbumount,script_usbhotplug,idle_enable,usb_3g,usb_apcupsd"); %>
 		//<% usbdevices(); %>
 
 		list = [];
@@ -48,12 +48,12 @@ No part of this file may be used without permission.
 				}
 				xob = null;
 				_forceRefresh();
-			}
+			};
 
 			xob.onError = function() {
 				xob = null;
 				_forceRefresh();
-			}
+			};
 
 			xob.post( 'usbcmd.cgi', 'remove=' + host );
 		}
@@ -77,12 +77,12 @@ No part of this file may be used without permission.
 				}
 				xob = null;
 				_forceRefresh();
-			}
+			};
 
 			xob.onError = function() {
 				xob = null;
 				_forceRefresh();
-			}
+			};
 
 			xob.post( 'usbcmd.cgi', 'mount=' + host );
 		}
@@ -99,7 +99,7 @@ No part of this file may be used without permission.
 			dg.removeAllData();
 			dg.populate();
 			dg.resort();
-		}
+		};
 
 		var dg = new TomatoGrid();
 
@@ -120,7 +120,7 @@ No part of this file may be used without permission.
 					r = cmpText( a.cells[ col ].innerHTML, b.cells[ col ].innerHTML );
 			}
 			return this.sortAscending ? r : -r;
-		}
+		};
 
 		dg.populate = function() {
 			var i, j, k, a, b, c, e, s, desc, d, parts, p;
@@ -187,14 +187,14 @@ No part of this file may be used without permission.
 			}
 
 			list = [];
-		}
+		};
 
 		dg.setup = function() {
 			this.init( 'dev-grid', 'sort' );
 			this.headerSet( [ 'Type', 'Host', 'Description', 'Mounted?' ] );
 			this.populate();
 			this.sort( 1 );
-		}
+		};
 
 		function earlyInit() {
 			dg.setup();
@@ -212,7 +212,7 @@ No part of this file may be used without permission.
 			E( '_f_uhci' ).disabled    = b || nvram.usb_uhci == -1;
 			E( '_f_ohci' ).disabled    = b || nvram.usb_ohci == -1;
 			E( '_f_usb2' ).disabled    = b;
-			E( '_f_usb3' ).disabled    = b;
+			E( '_f_usb3' ).disabled    = b || nvram.usb_usb3 == -1;
 			E( '_f_print' ).disabled   = b;
 			E( '_f_storage' ).disabled = b;
 
@@ -230,6 +230,9 @@ No part of this file may be used without permission.
 			E( '_f_idle_enable' ).disabled = b || a;
 			E( '_f_usb_3g' ).disabled      = b;
 			/* LINUX26-END */
+			/* UPS-BEGIN */
+			E('_f_usb_apcupsd').disabled = b;
+			/* UPS-END */
 			/* NTFS-BEGIN */
 			E( '_f_ntfs' ).disabled          = b || a;
 			E( '_usb_ntfs_driver' ).disabled = b || a;
@@ -261,7 +264,7 @@ No part of this file may be used without permission.
 			fom.usb_uhci.value             = nvram.usb_uhci == -1 ? -1 : (E( '_f_uhci' ).checked ? 1 : 0);
 			fom.usb_ohci.value             = nvram.usb_ohci == -1 ? -1 : (E( '_f_ohci' ).checked ? 1 : 0);
 			fom.usb_usb2.value             = E( '_f_usb2' ).checked ? 1 : 0;
-			fom.usb_usb3.value             = E( '_f_usb3' ).checked ? 1 : 0;
+			fom.usb_usb3.value             = E( '_f_usb3' ).checked  ? 1 : 0;
 			fom.usb_storage.value          = E( '_f_storage' ).checked ? 1 : 0;
 			fom.usb_printer.value          = E( '_f_print' ).checked ? 1 : 0;
 			fom.usb_printer_bidirect.value = E( '_f_bprint' ).checked ? 1 : 0;
@@ -286,6 +289,9 @@ No part of this file may be used without permission.
 			fom.idle_enable.value = E( '_f_idle_enable' ).checked ? 1 : 0;
 			fom.usb_3g.value      = E( '_f_usb_3g' ).checked ? 1 : 0;
 			/* LINUX26-END */
+			/* UPS-BEGIN */
+			fom.usb_apcupsd.value = E('_f_usb_apcupsd').checked ? 1 : 0;
+			/* UPS-END */
 
 			form.submit( fom, 1 );
 		}
@@ -322,6 +328,9 @@ No part of this file may be used without permission.
 		<input type="hidden" name="idle_enable">
 		<input type="hidden" name="usb_3g">
 		/* LINUX26-END */
+		/* UPS-BEGIN */
+		<input type="hidden" name="usb_apcupsd">
+		/* UPS-END */
 
 		<div class="box" data-box="usb-supp">
 			<div class="heading">USB Support</div>
@@ -380,18 +389,21 @@ No part of this file may be used without permission.
 						},
 						{ title: 'Run after mounting', indent: 2, name: 'script_usbmount', type: 'textarea', value: nvram.script_usbmount },
 						{ title: 'Run before unmounting', indent: 2, name: 'script_usbumount', type: 'textarea', value: nvram.script_usbumount },
-						null,
 						/* LINUX26-BEGIN */
 						{
 							title: 'HDD Spindown', name: 'f_idle_enable', type: 'checkbox',
 							suffix: ' <small>Spin down each HDD when idle. No need to use with flash drive.</small>', value: nvram.idle_enable == 1
 						},
-						null,
 						{
 							title: 'USB 3G Modem support', name: 'f_usb_3g', type: 'checkbox',
 							suffix: ' <small>Before disconnecting 3G Modem from USB port, remember to uncheck box. If modem used usbserial module, you have to reboot router before unplug modem.</small>', value: nvram.usb_3g == 1
 						},
-						null,
+						/* UPS-BEGIN */
+						{
+						    title: 'Run APCUPSD Deamon', name: 'f_usb_apcupsd', type: 'checkbox',
+							suffix: ' <small>Required by UPS Monitor (APC Uninterpretable Power Supply)</small>', value: nvram.usb_apcupsd == 1
+						},
+						/* UPS-END */
 						/* LINUX26-END */
 						{ title: 'Hotplug script<br><small>(called when any USB device is attached or removed)</small>', name: 'script_usbhotplug', type: 'textarea', value: nvram.script_usbhotplug },
 						null,
