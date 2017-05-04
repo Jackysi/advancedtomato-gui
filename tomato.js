@@ -2747,18 +2747,27 @@ function logout() {
 
 // -----------------------------------------------------------------------------
 // jQuery function to create forms on the fly
-(function( $ ) { $.fn.forms = function( data, settings ) { $( this ).append( createFormFields( data, settings ) ); } })( jQuery );
+(function( $ ) { $.fn.forms = function( data, settings ) { $( this ).append( createFormFields( data, settings ) ); }})( jQuery );
+
+/**
+ * Form fields function that handles generating nice and easy html content
+ * @param data
+ * @param settings
+ * @returns {string}
+ */
 function createFormFields( data, settings ) {
 
-    var id, id1, common, output, form = '';
-    var s                             = $.extend( {
+    // Some vars
+    var id, id1, common, output, form = '', multiornot;
 
-                                                      // Defaults
-                                                      'align': 'left',
-                                                      'grid' : [ 'col-sm-3', 'col-sm-9' ]
+    // Set settings
+    var s = $.extend(
+        {
+            // Defaults
+            'align': 'left',
+            'grid' : [ 'col-sm-3', 'col-sm-9' ]
 
-
-                                                  }, settings );
+        }, settings );
 
 
     // Loop through array
@@ -2775,12 +2784,13 @@ function createFormFields( data, settings ) {
 
         if ( v.help ) { v.title += ' (<i data-toggle="tooltip" class="icon-info icon-normal" title="' + v.help + '"></i>)'; }
         if ( v.text ) {
-            if ( v.title ) {
+
+            if ( v.title )
                 form += '<label class="' + s.grid[ 0 ] + ' ' + ((s.align == 'center') ? 'control-label' : 'control-left-label') + '">' + v.title + '</label><div class="' + s.grid[ 1 ] + ' text-block">' + v.text + '</div></fieldset>';
-            }
-            else {
+
+            else
                 form += '<label class="' + s.grid[ 0 ] + ' ' + ((s.align == 'center') ? 'control-label' : 'control-left-label') + '">' + v.text + '</label></fieldset>';
-            }
+
             return;
         }
 
@@ -2867,6 +2877,7 @@ function createFormFields( data, settings ) {
     } );
 
     return form;
+
 }
 
 
