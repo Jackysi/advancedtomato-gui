@@ -49,6 +49,7 @@
     left: 0;
     width: 0;
     height: 2px;
+    opacity: 0.75;
     animation: nprogress-animation 5s ease-out 1;
     animation-fill-mode: forwards;
 }
@@ -60,7 +61,7 @@
 }
 
 @keyframes nprogress-animation {
-    from { width: 15%; }
+    from { width: 10%; }
     to { width: 100%; }
 }
 

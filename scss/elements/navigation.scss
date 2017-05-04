@@ -245,16 +245,29 @@
     width: 15px;
 }
 
-.navigation.collapsed .active > a > i { color: #969ba0; }
+.navigation.collapsed .active > a > i {
+    color: #969ba0;
+}
 
-.navigation.collapsed > ul > li:hover > a > i { color: #e1e4e6; }
+.navigation.collapsed > ul > li:hover > a > i {
+    color: #e1e4e6;
+}
 
-.navigation.collapsed > ul > li > a:after { display: none; }
+.navigation.collapsed > ul > li > a:after {
+    display: none;
+}
 
 /* Other major changes when the  */
-#wrapper > .container.collapsed { margin-left: 60px; }
+#wrapper > .container.collapsed {
+    margin-left: 60px;
+}
 
-#wrapper > .container .ajaxwrap { min-width: 720px; }
+#wrapper > .container .ajaxwrap {
+    min-width: 720px;
+}
+
+// Generate scrollbars for navigation
+@include webkit-scrollbar(lighten($navi-background, 10%), 8px, 8px, '.navigation');
 
 /* Tabs */
 ul.nav-tabs {

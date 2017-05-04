@@ -15,9 +15,13 @@ body {
 }
 
 // Reset all elements box sizing to border-box
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
-*:before, *:after { box-sizing: inherit; }
+*:before, *:after {
+    box-sizing: inherit;
+}
 
 /* Replace some general styles (b, h1-h6, etc...) */
 a {

@@ -231,6 +231,9 @@
     text-align: center;
 }
 
+// Generate scrollbars for content wrapper
+@include webkit-scrollbar(#babdbe, 10px, 10px, '#wrapper > .container');
+
 .action-area {
     float: right;
     display: inline-block;

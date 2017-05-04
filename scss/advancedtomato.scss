@@ -19,6 +19,9 @@ $navi-background: #263238;
 // Animations
 $overflow-anim: cubic-bezier(1.000, -0.600, 0.000, 1.650);
 
+// Mixins
+@import '_mixins';
+
 // Imports
 @import 'elements/reset';
 @import 'elements/fonts';
