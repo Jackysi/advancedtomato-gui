@@ -1,0 +1,32 @@
+// Set scroll bars style for all webkit browsers (Chrome, Safari, etc...)
+@mixin webkit-scrollbar($background, $width, $height, $selector: '') {
+    #{$selector}::-webkit-scrollbar {
+        width: $width;
+        height: $height;
+    }
+    #{$selector}::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+    }
+
+    /* Handle */
+    #{$selector}::-webkit-scrollbar-thumb {
+        background-color: $background;
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+
+        &:hover {
+            background: lighten($background, 8%);
+        }
+    }
+    #{$selector}::-webkit-scrollbar-thumb:window-inactive {
+        background: lighten($background, 15%);
+    }
+}
+
+// Simple fix for absolute/fixed elements on some browsers (rendering issues fix)
+@mixin fixrender() {
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
