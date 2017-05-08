@@ -388,7 +388,7 @@ function loadPage( page, is_history ) {
                 if ( $( 'body .body-overwrite' ).length == 0 ) {
 
                     $( 'body' ).append( '<div class="body-overwrite"><div class="body-overwrite-text text-center"><div class="spinner spinner-large"></div>' +
-                                        '<br><br><b>Connection lost!</b><br>Attempting to reconnect...</div></div>' );
+                                        '<br><br><b>Connection timed out!</b><br>Establishing new connection to the router, please wait...</div></div>' );
 
                 }
 
