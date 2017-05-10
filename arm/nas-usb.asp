@@ -400,7 +400,7 @@ No part of this file may be used without permission.
 						},
 						/* UPS-BEGIN */
 						{
-						    title: 'Run APCUPSD Deamon', name: 'f_usb_apcupsd', type: 'checkbox',
+						    title: 'Run APCUPSD Daemon', name: 'f_usb_apcupsd', type: 'checkbox',
 							suffix: ' <small>Required by UPS Monitor (APC Uninterpretable Power Supply)</small>', value: nvram.usb_apcupsd == 1
 						},
 						/* UPS-END */
