@@ -387,7 +387,7 @@ No part of this file may be used without permission.
 					htmlOut += ('<li><a href="javascript:sectSelect('+i+', \''+sections[j][0]+'\')" id="'+t+'-'+sections[j][0]+'-tab">'+sections[j][1]+'</a></li>');
 				}
 
-				var action = (eval('vpn'+(i+1)+'up') ? 'title="Stop VPN Client ' + (i+1) + '"><i class="icon-stop"></i>' : 'title="Start VPN Client ' + (i+1) + '"><i class="icon-play"></i>');
+				var action = (eval('vpn'+(i+1)+'up') ? 'title="Stop VPN Client ' + (i+1) + '"><span class="btn btn-danger btn-small">Stop Now</span>' : 'title="Start VPN Client ' + (i+1) + '"><span class="btn btn-success btn-small">Start Now</span>');
 				var status = (!eval('vpn'+(i+1)+'up') ? '<small style="color: red">(Stopped)</small>' : '<small style="color: green;">(Running)</small>');
 
 				htmlOut += '</ul>'
