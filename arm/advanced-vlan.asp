@@ -15,11 +15,11 @@
 	Jan	2014 by Aaron Finney
 	https://github.com/slash31/TomatoE
 
-	VLAN Port Order By 't_model_name'
+	VLAN Port Order by 't_model_name'
 	March 2015 Tvlz
 	https://bitbucket.org/tvlz/tvlz-advanced-vlan/
 
-	** Last Updated - JULY 22 2016 - Tvlz **
+	** Last Updated - Jun 23 2017 - Tvlz **
 
 	For use with Tomato Firmware only.
 	No part of this file may be used without permission.
@@ -50,7 +50,7 @@
 	<script type="text/javascript" src="js/wireless.jsx?_http_id=<% nv(http_id); %>"></script>
 	<script type="text/javascript" src="js/interfaces.js"></script>
 	<script type="text/javascript">
-		//<% nvram ("t_model_name,vlan0ports,vlan1ports,vlan2ports,vlan3ports,vlan4ports,vlan5ports,vlan6ports,vlan7ports,vlan8ports,vlan9ports,vlan10ports,vlan11ports,vlan12ports,vlan13ports,vlan14ports,vlan15ports,vlan0hwname,vlan1hwname,vlan2hwname,vlan3hwname,vlan4hwname,vlan5hwname,vlan6hwname,vlan7hwname,vlan8hwname,vlan9hwname,vlan10hwname,vlan11hwname,vlan12hwname,vlan13hwname,vlan14hwname,vlan15hwname,wan_ifnameX,wan2_ifnameX,wan3_ifnameX,wan4_ifnameX,boardtype,boardflags,lan_ifname,lan_ifnames,lan1_ifname,lan1_ifnames,lan2_ifname,lan2_ifnames,lan3_ifname,lan3_ifnames,vlan0tag,vlan0vid,vlan1vid,vlan2vid,vlan3vid,vlan4vid,vlan5vid,vlan6vid,vlan7vid,vlan8vid,vlan9vid,vlan10vid,vlan11vid,vlan12vid,vlan13vid,vlan14vid,vlan15vid");%>
+		//<% nvram ("t_model_name,vlan0ports,vlan1ports,vlan2ports,vlan3ports,vlan4ports,vlan5ports,vlan6ports,vlan7ports,vlan8ports,vlan9ports,vlan10ports,vlan11ports,vlan12ports,vlan13ports,vlan14ports,vlan15ports,vlan0hwname,vlan1hwname,vlan2hwname,vlan3hwname,vlan4hwname,vlan5hwname,vlan6hwname,vlan7hwname,vlan8hwname,vlan9hwname,vlan10hwname,vlan11hwname,vlan12hwname,vlan13hwname,vlan14hwname,vlan15hwname,wan_ifnameX,wan2_ifnameX,wan3_ifnameX,wan4_ifnameX,manual_boot_nv,boardtype,boardflags,lan_ifname,lan_ifnames,lan1_ifname,lan1_ifnames,lan2_ifname,lan2_ifnames,lan3_ifname,lan3_ifnames,vlan0tag,vlan0vid,vlan1vid,vlan2vid,vlan3vid,vlan4vid,vlan5vid,vlan6vid,vlan7vid,vlan8vid,vlan9vid,vlan10vid,vlan11vid,vlan12vid,vlan13vid,vlan14vid,vlan15vid,model");%>
 
 		var port_vlan_supported = 0;
 		var trunk_vlan_supported = 1; //Enable on all routers
@@ -66,17 +66,13 @@
 			port_vlan_supported = 1;
 		}
 
-		// TESTED ONLY ON WRT54G v2 (boardtype 0x0101),WRT54GL v1.1 (boardtype 0x0467) and WNR3500L (boardtype 0x04cf)
-		// info on some of these boardtypes/routers obtained from
-		// http://wiki.openwrt.org/toh/asus/start
-		// http://wiki.openwrt.org/toh/linksys/start
-		// http://wiki.openwrt.org/toh/start
 		switch ( nvram[ 't_model_name' ] ) {
 			case 'vlan-testid0':
 			case 'Asus RT-AC56U':
 			case 'D-Link DIR868L':
 			case 'Cisco Linksys EA6500v2':
 			case 'Cisco Linksys EA6700':
+			case 'Netgear R8000':
 				COL_P0N = '0';
 				COL_P1N = '1';
 				COL_P2N = '2';
@@ -108,6 +104,7 @@
 				COL_P4N = '4';
 				break;
 			case 'vlan-testid3':
+			case 'Asus RT-AC3200':
 				COL_P0N = '4';
 				COL_P1N = '3';
 				COL_P2N = '2';
@@ -121,6 +118,13 @@
 				COL_P3N = '3';
 				COL_P4N = '4';
 				break;
+			case 'Tenda AC15': //only has 3 Lan ports
+				COL_P0N = '2';
+				COL_P1N = '3';
+				COL_P2N = '4';
+				COL_P3N = '1'; //not used
+				COL_P4N = '0';
+			break;
 			default:
 				COL_P0N = '1';
 				COL_P1N = '2';
@@ -231,7 +235,11 @@
 				v += (d[ i ][ COL_VID_DEF ].toString() != '0') ? d[ i ][ 0 ] : '';
 
 				fom[ 'vlan' + d[ i ][ COL_VID ] + 'ports' ].value  = p;
+				if (nvram['model'] == 'R8000') {
+					fom[ 'vlan' + d[ i ][ COL_VID ] + 'hwname' ].value = 'et2';
+				} else {
 				fom[ 'vlan' + d[ i ][ COL_VID ] + 'hwname' ].value = 'et0';
+				}
 				fom[ 'vlan' + d[ i ][ COL_VID ] + 'vid' ].value    = ((d[ i ][ COL_MAP ].toString() != '') && (d[ i ][ COL_MAP ].toString() != '0')) ? d[ i ][ COL_MAP ] : '';
 
 				fom[ 'wan_ifnameX' ].value += (d[ i ][ COL_BRI ] == '2') ? 'vlan' + d[ i ][ 0 ] : '';
@@ -283,6 +291,8 @@
 			 //        'lan2_ifnames=' + fom['lan2_ifnames'].value + '\n' +
 			 //        'lan3_ifnames=' + fom['lan3_ifnames'].value);
 			 REMOVE-END */
+
+  			fom['manual_boot_nv'].value = 1 //Prevent vlan reset to default
 
 			var e = E( 'footer-msg' );
 
@@ -440,7 +450,7 @@
 						}
 					}
 				}
-			}
+			};
 
 			vlg.countElem = function( f, v ) {
 				var data  = this.getAllData();
@@ -449,37 +459,37 @@
 					total += (data[ i ][ f ] == v) ? 1 : 0;
 				}
 				return total;
-			}
+			};
 
 			vlg.countDefaultVID = function() {
 				return this.countElem( COL_VID_DEF, 1 );
-			}
+			};
 
 			vlg.countVID = function( v ) {
 				return this.countElem( COL_VID, v );
-			}
+			};
 
 			vlg.countWan = function() {
 				return this.countElem( COL_BRI, 2 );
-			}
+			};
 
 			vlg.countWan2 = function() {
 				return this.countElem( COL_BRI, 7 );
-			}
+			};
 
 			/* MULTIWAN-BEGIN */
 			vlg.countWan3 = function() {
 				return this.countElem( COL_BRI, 8 );
-			}
+			};
 
 			vlg.countWan4 = function() {
 				return this.countElem( COL_BRI, 9 );
-			}
+			};
 			/* MULTIWAN-END */
 
 			vlg.countLan = function( l ) {
 				return this.countElem( COL_BRI, l + 3 );
-			}
+			};
 
 			vlg.verifyFields = function( row, quiet ) {
 				var valid = 1;
@@ -633,7 +643,7 @@
 				}
 
 				return valid;
-			}
+			};
 
 			vlg.dataToView = function( data ) {
 				return [ data[ COL_VID ],
@@ -654,7 +664,7 @@
 					         , 'WAN3', 'WAN4'
 					         /* MULTIWAN-END */
 				         ][ data[ COL_BRI ] - 1 ] ];
-			}
+			};
 
 			vlg.dataToFieldValues = function( data ) {
 				return [ data[ COL_VID ],
@@ -671,7 +681,7 @@
 				         (data[ COL_P4T ] != 0) ? 'checked' : '',
 				         (data[ COL_VID_DEF ] != 0) ? 'checked' : '',
 				         data[ COL_BRI ] ];
-			}
+			};
 
 			vlg.fieldValuesToData = function( row ) {
 				var f = fields.getAll( row );
@@ -689,7 +699,7 @@
 				         f[ COL_P4T ].checked ? 1 : 0,
 				         f[ COL_VID_DEF ].checked ? 1 : 0,
 				         f[ COL_BRI ].value ];
-			}
+			};
 
 			vlg.onCancel = function() {
 				this.removeEditor();
@@ -697,7 +707,7 @@
 				this.disableNewEditor( false );
 
 				this.resetNewEditor();
-			}
+			};
 
 			vlg.onAdd = function() {
 				var data;
@@ -714,7 +724,7 @@
 				this.resetNewEditor();
 
 				this.resort();
-			}
+			};
 
 			vlg.onOK = function() {
 				var i, data, view;
@@ -735,7 +745,7 @@
 
 				this.resetNewEditor();
 				this.resort();
-			}
+			};
 
 			vlg.onDelete = function() {
 				this.removeEditor();
@@ -744,7 +754,7 @@
 				this.disableNewEditor( false );
 
 				this.resetNewEditor();
-			}
+			};
 
 			vlg.sortCompare = function( a, b ) {
 				var obj = TGO( a );
@@ -874,10 +884,11 @@
 		<input type="hidden" name="vlan15hwname">
 		<input type="hidden" name="wan_ifnameX">
 		<input type="hidden" name="wan2_ifnameX">
-		/* MULTIWAN-BEGIN */
+		<!-- MULTIWAN-BEGIN -->
 		<input type="hidden" name="wan3_ifnameX">
 		<input type="hidden" name="wan4_ifnameX">
-		/* MULTIWAN-END */
+		<!-- MULTIWAN-END -->
+		<input type="hidden" name="manual_boot_nv">
 		<input type="hidden" name="lan_ifnames">
 		<input type="hidden" name="lan1_ifnames">
 		<input type="hidden" name="lan2_ifnames">
@@ -901,121 +912,107 @@
 
 		<div style="display: none;" class="alert alert-warning" id='unknown_router'>
 			<h5>Unknown Port Mapping!</h5>
-			<a href='http://www.linksysinfo.org/index.php?threads/can-vlan-gui-port-order-be-corrected.70160/#post-247634/'>Please follow these instructions to get it corrected.</a>
-			Include Router Brand/Model (<% nv('t_model_name'); %>), Results from "nvram show | grep vlan1ports" - VLANs section only &amp; and Port Numbers on Router Case (Left -> Right viewed from Front).
+			<a href='http://www.linksysinfo.org/index.php?threads/can-vlan-gui-port-order-be-corrected.70160/#post-247634/'>Please Follow this Link for Instructions to get it corrected.</a><br>
+			Include Router Brand/Model (<% nv('t_model_name'); %>), Results from "nvram show | grep vlan1ports" and Port Numbers on BACK of Router Case (Left -> Right viewed from Front).
 		</div>
 
-		<div id="sesdiv" class="box" style="display:none">
-			<div class="heading">VLAN Settings</div>
-			<div class="content">
-				<table class="line-table" id="vlan-grid"></table><br />
+        <div id="sesdiv" class="box" style="display:none">
+            <div class="heading">VLAN Settings</div>
+            <div class="content">
+                <table class="line-table" id="vlan-grid"></table>
+                <br />
+
+                <!-- Unneeded - Hide display for Now, remove later?? -->
+                <div id='vid_offset' style='display:none'>
+                    <h4><a href="javascript:toggleVisibility('vidmap');">VID Offset <span id="sesdiv_vidmap_showhide"><i class="icon-chevron-up"></i></span></a></h4>
+                    <div class="section vidoffset" id="sesdiv_vidmap" style="display:none"></div>
+                    <hr>
+                    <script type="text/javascript">
+                        $( '.section.vidoffset' ).forms(
+                            [
+                                {
+                                    title: 'First 802.1Q VLAN tag', name: 'vlan0tag', type: 'text', maxlen: 4, size: 6,
+                                    value: fixInt( nvram.vlan0tag, 0, 4080, 0 ),
+                                    suffix: ' <small><i>(range: 0 - 4080; must be a multiple of 16; set to 0 to disable)</i></small>'
+                                }
+                            ] );
+                    </script>
+                </div>
+
+                <h4><a href="javascript:toggleVisibility('wireless');">Wireless <span id="sesdiv_wireless_showhide"><i class="icon-chevron-up"></i></span></a></h4>
+                <div class="section wifi" id="sesdiv_wireless" style="display:none"></div>
+                <hr>
+                <script type="text/javascript">
+                    var f = [];
+                    for ( var uidx = 0; uidx < wl_ifaces.length; ++uidx ) {
+                        var u = wl_fface( uidx );
+                        f.push(
+                            {
+                                title: ('Bridge ' + wl_ifaces[ uidx ][ 0 ] + ' to'), name: ('f_bridge_wlan' + u + '_to'), type: 'select',
+                                options: [ [ 0, 'LAN (br0)' ], [ 1, 'LAN1  (br1)' ], [ 2, 'LAN2 (br2)' ], [ 3, 'LAN3 (br3)' ], [ 4, 'none' ] ], value: 4
+                            }
+                        );
+                    }
+
+                    $( '.section.wifi' ).forms( f );
+                    if ( port_vlan_supported ) vlg.setup();
+                </script>
 
 
-				<h4><a href="javascript:toggleVisibility('vidmap');">VID Offset <span id="sesdiv_vidmap_showhide"><i class="icon-chevron-up"></i></span></a></h4>
-				<div class="section vidoffset" id="sesdiv_vidmap" style="display:none"></div><hr>
-				<script type="text/javascript">
-					$('.section.vidoffset').forms([
-	                      { title: 'First 802.1Q VLAN tag', name: 'vlan0tag', type: 'text', maxlen:4, size:6,
-	                          value: fixInt(nvram.vlan0tag, 0, 4080, 0),
-	                          suffix: ' <small><i>(range: 0 - 4080; must be a multiple of 16; set to 0 to disable)</i></small>' }
-	                  ]);
-				</script>
+                <h4><a href="javascript:toggleVisibility('notes');">Notes <span id='sesdiv_notes_showhide'><i class="icon-chevron-up"></i></span></a></h4>
+                <div class="section" id="sesdiv_notes" style="display:none">
+                    <ul>
+                        <li>If you notice that the order of the Lan Ports are incorrectly mapped, <a href='http://www.linksysinfo.org/index.php?threads/can-vlan-gui-port-order-be-corrected.70160/#post-247634/'>
+                            <b>Please Follow this Link for Instructions to get it corrected.</b></a></li>
+                        <br>
+                        <li><b>VLAN</b> - Unique identifier of a VLAN.</li>
+                        <li><b>VID</b> - Allows overriding "traditional" VLAN/VID mapping with arbitrary VIDs for each VLAN (set to "0" to use "regular" VLAN/VID mappings instead).</li>
+                        <li><b>Ports 1-4 &amp; WAN</b> - Which ethernet ports on the router should be members of this VLAN.</li>
+                        <li><b>Tagged</b> - Enable 802.1Q tagging of ethernet frames on a particular port/VLAN</li>
+                        <li><b>Default</b> - VLAN ID assigned to untagged frames received by the router.</li>
+                        <li><b>Bridge</b> - Determines if this VLAN ID should be treated as WAN, part of a LAN bridge or just left alone (i.e. member of a 802.1Q trunk, being managed manually via scripts, etc...).</li>
+                    </ul>
+                    <ul>
+                        <li><b>Wireless</b> - Assignments of wireless interfaces to different LAN briges. You should probably be using and/or check things on <a href=advanced-wlanvifs.asp>Advanced/Virtual Wireless</a> and
+                            <a href=basic-network.asp>Basic/Network</a>.
+                        </li>
+                    </ul>
 
+                    <ul>
+                        <li><b>Other relevant notes/hints:</b>
+                            <ul id="noteshints">
+                                <li>One VID <i>must</i> be assigned to WAN.</li>
+                                <li>One VID <i>must</i> be selected as the default.</li>
+                            </ul>
+                    </ul>
 
-				<h4><a href="javascript:toggleVisibility('wireless');">Wireless <span id="sesdiv_wireless_showhide"><i class="icon-chevron-up"></i></span></a></h4>
-				<div class="section wifi" id="sesdiv_wireless" style="display:none"></div><hr>
-				<script type="text/javascript">
-					var f = [];
-					for (var uidx = 0; uidx < wl_ifaces.length; ++uidx) {
-						var u = wl_fface(uidx);
-						f.push(
-								{ title: ('Bridge ' + wl_ifaces[uidx][0] + ' to'), name: ('f_bridge_wlan'+u+'_to'), type: 'select',
-									options: [[0,'LAN (br0)'],[1,'LAN1  (br1)'],[2,'LAN2 (br2)'],[3,'LAN3 (br3)'],[4,'none']], value: 4 }
-						);
-					}
+                    <script type="text/javascript">
 
-					$('.section.wifi').forms(f);
-					if(port_vlan_supported) vlg.setup();
-				</script>
+                        if ( (trunk_vlan_supported) || (nvram.trunk_vlan_so == '1') ) {
+                            $( '#noteshints' ).append( '<li>To prevent 802.1Q compatibility issues, avoid using VID "0" as 802.1Q specifies that frames with a tag of "0" do not belong to any VLAN (the tag contains only user priority information).</li>' );
+                            $( '#noteshints' ).append( '<li>It may be also recommended to avoid using VID "1" as some vendors consider it special/reserved (for management purposes).</li>' );
+                        }
 
+                    </script>
 
-				<h4><a href="javascript:toggleVisibility('notes');">Notes <span id='sesdiv_notes_showhide'><i class="icon-chevron-up"></i></span></a></h4>
-				<div class="section" id="sesdiv_notes" style="display:none">
-					<ul>
-						<li>If you notice that the order of the Lan Ports are incorrectly mapped, <a href='http://www.linksysinfo.org/index.php?threads/can-vlan-gui-port-order-be-corrected.70160/#post-247634/'> <b>Please Follow this Link for Instructions to get it corrected.</b></a></li>
-						<li><b>VLAN</b> - Unique identifier of a VLAN.</li>
-						<li><b>VID</b> - <i>EXPERIMENTAL</i> - Allows overriding "traditional" VLAN/VID mapping with arbitrary VIDs for each VLAN (set to "0" to use "regular" VLAN/VID mappings instead). Warning: this hasn"t been verified/tested on anything but a Cisco/Linksys E3000 and may not be supported by your particular device/model (<small><b><i>see notes on "VID Offset" below</i></b></small>).</li>
-						<li><b>Ports 1-4 &amp; WAN</b> - Which ethernet ports on the router should be members of this VLAN.</li>
-						<li><b>Tagged</b> - Enable 802.1Q tagging of ethernet frames on a particular port/VLAN <span id="trunk_vlan_supported_message"></span>
-							<script type="text/javascript">
-								if(!trunk_vlan_supported)
-									$('#trunk_vlan_supported_message').html(' <i><b>(unknown support for this model...contact the developper (Victek))</i></b>');
-							</script>
-						</li>
-						<li><b>Default</b> - VLAN ID assigned to untagged frames received by the router.</li>
-						<li><b>Bridge</b> - Determines if this VLAN ID should be treated as WAN, part of a LAN bridge or just left alone (i.e. member of a 802.1Q trunk, being managed manually via scripts, etc...).</li>
-					</ul>
+                </div>
+                <br />
+            </div>
+        </div>
 
-					<ul>
-						<li><b>VID Offset</b> - <i>EXPERIMENTAL</i> - First 802.1Q VLAN tag to be used as <i>base/initial tag/VID</i> for VLAN and VID assignments. This allows using VIDs larger than 15 on (older) devices such as the Linksys WRT54GL v1.1 (in contiguous blocks/ranges with up to 16 VLANs/VIDs). Set to '0' (zero) to disable this feature and VLANs will have the very same/identical value for its VID, as usual (from 0 to 15).</li>
-					</ul>
+        <script type="text/javascript">
+            if ( !port_vlan_supported )
+                $( '#sesdiv' ).after( '<i>This feature is not supported on this router.</i>' );
+            else {
+                E( 'sesdiv' ).style.display = '';
+            }
+        </script>
 
-					<ul>
-						<li><b>Wireless</b> - Assignments of wireless interfaces to different LAN briges. You should probably be using and/or check things on <a href=advanced-wlanvifs.asp>Advanced/Virtual Wireless</a> and <a href=basic-network.asp>Basic/Network</a>.</li>
-					</ul>
+        <button type="button" value="Save" id="save-button" onclick="save()" class="btn btn-primary">Save <i class="icon-check"></i></button>
+        <button type="button" value="Cancel" id="cancel-button" onclick="javascript:reloadPage();" class="btn">Cancel <i class="icon-cancel"></i></button>
+        <span id="footer-msg" class="alert alert-warning" style="visibility: hidden;"></span>
 
-					<ul>
-						<li><b>Other relevant notes/hints:</b>
-							<ul id="noteshints">
-								<li>One VID <i>must</i> be assigned to WAN.</li>
-								<li>One VID <i>must</i> be selected as the default.</li>
+    </form>
 
-							</ul>
-							<ul>
-								<li>This is an <b>experimental</b> feature and hasn't been tested in anything but a Linksys WRT54GL v1.1 running a Teaman-ND K24 build and a Cisco/Linksys E3000 running a Teaman-RT K26 build.</li>
-								<li>There's lots of things that could go wrong, please do think about what you're doing and take a backup before hitting the 'Save' button on this page!</li>
-							</ul>
-					</ul>
-
-					<script type="text/javascript">
-
-						if((trunk_vlan_supported) || (nvram.trunk_vlan_so == '1')) {
-							$('#noteshints').append('<li>To prevent 802.1Q compatibility issues, avoid using VID "0" as 802.1Q specifies that frames with a tag of "0" do not belong to any VLAN (the tag contains only user priority information).</li>');
-							$('#noteshints').append('<li>It may be also recommended to avoid using VID "1" as some vendors consider it special/reserved (for management purposes).</li>');
-						}
-
-					</script>
-
-					<div id="trunk_vlan_override" style="display:none">
-						<h3>Trunk VLAN support override (experimental)</h3>
-						<div class="section trunkvlan">
-							<script type='text/javascript'>
-								createFieldTable('', [
-									{ title: 'Enable', name: 'f_trunk_vlan_so', type: 'checkbox', value: nvram.trunk_vlan_so == '1' },
-								], '.section.trunkvlan', 'fields-table');
-							</script>
-						</div>
-						<br />
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<script type="text/javascript">
-			if(!port_vlan_supported)
-				$('#sesdiv').after('<i>This feature is not supported on this router.</i>');
-			else {
-				E('sesdiv').style.display = '';
-				if(!trunk_vlan_supported)
-					E('trunk_vlan_override').style.display = '';
-			}
-		</script>
-
-		<button type="button" value="Save" id="save-button" onclick="save()" class="btn btn-primary">Save <i class="icon-check"></i></button>
-		<button type="button" value="Cancel" id="cancel-button" onclick="javascript:reloadPage();" class="btn">Cancel <i class="icon-cancel"></i></button>
-		<span id="footer-msg" class="alert alert-warning" style="visibility: hidden;"></span>
-
-	</form>
-
-	<script type="text/javascript">earlyInit(); verifyFields(null,1);</script>
+    <script type="text/javascript">earlyInit(); verifyFields( null, 1 );</script>
 </content>
