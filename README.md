@@ -8,4 +8,4 @@ to develop and work on Tomato GUI. Easiest way to compile firmware with up to da
 -rwxr-xr-x 1 jacky jacky    306 Nov 10 17:33 dnscrypt-helper.sh</pre>
 is 0777 and +X. 
 
-Tutorial how to build AdvancedTomato firmware can be found here: https://github.com/Jackysi/advancedtomato2/blob/advancedtomato-ac/readme.md
+Tutorial how to build AdvancedTomato firmware can be found here: https://github.com/Jackysi/advancedtomato/blob/advancedtomato-ac/README.TXT
