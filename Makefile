@@ -77,14 +77,6 @@ else
 	done
 endif
 
-ifeq ($(TCONFIG_MIPSR2),y)
-	sed -i $(INSTALLDIR)/www/tomato.js -e "/MIPSR1-BEGIN/,/MIPSR1-END/d"
-	rm -f $(INSTALLDIR)/www/advanced-vlan-r1.asp
-else
-	sed -i $(INSTALLDIR)/www/tomato.js -e "/MIPSR2-BEGIN/,/MIPSR2-END/d"
-	rm -f $(INSTALLDIR)/www/advanced-vlan.asp
-endif
-
 # Only include the CIFS pages if CIFS is configured in.
 ifneq ($(TCONFIG_CIFS),y)
 	rm -f $(INSTALLDIR)/www/admin-cifs.asp
@@ -121,6 +113,19 @@ endif
 ifneq ($(TCONFIG_NTFS),y)
 	sed -i $(INSTALLDIR)/www/nas-usb.asp -e "/NTFS-BEGIN/,/NTFS-END/d"
 endif
+
+# Only include Paragon NTFS settings if Paragon is configured in.
+ifneq ($(TCONFIG_UFSDA),y)
+ifneq ($(TCONFIG_UFSDN),y)
+	sed -i $(INSTALLDIR)/www/nas-usb.asp -e "/PARAGON-BEGIN/,/PARAGON-END/d"
+endif
+endif
+
+# Only include Tuxera NTFS settings if Tuxera is configured in.
+ifneq ($(TCONFIG_TUXERA),y)
+	sed -i $(INSTALLDIR)/www/nas-usb.asp -e "/TUXERA-BEGIN/,/TUXERA-END/d"
+endif
+
 # Only include the FTP pages if FTP Server is configured in.
 ifneq ($(TCONFIG_FTP),y)
 	rm -f $(INSTALLDIR)/www/nas-ftp.asp
@@ -167,7 +172,7 @@ endif
 # Only include IPv6 options if IPv6 is configured in.
 ifneq ($(TCONFIG_IPV6),y)
 	cd $(INSTALLDIR)/www && \
-	for F in $(wildcard js/*.js js/*.jsx *.asp *.js *.jsx); do \
+	for F in $(wildcard *.asp *.js *.jsx); do \
 		[ -f $(INSTALLDIR)/www/$$F ] && sed -i $$F \
 		-e "/IPV6-BEGIN/,/IPV6-END/d" \
 		|| true; \
@@ -202,6 +207,8 @@ ifneq ($(TCONFIG_TOR),y)
 	sed -i $(INSTALLDIR)/www/tomato.js -e "/TOR-BEGIN/,/TOR-END/d"
 	sed -i $(INSTALLDIR)/www/about.asp -e "/TOR-BEGIN/,/TOR-END/d"
 endif
+
+
 
 # Only include the USB and NAS pages if USB Support is configured in.
 ifneq ($(TCONFIG_USB),y)
@@ -242,11 +249,11 @@ endif
 		mv $$F.tmp $$F; \
 	done
 
+
 # Only include the vpn pages if OpenVPN is compiled in
 # Remove AES ciphers from the GUI if openssl doesn't have an AES directory
-# Bugfix: vpn.js in AdvancedTomato is in the /js folder
 ifeq ($(TCONFIG_OPENVPN),y)
-	test -d ../openssl/crypto/aes || sed -i $(INSTALLDIR)/www/js/vpn.js -e "/AES-BEGIN/,/AES-END/d"
+	test -d ../openssl/crypto/aes || sed -i $(INSTALLDIR)/www/vpn.js -e "/AES-BEGIN/,/AES-END/d"
 	sed -i $(INSTALLDIR)/www/tomato.js -e "/ VPN-BEGIN/d" -e "/ VPN-END/d"
 	sed -i $(INSTALLDIR)/www/admin-access.asp -e "/ VPN-BEGIN/d" -e "/ VPN-END/d"
 	sed -i $(INSTALLDIR)/www/about.asp -e "/ VPN-BEGIN/d" -e "/ VPN-END/d"
@@ -311,7 +318,7 @@ ifeq ($(TCONFIG_DNSCRYPT),y)
 else
 	sed -i $(INSTALLDIR)/www/basic-network.asp -e "/DNSCRYPT-BEGIN/,/DNSCRYPT-END/d"
 	sed -i $(INSTALLDIR)/www/about.asp -e "/DNSCRYPT-BEGIN/,/DNSCRYPT-END/d"
-endif
+ endif
 
 #-------------------------------- END COMPILER DIRECTIVES -----------------------------------------------
 # Images
@@ -324,12 +331,10 @@ endif
 		
 # clean up compiler directives
 	cd $(INSTALLDIR)/www && \
-	for F in $(wildcard *.asp *.js *.jsx js/*.js js/*.jsx *.html); do \
+	for F in $(wildcard *.asp *.js *.jsx *.html); do \
 		[ -f $(INSTALLDIR)/www/$$F ] && sed -i $$F \
 		-e "/LINUX26-BEGIN/d"	-e "/LINUX26-END/d" \
 		-e "/LINUX24-BEGIN/d"	-e "/LINUX24-END/d" \
-		-e "/MIPSR2-BEGIN/d"	-e "/MIPSR2-END/d" \
-		-e "/MIPSR1-BEGIN/d"	-e "/MIPSR1-END/d" \
 		-e "/USB-BEGIN/d"	-e "/USB-END/d" \
 		-e "/EXTRAS-BEGIN/d"	-e "/EXTRAS-END/d" \
 		-e "/NTFS-BEGIN/d"	-e "/NTFS-END/d" \
@@ -358,6 +363,9 @@ endif
 		-e "/DNSSEC-BEGIN/d"	-e "/DNSSEC-END/d"\
 		-e "/TOR-BEGIN/d"	-e "/TOR-END/d"\
 		-e "/TINC-BEGIN/d"	-e "/TINC-END/d"\
+		-e "/PARAGON-BEGIN/d"	-e "/PARAGON-END/d"\
+		-e "/TUXERA-BEGIN/d"	-e "/TUXERA-END/d"\
+		-e "/MICROSD-BEGIN/d"	-e "/MICROSD-END/d"\
 		-e "/MULTIWAN-BEGIN/d"	-e "/MULTIWAN-END/d"\
 		-e "/DUALWAN-BEGIN/d"	-e "/DUALWAN-END/d"\
 		|| true; \
@@ -411,4 +419,3 @@ endif
 	for F in $(wildcard js/*.jsx *.jsx); do \
 		[ -f $(INSTALLDIR)/www/$$F ] && $(TOP)/www/remcoms2.sh $(INSTALLDIR)/www/$$F c; \
 	done
-	
