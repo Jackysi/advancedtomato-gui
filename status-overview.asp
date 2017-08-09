@@ -36,6 +36,11 @@
 				'version'      : "<% version(0); %>",
 			};
 
+			// ARM Only
+			var lastjiffiestotal = 0;
+			var lastjiffiesidle = 0;
+			var lastjiffiesusage = 100;
+
 			// On DOM Ready, parse GUI version and create navigation
 			$( document ).ready( function() {
 
