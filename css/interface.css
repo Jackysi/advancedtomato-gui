@@ -1026,6 +1026,8 @@ input::-moz-focus-inner {
 
 .box.box-fluid {
   width: auto !important;
+  -ms-flex-line-pack: left;
+      align-content: left;
   display: block;
 }
 
