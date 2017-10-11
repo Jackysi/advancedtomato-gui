@@ -299,15 +299,22 @@ function loadPage( page, is_history ) {
     // Some things that need to be done here =)
     page = page.replace( '#', '' );
     if ( page == 'status-home.asp' || page == '/' || page == null ) { page = 'status-home.asp'; }
-    if ( window.ajaxLoadingState ) { return false; } else { window.ajaxLoadingState = true; }
+    if ( window.ajaxLoadingState ) return false; else window.ajaxLoadingState = true;
 
-    // Since we use ajax, functions and timers stay in memory/cache. Here we undefine & stop them to prevent issues with other pages.
-    if ( typeof( ref ) != 'undefined' ) {
+    // Since we use ajax, functions and timers stay in memory/cache. Here we undefined & stop them to prevent issues with other pages.
+    if ( typeof ref !== 'undefined' ) {
+
         ref.destroy();
-        ref = undefined;
         delete ref;
+
     }
-    if ( typeof( wdog ) != 'undefined' ) { clearTimeout( wdog ); } // Delayed function that kills our refreshers!
+
+    // Delayed function that kills our refreshers!
+    if ( typeof wdog !== 'undefined' ) {
+
+        clearTimeout( wdog );
+
+    }
 
     // Start page pre-loader
     $( '#nprogress' ).append( '<div class="bar"></div>' );
@@ -360,7 +367,7 @@ function loadPage( page, is_history ) {
             $( naviLinks ).parent( 'li' ).addClass( 'active' );
 
             // Remove existing tooltips
-            $('.tooltip').remove();
+            $( '.tooltip' ).remove();
 
             // Bind some functions, scripts etc... (Important: after every page change (ajax load))
             $( '[data-toggle="tooltip"]' ).tooltip( { placement: 'top auto', container: 'body' } );
