@@ -13,7 +13,7 @@ No part of this file may be used without permission.
         /* REMOVE-BEGIN
         !!TB - additional miniupnp settings
         REMOVE-END */
-        //	<% nvram("at_update,tomatoanon_answer,upnp_enable,upnp_mnp,upnp_clean,upnp_secure,upnp_clean_interval,upnp_clean_threshold,upnp_lan,upnp_lan1,upnp_lan2,upnp_lan3,lan_ifname,lan1_ifname,lan2_ifname,lan3_ifname,"); %>
+        //	<% nvram("at_update,tomatoanon_answer,upnp_enable,upnp_mnp,upnp_clean,upnp_secure,upnp_clean_interval,upnp_clean_threshold,upnp_custom,upnp_lan,upnp_lan1,upnp_lan2,upnp_lan3,lan_ifname,lan1_ifname,lan2_ifname,lan3_ifname,"); %>
 		// <% upnpinfo(); %>
 
 		nvram.upnp_enable = fixInt(nvram.upnp_enable, 0, 3, 0);
