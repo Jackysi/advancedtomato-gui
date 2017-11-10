@@ -598,19 +598,23 @@ ul {
   text-align: center;
 }
 
-.text-orange {
+.text-orange,
+.text-warning {
   color: #c0392b;
 }
 
-.text-green {
+.text-green,
+.text-success {
   color: #27ae60;
 }
 
-.text-red {
+.text-red,
+.text-danger {
   color: #c0392b;
 }
 
-.text-blue {
+.text-blue,
+.text-info {
   color: #2980b9;
 }
 
@@ -724,8 +728,6 @@ input::-moz-focus-inner {
   background: #3498db;
   text-align: center;
   overflow: hidden;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   -webkit-transition: width 600ms cubic-bezier(1, -0.6, 0, 1.65);
   transition: width 600ms cubic-bezier(1, -0.6, 0, 1.65);
 }
@@ -1119,6 +1121,56 @@ input::-moz-focus-inner {
   top: 30%;
   left: 50%;
   margin-left: -200px;
+}
+
+/* Upgrade router firmware page
+*******************************************************************************************************/
+#afu-progress {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 20;
+  background: #fff;
+  color: #5a5a5a;
+  opacity: 0;
+  -webkit-transition: opacity 250ms ease-out;
+  transition: opacity 250ms ease-out;
+}
+
+#afu-progress .text-container {
+  position: absolute;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  height: 150px;
+  top: 30%;
+  margin-top: -75px;
+  -webkit-transform: scale(0.2);
+          transform: scale(0.2);
+  -webkit-transition: all 350ms ease-out;
+  transition: all 350ms ease-out;
+}
+
+#afu-progress.active {
+  opacity: 1;
+}
+
+#afu-progress.active .text-container {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  top: 40%;
+}
+
+.line-table tr {
+  background: transparent !important;
+}
+
+.line-table tr:last-child {
+  border: 0;
 }
 
 /* Alerts
@@ -1678,43 +1730,43 @@ button.btn {
 
 /* Fluids */
 .span1 {
-  width: 10% !important;
+  width: 10%;
 }
 
 .span2 {
-  width: 20% !important;
+  width: 20%;
 }
 
 .span3 {
-  width: 30% !important;
+  width: 30%;
 }
 
 .span4 {
-  width: 40% !important;
+  width: 40%;
 }
 
 .span5 {
-  width: 50% !important;
+  width: 50%;
 }
 
 .span6 {
-  width: 60% !important;
+  width: 60%;
 }
 
 .span7 {
-  width: 70% !important;
+  width: 70%;
 }
 
 .span8 {
-  width: 80% !important;
+  width: 80%;
 }
 
 .span9 {
-  width: 90% !important;
+  width: 90%;
 }
 
 .span10 {
-  width: 100% !important;
+  width: 100%;
 }
 
 /* Fluid boxes placement */
@@ -1741,8 +1793,8 @@ button.btn {
           column-count: 2;
   -webkit-column-gap: 15px;
           column-gap: 15px;
-  -webkit-column-width: 50%;
-          column-width: 50%;
+  -webkit-column-width: auto;
+          column-width: auto;
 }
 
 /* Bootstrap GRID */
@@ -3966,6 +4018,34 @@ body.login-screen {
           animation: tomato-spinner 1s linear infinite;
 }
 
+/* SVG Preloader */
+.preloader-circle {
+  display: inline-block;
+  width: 60px;
+}
+
+.preloader-circle > svg {
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+  height: 100%;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  width: 100%;
+  margin: auto;
+}
+
+.preloader-circle > svg > circle {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  fill: none;
+  -webkit-animation: dash 1.5s ease-in-out infinite;
+          animation: dash 1.5s ease-in-out infinite;
+  stroke: #3498db;
+}
+
 /* More Preloader(s) */
 #nprogress {
   pointer-events: none;
@@ -4041,6 +4121,50 @@ body.login-screen {
   to {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
   }
 }
 

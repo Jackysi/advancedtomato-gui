@@ -24,7 +24,6 @@
     background: #3498db;
     text-align: center;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: width 600ms $overflow-anim;
 }
 
@@ -336,11 +335,17 @@
     height: 48px;
 }
 
-#ethPorts .eth.off { background: url('/img/ethernet.x.svg') 20px center no-repeat; }
+#ethPorts .eth.off {
+    background: url('/img/ethernet.x.svg') 20px center no-repeat;
+}
 
-#ethPorts .eth.on { background: url('/img/ethernet.svg') 20px center no-repeat; }
+#ethPorts .eth.on {
+    background: url('/img/ethernet.svg') 20px center no-repeat;
+}
 
-#ethPorts .eth.wan { width: 30%; }
+#ethPorts .eth.wan {
+    width: 30%;
+}
 
 /* Style Refresh timers */
 .tomato-refresh {
@@ -380,4 +385,50 @@
         margin-left: -200px;
     }
 
+}
+
+/* Upgrade router firmware page
+*******************************************************************************************************/
+#afu-progress {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 20;
+    background: #fff;
+    color: #5a5a5a;
+    opacity: 0;
+    transition: opacity 250ms ease-out;
+}
+
+#afu-progress .text-container {
+    position: absolute;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    height: 150px;
+    top: 30%;
+    margin-top: -75px;
+    transform: scale(0.2);
+    transition: all 350ms ease-out;
+}
+
+#afu-progress.active {
+    opacity: 1;
+}
+
+#afu-progress.active .text-container {
+    transform: scale(1);
+    top: 40%;
+}
+
+.line-table tr {
+    background: transparent !important;
+}
+
+.line-table tr:last-child {
+    border: 0;
 }
