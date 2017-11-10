@@ -241,6 +241,7 @@ No part of this file may be used without permission.
 						{ title: '<h5>User Interface Settings</h5>' },
 						{ title: 'Interface Theme', name: 'web_css', type: 'select', help: 'With AdvancedTomato you get very few built in skins, others are available on AdvancedTomato Themes Directory. This way we can save space on router for more important functions.',
 							options: [['tomato','Default'],
+								['css/schemes/dark-scheme', 'Dark Color Scheme'],
 							['css/schemes/green-scheme','Green Color Scheme'],
 							['css/schemes/red-scheme','Red Color Scheme'],
 							['css/schemes/torquoise-scheme','Torquoise Color Scheme'],
