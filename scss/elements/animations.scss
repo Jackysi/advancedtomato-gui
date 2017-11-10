@@ -36,6 +36,33 @@
     animation: tomato-spinner 1s linear infinite;
 }
 
+/* SVG Preloader */
+.preloader-circle {
+    display: inline-block;
+    width: 60px;
+
+    > svg {
+        animation: rotate 2s linear infinite;
+        height: 100%;
+        transform-origin: center center;
+        width: 100%;
+        margin: auto;
+
+        > circle {
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+            stroke-linecap: round;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            fill: none;
+            animation: dash 1.5s ease-in-out infinite;
+            stroke: #3498db;
+        }
+
+    }
+
+}
+
 /* More Preloader(s) */
 #nprogress {
     pointer-events: none;
@@ -68,4 +95,27 @@
 @keyframes tomato-spinner {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0
+    }
+
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px
+    }
+
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px
+    }
 }
