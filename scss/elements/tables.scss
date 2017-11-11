@@ -92,30 +92,54 @@ table.line-table tr td {
     }
 }
 
-#table-row-panel a.delete-row { background: #f76d6a; }
+#table-row-panel a.delete-row {
+    background: #f76d6a;
+}
 
-#table-row-panel a.delete-row:hover { background: #eb4d4a; }
+#table-row-panel a.delete-row:hover {
+    background: #eb4d4a;
+}
 
-#table-row-panel a.move-row { background: #4ea5e0; }
+#table-row-panel a.move-row {
+    background: #4ea5e0;
+}
 
-#table-row-panel a.move-row:hover { background: #3092d0; }
+#table-row-panel a.move-row:hover {
+    background: #3092d0;
+}
 
-#table-row-panel a:first-child { border-bottom-left-radius: 3px; }
+#table-row-panel a:first-child {
+    border-bottom-left-radius: 3px;
+}
 
-#table-row-panel i:before { top: 0 }
+#table-row-panel i:before {
+    top: 0
+}
 
 /* Data Tables */
-table.data-table { margin: 0; }
+table.data-table {
+    margin: 0;
+}
 
-table.data-table tr td { display: table-cell; padding: 5px 0; }
+table.data-table tr td {
+    display: table-cell; padding: 5px 0;
+}
 
-table.data-table.dataonly tr td:first-child { width: 40%; }
+table.data-table.dataonly tr td:first-child {
+    width: 40%;
+}
 
-table.data-table.other { margin: 5px 10px; }
+table.data-table.other {
+    margin: 5px 10px;
+}
 
-table.data-table.bwm-info { margin: 15px 5px; }
+table.data-table.bwm-info {
+    margin: 15px 5px;
+}
 
-table.data-table.bwm-info tr td { vertical-align: middle; }
+table.data-table.bwm-info tr td {
+    vertical-align: middle;
+}
 
 /* Field Tables */
 table.fields-table {
@@ -134,16 +158,28 @@ table.fields-table tr td:first-child {
     min-width: 200px;
 }
 
-table.fields-table select { min-width: 180px; }
+table.fields-table select {
+    min-width: 180px;
+}
 
 /* Other extra styles */
-table.td-large tr td { }
+table.td-large tr td {
+}
 
-table .controls, table.line-table tr.controls { box-shadow: none; -webkit-box-shadow: none; border: 0; padding: 0; margin: 0; }
+table .controls, table.line-table tr.controls {
+    box-shadow: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
 
-table .controls:hover, table.line-table tr.controls:hover { background: transparent; }
+table .controls:hover, table.line-table tr.controls:hover {
+    background: transparent;
+}
 
-table .controls td, table.line-table tr.controls td { padding: 8px 4px; }
+table .controls td, table.line-table tr.controls td {
+    padding: 8px 4px;
+}
 
 table tr.editor td { margin: 0; }
 
@@ -161,12 +197,26 @@ table .header {
 }
 
 /* Multi-row editor default values. Should/can be overriden in every .asp page were a multirow editor field is used */
-.erow div[class^="x"] { margin-top: 3px; float: left; display: inline-block; }
+.erow div[class^="x"] {
+    margin-top: 3px;
+    float: left;
+    display: inline-block;
+}
 
-.erow:first-child div[class^="x"] { margin-top: 0px }
+.erow:first-child div[class^="x"] {
+    margin-top: 0px
+}
 
-.erow div[class^="x"]:first-child { clear: left; }
+.erow div[class^="x"]:first-child {
+    clear: left;
+}
 
-.erow div.xa { width: 30%; padding: 0px 0px 0 xp 2px; }
+.erow div.xa {
+    width: 30%;
+    padding: 0 0 0 2px;
+}
 
-.erow div.xb { width: 30%; padding-left: 5px; }
+.erow div.xb {
+    width: 30%;
+    padding-left: 5px;
+}
