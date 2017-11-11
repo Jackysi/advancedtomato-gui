@@ -1165,14 +1165,6 @@ input::-moz-focus-inner {
   top: 40%;
 }
 
-.line-table tr {
-  background: transparent !important;
-}
-
-.line-table tr:last-child {
-  border: 0;
-}
-
 /* Alerts
 *******************************************************************************************************/
 .alert {
@@ -3618,8 +3610,8 @@ table.fields-table select {
 
 /* Other extra styles */
 table .controls, table.line-table tr.controls {
-  box-shadow: none;
   -webkit-box-shadow: none;
+          box-shadow: none;
   border: 0;
   padding: 0;
   margin: 0;
@@ -3667,7 +3659,7 @@ table .header {
 
 .erow div.xa {
   width: 30%;
-  padding: 0px 0px 0 xp 2px;
+  padding: 0 0 0 2px;
 }
 
 .erow div.xb {
