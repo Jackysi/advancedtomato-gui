@@ -5,29 +5,6 @@
     }
 }
 
-/* Fluid boxes placement */
-.fluid-grid {
-    column-count: 1;
-    column-gap: none;
-    column-width: auto;
-    margin: 0 0 10px;
-}
-
-.fluid-grid .box {
-    display: block;
-    margin: 0 0 15px;
-
-    // Fix column breaking
-    break-inside: avoid;
-    column-break-inside: avoid;
-}
-
-.fluid-grid.x3 {
-    column-count: 2;
-    column-gap: 15px;
-    column-width: auto;
-}
-
 /* Bootstrap GRID */
 .row {
     margin-left: -15px;

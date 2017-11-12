@@ -4,6 +4,14 @@ body {
     background: #22313a
 }
 
+input, select, textarea {
+    font-family: Roboto, sans-serif;
+}
+
+button.btn {
+    font-family: Roboto, sans-serif;
+}
+
 .top-header {
     background-color: #1e2a31;
 }
@@ -48,16 +56,43 @@ body {
     border-color: #22313a;
 }
 
+.navigation {
+    padding-top: 10px;
+    background-color: #22313a;
+}
+
+.navigation.collapsed {
+    padding-top: 0;
+}
+
 .navigation > ul > li.active > a {
     background: #22313a;
 }
 
-.navigation li ul {
-    background: #22313a;
+.navigation li a {
+    padding: 10px 35px;
 }
 
-.navigation {
-    background-color: #22313a;
+.navigation li ul li a {
+    padding: 5px 0 5px 65px;
+}
+
+.navigation li ul li:before {
+    left: 42px;
+    top: -14px;
+}
+
+.navigation li ul li a:before {
+    left: 44px;
+    top: 14px;
+}
+
+.navigation li ul li a:hover {
+    padding-left: 68px;
+}
+
+.navigation li ul {
+    background: #22313a;
 }
 
 .navigation .nav-footer {

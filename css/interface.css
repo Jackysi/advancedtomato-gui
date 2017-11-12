@@ -972,6 +972,34 @@ input::-moz-focus-inner {
   display: inline-block;
 }
 
+/* Fluid boxes placement */
+.fluid-grid {
+  -webkit-column-count: 1;
+          column-count: 1;
+  -webkit-column-gap: unset;
+          column-gap: unset;
+  -webkit-column-width: auto;
+          column-width: auto;
+  margin: 0 0 10px;
+}
+
+.fluid-grid .box {
+  display: block;
+  margin: 0 0 15px;
+  -webkit-column-break-inside: avoid;
+          break-inside: avoid;
+}
+
+.fluid-grid.x3 {
+  -webkit-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 15px;
+          column-gap: 15px;
+  -webkit-column-width: auto;
+          column-width: auto;
+}
+
+/* Boxes design */
 .box {
   display: block;
   padding: 0;
@@ -1298,8 +1326,6 @@ a.close:hover {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  background-image: none;
-  border: 0;
   white-space: nowrap;
   padding: 8px 16px;
   margin: 0;
@@ -1307,16 +1333,15 @@ a.close:hover {
   font-weight: normal;
   line-height: normal !important;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   text-decoration: none;
-  outline-style: none;
   outline: none;
   color: #ffffff !important;
   background: #536270;
-  transition: background-color 150ms ease, color 150ms ease;
   -webkit-transition: background-color 150ms ease, color 150ms ease;
+  transition: background-color 150ms ease, color 150ms ease;
   border-radius: 3px;
   border: 1px solid transparent;
 }
@@ -1332,8 +1357,8 @@ a.close:hover {
 .btn[disabled] {
   pointer-events: none;
   cursor: not-allowed;
-  box-shadow: none;
   -webkit-box-shadow: none;
+          box-shadow: none;
   opacity: 0.65;
   filter: alpha(opacity=65);
 }
@@ -1387,10 +1412,10 @@ a.close:hover {
 .btn.btn-tab {
   color: #535353 !important;
   background: #fafafa;
-  box-shadow: none;
   -webkit-box-shadow: none;
+          box-shadow: none;
   line-height: 1.2;
-  border: 1px solid #f0f0f0;
+  border: solid #f0f0f0;
   border-width: 1px 0 0 1px;
 }
 
@@ -1410,8 +1435,7 @@ button.btn {
   font-family: "Roboto", "Segoe UI", sans-serif;
   font-weight: 400 !important;
   vertical-align: middle;
-  outline: 0;
-  outline-style: none;
+  outline: none;
 }
 
 .btn-small {
@@ -1422,8 +1446,8 @@ button.btn {
 }
 
 .btn-group {
-  white-space: no-wrap;
-  font-size: 0px;
+  white-space: nowrap;
+  font-size: 0;
 }
 
 .btn-group > .btn {
@@ -1759,34 +1783,6 @@ button.btn {
 
 .span10 {
   width: 100%;
-}
-
-/* Fluid boxes placement */
-.fluid-grid {
-  -webkit-column-count: 1;
-          column-count: 1;
-  -webkit-column-gap: none;
-          column-gap: none;
-  -webkit-column-width: auto;
-          column-width: auto;
-  margin: 0 0 10px;
-}
-
-.fluid-grid .box {
-  display: block;
-  margin: 0 0 15px;
-  -webkit-column-break-inside: avoid;
-          break-inside: avoid;
-  column-break-inside: avoid;
-}
-
-.fluid-grid.x3 {
-  -webkit-column-count: 2;
-          column-count: 2;
-  -webkit-column-gap: 15px;
-          column-gap: 15px;
-  -webkit-column-width: auto;
-          column-width: auto;
 }
 
 /* Bootstrap GRID */
@@ -2573,7 +2569,7 @@ button.btn {
 .navigation li ul li:before {
   content: "";
   left: 32px;
-  top: -11px;
+  top: -12px;
   bottom: 13px;
   position: absolute;
   display: block;
@@ -2584,8 +2580,8 @@ button.btn {
 
 .navigation li ul li a:before {
   content: "";
-  left: 32px;
-  top: 13px;
+  left: 33px;
+  top: 14px;
   position: absolute;
   display: block;
   width: 12px;
@@ -2639,9 +2635,9 @@ button.btn {
 
 .navigation .nav-footer {
   position: absolute;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
   min-height: 30px;
   line-height: 1;
   font-weight: 500;

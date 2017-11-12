@@ -82,7 +82,7 @@
 .navigation li ul li:before {
     content: "";
     left: 32px;
-    top: -11px;
+    top: -12px;
     bottom: 13px;
     position: absolute;
     display: block;
@@ -93,8 +93,8 @@
 
 .navigation li ul li a:before {
     content: "";
-    left: 32px;
-    top: 13px;
+    left: 33px;
+    top: 14px;
     position: absolute;
     display: block;
     width: 12px;
@@ -148,9 +148,9 @@
 
 .navigation .nav-footer {
     position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
     min-height: 30px;
     line-height: 1;
     font-weight: $font-bold;
