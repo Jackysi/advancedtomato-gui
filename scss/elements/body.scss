@@ -238,6 +238,27 @@
     display: inline-block;
 }
 
+/* Fluid boxes placement */
+.fluid-grid {
+    column-count: 1;
+    column-gap: unset;
+    column-width: auto;
+    margin: 0 0 10px;
+}
+
+.fluid-grid .box {
+    display: block;
+    margin: 0 0 15px;
+    break-inside: avoid;
+}
+
+.fluid-grid.x3 {
+    column-count: 2;
+    column-gap: 15px;
+    column-width: auto;
+}
+
+/* Boxes design */
 .box {
     display: block;
     padding: 0;
