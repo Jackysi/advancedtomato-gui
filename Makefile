@@ -77,6 +77,14 @@ else
 	done
 endif
 
+ifeq ($(TCONFIG_MIPSR2),y)
+	sed -i $(INSTALLDIR)/www/tomato.js -e "/MIPSR1-BEGIN/,/MIPSR1-END/d"
+	rm -f $(INSTALLDIR)/www/advanced-vlan-r1.asp
+else
+	sed -i $(INSTALLDIR)/www/tomato.js -e "/MIPSR2-BEGIN/,/MIPSR2-END/d"
+	rm -f $(INSTALLDIR)/www/advanced-vlan.asp
+endif
+
 # Only include the CIFS pages if CIFS is configured in.
 ifneq ($(TCONFIG_CIFS),y)
 	rm -f $(INSTALLDIR)/www/admin-cifs.asp
@@ -113,19 +121,6 @@ endif
 ifneq ($(TCONFIG_NTFS),y)
 	sed -i $(INSTALLDIR)/www/nas-usb.asp -e "/NTFS-BEGIN/,/NTFS-END/d"
 endif
-
-# Only include Paragon NTFS settings if Paragon is configured in.
-ifneq ($(TCONFIG_UFSDA),y)
-ifneq ($(TCONFIG_UFSDN),y)
-	sed -i $(INSTALLDIR)/www/nas-usb.asp -e "/PARAGON-BEGIN/,/PARAGON-END/d"
-endif
-endif
-
-# Only include Tuxera NTFS settings if Tuxera is configured in.
-ifneq ($(TCONFIG_TUXERA),y)
-	sed -i $(INSTALLDIR)/www/nas-usb.asp -e "/TUXERA-BEGIN/,/TUXERA-END/d"
-endif
-
 # Only include the FTP pages if FTP Server is configured in.
 ifneq ($(TCONFIG_FTP),y)
 	rm -f $(INSTALLDIR)/www/nas-ftp.asp
@@ -207,8 +202,6 @@ ifneq ($(TCONFIG_TOR),y)
 	sed -i $(INSTALLDIR)/www/tomato.js -e "/TOR-BEGIN/,/TOR-END/d"
 	sed -i $(INSTALLDIR)/www/about.asp -e "/TOR-BEGIN/,/TOR-END/d"
 endif
-
-
 
 # Only include the USB and NAS pages if USB Support is configured in.
 ifneq ($(TCONFIG_USB),y)
@@ -303,7 +296,7 @@ ifeq ($(TCONFIG_DNSCRYPT),y)
 else
 	sed -i $(INSTALLDIR)/www/basic-network.asp -e "/DNSCRYPT-BEGIN/,/DNSCRYPT-END/d"
 	sed -i $(INSTALLDIR)/www/about.asp -e "/DNSCRYPT-BEGIN/,/DNSCRYPT-END/d"
- endif
+endif
 
 #-------------------------------- END COMPILER DIRECTIVES -----------------------------------------------
 # Images
@@ -313,13 +306,15 @@ else
 # Fonts
 	mkdir -p $(INSTALLDIR)/www/css/fonts
 	cp -r css/fonts/* $(INSTALLDIR)/www/css/fonts/.
-
+		
 # clean up compiler directives
 	cd $(INSTALLDIR)/www && \
 	for F in $(wildcard *.asp *.js *.jsx js/*.js js/*.jsx *.html); do \
 		[ -f $(INSTALLDIR)/www/$$F ] && sed -i $$F \
 		-e "/LINUX26-BEGIN/d"	-e "/LINUX26-END/d" \
 		-e "/LINUX24-BEGIN/d"	-e "/LINUX24-END/d" \
+		-e "/MIPSR2-BEGIN/d"	-e "/MIPSR2-END/d" \
+		-e "/MIPSR1-BEGIN/d"	-e "/MIPSR1-END/d" \
 		-e "/USB-BEGIN/d"	-e "/USB-END/d" \
 		-e "/UPS-BEGIN/d"	-e "/UPS-END/d" \
 		-e "/EXTRAS-BEGIN/d"	-e "/EXTRAS-END/d" \
@@ -362,16 +357,16 @@ else
 	for F in $(wildcard *.asp ); do \
 			[ -f $(INSTALLDIR)/www/$$F ] && \
 			$(TOP)/www/tools/node_modules/.bin/html-minifier $$F --minify-css -o $$F || true; \
-	done 
+	done
 	
-# Remove all javascript multi line comments in asp files
+# Remove all javascript multiline comments in asp files
 	cd $(INSTALLDIR)/www && \
 	for F in $(wildcard *.asp *.html); do \
 		[ -f $(INSTALLDIR)/www/$$F ] && sed -i $$F \
 		-e :a -re 's%(.*)/\*.*\*/%\1%; ta; /\/\*/ !b; N; ba' \
 		|| true; \
 	done
-		
+
 # Compress JAVASCRIPT files
 	cd $(INSTALLDIR)/www && \
 	for F in $(wildcard js/*.js *.js ); do \
@@ -393,4 +388,4 @@ else
 
 # secure the files in the installdir and change file ACLs (and preserve the existing folder ACLs)
 #	chmod 0644 $(INSTALLDIR)/www/*
-	find $(INSTALLDIR)/www/ -type f -print0 | xargs -0 chmod 644
+	find $(INSTALLDIR)/www/ -type f -print0 | xargs -0 chmod 644	
