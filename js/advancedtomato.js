@@ -161,10 +161,10 @@ function AdvancedTomato() {
 
     /* Handle NVRAM global functions and notifications
      ************************************************************************************************/
-    if ( typeof nvram == 'undefined' ) { return false; }
+    if ( nvram === undefined ) { return false; }
 
     // Check for update
-    if ( typeof nvram.at_update !== "undefined" && nvram.at_update != '' ) {
+    if ( nvram.at_update !== undefined && nvram.at_update != '' ) {
 
         var n          = cookie.get( 'latest-update' );
         var lastUpdate = nvram[ 'at_update' ].replace( '.', '' );
@@ -186,7 +186,7 @@ function AdvancedTomato() {
     }
 
     // Check if tomatoanon is configured
-    if ( typeof nvram.tomatoanon_answer !== "undefined" ) {
+    if ( nvram.tomatoanon_answer !== undefined ) {
 
         if ( nvram.tomatoanon_answer != '1' ) {
 
@@ -198,7 +198,7 @@ function AdvancedTomato() {
     }
 
     // Check for Navigation State NVRAM value
-    if ( typeof nvram.at_nav_state !== 'undefined' ) {
+    if ( nvram.at_nav_state !== undefined ) {
 
         if ( nvram.at_nav_state == 'collapsed' || $( window ).width() <= 768 ) {
 
@@ -324,7 +324,7 @@ function loadPage( page, is_history ) {
 
 
     // Switch to JQUERY AJAX function call (doesn't capture errors allowing much easier debugging)
-    $.ajax( { url: page, async: true, cache: false, timeout: 2950 } )
+    $.ajax( { url: page, async: true, cache: false, timeout: 6550 } )
         .done( function( resp ) {
 
             var dom   = $( resp );
@@ -409,7 +409,7 @@ function loadPage( page, is_history ) {
                     window.ajaxLoadingState = false;
                     loadPage( page, is_history );
 
-                }, 3000 );
+                }, 7000 );
 
                 // Don't continue
                 return;
