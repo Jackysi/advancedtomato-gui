@@ -1,55 +1,55 @@
 /* Buttons (using same prefix as bootstrap)
 *******************************************************************************************************/
 .btn {
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    white-space: nowrap;
-    padding: 8px 16px;
-    margin: 0;
-    font-size: 10pt;
-    font-weight: normal;
-    line-height: normal !important;
-    user-select: none;
+    display:         inline-block;
+    text-align:      center;
+    vertical-align:  middle;
+    cursor:          pointer;
+    white-space:     nowrap;
+    padding:         8px 16px;
+    margin:          0;
+    font-size:       10pt;
+    font-weight:     normal;
+    line-height:     normal !important;
+    user-select:     none;
     text-decoration: none;
-    outline: none;
-    color: #ffffff !important;
-    background: #536270;
-    transition: background-color 150ms ease, color 150ms ease;
-    border-radius: 3px;
-    border: 1px solid transparent;
+    outline:         none;
+    color:           #ffffff !important;
+    background:      #536270;
+    transition:      background-color 150ms ease, color 150ms ease;
+    border-radius:   3px;
+    border:          1px solid transparent;
 }
 
 .btn:hover,
 .btn:focus,
 .btn.active {
     background: #617486;
-    color: #fff;
+    color:      #fff;
 }
 
 .btn.disabled,
 .btn[disabled] {
     pointer-events: none;
-    cursor: not-allowed;
-    box-shadow: none;
-    opacity: 0.65;
-    filter: alpha(opacity=65);
+    cursor:         not-allowed;
+    box-shadow:     none;
+    opacity:        0.65;
+    filter:         alpha(opacity=65);
 }
 
 .btn.btn-primary {
-    color: #fff !important;
+    color:            #fff !important;
     background-color: #51aded;
 }
 
 .btn.btn-primary:hover,
 .btn.btn-primary:focus {
-    color: #fff !important;
+    color:      #fff !important;
     background: #60b7f4;
 }
 
 .btn.btn-danger {
-    color: #fff !important;
+    color:      #fff !important;
     background: #ed5153;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .btn.btn-success {
-    color: #fff !important;
+    color:      #fff !important;
     background: #67ba2f;
 }
 
@@ -69,12 +69,12 @@
 }
 
 .btn.btn-link {
-    color: #919293 !important;
-    box-shadow: none;
+    color:              #919293 !important;
+    box-shadow:         none;
     -webkit-box-shadow: none;
-    background: transparent;
-    border: 0;
-    padding: 8px 10px;
+    background:         transparent;
+    border:             0;
+    padding:            8px 10px;
 }
 
 .btn.btn-link:hover,
@@ -84,11 +84,11 @@
 
 /* BTN Tabs */
 .btn.btn-tab {
-    color: #535353 !important;
-    background: #fafafa;
-    box-shadow: none;
-    line-height: 1.2;
-    border: solid #f0f0f0;
+    color:        #535353 !important;
+    background:   #fafafa;
+    box-shadow:   none;
+    line-height:  1.2;
+    border:       solid #f0f0f0;
     border-width: 1px 0 0 1px;
 }
 
@@ -104,36 +104,36 @@
 }
 
 button.btn {
-    height: 35px;
-    font-family: $font-family;
-    font-weight: 400 !important;
+    height:         35px;
+    font-family:    $font-family;
+    font-weight:    400 !important;
     vertical-align: middle;
-    outline: none;
+    outline:        none;
 }
 
 .btn-small {
-    font-size: 8pt;
-    font-weight: normal;
-    padding: 4px 10px !important;
+    font-size:      8pt;
+    font-weight:    normal;
+    padding:        4px 10px !important;
     vertical-align: middle;
 }
 
 .btn-group {
-    white-space: nowrap;
-    font-size: 0;
+    white-space: pre-wrap;
+    font-size:   0;
 }
 
 .btn-group > .btn {
-    margin: 0 -1px 0 0;
+    margin:        0 -1px 0 0;
     border-radius: 0;
 }
 
 .btn-group > .btn:first-of-type {
-    border-top-left-radius: 3px;
+    border-top-left-radius:    3px;
     border-bottom-left-radius: 3px;
 }
 
 .btn-group > .btn:last-of-type {
-    border-top-right-radius: 3px;
+    border-top-right-radius:    3px;
     border-bottom-right-radius: 3px;
 }

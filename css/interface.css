@@ -1446,7 +1446,7 @@ button.btn {
 }
 
 .btn-group {
-  white-space: nowrap;
+  white-space: pre-wrap;
   font-size: 0;
 }
 
