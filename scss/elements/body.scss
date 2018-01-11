@@ -1,68 +1,68 @@
 /* Header Design
 *******************************************************************************************************/
 .top-header {
-    display: block;
-    height: 60px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #fff;
+    display:             block;
+    height:              60px;
+    position:            fixed;
+    top:                 0;
+    left:                0;
+    right:               0;
+    background:          #fff;
     backface-visibility: hidden; /* Performance Improvement */
-    transform: translate3d(0, 0, 0); /* Font Rendering FIX */
-    z-index: 3;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-    user-select: none;
+    transform:           translate3d(0, 0, 0); /* Font Rendering FIX */
+    z-index:             3;
+    box-shadow:          0 2px 4px rgba(0, 0, 0, 0.08);
+    user-select:         none;
 }
 
 .top-header .logo {
-    display: inline-block;
-    float: left;
-    height: 60px;
-    width: 240px;
+    display:     inline-block;
+    float:       left;
+    height:      60px;
+    width:       240px;
     line-height: normal;
-    background: #3498db;
-    text-align: center;
-    overflow: hidden;
-    transition: width 600ms $overflow-anim;
+    background:  #3498db;
+    text-align:  center;
+    overflow:    hidden;
+    transition:  width 600ms $overflow-anim;
 }
 
 .top-header .logo h1 {
-    display: inline-block;
-    color: #fff;
+    display:     inline-block;
+    color:       #fff;
     font-weight: 500;
-    font-size: 14pt;
-    margin: 12px 0 4px 0;
-    padding: 0;
+    font-size:   14pt;
+    margin:      12px 0 4px 0;
+    padding:     0;
 }
 
 .top-header .logo h2 {
-    color: #fff;
+    color:       #fff;
     font-weight: normal;
-    display: block;
-    font-size: 10pt;
-    padding: 0;
-    margin: -4px 0 0;
+    display:     block;
+    font-size:   10pt;
+    padding:     0;
+    margin:      -4px 0 0;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
 }
 
 .top-header .logo svg {
-    display: none;
-    margin: -8px 0 0 -10px;
-    padding: 0;
+    display:        none;
+    margin:         -8px 0 0 -10px;
+    padding:        0;
     vertical-align: middle;
 }
 
 .top-header .left-container a {
-    display: inline-block;
-    float: left;
-    height: 100%;
-    width: 40px;
-    text-align: center;
+    display:     inline-block;
+    float:       left;
+    height:      100%;
+    width:       40px;
+    text-align:  center;
     line-height: 60px;
-    font-size: 14px;
+    font-size:   14px;
     font-weight: normal;
-    color: #526069;
+    color:       #526069;
 }
 
 .top-header .left-container a:hover {
@@ -74,18 +74,18 @@
 }
 
 .top-header > .links > ul > li > a {
-    display: inline-block;
-    color: #526069;
-    padding: 0 22px;
-    height: 60px;
-    line-height: 60px;
-    transition: all 150ms ease;
+    display:            inline-block;
+    color:              #526069;
+    padding:            0 22px;
+    height:             60px;
+    line-height:        60px;
+    transition:         all 150ms ease;
     -webkit-transition: all 150ms ease;
 }
 
 .top-header > .links > ul > li > a:hover,
 .top-header > .links > ul > li a.active {
-    color: #000;
+    color:      #000;
     background: #fafafa;
 }
 
@@ -94,58 +94,58 @@
 }
 
 .top-header .links > ul > li {
-    margin: 0 0 0 -4px;
+    margin:  0 0 0 -4px;
     padding: 0;
     display: inline-block;
 }
 
 .top-header .links li a i {
-    padding-left: 2px;
-    font-size: 16px;
-    margin-top: -2px;
+    padding-left:   2px;
+    font-size:      16px;
+    margin-top:     -2px;
     vertical-align: middle;
 }
 
 /* System Info Box
 *******************************************************************************************************/
 .system-ui {
-    position: absolute;
-    background: #fff;
-    padding: 0;
-    width: 340px;
-    top: 72px;
-    right: 10px;
+    position:      absolute;
+    background:    #fff;
+    padding:       0;
+    width:         340px;
+    top:           72px;
+    right:         10px;
     border-radius: 5px;
-    display: none;
-    z-index: 1;
-    border: 1px solid #e4eaec;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, .05);
+    display:       none;
+    z-index:       1;
+    border:        1px solid #e4eaec;
+    box-shadow:    0 3px 12px rgba(0, 0, 0, .05);
 
     &::after, &::before {
-        display: block;
-        content: "";
-        position: absolute;
-        border: 8px solid transparent;
+        display:             block;
+        content:             "";
+        position:            absolute;
+        border:              8px solid transparent;
         border-bottom-color: #fff;
-        top: -14px;
-        right: 40px;
+        top:                 -14px;
+        right:               40px;
     }
 
     &::before {
-        top: -15px;
+        top:                 -15px;
         border-bottom-color: #e4eaec;
     }
 }
 
 .system-ui .router-name {
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
-    color: #656565;
-    border-bottom: 1px solid #e4eaec;
-    padding: 12px 18px;
+    display:                 block;
+    font-size:               14px;
+    font-weight:             500;
+    color:                   #656565;
+    border-bottom:           1px solid #e4eaec;
+    padding:                 12px 18px;
     border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
+    border-top-left-radius:  3px;
 }
 
 .system-ui .router-name small {
@@ -154,63 +154,63 @@
 
 .system-ui .router-control {
     text-align: center;
-    padding: 15px 15px;
+    padding:    15px 15px;
 }
 
 .system-ui .inner-container {
-    margin: 0;
-    padding: 5px 18px;
+    margin:        0;
+    padding:       5px 18px;
     border-bottom: 1px solid #e4eaec;
 }
 
 .system-ui .inner-container .desc {
-    display: inline-block;
+    display:        inline-block;
     vertical-align: middle;
-    text-align: right;
-    padding: 5px 15px 5px 0;
-    width: 50px;
-    font-weight: 500;
+    text-align:     right;
+    padding:        5px 15px 5px 0;
+    width:          50px;
+    font-weight:    500;
 }
 
 .system-ui .inner-container .value {
-    display: inline-block;
+    display:        inline-block;
     vertical-align: middle;
-    width: 240px;
-    padding: 5px 0;
+    width:          240px;
+    padding:        5px 0;
 }
 
 /* Content Design
 *******************************************************************************************************/
 #wrapper > .container {
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 60px;
-    padding: 20px 40px;
-    height: auto;
-    overflow-y: auto;
-    overflow-x: visible;
-    z-index: 1;
-    margin-left: 240px;
-    transition: margin 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550) 150ms;
+    display:             block;
+    position:            absolute;
+    left:                0;
+    right:               0;
+    bottom:              0;
+    top:                 60px;
+    padding:             20px 40px;
+    height:              auto;
+    overflow-y:          auto;
+    overflow-x:          visible;
+    z-index:             1;
+    margin-left:         240px;
+    transition:          margin 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550) 150ms;
     backface-visibility: hidden; /* Performance Improvement */
-    transform: translate3d(0, 0, 0); /* Font Rendering FIX */
+    transform:           translate3d(0, 0, 0); /* Font Rendering FIX */
 }
 
 #wrapper > .container .debug {
-    font-size: 12px;
-    background: #fafafa;
-    border: 1px solid #f5f5f5;
-    padding: 10px;
+    font-size:     12px;
+    background:    #fafafa;
+    border:        1px solid #f5f5f5;
+    padding:       10px;
     border-radius: 2px;
 }
 
 #wrapper > .container:after {
     content: "";
     display: table;
-    clear: both;
+    clear:   both;
 }
 
 #wrapper .container ul {
@@ -221,62 +221,71 @@
     margin: 0 20px;
 }
 
+#wrapper > .container.collapsed {
+    margin-left: 60px;
+}
+
+#wrapper > .container .ajaxwrap {
+    min-width:  720px;
+    min-height: 100%;
+}
+
 #wrapper > .container .container-center {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    width: 350px;
+    position:    absolute;
+    top:         25%;
+    left:        50%;
+    width:       350px;
     margin-left: -175px;
-    text-align: center;
+    text-align:  center;
 }
 
 // Generate scrollbars for content wrapper
 @include webkit-scrollbar(#babdbe, 10px, 10px, '#wrapper > .container');
 
 .action-area {
-    float: right;
+    float:   right;
     display: inline-block;
 }
 
 /* Fluid boxes placement */
 .fluid-grid {
     column-count: 1;
-    column-gap: unset;
+    column-gap:   unset;
     column-width: auto;
-    margin: 0 0 10px;
+    margin:       0 0 10px;
 }
 
 .fluid-grid .box {
-    display: block;
-    margin: 0 0 15px;
+    display:      block;
+    margin:       0 0 15px;
     break-inside: avoid;
 }
 
 .fluid-grid.x3 {
     column-count: 2;
-    column-gap: 15px;
+    column-gap:   15px;
     column-width: auto;
 }
 
 /* Boxes design */
 .box {
-    display: block;
-    padding: 0;
-    margin: 0 0 15px;
-    background: #fff;
+    display:        block;
+    padding:        0;
+    margin:         0 0 15px;
+    background:     #fff;
     vertical-align: top;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    border:         1px solid transparent;
+    border-radius:  5px;
+    box-shadow:     0 1px 1px rgba(0, 0, 0, .05);
 }
 
 .box .heading {
-    display: block;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: normal;
-    color: #656565;
-    padding: 15px 10px 15px 20px;
+    display:        block;
+    font-size:      16px;
+    font-weight:    500;
+    line-height:    normal;
+    color:          #656565;
+    padding:        15px 10px 15px 20px;
     vertical-align: middle;
 }
 
@@ -285,11 +294,11 @@
 }
 
 .box .heading a {
-    color: #838c91;
-    margin: -8px 0 0 0;
-    padding: 8px 12px;
+    color:         #838c91;
+    margin:        -8px 0 0 0;
+    padding:       8px 12px;
     border-radius: 50%;
-    transition: color 150ms ease-out;
+    transition:    color 150ms ease-out;
 }
 
 .box .heading a:hover {
@@ -304,7 +313,7 @@
 .box .content:after {
     display: table;
     content: "";
-    clear: both;
+    clear:   both;
 }
 
 .box.small {
@@ -312,48 +321,48 @@
 }
 
 .box.box-fluid {
-    width: auto !important;
+    width:         auto !important;
     align-content: left;
-    display: block;
+    display:       block;
 }
 
 .box h2, .box h3, .box h4 {
     padding: 0;
-    margin: 8px 0;
+    margin:  8px 0;
 }
 
 /* New Ethernet States 
 *******************************************************************************************************/
 #ethPorts {
-    position: relative;
-    display: table;
-    padding: 30px 10px;
-    width: 100%;
+    position:  relative;
+    display:   table;
+    padding:   30px 10px;
+    width:     100%;
     font-size: 12px;
 }
 
 #ethPorts .title {
-    position: absolute;
-    display: block;
-    width: 64px;
-    top: 10px;
+    position:   absolute;
+    display:    block;
+    width:      64px;
+    top:        10px;
     text-align: center;
 }
 
 #ethPorts .speed {
-    position: absolute;
-    display: block;
-    width: 64px;
-    bottom: 8px;
+    position:   absolute;
+    display:    block;
+    width:      64px;
+    bottom:     8px;
     text-align: center;
 }
 
 #ethPorts .eth {
     display: table-cell;
     z-index: 15;
-    width: auto;
+    width:   auto;
     padding: 0 10px;
-    height: 48px;
+    height:  48px;
 }
 
 #ethPorts .eth.off {
@@ -370,39 +379,39 @@
 
 /* Style Refresh timers */
 .tomato-refresh {
-    float: right;
+    float:  right;
     margin: 5px 0 10px 10px;
 }
 
 .tomato-refresh .spinner {
-    margin-right: 10px;
+    margin-right:   10px;
     vertical-align: middle;
 }
 
 #refresh-spinner {
     vertical-align: middle;
-    margin-top: -4px;
+    margin-top:     -4px;
 }
 
 /* Unresponsive interface problem
 *******************************************************************************************************/
 .body-overwrite {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    display:    block;
+    position:   absolute;
+    left:       0;
+    top:        0;
+    right:      0;
+    bottom:     0;
     background: #fff;
     background: rgba(255, 255, 255, 0.94);
-    z-index: 999;
+    z-index:    999;
 
     .body-overwrite-text {
-        display: block;
-        width: 400px;
-        position: absolute;
-        top: 30%;
-        left: 50%;
+        display:     block;
+        width:       400px;
+        position:    absolute;
+        top:         30%;
+        left:        50%;
         margin-left: -200px;
     }
 
@@ -411,29 +420,29 @@
 /* Upgrade router firmware page
 *******************************************************************************************************/
 #afu-progress {
-    display: block;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 20;
+    display:    block;
+    position:   fixed;
+    top:        0;
+    right:      0;
+    left:       0;
+    bottom:     0;
+    z-index:    20;
     background: #fff;
-    color: #5a5a5a;
-    opacity: 0;
+    color:      #5a5a5a;
+    opacity:    0;
     transition: opacity 250ms ease-out;
 }
 
 #afu-progress .text-container {
-    position: absolute;
-    display: block;
+    position:   absolute;
+    display:    block;
     text-align: center;
-    font-size: 14px;
-    width: 100%;
-    height: 150px;
-    top: 30%;
+    font-size:  14px;
+    width:      100%;
+    height:     150px;
+    top:        30%;
     margin-top: -75px;
-    transform: scale(0.2);
+    transform:  scale(0.2);
     transition: all 350ms ease-out;
 }
 
@@ -443,5 +452,5 @@
 
 #afu-progress.active .text-container {
     transform: scale(1);
-    top: 40%;
+    top:       40%;
 }

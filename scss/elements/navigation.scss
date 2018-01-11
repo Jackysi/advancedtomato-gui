@@ -257,15 +257,6 @@
     display: none;
 }
 
-/* Other major changes when the  */
-#wrapper > .container.collapsed {
-    margin-left: 60px;
-}
-
-#wrapper > .container .ajaxwrap {
-    min-width: 720px;
-}
-
 // Generate scrollbars for navigation
 @include webkit-scrollbar(lighten($navi-background, 10%), 8px, 8px, '.navigation');
 
