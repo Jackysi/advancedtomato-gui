@@ -497,7 +497,7 @@ html {
 }
 
 body {
-  font-size: 10pt;
+  font-size: 1.3rem;
   font-family: "Segoe UI", "Roboto", sans-serif;
   color: #76838f;
   line-height: 1.42857;
@@ -533,36 +533,36 @@ h1, h2, h3, h4, h5 {
 }
 
 h1, .h1 {
-  font-size: 24px;
-  margin: 0 0 10px;
+  font-size: 2.4rem;
+  margin: 0 0 1rem;
 }
 
 h2, .h2 {
-  font-size: 20px;
-  margin: 0 0 10px;
+  font-size: 2rem;
+  margin: 0 0 1rem;
 }
 
 h3, .h3 {
-  font-size: 16px;
-  margin: 0 0 10px;
+  font-size: 1.6rem;
+  margin: 0 0 1rem;
 }
 
 h4, .h4 {
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 h5, .h5 {
-  font-size: 15px;
+  font-size: 1.5rem;
 }
 
 h6, .h6 {
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 hr {
-  margin: -5px 0 15px;
+  margin: -0.5rem 0 1.5rem;
   border: 0;
-  border-bottom: 1px dashed #eee;
+  border-bottom: 0.1rem dashed #eee;
 }
 
 small {
@@ -619,8 +619,8 @@ select::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
-  margin-top: -2px;
-  margin-bottom: -2px;
+  margin-top: -0.2rem;
+  margin-bottom: -0.2rem;
 }
 
 /* Other cool classes we may need */
@@ -692,7 +692,7 @@ input::-moz-focus-inner {
 *******************************************************************************************************/
 .top-header {
   display: block;
-  height: 60px;
+  height: 6rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -703,15 +703,15 @@ input::-moz-focus-inner {
   transform: translate3d(0, 0, 0);
   /* Font Rendering FIX */
   z-index: 3;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.08);
   user-select: none;
 }
 
 .top-header .logo {
   display: inline-block;
   float: left;
-  height: 60px;
-  width: 240px;
+  height: 6rem;
+  width: 24rem;
   line-height: normal;
   background: #3498db;
   text-align: center;
@@ -723,8 +723,8 @@ input::-moz-focus-inner {
   display: inline-block;
   color: #fff;
   font-weight: 500;
-  font-size: 14pt;
-  margin: 12px 0 4px 0;
+  font-size: 1.8rem;
+  margin: 1.2rem 0 .4rem 0;
   padding: 0;
 }
 
@@ -732,15 +732,15 @@ input::-moz-focus-inner {
   color: #fff;
   font-weight: normal;
   display: block;
-  font-size: 10pt;
+  font-size: 1.4rem;
   padding: 0;
-  margin: -4px 0 0;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  margin: -.4rem 0 0;
+  text-shadow: 0 0.1rem 0 rgba(0, 0, 0, 0.15);
 }
 
 .top-header .logo svg {
   display: none;
-  margin: -8px 0 0 -10px;
+  margin: -.8rem 0 0 -1rem;
   padding: 0;
   vertical-align: middle;
 }
@@ -749,10 +749,10 @@ input::-moz-focus-inner {
   display: inline-block;
   float: left;
   height: 100%;
-  width: 40px;
+  width: 4rem;
   text-align: center;
-  line-height: 60px;
-  font-size: 14px;
+  line-height: 6rem;
+  font-size: 1.4rem;
   font-weight: normal;
   color: #526069;
 }
@@ -768,9 +768,9 @@ input::-moz-focus-inner {
 .top-header > .links > ul > li > a {
   display: inline-block;
   color: #526069;
-  padding: 0 22px;
-  height: 60px;
-  line-height: 60px;
+  padding: 0 2.2rem;
+  height: 6rem;
+  line-height: 6rem;
   transition: all 150ms ease;
   -webkit-transition: all 150ms ease;
 }
@@ -786,15 +786,15 @@ input::-moz-focus-inner {
 }
 
 .top-header .links > ul > li {
-  margin: 0 0 0 -4px;
+  margin: 0 0 0 -.4rem;
   padding: 0;
   display: inline-block;
 }
 
 .top-header .links li a i {
-  padding-left: 2px;
-  font-size: 16px;
-  margin-top: -2px;
+  padding-left: .2rem;
+  font-size: 1.6rem;
+  margin-top: -.2rem;
   vertical-align: middle;
 }
 
@@ -804,71 +804,71 @@ input::-moz-focus-inner {
   position: absolute;
   background: #fff;
   padding: 0;
-  width: 340px;
-  top: 72px;
-  right: 10px;
-  border-radius: 5px;
+  width: 35rem;
+  top: 7.2rem;
+  right: 1rem;
+  border-radius: .5rem;
   display: none;
   z-index: 1;
-  border: 1px solid #e4eaec;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  border: .1rem solid #e4eaec;
+  box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.05);
 }
 
 .system-ui::after, .system-ui::before {
   display: block;
   content: "";
   position: absolute;
-  border: 8px solid transparent;
+  border: .8rem solid transparent;
   border-bottom-color: #fff;
-  top: -14px;
-  right: 40px;
+  top: -1.4rem;
+  right: 4rem;
 }
 
 .system-ui::before {
-  top: -15px;
+  top: -1.5rem;
   border-bottom-color: #e4eaec;
 }
 
 .system-ui .router-name {
   display: block;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 500;
   color: #656565;
-  border-bottom: 1px solid #e4eaec;
-  padding: 12px 18px;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
+  border-bottom: .1rem solid #e4eaec;
+  padding: 1.2rem 1.8rem;
+  border-top-right-radius: .3rem;
+  border-top-left-radius: .3rem;
 }
 
 .system-ui .router-name small {
-  margin-top: 2px;
+  margin-top: .2rem;
 }
 
 .system-ui .router-control {
   text-align: center;
-  padding: 15px 15px;
+  padding: 1.5rem 1.5rem;
 }
 
 .system-ui .inner-container {
   margin: 0;
-  padding: 5px 18px;
-  border-bottom: 1px solid #e4eaec;
+  padding: .5rem 1.8rem;
+  border-bottom: .1rem solid #e4eaec;
 }
 
 .system-ui .inner-container .desc {
   display: inline-block;
   vertical-align: middle;
   text-align: right;
-  padding: 5px 15px 5px 0;
-  width: 50px;
+  padding: .5rem 1.5rem .5rem 0;
+  width: 5rem;
   font-weight: 500;
 }
 
 .system-ui .inner-container .value {
   display: inline-block;
   vertical-align: middle;
-  width: 240px;
-  padding: 5px 0;
+  width: 24rem;
+  padding: .5rem 0;
 }
 
 /* Content Design
@@ -879,13 +879,13 @@ input::-moz-focus-inner {
   left: 0;
   right: 0;
   bottom: 0;
-  top: 60px;
-  padding: 20px 40px;
+  top: 6rem;
+  padding: 2rem 4rem;
   height: auto;
   overflow-y: auto;
   overflow-x: visible;
   z-index: 1;
-  margin-left: 240px;
+  margin-left: 24rem;
   transition: margin 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 150ms;
   backface-visibility: hidden;
   /* Performance Improvement */
@@ -894,11 +894,11 @@ input::-moz-focus-inner {
 }
 
 #wrapper > .container .debug {
-  font-size: 12px;
+  font-size: 1.2rem;
   background: #fafafa;
-  border: 1px solid #f5f5f5;
-  padding: 10px;
-  border-radius: 2px;
+  border: .1rem solid #f5f5f5;
+  padding: 1rem;
+  border-radius: .2rem;
 }
 
 #wrapper > .container:after {
@@ -908,19 +908,19 @@ input::-moz-focus-inner {
 }
 
 #wrapper .container ul {
-  margin: 10px 15px;
+  margin: 1rem 1.5rem;
 }
 
 #wrapper .container ul li {
-  margin: 0 20px;
+  margin: 0 2rem;
 }
 
 #wrapper > .container.collapsed {
-  margin-left: 60px;
+  margin-left: 6rem;
 }
 
 #wrapper > .container .ajaxwrap {
-  min-width: 720px;
+  min-width: 72rem;
   min-height: 100%;
 }
 
@@ -928,8 +928,8 @@ input::-moz-focus-inner {
   position: absolute;
   top: 25%;
   left: 50%;
-  width: 350px;
-  margin-left: -175px;
+  width: 35rem;
+  margin-left: -17.5rem;
   text-align: center;
 }
 
@@ -940,15 +940,15 @@ input::-moz-focus-inner {
 
 #wrapper > .container::-webkit-scrollbar-track {
   background: transparent;
-  border-radius: 0px;
-  -webkit-border-radius: 0px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
 }
 
 /* Handle */
 #wrapper > .container::-webkit-scrollbar-thumb {
   background-color: #babdbe;
-  border-radius: 0px;
-  -webkit-border-radius: 0px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
 }
 
 #wrapper > .container::-webkit-scrollbar-thumb:hover {
@@ -969,18 +969,18 @@ input::-moz-focus-inner {
   column-count: 1;
   column-gap: unset;
   column-width: auto;
-  margin: 0 0 10px;
+  margin: 0 0 1rem;
 }
 
 .fluid-grid .box {
   display: block;
-  margin: 0 0 15px;
+  margin: 0 0 1.5rem;
   break-inside: avoid;
 }
 
 .fluid-grid.x3 {
   column-count: 2;
-  column-gap: 15px;
+  column-gap: 1.5rem;
   column-width: auto;
 }
 
@@ -988,32 +988,32 @@ input::-moz-focus-inner {
 .box {
   display: block;
   padding: 0;
-  margin: 0 0 15px;
+  margin: 0 0 1.5rem;
   background: #fff;
   vertical-align: top;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  border: .1rem solid transparent;
+  border-radius: .5rem;
+  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.05);
 }
 
 .box .heading {
   display: block;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 500;
   line-height: normal;
   color: #656565;
-  padding: 15px 10px 15px 20px;
+  padding: 1.5rem 1rem 1.5rem 2rem;
   vertical-align: middle;
 }
 
 .box .heading small {
-  margin-left: 5px;
+  margin-left: .5rem;
 }
 
 .box .heading a {
   color: #838c91;
-  margin: -8px 0 0 0;
-  padding: 8px 12px;
+  margin: -.8rem 0 0 0;
+  padding: .8rem 1.2rem;
   border-radius: 50%;
   transition: color 150ms ease-out;
 }
@@ -1023,7 +1023,7 @@ input::-moz-focus-inner {
 }
 
 .box .content {
-  padding: 0 20px 15px;
+  padding: 0 2rem 1.5rem;
   display: block;
 }
 
@@ -1034,7 +1034,7 @@ input::-moz-focus-inner {
 }
 
 .box.small {
-  max-width: 960px;
+  max-width: 96rem;
 }
 
 .box.box-fluid {
@@ -1045,7 +1045,7 @@ input::-moz-focus-inner {
 
 .box h2, .box h3, .box h4 {
   padding: 0;
-  margin: 8px 0;
+  margin: .8rem 0;
 }
 
 /* New Ethernet States 
@@ -1053,24 +1053,24 @@ input::-moz-focus-inner {
 #ethPorts {
   position: relative;
   display: table;
-  padding: 30px 10px;
+  padding: 3rem 1rem;
   width: 100%;
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 #ethPorts .title {
   position: absolute;
   display: block;
-  width: 64px;
-  top: 10px;
+  width: 6.4rem;
+  top: 1rem;
   text-align: center;
 }
 
 #ethPorts .speed {
   position: absolute;
   display: block;
-  width: 64px;
-  bottom: 8px;
+  width: 6.4rem;
+  bottom: .8rem;
   text-align: center;
 }
 
@@ -1078,16 +1078,16 @@ input::-moz-focus-inner {
   display: table-cell;
   z-index: 15;
   width: auto;
-  padding: 0 10px;
-  height: 48px;
+  padding: 0 1rem;
+  height: 4.8rem;
 }
 
 #ethPorts .eth.off {
-  background: url("/img/ethernet.x.svg") 20px center no-repeat;
+  background: url("/img/ethernet.x.svg") 2rem center no-repeat;
 }
 
 #ethPorts .eth.on {
-  background: url("/img/ethernet.svg") 20px center no-repeat;
+  background: url("/img/ethernet.svg") 2rem center no-repeat;
 }
 
 #ethPorts .eth.wan {
@@ -1097,17 +1097,17 @@ input::-moz-focus-inner {
 /* Style Refresh timers */
 .tomato-refresh {
   float: right;
-  margin: 5px 0 10px 10px;
+  margin: .5rem 0 1rem 1rem;
 }
 
 .tomato-refresh .spinner {
-  margin-right: 10px;
+  margin-right: 1rem;
   vertical-align: middle;
 }
 
 #refresh-spinner {
   vertical-align: middle;
-  margin-top: -4px;
+  margin-top: -.4rem;
 }
 
 /* Unresponsive interface problem
@@ -1126,11 +1126,11 @@ input::-moz-focus-inner {
 
 .body-overwrite .body-overwrite-text {
   display: block;
-  width: 400px;
+  width: 40rem;
   position: absolute;
   top: 30%;
   left: 50%;
-  margin-left: -200px;
+  margin-left: -20rem;
 }
 
 /* Upgrade router firmware page
@@ -1153,11 +1153,11 @@ input::-moz-focus-inner {
   position: absolute;
   display: block;
   text-align: center;
-  font-size: 14px;
+  font-size: 1.4rem;
   width: 100%;
-  height: 150px;
+  height: 15rem;
   top: 30%;
-  margin-top: -75px;
+  margin-top: -7.5rem;
   transform: scale(0.2);
   transition: all 350ms ease-out;
 }
@@ -1176,40 +1176,40 @@ input::-moz-focus-inner {
 .alert {
   position: relative;
   color: #e6f4f9;
-  padding: 15px 40px 15px 15px;
-  margin: 0 0 15px;
-  border-radius: 2px;
-  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  padding: 1.5rem 4rem 1.5rem 1.5rem;
+  margin: 0 0 1.5rem;
+  border-radius: .2rem;
+  box-shadow: inset 0 -0.2rem 0 rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: inset 0 -0.2rem 0 rgba(0, 0, 0, 0.05);
   background-color: #3498db;
 }
 
 .alert.icon {
-  padding: 15px 40px 15px 75px;
+  padding: 1.5rem 4rem 1.5rem 7.5rem;
 }
 
 .alert.icon:after {
   display: block;
   position: absolute;
-  width: 58px;
-  height: 72px;
-  line-height: 72px;
+  width: 5.8rem;
+  height: 7.2rem;
+  line-height: 7.2rem;
   text-align: center;
   top: 50%;
-  left: 10px;
-  margin-top: -36px;
+  left: 1rem;
+  margin-top: -3.6rem;
   content: " ";
   font-family: "advancedtomato" !important;
-  font-size: 38px;
+  font-size: 3.8rem;
 }
 
 a.close {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  margin-top: -10px;
-  padding: 2px;
-  font-size: 14px;
+  top: 1.5rem;
+  right: 1.5rem;
+  margin-top: -1rem;
+  padding: .2rem;
+  font-size: 1.4rem;
   line-height: 1;
   text-decoration: none;
   cursor: pointer;
@@ -1230,8 +1230,8 @@ a.close:hover {
 
 .alert h5 {
   display: block;
-  font-size: 16px;
-  margin: 0 0 4px;
+  font-size: 1.6rem;
+  margin: 0 0 .4rem;
   padding: 0;
 }
 
@@ -1293,8 +1293,8 @@ a.close:hover {
 
 #footer-msg {
   vertical-align: middle;
-  padding: 10px 40px 10px 15px;
-  min-height: 35px;
+  padding: 1rem 4rem 1rem 1.5rem;
+  min-height: 3.5rem;
 }
 
 /* Buttons (using same prefix as bootstrap)
@@ -1305,9 +1305,9 @@ a.close:hover {
   vertical-align: middle;
   cursor: pointer;
   white-space: nowrap;
-  padding: 8px 16px;
+  padding: .8rem 1.6rem;
   margin: 0;
-  font-size: 10pt;
+  font-size: 1.4rem;
   font-weight: normal;
   line-height: normal !important;
   user-select: none;
@@ -1316,8 +1316,8 @@ a.close:hover {
   color: #ffffff !important;
   background: #536270;
   transition: background-color 150ms ease, color 150ms ease;
-  border-radius: 3px;
-  border: 1px solid transparent;
+  border-radius: .3rem;
+  border: .1rem solid transparent;
 }
 
 .btn:hover,
@@ -1373,7 +1373,7 @@ a.close:hover {
   -webkit-box-shadow: none;
   background: transparent;
   border: 0;
-  padding: 8px 10px;
+  padding: .8rem 1rem;
 }
 
 .btn.btn-link:hover,
@@ -1388,7 +1388,7 @@ a.close:hover {
   box-shadow: none;
   line-height: 1.2;
   border: solid #f0f0f0;
-  border-width: 1px 0 0 1px;
+  border-width: .1rem 0 0 .1rem;
 }
 
 .btn.btn-tab:hover,
@@ -1403,7 +1403,7 @@ a.close:hover {
 }
 
 button.btn {
-  height: 35px;
+  height: 3.5rem;
   font-family: "Roboto", "Segoe UI", sans-serif;
   font-weight: 400 !important;
   vertical-align: middle;
@@ -1411,9 +1411,9 @@ button.btn {
 }
 
 .btn-small {
-  font-size: 8pt;
+  font-size: 1rem;
   font-weight: normal;
-  padding: 4px 10px !important;
+  padding: .4rem 1rem !important;
   vertical-align: middle;
 }
 
@@ -1423,18 +1423,18 @@ button.btn {
 }
 
 .btn-group > .btn {
-  margin: 0 -1px 0 0;
+  margin: 0 -.1rem 0 0;
   border-radius: 0;
 }
 
 .btn-group > .btn:first-of-type {
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-top-left-radius: .3rem;
+  border-bottom-left-radius: .3rem;
 }
 
 .btn-group > .btn:last-of-type {
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-top-right-radius: .3rem;
+  border-bottom-right-radius: .3rem;
 }
 
 /* Font Icons (for High Density displays (High DPI))
@@ -1455,7 +1455,7 @@ button.btn {
   font-family: 'advancedtomato' !important;
   font-weight: normal !important;
   display: inline-block;
-  top: -1px;
+  top: -.1rem;
   position: relative;
   vertical-align: middle;
   /* Better Font Rendering =========== */
@@ -1486,20 +1486,20 @@ button.btn {
 
 /* Sizes */
 .icon-medium:before {
-  font-size: 15pt;
+  font-size: 2rem;
   margin: 0;
   vertical-align: baseline;
 }
 
 .icon-sort:before {
-  font-size: 11pt;
-  margin-left: 5px;
-  margin-top: -2px;
+  font-size: 1.4rem;
+  margin-left: .5rem;
+  margin-top: -.2rem;
 }
 
 .icon-large:before {
-  font-size: 14px;
-  margin-right: 3px;
+  font-size: 1.4rem;
+  margin-right: .3rem;
 }
 
 /* Fix VAlign */
@@ -1759,14 +1759,14 @@ button.btn {
 
 /* Bootstrap GRID */
 .row {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
 }
 
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  min-height: 0.1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
@@ -2460,9 +2460,9 @@ button.btn {
   display: block;
   position: fixed;
   left: 0;
-  top: 60px;
+  top: 6rem;
   bottom: 0;
-  width: 240px;
+  width: 24rem;
   background: #263238;
   z-index: 2;
   overflow: auto;
@@ -2494,9 +2494,9 @@ button.btn {
   position: relative;
   display: block;
   color: #a6adb3;
-  font-size: 10pt;
+  font-size: 1.3rem;
   font-weight: 500;
-  padding: 10px 25px;
+  padding: 1rem 2.5rem;
   vertical-align: middle;
 }
 
@@ -2504,12 +2504,12 @@ button.btn {
   font-family: 'advancedtomato';
   content: "\e001";
   position: absolute;
-  right: 30px;
+  right: 3rem;
   transition: transform 250ms ease-out, right 150ms ease-out;
 }
 
 .navigation > ul > li > a:hover::after {
-  right: 25px;
+  right: 2.5rem;
 }
 
 .navigation > ul > li.active > a:after {
@@ -2518,8 +2518,8 @@ button.btn {
 }
 
 .navigation li a i {
-  font-size: 16px;
-  margin-right: 7px;
+  font-size: 1.6rem;
+  margin-right: 0.7rem;
 }
 
 .navigation li ul {
@@ -2530,36 +2530,36 @@ button.btn {
 
 /* Dropdown, or w/e */
 .navigation li ul li:first-child:before {
-  top: 5px;
+  top: .5rem;
 }
 
 .navigation li ul li:before {
   content: "";
-  left: 32px;
-  top: -12px;
-  bottom: 13px;
+  left: 3.2rem;
+  top: -1.2rem;
+  bottom: 1.3rem;
   position: absolute;
   display: block;
-  width: 1px;
-  border-left: 1px dotted #3e474e;
+  width: 0.1rem;
+  border-left: 0.1rem dotted #3e474e;
   z-index: 1;
 }
 
 .navigation li ul li a:before {
   content: "";
-  left: 33px;
-  top: 14px;
+  left: 3.3rem;
+  top: 1.4rem;
   position: absolute;
   display: block;
-  width: 12px;
-  border-bottom: 1px dotted #3e474e;
+  width: 1.2rem;
+  border-bottom: 0.1rem dotted #3e474e;
   z-index: 1;
 }
 
 .navigation li ul li a {
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: normal;
-  padding: 5px 0 5px 55px;
+  padding: 0.5rem 0 0.5rem 5.5rem;
   transition: padding-left 150ms ease-out;
 }
 
@@ -2571,7 +2571,7 @@ button.btn {
 
 .navigation li ul li a:hover {
   color: #e1e4e6;
-  padding-left: 58px;
+  padding-left: 5.8rem;
   background: rgba(255, 255, 255, 0.02);
 }
 
@@ -2589,13 +2589,13 @@ button.btn {
 }
 
 .navigation > ul > li.active > a::after {
-  right: 30px;
+  right: 3rem;
 }
 
 /* Footer */
 .navigation > ul {
   position: relative;
-  padding-bottom: 40px;
+  padding-bottom: 4rem;
   min-height: 100%;
 }
 
@@ -2604,35 +2604,35 @@ button.btn {
   bottom: 0;
   left: 0;
   right: 0;
-  min-height: 30px;
+  min-height: 3rem;
   line-height: 1;
   font-weight: 500;
-  font-size: 13px;
-  padding: 10px;
+  font-size: 1.3rem;
+  padding: 1rem;
   color: #a6adb3;
   text-align: center;
-  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0.1rem 0 rgba(0, 0, 0, 0.05);
   background: #202a2f;
 }
 
 .navigation .nav-footer i:before {
-  font-size: 18px;
-  top: -2px;
-  left: -2px;
+  font-size: 1.8rem;
+  top: -0.2rem;
+  left: -0.2rem;
 }
 
 /* Collapse Logo/Navigation and extend content */
 .top-header.collapsed .logo {
-  width: 60px;
+  width: 6rem;
 }
 
 .top-header.collapsed .logo svg {
-  margin: 15px 0 0;
+  margin: 1.2rem 0 0;
   display: inline-block;
 }
 
 .navigation.collapsed {
-  width: 60px;
+  width: 6rem;
   overflow: visible;
 }
 
@@ -2641,18 +2641,18 @@ button.btn {
 }
 
 .navigation.collapsed li a i {
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .navigation.collapsed > ul > li > a {
   text-align: center;
-  padding: 14px 18px;
+  padding: 1.4rem 1.8rem;
   background-color: transparent;
 }
 
 .navigation.collapsed li:hover ul {
   display: block !important;
-  top: 40px;
+  top: 4rem;
 }
 
 .navigation.collapsed li:hover > a {
@@ -2666,36 +2666,36 @@ button.btn {
   left: 100%;
   top: 0;
   font-weight: normal;
-  line-height: 40px;
-  width: 200px;
+  line-height: 4rem;
+  width: 20rem;
   color: #fff;
   background: none repeat scroll 0 0 #263238;
   z-index: 4;
-  padding: 0 20px;
-  border-top-right-radius: 3px;
+  padding: 0 2rem;
+  border-top-right-radius: 0.3rem;
 }
 
 .navigation.collapsed li ul li a {
-  width: 200px;
-  padding: 6px 0 6px 35px;
+  width: 20rem;
+  padding: .6rem 0 .6rem 3rem;
 }
 
 .navigation.collapsed li ul {
   display: none !important;
-  width: 200px;
+  width: 20rem;
   position: absolute;
   height: auto;
   left: 100%;
-  border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 0.3rem;
 }
 
 .navigation.collapsed li ul li:before {
-  left: 15px;
+  left: 1.5rem;
 }
 
 .navigation.collapsed li ul li a:before {
-  left: 15px;
-  width: 15px;
+  left: 1.5rem;
+  width: 1.5rem;
 }
 
 .navigation.collapsed .active > a > i {
@@ -2717,15 +2717,15 @@ button.btn {
 
 .navigation::-webkit-scrollbar-track {
   background: transparent;
-  border-radius: 0px;
-  -webkit-border-radius: 0px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
 }
 
 /* Handle */
 .navigation::-webkit-scrollbar-thumb {
   background-color: #3b4d56;
-  border-radius: 0px;
-  -webkit-border-radius: 0px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
 }
 
 .navigation::-webkit-scrollbar-thumb:hover {
@@ -2739,33 +2739,33 @@ button.btn {
 /* Tabs */
 ul.nav-tabs {
   display: block;
-  height: 40px;
+  height: 4rem;
   list-style: none;
-  margin: 0 0 15px !important;
+  margin: 0 0 1.5rem !important;
   white-space: nowrap;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 0.2rem solid rgba(0, 0, 0, 0.08);
   background: rgba(255, 255, 255, 0.6);
 }
 
 ul.nav-tabs li {
   display: inline-block;
   float: left;
-  height: 40px;
-  line-height: 40px;
+  height: 4rem;
+  line-height: 4rem;
   margin: 0 !important;
 }
 
 ul.nav-tabs li a {
   display: block;
-  padding: 0 15px;
-  height: 40px;
+  padding: 0 1.5rem;
+  height: 4rem;
   font-weight: normal;
-  line-height: 40px;
+  line-height: 4rem;
   color: #808080;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: 0 0.1rem 0 rgba(255, 255, 255, 0.2);
   transition: all 100ms ease;
   -webkit-transition: all 100ms ease;
-  border-bottom: 1px solid transparent;
+  border-bottom: 0.1rem solid transparent;
 }
 
 ul.nav-tabs li a:hover,
@@ -2774,16 +2774,16 @@ ul.nav-tabs li a.active {
   z-index: 999;
   color: #777777;
   background: rgba(0, 0, 0, 0.05);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 0.2rem solid rgba(0, 0, 0, 0.05);
 }
 
 ul.nav-tabs li a.active {
-  border-bottom: 2px solid #3498db;
+  border-bottom: 0.2rem solid #3498db;
   background: transparent;
 }
 
 ul.nav-tabs li a i {
-  margin-right: 2px;
+  margin-right: 0.2rem;
 }
 
 /* Form, label, input, textarea, etc...
@@ -2797,34 +2797,34 @@ label {
 
 label.control-label {
   text-align: right;
-  padding-top: 9px;
+  padding-top: 0.9rem;
 }
 
 label.control-left-label {
   text-align: left;
-  padding-top: 10px;
+  padding-top: 1rem;
 }
 
 fieldset {
-  padding-bottom: 9px;
-  padding-top: 4px;
+  padding-bottom: 0.9rem;
+  padding-top: 0.4rem;
   border: 0;
-  border-bottom: 1px dashed #eee;
-  margin-bottom: 5px;
-  margin-left: -15px;
-  margin-right: -15px;
+  border-bottom: 0.1rem dashed #eee;
+  margin-bottom: 0.5rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
 }
 
 fieldset legend {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: 20px;
-  font-size: 21px;
+  margin-bottom: 2rem;
+  font-size: 2.1rem;
   line-height: inherit;
   color: #919292;
   border: 0;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: .1rem solid #e5e5e5;
 }
 
 fieldset:last-child {
@@ -2832,36 +2832,36 @@ fieldset:last-child {
 }
 
 fieldset h5 {
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 fieldset .help-block {
   display: inline-block;
   vertical-align: middle;
-  margin: -4px 5px 0;
+  margin: -.4rem .5rem 0;
   color: #a5a5a5;
 }
 
 fieldset .text-block {
-  padding-top: 7px;
+  padding-top: .7rem;
 }
 
 input, select, textarea {
   color: #76838f;
-  padding: 6px 10px;
+  padding: .6rem 1rem;
   margin: 0;
-  height: 34px;
+  height: 3.4rem;
   line-height: normal;
-  font-size: 10pt;
+  font-size: 1.4rem;
   font-family: "Segoe UI", "Roboto", sans-serif, Helvetica, Arial, sans-serif;
-  border: 1px solid #e4eaec;
+  border: .1rem solid #e4eaec;
   background-color: #fff;
   transition: color 150ms ease, border-color 150ms ease, opacity 150ms ease;
   -webkit-transition: color 150ms ease, border-color 150ms ease, opacity 150ms ease;
   outline-style: none;
   vertical-align: baseline;
-  border-radius: 3px;
+  border-radius: .3rem;
 }
 
 input:hover, select:hover, textarea:hover {
@@ -2878,16 +2878,16 @@ input:disabled, select:disabled, textarea:disabled {
   filter: alpha(opacity=65);
   cursor: not-allowed;
   color: #7c7c7c;
-  border: 1px solid #f0f0f0;
+  border: .1rem solid #f0f0f0;
 }
 
 /* Some quick fixes */
 fieldset .help-block .btn {
-  margin-top: 1px;
+  margin-top: .1rem;
 }
 
 form {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 textarea {
@@ -2901,7 +2901,7 @@ select, select option {
 .c-checkbox,
 .c-radio {
   display: inline-block;
-  margin: 7px 2px 5px;
+  margin: .7rem .2rem .5rem;
 }
 
 .c-checkbox *,
@@ -2922,14 +2922,14 @@ select, select option {
 .c-radio span {
   position: relative;
   display: inline-block;
-  width: 22px;
-  height: 22px;
-  border-radius: 2px;
-  border: 1px solid #e4eaec;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.2rem;
+  border: .1rem solid #e4eaec;
   background: #fff;
   transition: all 250ms ease;
   vertical-align: middle;
-  margin-right: 2px;
+  margin-right: .2rem;
 }
 
 .c-checkbox:hover span,
@@ -2958,8 +2958,8 @@ select, select option {
   bottom: 0;
   opacity: 0;
   text-align: center !important;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 1.2rem;
+  line-height: 2rem;
   vertical-align: middle;
   transform: scale(0);
   transition: all 450ms cubic-bezier(0.68, -0.75, 0.265, 1.55) 50ms;
@@ -3014,7 +3014,7 @@ input[type=radio]:disabled + span:before {
 .input-append {
   line-height: 0;
   vertical-align: middle;
-  margin: 4px 0;
+  margin: .4rem 0;
 }
 
 .input-append .btn {
@@ -3027,8 +3027,8 @@ input[type=radio]:disabled + span:before {
 .input-append input,
 .input-append select {
   vertical-align: middle;
-  padding: 8px 10px;
-  margin: 0 -4px 0 0;
+  padding: .8rem 1rem;
+  margin: 0 -.4rem 0 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -3045,7 +3045,7 @@ input[type=radio]:disabled + span:before {
 
 .customfile-input {
   position: absolute;
-  height: 100px;
+  height: 10rem;
   cursor: pointer;
   background: transparent;
   border: 0;
@@ -3063,28 +3063,28 @@ input[type=radio]:disabled + span:before {
 
 .customfile-text {
   display: block;
-  font-size: 10pt;
+  font-size: 1.4rem;
   line-height: normal;
-  height: 34px;
+  height: 3.4rem;
   float: left;
   overflow: hidden;
-  width: 280px;
-  margin: 0 -1px 0 0;
+  width: 28rem;
+  margin: 0 -.1rem 0 0;
   color: #313131;
   font-style: normal;
-  padding: 8px 12px;
+  padding: .8rem 1.2rem;
   white-space: nowrap;
   background: #fff;
-  border: 1px solid #e4eaec;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border: .1rem solid #e4eaec;
+  border-top-left-radius: .3rem;
+  border-bottom-left-radius: .3rem;
   transition: border-color 150ms ease;
 }
 
 .customfile .browse {
   float: left;
-  height: 34px;
-  line-height: 17px;
+  height: 3.4rem;
+  line-height: 1.7rem;
   margin: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -3100,8 +3100,8 @@ input[type=radio]:disabled + span:before {
 
 /* Fix refresh timer append */
 .tomato-refresh select {
-  padding: 7px 10px;
-  width: 150px;
+  padding: .7rem 1rem;
+  width: 15rem;
   vertical-align: middle;
 }
 
@@ -3123,7 +3123,7 @@ input[type=radio]:disabled + span:before {
   font-family: 'advancedtomato' !important;
   font-weight: normal !important;
   display: inline-block;
-  top: -1px;
+  top: -.1rem;
   position: relative;
   vertical-align: middle;
   /* Better Font Rendering =========== */
@@ -3154,20 +3154,20 @@ input[type=radio]:disabled + span:before {
 
 /* Sizes */
 .icon-medium:before {
-  font-size: 15pt;
+  font-size: 2rem;
   margin: 0;
   vertical-align: baseline;
 }
 
 .icon-sort:before {
-  font-size: 11pt;
-  margin-left: 5px;
-  margin-top: -2px;
+  font-size: 1.4rem;
+  margin-left: .5rem;
+  margin-top: -.2rem;
 }
 
 .icon-large:before {
-  font-size: 14px;
-  margin-right: 3px;
+  font-size: 1.4rem;
+  margin-right: .3rem;
 }
 
 /* Fix VAlign */
@@ -3400,7 +3400,7 @@ table th {
 /* Nice Lined Tables */
 table.line-table tr {
   display: table-row;
-  border-top: 1px solid #e4eaec;
+  border-top: .1rem solid #e4eaec;
 }
 
 table.line-table tr:first-child {
@@ -3408,7 +3408,7 @@ table.line-table tr:first-child {
 }
 
 table.line-table .progress {
-  margin: 1px 15px;
+  margin: .1rem 1.5rem;
 }
 
 table.line-table tr:nth-child(even) {
@@ -3438,7 +3438,7 @@ table.line-table.static tr {
 
 table.line-table tr th {
   display: table-cell;
-  padding: 8px;
+  padding: .8rem;
   font-weight: 500;
   text-align: left;
 }
@@ -3446,7 +3446,7 @@ table.line-table tr th {
 table.line-table tr td {
   display: table-cell;
   width: inherit;
-  padding: 10px 6px;
+  padding: 1rem .6rem;
   vertical-align: middle;
 }
 
@@ -3463,9 +3463,9 @@ table.line-table tr td {
 #table-row-panel a.move-row,
 #table-row-panel a.delete-row {
   float: left;
-  font-size: 10pt;
+  font-size: 1.4rem;
   text-align: center;
-  padding: 4px 6px;
+  padding: .4rem .6rem;
   line-height: 1;
   color: #fff;
   background: #585858;
@@ -3498,7 +3498,7 @@ table.line-table tr td {
 }
 
 #table-row-panel a:first-child {
-  border-bottom-left-radius: 3px;
+  border-bottom-left-radius: .3rem;
 }
 
 #table-row-panel i:before {
@@ -3512,7 +3512,7 @@ table.data-table {
 
 table.data-table tr td {
   display: table-cell;
-  padding: 5px 0;
+  padding: .5rem 0;
 }
 
 table.data-table.dataonly tr td:first-child {
@@ -3520,11 +3520,11 @@ table.data-table.dataonly tr td:first-child {
 }
 
 table.data-table.other {
-  margin: 5px 10px;
+  margin: .5rem 1rem;
 }
 
 table.data-table.bwm-info {
-  margin: 15px 5px;
+  margin: 1.5rem .5rem;
 }
 
 table.data-table.bwm-info tr td {
@@ -3534,22 +3534,22 @@ table.data-table.bwm-info tr td {
 /* Field Tables */
 table.fields-table {
   width: 100%;
-  max-width: 800px;
+  max-width: 80rem;
 }
 
 table.fields-table tr td {
   display: table-cell;
-  padding: 8px 0;
+  padding: .8rem 0;
   vertical-align: middle;
 }
 
 table.fields-table tr td:first-child {
   width: 25%;
-  min-width: 200px;
+  min-width: 20rem;
 }
 
 table.fields-table select {
-  min-width: 180px;
+  min-width: 18rem;
 }
 
 /* Other extra styles */
@@ -3565,7 +3565,7 @@ table .controls:hover, table.line-table tr.controls:hover {
 }
 
 table .controls td, table.line-table tr.controls td {
-  padding: 8px 4px;
+  padding: .8rem .4rem;
 }
 
 table tr.editor td {
@@ -3575,7 +3575,7 @@ table tr.editor td {
 table tr.editor td input:not([type='checkbox']),
 table tr.editor td select,
 table tr.editor td textarea {
-  padding: 5px 4px;
+  padding: .5rem .4rem;
   width: 100%;
 }
 
@@ -3587,13 +3587,13 @@ table .header {
 
 /* Multi-row editor default values. Should/can be overriden in every .asp page were a multirow editor field is used */
 .erow div[class^="x"] {
-  margin-top: 3px;
+  margin-top: .2rem;
   float: left;
   display: inline-block;
 }
 
 .erow:first-child div[class^="x"] {
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .erow div[class^="x"]:first-child {
@@ -3602,12 +3602,12 @@ table .header {
 
 .erow div.xa {
   width: 30%;
-  padding: 0 0 0 2px;
+  padding: 0 0 0 .2rem;
 }
 
 .erow div.xb {
   width: 30%;
-  padding-left: 5px;
+  padding-left: .5rem;
 }
 
 /* Progress Bars
@@ -3615,17 +3615,17 @@ table .header {
 .progress {
   vertical-align: middle;
   display: block;
-  height: 8px;
+  height: .8rem;
   padding: 0;
   margin: 0;
   background: #e4eaec;
-  border-radius: 2px;
+  border-radius: .2rem;
   overflow: hidden;
 }
 
 .progress.small {
-  border-radius: 1px;
-  height: 2px;
+  border-radius: .1rem;
+  height: .2rem;
 }
 
 .progress .bar {
@@ -3656,7 +3656,7 @@ table .header {
   z-index: 99;
   display: block;
   visibility: visible;
-  font-size: 11px;
+  font-size: 1.1rem;
   line-height: 1.4;
   opacity: 0;
   filter: alpha(opacity=0);
@@ -3668,35 +3668,35 @@ table .header {
 }
 
 .tooltip.top {
-  margin-top: -3px;
-  padding: 5px 0;
+  margin-top: -.3rem;
+  padding: .5rem 0;
 }
 
 .tooltip.right {
-  margin-left: 3px;
-  padding: 0 5px;
+  margin-left: .3rem;
+  padding: 0 .5rem;
 }
 
 .tooltip.bottom {
-  margin-top: 3px;
-  padding: 5px 0;
+  margin-top: .3rem;
+  padding: .5rem 0;
 }
 
 .tooltip.left {
-  margin-left: -3px;
-  padding: 0 5px;
+  margin-left: -.3rem;
+  padding: 0 .5rem;
 }
 
 .tooltip-inner {
-  max-width: 300px;
-  padding: 3px 8px;
+  max-width: 30rem;
+  padding: .3rem .8rem;
   font-weight: normal;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
   background-color: #000000;
   background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 4px;
+  border-radius: .4rem;
 }
 
 .tooltip-arrow {
@@ -3710,24 +3710,24 @@ table .header {
 .tooltip.top .tooltip-arrow {
   bottom: 0;
   left: 50%;
-  margin-left: -5px;
-  border-width: 5px 5px 0;
+  margin-left: -.5rem;
+  border-width: .5rem .5rem 0;
   border-top-color: #000000;
   border-top-color: rgba(0, 0, 0, 0.8);
 }
 
 .tooltip.top-left .tooltip-arrow {
   bottom: 0;
-  left: 5px;
-  border-width: 5px 5px 0;
+  left: .5rem;
+  border-width: .5rem .5rem 0;
   border-top-color: #000000;
   border-top-color: rgba(0, 0, 0, 0.8);
 }
 
 .tooltip.top-right .tooltip-arrow {
   bottom: 0;
-  right: 5px;
-  border-width: 5px 5px 0;
+  right: .5rem;
+  border-width: .5rem .5rem 0;
   border-top-color: #000000;
   border-top-color: rgba(0, 0, 0, 0.8);
 }
@@ -3735,8 +3735,8 @@ table .header {
 .tooltip.right .tooltip-arrow {
   top: 50%;
   left: 0;
-  margin-top: -5px;
-  border-width: 5px 5px 5px 0;
+  margin-top: -.5rem;
+  border-width: .5rem .5rem .5rem 0;
   border-right-color: #000000;
   border-right-color: rgba(0, 0, 0, 0.8);
 }
@@ -3744,8 +3744,8 @@ table .header {
 .tooltip.left .tooltip-arrow {
   top: 50%;
   right: 0;
-  margin-top: -5px;
-  border-width: 5px 0 5px 5px;
+  margin-top: -.5rem;
+  border-width: .5rem 0 .5rem .5rem;
   border-left-color: #000000;
   border-left-color: rgba(0, 0, 0, 0.8);
 }
@@ -3753,24 +3753,24 @@ table .header {
 .tooltip.bottom .tooltip-arrow {
   top: 0;
   left: 50%;
-  margin-left: -5px;
-  border-width: 0 5px 5px;
+  margin-left: -.5rem;
+  border-width: 0 .5rem .5rem;
   border-bottom-color: #000000;
   border-bottom-color: rgba(0, 0, 0, 0.8);
 }
 
 .tooltip.bottom-left .tooltip-arrow {
   top: 0;
-  left: 5px;
-  border-width: 0 5px 5px;
+  left: .5rem;
+  border-width: 0 .5rem .5rem;
   border-bottom-color: #000000;
   border-bottom-color: rgba(0, 0, 0, 0.8);
 }
 
 .tooltip.bottom-right .tooltip-arrow {
   top: 0;
-  right: 5px;
-  border-width: 0 5px 5px;
+  right: .5rem;
+  border-width: 0 .5rem .5rem;
   border-bottom-color: #000000;
   border-bottom-color: rgba(0, 0, 0, 0.8);
 }
@@ -3795,7 +3795,7 @@ body.login-screen {
 #logo-icon {
   display: inline-block;
   vertical-align: middle;
-  margin-top: -4px;
+  margin-top: -.4rem;
 }
 
 /* Move login to center of screen */
@@ -3803,33 +3803,33 @@ body.login-screen {
   position: absolute;
   left: 50%;
   top: 25%;
-  margin-left: -200px;
-  width: 400px;
+  margin-left: -20rem;
+  width: 40rem;
 }
 
 .login-container {
   background: #fff;
   overflow: hidden;
-  border-radius: 3px;
-  border: 1px solid transparent;
-  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
+  border-radius: .3rem;
+  border: .1rem solid transparent;
+  box-shadow: 0 0.2rem 0.1rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
 }
 
 .login-content {
-  padding: 20px 25px;
+  padding: 2rem 2.5rem;
 }
 
 .login-header {
   color: #464646;
-  margin: 30px 0 15px;
+  margin: 3rem 0 1.5rem;
 }
 
 .login-header h2 {
   text-align: center;
   margin: 0;
   padding: 0;
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .form-control {
@@ -3838,11 +3838,11 @@ body.login-screen {
   border-color: #f1f1f1;
   box-shadow: none;
   width: 100%;
-  -webkit-box-shadow: 0 0 0 1000px #f1f1f1 inset;
+  -webkit-box-shadow: 0 0 0 100rem #f1f1f1 inset;
 }
 
 .form-group {
-  margin: 0 0 15px;
+  margin: 0 0 1.5rem;
   border-color: transparent;
 }
 
@@ -3852,12 +3852,12 @@ body.login-screen {
 
 .version-info {
   color: #fff;
-  margin-top: 10px;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+  text-shadow: 0 0.1rem 0 rgba(0, 0, 0, 0.2);
 }
 
 .divider {
-  margin: 15px 0 0;
+  margin: 1.5rem 0 0;
   border: 0;
   content: "";
 }
@@ -3893,7 +3893,7 @@ body.login-screen {
 *******************************************************************************************************/
 .preloader {
   vertical-align: middle;
-  margin: 0 10px;
+  margin: 0 1rem;
 }
 
 .ajax-animation {
@@ -3907,32 +3907,32 @@ body.login-screen {
 /* Pure CSS preloader */
 .spinner {
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  width: 1.5rem;
+  height: 1.5rem;
   vertical-align: middle;
-  border: solid 1px #3498db;
+  border: solid .1rem #3498db;
   border-color: #3498db #3498db transparent transparent;
-  border-width: 0 1px 1px;
+  border-width: 0 .1rem .1rem;
   border-radius: 50%;
   animation: tomato-spinner 600ms linear infinite;
 }
 
 .spinner.spinner-small {
-  width: 12px;
-  height: 12px;
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .spinner.spinner-large {
-  width: 36px;
-  height: 36px;
-  border-width: 0 3px 3px;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-width: 0 .3rem .3rem;
   animation: tomato-spinner 1s linear infinite;
 }
 
 /* SVG Preloader */
 .preloader-circle {
   display: inline-block;
-  width: 60px;
+  width: 6rem;
 }
 
 .preloader-circle > svg {
@@ -3947,7 +3947,7 @@ body.login-screen {
   stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;
   stroke-linecap: round;
-  stroke-width: 2;
+  stroke-width: .4rem;
   stroke-miterlimit: 10;
   fill: none;
   animation: dash 1.5s ease-in-out infinite;
@@ -3963,11 +3963,10 @@ body.login-screen {
   background: #3498db;
   position: absolute;
   z-index: 99;
-  top: 58px;
+  top: 5.8rem;
   left: 0;
   width: 0;
-  height: 2px;
-  opacity: 0.75;
+  height: .2rem;
   animation: nprogress-animation 5s ease-out 1;
   animation-fill-mode: forwards;
 }
@@ -4013,11 +4012,11 @@ body.login-screen {
   }
   50% {
     stroke-dasharray: 89, 200;
-    stroke-dashoffset: -35px;
+    stroke-dashoffset: -3.5rem;
   }
   100% {
     stroke-dasharray: 89, 200;
-    stroke-dashoffset: -124px;
+    stroke-dashoffset: -12.4rem;
   }
 }
 
@@ -4025,16 +4024,16 @@ body.login-screen {
 *******************************************************************************************************/
 @media (max-width: 960px) {
   #wrapper > .container {
-    padding: 5px 10px;
+    padding: .5rem 1rem;
   }
   .links ul li a {
     font-size: 0;
   }
   .links ul li a i {
-    font-size: 16px;
+    font-size: 1.6rem;
   }
   .system-ui::before, .system-ui::after {
-    right: 15px;
+    right: 1.5rem;
   }
 }
 
@@ -4042,11 +4041,11 @@ body.login-screen {
 @media (min-width: 1200px) {
   .fluid-grid {
     column-count: 2;
-    column-gap: 15px;
+    column-gap: 1.5rem;
     column-width: 50%;
   }
   .fluid-grid.x3 {
-    column-gap: 15px;
+    column-gap: 1.5rem;
     column-count: 3 auto;
   }
 }
@@ -4054,7 +4053,7 @@ body.login-screen {
 /* Navigation */
 @media (max-height: 990px) {
   .navigation.collapsed li:hover ul {
-    max-height: 240px;
+    max-height: 24rem;
     overflow-x: hidden;
     overflow-y: auto;
   }

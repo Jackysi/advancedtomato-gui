@@ -1,75 +1,102 @@
 body.login-screen {
-    background: #63b7fa;
+    background:       #63b7fa;
     background-image: radial-gradient(ellipse, #63b7fa 0, #3583ca 100%);
 }
 
 /* Change position of the logo icon */
 #logo-icon {
-    display: inline-block;
+    display:        inline-block;
     vertical-align: middle;
-    margin-top: -4px;
+    margin-top:     -.4rem;
 }
 
 /* Move login to center of screen */
 .login-form {
-    position: absolute;
-    left: 50%;
-    top: 25%;
-    margin-left: -200px;
-    width: 400px;
+    position:    absolute;
+    left:        50%;
+    top:         25%;
+    margin-left: -20rem;
+    width:       40rem;
 }
 
 .login-container {
-    background: #fff;
-    overflow: hidden;
-    border-radius: 3px;
-    border: 1px solid transparent;
-    box-shadow: 0 2px 1px rgba(0, 0, 0, .1);
-    margin-bottom: 10px;
+    background:    #fff;
+    overflow:      hidden;
+    border-radius: .3rem;
+    border:        .1rem solid transparent;
+    box-shadow:    0 .2rem .1rem rgba(0, 0, 0, .1);
+    margin-bottom: 1rem;
 }
 
 .login-content {
-    padding: 20px 25px;
+    padding: 2rem 2.5rem;
 }
 
 .login-header {
-    color: #464646;
-    margin: 30px 0 15px;
+    color:  #464646;
+    margin: 3rem 0 1.5rem;
 }
 
 .login-header h2 {
     text-align: center;
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
+    margin:     0;
+    padding:    0;
+    font-size:  2rem;
 }
 
 .form-control {
-    display: block;
-    background: #f1f1f1;
-    border-color: #f1f1f1;
-    box-shadow: none;
-    width: 100%;
-    -webkit-box-shadow: 0 0 0 1000px #f1f1f1 inset;
+    display:            block;
+    background:         #f1f1f1;
+    border-color:       #f1f1f1;
+    box-shadow:         none;
+    width:              100%;
+    -webkit-box-shadow: 0 0 0 100rem #f1f1f1 inset;
 }
 
-.form-group { margin: 0 0 15px; border-color: transparent; }
+.form-group {
+    margin:       0 0 1.5rem;
+    border-color: transparent;
+}
 
-.form-control:focus { border-color: #f0f0f0; }
+.form-control:focus {
+    border-color: #f0f0f0;
+}
 
-.version-info { color: #fff; margin-top: 10px; text-shadow: 0 1px 0 rgba(0, 0, 0, .2); }
+.version-info {
+    color:       #fff;
+    margin-top:  1rem;
+    text-shadow: 0 .1rem 0 rgba(0, 0, 0, .2);
+}
 
-.divider { margin: 15px 0 0; border: 0; content: ""; }
+.divider {
+    margin:  1.5rem 0 0;
+    border:  0;
+    content: "";
+}
 
-.login-form-onload { animation: loginate 800ms ease 1; }
+.login-form-onload {
+    animation: loginate 800ms ease 1;
+}
 
-.text-center { text-align: center; }
+.text-center {
+    text-align: center;
+}
 
 @keyframes loginate {
-    from { opacity: 0.4; transform: scale(0.98); top: 20%; }
-    to { opacity: 1; transform: scale(1); top: 25%; }
+    from {
+        opacity:   0.4;
+        transform: scale(0.98);
+        top:       20%;
+    }
+    to {
+        opacity:   1;
+        transform: scale(1);
+        top:       25%;
+    }
 }
 
 @media (max-width: 768px) {
-    .login-form { top: 5% !important; }
+    .login-form {
+        top: 5% !important;
+    }
 }

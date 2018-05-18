@@ -1,31 +1,31 @@
 /* Navigation
 *******************************************************************************************************/
 .navigation {
-    display: block;
-    position: fixed;
-    left: 0;
-    top: 60px;
-    bottom: 0;
-    width: 240px;
-    background: $navi-background;
-    z-index: 2;
-    overflow: auto;
+    display:                     block;
+    position:                    fixed;
+    left:                        0;
+    top:                         6rem;
+    bottom:                      0;
+    width:                       24rem;
+    background:                  $navi-background;
+    z-index:                     2;
+    overflow:                    auto;
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden; /* Performance Improvement */
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0); /* Font Rendering FIX */
-    transition: width 600ms cubic-bezier(1.000, -0.600, 0.000, 1.650);
-    -webkit-transition: width 600ms cubic-bezier(1.000, -0.600, 0.000, 1.650);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    backface-visibility:         hidden; /* Performance Improvement */
+    -webkit-transform:           translate3d(0, 0, 0);
+    transform:                   translate3d(0, 0, 0); /* Font Rendering FIX */
+    transition:                  width 600ms cubic-bezier(1.000, -0.600, 0.000, 1.650);
+    -webkit-transition:          width 600ms cubic-bezier(1.000, -0.600, 0.000, 1.650);
+    -webkit-user-select:         none;
+    -moz-user-select:            none;
+    -ms-user-select:             none;
+    user-select:                 none;
 }
 
 .navigation ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin:     0;
+    padding:    0;
 }
 
 .navigation li {
@@ -33,12 +33,12 @@
 }
 
 .navigation li a {
-    position: relative;
-    display: block;
-    color: #a6adb3;
-    font-size: 10pt;
-    font-weight: $font-bold;
-    padding: 10px 25px;
+    position:       relative;
+    display:        block;
+    color:          #a6adb3;
+    font-size:      1.3rem;
+    font-weight:    $font-bold;
+    padding:        1rem 2.5rem;
     vertical-align: middle;
 }
 
@@ -46,79 +46,79 @@
 
     > a:after {
         font-family: 'advancedtomato';
-        content: "\e001";
-        position: absolute;
-        right: 30px;
-        transition: transform 250ms ease-out, right 150ms ease-out;
+        content:     "\e001";
+        position:    absolute;
+        right:       3rem;
+        transition:  transform 250ms ease-out, right 150ms ease-out;
     }
 
     > a:hover::after {
-        right: 25px;
+        right: 2.5rem;
     }
 
     &.active > a:after {
         transition-delay: 250ms;
-        transform: rotate(90deg);
+        transform:        rotate(90deg);
     }
 
 }
 
 .navigation li a i {
-    font-size: 16px;
-    margin-right: 7px;
+    font-size:    1.6rem;
+    margin-right: 0.7rem;
 }
 
 .navigation li ul {
-    display: none;
-    margin: 0;
+    display:    none;
+    margin:     0;
     background: darken($navi-background, 1%);
 }
 
 /* Dropdown, or w/e */
 .navigation li ul li:first-child:before {
-    top: 5px;
+    top: .5rem;
 }
 
 .navigation li ul li:before {
-    content: "";
-    left: 32px;
-    top: -12px;
-    bottom: 13px;
-    position: absolute;
-    display: block;
-    width: 1px;
-    border-left: 1px dotted #3e474e;
-    z-index: 1;
+    content:     "";
+    left:        3.2rem;
+    top:         -1.2rem;
+    bottom:      1.3rem;
+    position:    absolute;
+    display:     block;
+    width:       0.1rem;
+    border-left: 0.1rem dotted #3e474e;
+    z-index:     1;
 }
 
 .navigation li ul li a:before {
-    content: "";
-    left: 33px;
-    top: 14px;
-    position: absolute;
-    display: block;
-    width: 12px;
-    border-bottom: 1px dotted #3e474e;
-    z-index: 1;
+    content:       "";
+    left:          3.3rem;
+    top:           1.4rem;
+    position:      absolute;
+    display:       block;
+    width:         1.2rem;
+    border-bottom: 0.1rem dotted #3e474e;
+    z-index:       1;
 }
 
 .navigation li ul li a {
-    font-size: 12px;
+    font-size:   1.2rem;
     font-weight: normal;
-    padding: 5px 0 5px 55px;
-    transition: padding-left 150ms ease-out;
+    padding:     0.5rem 0 0.5rem 5.5rem;
+    transition:  padding-left 150ms ease-out;
 }
 
 /* Hover & Active States */
 .navigation > ul > li > a:hover {
-    color: #e1e4e6;
+    color:      #e1e4e6;
     background: rgba(#fff, 0.02);
 }
 
 .navigation li ul li a:hover {
-    color: #e1e4e6;
-    padding-left: 58px;
-    background: rgba(#fff, 0.02);
+    color:        #e1e4e6;
+    padding-left: 5.8rem;
+    background:   rgba(#fff, 0.02);
 }
 
 .navigation li ul li.active a {
@@ -131,55 +131,55 @@
 }
 
 .navigation > ul > li.active > a {
-    color: #e1e4e6;
+    color:            #e1e4e6;
     background-color: darken($navi-background, 1%);
 
     &::after {
-        right: 30px;
+        right: 3rem;
     }
 }
 
 /* Footer */
 .navigation > ul {
-    position: relative;
-    padding-bottom: 40px;
-    min-height: 100%;
+    position:       relative;
+    padding-bottom: 4rem;
+    min-height:     100%;
 }
 
 .navigation .nav-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    min-height: 30px;
+    position:    absolute;
+    bottom:      0;
+    left:        0;
+    right:       0;
+    min-height:  3rem;
     line-height: 1;
     font-weight: $font-bold;
-    font-size: 13px;
-    padding: 10px;
-    color: #a6adb3;
-    text-align: center;
-    box-shadow: inset 0 1px 0 rgba(#000, 0.05);
-    background: darken($navi-background, 3%);
+    font-size:   1.3rem;
+    padding:     1rem;
+    color:       #a6adb3;
+    text-align:  center;
+    box-shadow:  inset 0 .1rem 0 rgba(#000, 0.05);
+    background:  darken($navi-background, 3%);
 }
 
 .navigation .nav-footer i:before {
-    font-size: 18px;
-    top: -2px;
-    left: -2px
+    font-size: 1.8rem;
+    top:       -0.2rem;
+    left:      -0.2rem
 }
 
 /* Collapse Logo/Navigation and extend content */
 .top-header.collapsed .logo {
-    width: 60px;
+    width: 6rem;
 }
 
 .top-header.collapsed .logo svg {
-    margin: 15px 0 0;
+    margin:  1.2rem 0 0;
     display: inline-block;
 }
 
 .navigation.collapsed {
-    width: 60px;
+    width:    6rem;
     overflow: visible;
 }
 
@@ -188,18 +188,18 @@
 }
 
 .navigation.collapsed li a i {
-    font-size: 20px;
+    font-size: 2rem;
 }
 
 .navigation.collapsed > ul > li > a {
-    text-align: center;
-    padding: 14px 18px;
+    text-align:       center;
+    padding:          1.4rem 1.8rem;
     background-color: transparent;
 }
 
 .navigation.collapsed li:hover ul {
     display: block !important;
-    top: 40px;
+    top:     4rem;
 }
 
 .navigation.collapsed li:hover > a {
@@ -207,42 +207,42 @@
 }
 
 .navigation.collapsed li:hover .icons-desc {
-    display: block !important;
-    position: absolute;
-    text-align: left;
-    left: 100%;
-    top: 0;
-    font-weight: normal;
-    line-height: 40px;
-    width: 200px;
-    color: #fff;
-    background: none repeat scroll 0 0 $navi-background;
-    z-index: 4;
-    padding: 0 20px;
-    border-top-right-radius: 3px;
+    display:                 block !important;
+    position:                absolute;
+    text-align:              left;
+    left:                    100%;
+    top:                     0;
+    font-weight:             normal;
+    line-height:             4rem;
+    width:                   20rem;
+    color:                   #fff;
+    background:              none repeat scroll 0 0 $navi-background;
+    z-index:                 4;
+    padding:                 0 2rem;
+    border-top-right-radius: 0.3rem;
 }
 
 .navigation.collapsed li ul li a {
-    width: 200px;
-    padding: 6px 0 6px 35px;
+    width:   20rem;
+    padding: .6rem 0 .6rem 3rem;
 }
 
 .navigation.collapsed li ul {
-    display: none !important;
-    width: 200px;
-    position: absolute;
-    height: auto;
-    left: 100%;
-    border-bottom-right-radius: 3px;
+    display:                    none !important;
+    width:                      20rem;
+    position:                   absolute;
+    height:                     auto;
+    left:                       100%;
+    border-bottom-right-radius: 0.3rem;
 }
 
 .navigation.collapsed li ul li:before {
-    left: 15px;
+    left: 1.5rem;
 }
 
 .navigation.collapsed li ul li a:before {
-    left: 15px;
-    width: 15px;
+    left:  1.5rem;
+    width: 1.5rem;
 }
 
 .navigation.collapsed .active > a > i {
@@ -262,50 +262,50 @@
 
 /* Tabs */
 ul.nav-tabs {
-    display: block;
-    height: 40px;
-    list-style: none;
-    margin: 0 0 15px !important;
-    white-space: nowrap;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
-    background: rgba(255, 255, 255, 0.6);
+    display:       block;
+    height:        4rem;
+    list-style:    none;
+    margin:        0 0 1.5rem !important;
+    white-space:   nowrap;
+    border-bottom: 0.2rem solid rgba(0, 0, 0, 0.08);
+    background:    rgba(255, 255, 255, 0.6);
 }
 
 ul.nav-tabs li {
-    display: inline-block;
-    float: left;
-    height: 40px;
-    line-height: 40px;
-    margin: 0 !important;
+    display:     inline-block;
+    float:       left;
+    height:      4rem;
+    line-height: 4rem;
+    margin:      0 !important;
 }
 
 ul.nav-tabs li a {
-    display: block;
-    padding: 0 15px;
-    height: 40px;
-    font-weight: normal;
-    line-height: 40px;
-    color: #808080;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
-    transition: all 100ms ease;
+    display:            block;
+    padding:            0 1.5rem;
+    height:             4rem;
+    font-weight:        normal;
+    line-height:        4rem;
+    color:              #808080;
+    text-shadow:        0 0.1rem 0 rgba(255, 255, 255, 0.2);
+    transition:         all 100ms ease;
     -webkit-transition: all 100ms ease;
-    border-bottom: 1px solid transparent;
+    border-bottom:      0.1rem solid transparent;
 }
 
 ul.nav-tabs li a:hover,
 ul.nav-tabs li a:focus,
 ul.nav-tabs li a.active {
-    z-index: 999;
-    color: #777777;
-    background: rgba(0, 0, 0, 0.05);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    z-index:       999;
+    color:         #777777;
+    background:    rgba(0, 0, 0, 0.05);
+    border-bottom: 0.2rem solid rgba(0, 0, 0, 0.05);
 }
 
 ul.nav-tabs li a.active {
-    border-bottom: 2px solid #3498db;
-    background: transparent;
+    border-bottom: 0.2rem solid #3498db;
+    background:    transparent;
 }
 
 ul.nav-tabs li a i {
-    margin-right: 2px;
+    margin-right: 0.2rem;
 }

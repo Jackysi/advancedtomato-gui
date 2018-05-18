@@ -2,9 +2,9 @@
 *******************************************************************************************************/
 table {
     position: relative;
-    display: table;
-    width: 100%;
-    margin: 0;
+    display:  table;
+    width:    100%;
+    margin:   0;
 }
 
 table th {
@@ -13,8 +13,8 @@ table th {
 
 /* Nice Lined Tables */
 table.line-table tr {
-    display: table-row;
-    border-top: 1px solid #e4eaec;
+    display:    table-row;
+    border-top: .1rem solid #e4eaec;
 }
 
 table.line-table tr:first-child {
@@ -22,7 +22,7 @@ table.line-table tr:first-child {
 }
 
 table.line-table .progress {
-    margin: 1px 15px;
+    margin: .1rem 1.5rem;
 }
 
 table.line-table tr:nth-child(even) {
@@ -51,43 +51,43 @@ table.line-table.static tr {
 }
 
 table.line-table tr th {
-    display: table-cell;
-    padding: 8px;
+    display:     table-cell;
+    padding:     .8rem;
     font-weight: 500;
-    text-align: left;
+    text-align:  left;
 }
 
 table.line-table tr td {
-    display: table-cell;
-    width: inherit;
-    padding: 10px 6px;
+    display:        table-cell;
+    width:          inherit;
+    padding:        1rem .6rem;
     vertical-align: middle;
 }
 
 /* Table ROW options panel */
 #table-row-panel {
     text-align: right;
-    right: 0;
-    display: block;
-    position: absolute;
+    right:      0;
+    display:    block;
+    position:   absolute;
 }
 
 #table-row-panel a.move-up-row,
 #table-row-panel a.move-down-row,
 #table-row-panel a.move-row,
 #table-row-panel a.delete-row {
-    float: left;
-    font-size: 10pt;
-    text-align: center;
-    padding: 4px 6px;
+    float:       left;
+    font-size:   1.4rem;
+    text-align:  center;
+    padding:     .4rem .6rem;
     line-height: 1;
-    color: #fff;
-    background: #585858;
-    z-index: 1;
-    transition: background-color 80ms ease;
+    color:       #fff;
+    background:  #585858;
+    z-index:     1;
+    transition:  background-color 80ms ease;
 
     &:hover {
-        z-index: 10;
+        z-index:    10;
         background: #434343;
     }
 }
@@ -109,7 +109,7 @@ table.line-table tr td {
 }
 
 #table-row-panel a:first-child {
-    border-bottom-left-radius: 3px;
+    border-bottom-left-radius: .3rem;
 }
 
 #table-row-panel i:before {
@@ -122,7 +122,8 @@ table.data-table {
 }
 
 table.data-table tr td {
-    display: table-cell; padding: 5px 0;
+    display: table-cell;
+    padding: .5rem 0;
 }
 
 table.data-table.dataonly tr td:first-child {
@@ -130,11 +131,11 @@ table.data-table.dataonly tr td:first-child {
 }
 
 table.data-table.other {
-    margin: 5px 10px;
+    margin: .5rem 1rem;
 }
 
 table.data-table.bwm-info {
-    margin: 15px 5px;
+    margin: 1.5rem .5rem;
 }
 
 table.data-table.bwm-info tr td {
@@ -143,23 +144,23 @@ table.data-table.bwm-info tr td {
 
 /* Field Tables */
 table.fields-table {
-    width: 100%;
-    max-width: 800px;
+    width:     100%;
+    max-width: 80rem;
 }
 
 table.fields-table tr td {
-    display: table-cell;
-    padding: 8px 0;
+    display:        table-cell;
+    padding:        .8rem 0;
     vertical-align: middle;
 }
 
 table.fields-table tr td:first-child {
-    width: 25%;
-    min-width: 200px;
+    width:     25%;
+    min-width: 20rem;
 }
 
 table.fields-table select {
-    min-width: 180px;
+    min-width: 18rem;
 }
 
 /* Other extra styles */
@@ -168,9 +169,9 @@ table.td-large tr td {
 
 table .controls, table.line-table tr.controls {
     box-shadow: none;
-    border: 0;
-    padding: 0;
-    margin: 0;
+    border:     0;
+    padding:    0;
+    margin:     0;
 }
 
 table .controls:hover, table.line-table tr.controls:hover {
@@ -178,33 +179,35 @@ table .controls:hover, table.line-table tr.controls:hover {
 }
 
 table .controls td, table.line-table tr.controls td {
-    padding: 8px 4px;
+    padding: .8rem .4rem;
 }
 
-table tr.editor td { margin: 0; }
+table tr.editor td {
+    margin: 0;
+}
 
 table tr.editor td input:not([type='checkbox']),
 table tr.editor td select,
 table tr.editor td textarea {
-    padding: 5px 4px;
-    width: 100%;
+    padding: .5rem .4rem;
+    width:   100%;
 }
 
 table .header {
-    color: #646464;
+    color:       #646464;
     font-weight: 500;
-    cursor: pointer;
+    cursor:      pointer;
 }
 
 /* Multi-row editor default values. Should/can be overriden in every .asp page were a multirow editor field is used */
 .erow div[class^="x"] {
-    margin-top: 3px;
-    float: left;
-    display: inline-block;
+    margin-top: .2rem;
+    float:      left;
+    display:    inline-block;
 }
 
 .erow:first-child div[class^="x"] {
-    margin-top: 0px
+    margin-top: 0
 }
 
 .erow div[class^="x"]:first-child {
@@ -212,11 +215,11 @@ table .header {
 }
 
 .erow div.xa {
-    width: 30%;
-    padding: 0 0 0 2px;
+    width:   30%;
+    padding: 0 0 0 .2rem;
 }
 
 .erow div.xb {
-    width: 30%;
-    padding-left: 5px;
+    width:        30%;
+    padding-left: .5rem;
 }

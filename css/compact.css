@@ -1,0 +1,64 @@
+html {
+  font-size: 40%;
+}
+
+body {
+  font-size: 9pt;
+}
+
+table.line-table tr th {
+  padding: 8px 6px;
+}
+
+table.line-table tr td {
+  padding: 6px;
+}
+
+table.data-table tr td {
+  padding: 2px 0;
+}
+
+input, select, textarea {
+  height: 26px;
+  padding: 3px 6px;
+}
+
+label.control-left-label {
+  padding-top: 4px;
+}
+
+fieldset {
+  padding: 2px 0 9px;
+}
+
+.btn, button.btn {
+  height: 26px;
+  padding: 2px 10px;
+}
+
+.c-checkbox span,
+.c-radio span {
+  width: 20px;
+  height: 20px;
+}
+
+.customfile-text {
+  height: 26px;
+  padding: 3px 6px;
+}
+
+.customfile .browse {
+  height: 26px;
+}
+
+.tomato-refresh select {
+  padding: 3px 6px;
+}
+
+table tr.editor td input:not([type='checkbox']), table tr.editor td select, table tr.editor td textarea {
+  padding: 2px 4px;
+}
+
+.input-append input, .input-append select {
+  padding: 3px 6px;
+}

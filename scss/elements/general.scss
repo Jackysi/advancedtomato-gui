@@ -2,15 +2,15 @@
 *******************************************************************************************************/
 html {
     font-size: 62.5%;
-    height: 100%;
+    height:    100%;
 }
 
 body {
-    font-size: 10pt;
-    font-family: "Segoe UI", "Roboto", sans-serif;
-    color: #76838f;
-    line-height: 1.42857;
-    height: 100%;
+    font-size:        1.3rem;
+    font-family:      "Segoe UI", "Roboto", sans-serif;
+    color:            #76838f;
+    line-height:      1.42857;
+    height:           100%;
     background-color: #f1f4f5;
 }
 
@@ -25,54 +25,54 @@ body {
 
 /* Replace some general styles (b, h1-h6, etc...) */
 a {
-    color: #45657c;
+    color:           #45657c;
     text-decoration: none;
-    outline-style: none;
-    outline-width: 0;
+    outline-style:   none;
+    outline-width:   0;
 }
 
 a:hover, a:active {
-    color: #8dbdf1;
+    color:           #8dbdf1;
     text-decoration: none;
 }
 
 h1, h2, h3, h4, h5 {
     font-weight: 500;
     line-height: 1.1;
-    color: #37474f;
+    color:       #37474f;
 }
 
 h1, .h1 {
-    font-size: 24px;
-    margin: 0 0 10px;
+    font-size: 2.4rem;
+    margin:    0 0 1rem;
 }
 
 h2, .h2 {
-    font-size: 20px;
-    margin: 0 0 10px;
+    font-size: 2rem;
+    margin:    0 0 1rem;
 }
 
 h3, .h3 {
-    font-size: 16px;
-    margin: 0 0 10px;
+    font-size: 1.6rem;
+    margin:    0 0 1rem;
 }
 
 h4, .h4 {
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 h5, .h5 {
-    font-size: 15px;
+    font-size: 1.5rem;
 }
 
 h6, .h6 {
-    font-size: 12px;
+    font-size: 1.2rem;
 }
 
 hr {
-    margin: -5px 0 15px;
-    border: 0;
-    border-bottom: 1px dashed #eee;
+    margin:        -0.5rem 0 1.5rem;
+    border:        0;
+    border-bottom: 0.1rem dashed #eee;
 }
 
 small {
@@ -92,13 +92,13 @@ small {
 }
 
 ul {
-    margin: 0;
+    margin:  0;
     padding: 0;
 }
 
 /* General Text styles */
 .text-center {
-    display: block;
+    display:    block;
     text-align: center;
 }
 
@@ -127,10 +127,10 @@ button::-moz-focus-inner,
 textarea::-moz-focus-inner,
 select::-moz-focus-inner,
 input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-    margin-top: -2px;
-    margin-bottom: -2px;
+    border:        0;
+    padding:       0;
+    margin-top:    -0.2rem;
+    margin-bottom: -0.2rem;
 }
 
 /* Other cool classes we may need */
@@ -154,8 +154,8 @@ input::-moz-focus-inner {
 }
 
 .center-block {
-    display: block;
-    margin-left: auto;
+    display:      block;
+    margin-left:  auto;
     margin-right: auto;
 }
 
@@ -180,20 +180,20 @@ input::-moz-focus-inner {
 }
 
 .text-hide {
-    font: 0/0 a;
-    color: transparent;
-    text-shadow: none;
+    font:             0/0 a;
+    color:            transparent;
+    text-shadow:      none;
     background-color: transparent;
-    border: 0;
+    border:           0;
 }
 
 .hidden {
-    display: none !important;
+    display:    none !important;
     visibility: hidden !important;
 }
 
 .affix {
-    position: fixed;
+    position:          fixed;
     -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    transform:         translate3d(0, 0, 0);
 }

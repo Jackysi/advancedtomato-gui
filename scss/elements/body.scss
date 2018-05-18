@@ -2,7 +2,7 @@
 *******************************************************************************************************/
 .top-header {
     display:             block;
-    height:              60px;
+    height:              6rem;
     position:            fixed;
     top:                 0;
     left:                0;
@@ -11,15 +11,15 @@
     backface-visibility: hidden; /* Performance Improvement */
     transform:           translate3d(0, 0, 0); /* Font Rendering FIX */
     z-index:             3;
-    box-shadow:          0 2px 4px rgba(0, 0, 0, 0.08);
+    box-shadow:          0 .2rem .4rem rgba(0, 0, 0, 0.08);
     user-select:         none;
 }
 
 .top-header .logo {
     display:     inline-block;
     float:       left;
-    height:      60px;
-    width:       240px;
+    height:      6rem;
+    width:       24rem;
     line-height: normal;
     background:  #3498db;
     text-align:  center;
@@ -31,8 +31,8 @@
     display:     inline-block;
     color:       #fff;
     font-weight: 500;
-    font-size:   14pt;
-    margin:      12px 0 4px 0;
+    font-size:   1.8rem;
+    margin:      1.2rem 0 .4rem 0;
     padding:     0;
 }
 
@@ -40,15 +40,15 @@
     color:       #fff;
     font-weight: normal;
     display:     block;
-    font-size:   10pt;
+    font-size:   1.4rem;
     padding:     0;
-    margin:      -4px 0 0;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+    margin:      -.4rem 0 0;
+    text-shadow: 0 .1rem 0 rgba(0, 0, 0, 0.15);
 }
 
 .top-header .logo svg {
     display:        none;
-    margin:         -8px 0 0 -10px;
+    margin:         -.8rem 0 0 -1rem;
     padding:        0;
     vertical-align: middle;
 }
@@ -57,10 +57,10 @@
     display:     inline-block;
     float:       left;
     height:      100%;
-    width:       40px;
+    width:       4rem;
     text-align:  center;
-    line-height: 60px;
-    font-size:   14px;
+    line-height: 6rem;
+    font-size:   1.4rem;
     font-weight: normal;
     color:       #526069;
 }
@@ -76,9 +76,9 @@
 .top-header > .links > ul > li > a {
     display:            inline-block;
     color:              #526069;
-    padding:            0 22px;
-    height:             60px;
-    line-height:        60px;
+    padding:            0 2.2rem;
+    height:             6rem;
+    line-height:        6rem;
     transition:         all 150ms ease;
     -webkit-transition: all 150ms ease;
 }
@@ -94,15 +94,15 @@
 }
 
 .top-header .links > ul > li {
-    margin:  0 0 0 -4px;
+    margin:  0 0 0 -.4rem;
     padding: 0;
     display: inline-block;
 }
 
 .top-header .links li a i {
-    padding-left:   2px;
-    font-size:      16px;
-    margin-top:     -2px;
+    padding-left:   .2rem;
+    font-size:      1.6rem;
+    margin-top:     -.2rem;
     vertical-align: middle;
 }
 
@@ -112,71 +112,71 @@
     position:      absolute;
     background:    #fff;
     padding:       0;
-    width:         340px;
-    top:           72px;
-    right:         10px;
-    border-radius: 5px;
+    width:         35rem;
+    top:           7.2rem;
+    right:         1rem;
+    border-radius: .5rem;
     display:       none;
     z-index:       1;
-    border:        1px solid #e4eaec;
-    box-shadow:    0 3px 12px rgba(0, 0, 0, .05);
+    border:        .1rem solid #e4eaec;
+    box-shadow:    0 .3rem 1.2rem rgba(0, 0, 0, .05);
 
     &::after, &::before {
         display:             block;
         content:             "";
         position:            absolute;
-        border:              8px solid transparent;
+        border:              .8rem solid transparent;
         border-bottom-color: #fff;
-        top:                 -14px;
-        right:               40px;
+        top:                 -1.4rem;
+        right:               4rem;
     }
 
     &::before {
-        top:                 -15px;
+        top:                 -1.5rem;
         border-bottom-color: #e4eaec;
     }
 }
 
 .system-ui .router-name {
     display:                 block;
-    font-size:               14px;
+    font-size:               1.4rem;
     font-weight:             500;
     color:                   #656565;
-    border-bottom:           1px solid #e4eaec;
-    padding:                 12px 18px;
-    border-top-right-radius: 3px;
-    border-top-left-radius:  3px;
+    border-bottom:           .1rem solid #e4eaec;
+    padding:                 1.2rem 1.8rem;
+    border-top-right-radius: .3rem;
+    border-top-left-radius:  .3rem;
 }
 
 .system-ui .router-name small {
-    margin-top: 2px;
+    margin-top: .2rem
 }
 
 .system-ui .router-control {
     text-align: center;
-    padding:    15px 15px;
+    padding:    1.5rem 1.5rem;
 }
 
 .system-ui .inner-container {
     margin:        0;
-    padding:       5px 18px;
-    border-bottom: 1px solid #e4eaec;
+    padding:       .5rem 1.8rem;
+    border-bottom: .1rem solid #e4eaec;
 }
 
 .system-ui .inner-container .desc {
     display:        inline-block;
     vertical-align: middle;
     text-align:     right;
-    padding:        5px 15px 5px 0;
-    width:          50px;
+    padding:        .5rem 1.5rem .5rem 0;
+    width:          5rem;
     font-weight:    500;
 }
 
 .system-ui .inner-container .value {
     display:        inline-block;
     vertical-align: middle;
-    width:          240px;
-    padding:        5px 0;
+    width:          24rem;
+    padding:        .5rem 0;
 }
 
 /* Content Design
@@ -187,24 +187,24 @@
     left:                0;
     right:               0;
     bottom:              0;
-    top:                 60px;
-    padding:             20px 40px;
+    top:                 6rem;
+    padding:             2rem 4rem;
     height:              auto;
     overflow-y:          auto;
     overflow-x:          visible;
     z-index:             1;
-    margin-left:         240px;
+    margin-left:         24rem;
     transition:          margin 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550) 150ms;
     backface-visibility: hidden; /* Performance Improvement */
     transform:           translate3d(0, 0, 0); /* Font Rendering FIX */
 }
 
 #wrapper > .container .debug {
-    font-size:     12px;
+    font-size:     1.2rem;
     background:    #fafafa;
-    border:        1px solid #f5f5f5;
-    padding:       10px;
-    border-radius: 2px;
+    border:        .1rem solid #f5f5f5;
+    padding:       1rem;
+    border-radius: .2rem;
 }
 
 #wrapper > .container:after {
@@ -214,19 +214,19 @@
 }
 
 #wrapper .container ul {
-    margin: 10px 15px;
+    margin: 1rem 1.5rem;
 }
 
 #wrapper .container ul li {
-    margin: 0 20px;
+    margin: 0 2rem;
 }
 
 #wrapper > .container.collapsed {
-    margin-left: 60px;
+    margin-left: 6rem;
 }
 
 #wrapper > .container .ajaxwrap {
-    min-width:  720px;
+    min-width:  72rem;
     min-height: 100%;
 }
 
@@ -234,8 +234,8 @@
     position:    absolute;
     top:         25%;
     left:        50%;
-    width:       350px;
-    margin-left: -175px;
+    width:       35rem;
+    margin-left: -17.5rem;
     text-align:  center;
 }
 
@@ -252,18 +252,18 @@
     column-count: 1;
     column-gap:   unset;
     column-width: auto;
-    margin:       0 0 10px;
+    margin:       0 0 1rem;
 }
 
 .fluid-grid .box {
     display:      block;
-    margin:       0 0 15px;
+    margin:       0 0 1.5rem;
     break-inside: avoid;
 }
 
 .fluid-grid.x3 {
     column-count: 2;
-    column-gap:   15px;
+    column-gap:   1.5rem;
     column-width: auto;
 }
 
@@ -271,32 +271,32 @@
 .box {
     display:        block;
     padding:        0;
-    margin:         0 0 15px;
+    margin:         0 0 1.5rem;
     background:     #fff;
     vertical-align: top;
-    border:         1px solid transparent;
-    border-radius:  5px;
-    box-shadow:     0 1px 1px rgba(0, 0, 0, .05);
+    border:         .1rem solid transparent;
+    border-radius:  .5rem;
+    box-shadow:     0 .1rem .1rem rgba(0, 0, 0, .05);
 }
 
 .box .heading {
     display:        block;
-    font-size:      16px;
+    font-size:      1.6rem;
     font-weight:    500;
     line-height:    normal;
     color:          #656565;
-    padding:        15px 10px 15px 20px;
+    padding:        1.5rem 1rem 1.5rem 2rem;
     vertical-align: middle;
 }
 
 .box .heading small {
-    margin-left: 5px;
+    margin-left: .5rem;
 }
 
 .box .heading a {
     color:         #838c91;
-    margin:        -8px 0 0 0;
-    padding:       8px 12px;
+    margin:        -.8rem 0 0 0;
+    padding:       .8rem 1.2rem;
     border-radius: 50%;
     transition:    color 150ms ease-out;
 }
@@ -306,7 +306,7 @@
 }
 
 .box .content {
-    padding: 0 20px 15px;
+    padding: 0 2rem 1.5rem;
     display: block;
 }
 
@@ -317,7 +317,7 @@
 }
 
 .box.small {
-    max-width: 960px;
+    max-width: 96rem;
 }
 
 .box.box-fluid {
@@ -328,7 +328,7 @@
 
 .box h2, .box h3, .box h4 {
     padding: 0;
-    margin:  8px 0;
+    margin:  .8rem 0;
 }
 
 /* New Ethernet States 
@@ -336,24 +336,24 @@
 #ethPorts {
     position:  relative;
     display:   table;
-    padding:   30px 10px;
+    padding:   3rem 1rem;
     width:     100%;
-    font-size: 12px;
+    font-size: 1.2rem;
 }
 
 #ethPorts .title {
     position:   absolute;
     display:    block;
-    width:      64px;
-    top:        10px;
+    width:      6.4rem;
+    top:        1rem;
     text-align: center;
 }
 
 #ethPorts .speed {
     position:   absolute;
     display:    block;
-    width:      64px;
-    bottom:     8px;
+    width:      6.4rem;
+    bottom:     .8rem;
     text-align: center;
 }
 
@@ -361,16 +361,16 @@
     display: table-cell;
     z-index: 15;
     width:   auto;
-    padding: 0 10px;
-    height:  48px;
+    padding: 0 1rem;
+    height:  4.8rem;
 }
 
 #ethPorts .eth.off {
-    background: url('/img/ethernet.x.svg') 20px center no-repeat;
+    background: url('/img/ethernet.x.svg') 2rem center no-repeat;
 }
 
 #ethPorts .eth.on {
-    background: url('/img/ethernet.svg') 20px center no-repeat;
+    background: url('/img/ethernet.svg') 2rem center no-repeat;
 }
 
 #ethPorts .eth.wan {
@@ -380,17 +380,17 @@
 /* Style Refresh timers */
 .tomato-refresh {
     float:  right;
-    margin: 5px 0 10px 10px;
+    margin: .5rem 0 1rem 1rem;
 }
 
 .tomato-refresh .spinner {
-    margin-right:   10px;
+    margin-right:   1rem;
     vertical-align: middle;
 }
 
 #refresh-spinner {
     vertical-align: middle;
-    margin-top:     -4px;
+    margin-top:     -.4rem;
 }
 
 /* Unresponsive interface problem
@@ -408,11 +408,11 @@
 
     .body-overwrite-text {
         display:     block;
-        width:       400px;
+        width:       40rem;
         position:    absolute;
         top:         30%;
         left:        50%;
-        margin-left: -200px;
+        margin-left: -20rem;
     }
 
 }
@@ -437,11 +437,11 @@
     position:   absolute;
     display:    block;
     text-align: center;
-    font-size:  14px;
+    font-size:  1.4rem;
     width:      100%;
-    height:     150px;
+    height:     15rem;
     top:        30%;
-    margin-top: -75px;
+    margin-top: -7.5rem;
     transform:  scale(0.2);
     transition: all 350ms ease-out;
 }
