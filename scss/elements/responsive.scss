@@ -1,21 +1,29 @@
 /* Responsive code (Adapt to screen size)
 *******************************************************************************************************/
 @media (max-width: 960px) {
-    #wrapper > .container { padding: 5px 10px; }
-    .links ul li a { font-size: 0; }
-    .links ul li a i { font-size: 16px; }
-    .system-ui::before, .system-ui::after { right: 15px; }
+    #wrapper > .container {
+        padding: .5rem 1rem;
+    }
+    .links ul li a {
+        font-size: 0;
+    }
+    .links ul li a i {
+        font-size: 1.6rem;
+    }
+    .system-ui::before, .system-ui::after {
+        right: 1.5rem;
+    }
 }
 
 /* Grids */
 @media (min-width: 1200px) {
     .fluid-grid {
         column-count: 2;
-        column-gap: 15px;
+        column-gap:   1.5rem;
         column-width: 50%;
     }
     .fluid-grid.x3 {
-        column-gap: 15px;
+        column-gap:   1.5rem;
         column-count: 3 auto;
     }
 }
@@ -23,16 +31,31 @@
 /* Navigation */
 @media (max-height: 990px) {
     .navigation.collapsed li:hover ul {
-        max-height: 240px;
+        max-height: 24rem;
         overflow-x: hidden;
         overflow-y: auto;
     }
 }
 
 @media (max-width: 768px) {
-    .top-header .links { visibility: hidden; opacity: 0; transition: all 200ms ease-out; }
-    .top-header.collapsed .links { visibility: visible; opacity: 1; transition-delay: 350ms; }
-    .top-header.collapsed .logo { width: 0; }
-    .navigation.collapsed { width: 0; overflow: hidden; }
-    #wrapper > .container.collapsed, #wrapper > .container { margin-left: 0; }
+    .top-header .links {
+        visibility: hidden;
+        opacity:    0;
+        transition: all 200ms ease-out;
+    }
+    .top-header.collapsed .links {
+        visibility:       visible;
+        opacity:          1;
+        transition-delay: 350ms;
+    }
+    .top-header.collapsed .logo {
+        width: 0;
+    }
+    .navigation.collapsed {
+        width:    0;
+        overflow: hidden;
+    }
+    #wrapper > .container.collapsed, #wrapper > .container {
+        margin-left: 0;
+    }
 }

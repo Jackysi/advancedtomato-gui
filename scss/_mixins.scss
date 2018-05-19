@@ -6,15 +6,15 @@
     }
     #{$selector}::-webkit-scrollbar-track {
         background: transparent;
-        border-radius: 0px;
-        -webkit-border-radius: 0px;
+        border-radius: 0;
+        -webkit-border-radius: 0;
     }
 
     /* Handle */
     #{$selector}::-webkit-scrollbar-thumb {
         background-color: $background;
-        border-radius: 0px;
-        -webkit-border-radius: 0px;
+        border-radius: 0;
+        -webkit-border-radius: 0;
 
         &:hover {
             background: lighten($background, 8%);

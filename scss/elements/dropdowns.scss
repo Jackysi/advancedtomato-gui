@@ -6,30 +6,30 @@ ul.dropdowns {
 
 ul.dropdowns > li {
     position: relative;
-    display: inline-block;
+    display:  inline-block;
 }
 
 ul.dropdowns > li ul {
-    display: none;
-    position: absolute;
-    left: -10px;
-    z-index: 40;
-    width: 200px;
-    background: #fff;
-    border-radius: 2px;
-    overflow-y: hidden;
-    overflow-x: auto;
+    display:       none;
+    position:      absolute;
+    left:          -1rem;
+    z-index:       40;
+    width:         20rem;
+    background:    #fff;
+    border-radius: .2rem;
+    overflow-y:    hidden;
+    overflow-x:    auto;
 }
 
 ul.dropdowns > li ul li {
-    display: block;
+    display:     block;
     line-height: normal;
-    margin: 0;
+    margin:      0;
 }
 
 ul.dropdowns > li ul li a {
     display: block;
-    padding: 5px 10px;
+    padding: .5rem 1rem;
 }
 
 .dropdowns li:hover > ul {

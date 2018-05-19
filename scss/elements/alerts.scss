@@ -1,83 +1,125 @@
 /* Alerts
 *******************************************************************************************************/
 .alert {
-    position: relative;
-    color: #e6f4f9;
-    padding: 15px 40px 15px 15px;
-    margin: 0 0 15px;
-    border-radius: 2px;
-    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.05);
-    -webkit-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.05);
-    background-color: #3498db;
+    position:           relative;
+    color:              #e6f4f9;
+    padding:            1.5rem 4rem 1.5rem 1.5rem;
+    margin:             0 0 1.5rem;
+    border-radius:      .2rem;
+    box-shadow:         inset 0 -.2rem 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: inset 0 -.2rem 0 rgba(0, 0, 0, 0.05);
+    background-color:   #3498db;
 }
 
 .alert.icon {
-    padding: 15px 40px 15px 75px;
+    padding: 1.5rem 4rem 1.5rem 7.5rem;
 }
 
 .alert.icon:after {
-    display: block;
-    position: absolute;
-    width: 58px;
-    height: 72px;
-    line-height: 72px;
-    text-align: center;
-    top: 50%;
-    left: 10px;
-    margin-top: -36px;
-    content: " ";
+    display:     block;
+    position:    absolute;
+    width:       5.8rem;
+    height:      7.2rem;
+    line-height: 7.2rem;
+    text-align:  center;
+    top:         50%;
+    left:        1rem;
+    margin-top:  -3.6rem;
+    content:     " ";
     font-family: "advancedtomato" !important;
-    font-size: 38px;
+    font-size:   3.8rem;
 }
 
 a.close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    margin-top: -10px;
-    padding: 2px;
-    font-size: 14px;
-    line-height: 1;
-    text-decoration: none;
-    cursor: pointer;
-    opacity: 0.5;
-    filter: alpha(opacity=50);
-    transition: opacity 150ms ease;
+    position:           absolute;
+    top:                1.5rem;
+    right:              1.5rem;
+    margin-top:         -1rem;
+    padding:            .2rem;
+    font-size:          1.4rem;
+    line-height:        1;
+    text-decoration:    none;
+    cursor:             pointer;
+    opacity:            0.5;
+    filter:             alpha(opacity=50);
+    transition:         opacity 150ms ease;
     -webkit-transition: opacity 150ms ease;
 }
 
-.alert a { text-decoration: underline; }
+.alert a {
+    text-decoration: underline;
+}
 
-a.close:hover { opacity: 1; filter: alpha(opacity=100); }
+a.close:hover {
+    opacity: 1;
+    filter:  alpha(opacity=100);
+}
 
-.alert h5 { display: block; font-size: 16px; margin: 0 0 4px; padding: 0; }
+.alert h5 {
+    display:   block;
+    font-size: 1.6rem;
+    margin:    0 0 .4rem;
+    padding:   0;
+}
 
 /* Success */
-.alert.alert-success { background-color: #defcd5; color: #52a954; }
+.alert.alert-success {
+    background-color: #defcd5;
+    color:            #52a954;
+}
 
-.alert.alert-success * { color: #52a954; }
+.alert.alert-success * {
+    color: #52a954;
+}
 
-.alert.icon.alert-success:after { content: "\E006"; }
+.alert.icon.alert-success:after {
+    content: "\E006";
+}
 
 /* Info */
-.alert.alert-info { background-color: #e6f4f9; color: #4d8796; }
+.alert.alert-info {
+    background-color: #e6f4f9;
+    color:            #4d8796;
+}
 
-.alert.alert-info * { color: #4d8796; }
+.alert.alert-info * {
+    color: #4d8796;
+}
 
-.alert.icon.alert-info:after { content: "\E027"; }
+.alert.icon.alert-info:after {
+    content: "\E027";
+}
 
 /* Warning */
-.alert.alert-warning { background-color: #f6f3d5; color: #96904d; }
+.alert.alert-warning {
+    background-color: #f6f3d5;
+    color:            #96904d;
+}
 
-.alert.alert-warning * { color: #96904d; }
+.alert.alert-warning * {
+    color: #96904d;
+}
 
-.alert.icon.alert-warning:after { content: "\e00b"; }
+.alert.icon.alert-warning:after {
+    content: "\e00b";
+}
 
 /* ERROR */
-.alert.alert-error { background-color: #f1d7d7; color: #a95252; }
+.alert.alert-error {
+    background-color: #f1d7d7;
+    color:            #a95252;
+}
 
-.alert.alert-error * { color: #a95252; }
+.alert.alert-error * {
+    color: #a95252;
+}
 
-.alert.icon.alert-error:after { content: "\E02B"; }
+.alert.icon.alert-error:after {
+    content: "\E02B";
+}
 
-#footer-msg { vertical-align: middle; padding: 10px 40px 10px 15px; min-height: 35px; }
+#footer-msg {
+    vertical-align: middle;
+    padding:        1rem 4rem 1rem 1.5rem;
+    min-height:     3.5rem;
+}
