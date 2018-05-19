@@ -6,9 +6,9 @@
     vertical-align:  middle;
     cursor:          pointer;
     white-space:     nowrap;
-    padding:         8px 16px;
+    padding:         .8rem 1.6rem;
     margin:          0;
-    font-size:       10pt;
+    font-size:       1.4rem;
     font-weight:     normal;
     line-height:     normal !important;
     user-select:     none;
@@ -17,8 +17,8 @@
     color:           #ffffff !important;
     background:      #536270;
     transition:      background-color 150ms ease, color 150ms ease;
-    border-radius:   3px;
-    border:          1px solid transparent;
+    border-radius:   .3rem;
+    border:          .1rem solid transparent;
 }
 
 .btn:hover,
@@ -74,7 +74,7 @@
     -webkit-box-shadow: none;
     background:         transparent;
     border:             0;
-    padding:            8px 10px;
+    padding:            .8rem 1rem;
 }
 
 .btn.btn-link:hover,
@@ -89,7 +89,7 @@
     box-shadow:   none;
     line-height:  1.2;
     border:       solid #f0f0f0;
-    border-width: 1px 0 0 1px;
+    border-width: .1rem 0 0 .1rem;
 }
 
 .btn.btn-tab:hover,
@@ -104,7 +104,7 @@
 }
 
 button.btn {
-    height:         35px;
+    height:         3.5rem;
     font-family:    $font-family;
     font-weight:    400 !important;
     vertical-align: middle;
@@ -112,9 +112,9 @@ button.btn {
 }
 
 .btn-small {
-    font-size:      8pt;
+    font-size:      1rem;
     font-weight:    normal;
-    padding:        4px 10px !important;
+    padding:        .4rem 1rem !important;
     vertical-align: middle;
 }
 
@@ -124,16 +124,16 @@ button.btn {
 }
 
 .btn-group > .btn {
-    margin:        0 -1px 0 0;
+    margin:        0 -.1rem 0 0;
     border-radius: 0;
 }
 
 .btn-group > .btn:first-of-type {
-    border-top-left-radius:    3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius:    .3rem;
+    border-bottom-left-radius: .3rem;
 }
 
 .btn-group > .btn:last-of-type {
-    border-top-right-radius:    3px;
-    border-bottom-right-radius: 3px;
+    border-top-right-radius:    .3rem;
+    border-bottom-right-radius: .3rem;
 }

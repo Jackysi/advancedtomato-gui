@@ -1,42 +1,42 @@
 /* Form, label, input, textarea, etc...
 *******************************************************************************************************/
 label {
-    display: inline-block;
-    color: #656565;
-    cursor: pointer;
+    display:        inline-block;
+    color:          #656565;
+    cursor:         pointer;
     vertical-align: baseline;
 }
 
 label.control-label {
-    text-align: right;
-    padding-top: 9px;
+    text-align:  right;
+    padding-top: 0.9rem;
 }
 
 label.control-left-label {
-    text-align: left;
-    padding-top: 10px;
+    text-align:  left;
+    padding-top: 1rem;
 }
 
 fieldset {
-    padding-bottom: 9px;
-    padding-top: 4px;
-    border: 0;
-    border-bottom: 1px dashed #eee;
-    margin-bottom: 5px;
-    margin-left: -15px;
-    margin-right: -15px;
+    padding-bottom: 0.9rem;
+    padding-top:    0.4rem;
+    border:         0;
+    border-bottom:  0.1rem dashed #eee;
+    margin-bottom:  0.5rem;
+    margin-left:    -1.5rem;
+    margin-right:   -1.5rem;
 }
 
 fieldset legend {
-    display: block;
-    width: 100%;
-    padding: 0;
-    margin-bottom: 20px;
-    font-size: 21px;
-    line-height: inherit;
-    color: #919292;
-    border: 0;
-    border-bottom: 1px solid #e5e5e5;
+    display:       block;
+    width:         100%;
+    padding:       0;
+    margin-bottom: 2rem;
+    font-size:     2.1rem;
+    line-height:   inherit;
+    color:         #919292;
+    border:        0;
+    border-bottom: .1rem solid #e5e5e5;
 }
 
 fieldset:last-child {
@@ -44,36 +44,36 @@ fieldset:last-child {
 }
 
 fieldset h5 {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top:    2rem;
+    margin-bottom: 1rem;
 }
 
 fieldset .help-block {
-    display: inline-block;
+    display:        inline-block;
     vertical-align: middle;
-    margin: -4px 5px 0;
-    color: #a5a5a5;
+    margin:         -.4rem .5rem 0;
+    color:          #a5a5a5;
 }
 
 fieldset .text-block {
-    padding-top: 7px;
+    padding-top: .7rem;
 }
 
 input, select, textarea {
-    color: #76838f;
-    padding: 6px 10px;
-    margin: 0;
-    height: 34px;
-    line-height: normal;
-    font-size: 10pt;
-    font-family: "Segoe UI", "Roboto", sans-serif, Helvetica, Arial, sans-serif;
-    border: 1px solid #e4eaec;
-    background-color: #fff;
-    transition: color 150ms ease, border-color 150ms ease, opacity 150ms ease;
+    color:              #76838f;
+    padding:            .6rem 1rem;
+    margin:             0;
+    height:             3.4rem;
+    line-height:        normal;
+    font-size:          1.4rem;
+    font-family:        "Segoe UI", "Roboto", sans-serif, Helvetica, Arial, sans-serif;
+    border:             .1rem solid #e4eaec;
+    background-color:   #fff;
+    transition:         color 150ms ease, border-color 150ms ease, opacity 150ms ease;
     -webkit-transition: color 150ms ease, border-color 150ms ease, opacity 150ms ease;
-    outline-style: none;
-    vertical-align: baseline;
-    border-radius: 3px;
+    outline-style:      none;
+    vertical-align:     baseline;
+    border-radius:      .3rem;
 }
 
 input:hover, select:hover, textarea:hover {
@@ -81,25 +81,25 @@ input:hover, select:hover, textarea:hover {
 }
 
 input:focus, select:focus, textarea:focus {
-    color: #000;
+    color:        #000;
     border-color: #3498db;
 }
 
 input:disabled, select:disabled, textarea:disabled {
     opacity: 0.65;
-    filter: alpha(opacity=65);
-    cursor: not-allowed;
-    color: #7c7c7c;
-    border: 1px solid #f0f0f0;
+    filter:  alpha(opacity=65);
+    cursor:  not-allowed;
+    color:   #7c7c7c;
+    border:  .1rem solid #f0f0f0;
 }
 
 /* Some quick fixes */
 fieldset .help-block .btn {
-    margin-top: 1px;
+    margin-top: .1rem;
 }
 
 form {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 textarea {
@@ -113,7 +113,7 @@ select, select option {
 .c-checkbox,
 .c-radio {
     display: inline-block;
-    margin: 7px 2px 5px;
+    margin:  .7rem .2rem .5rem;
 }
 
 .c-checkbox *,
@@ -123,25 +123,25 @@ select, select option {
 
 .c-checkbox input,
 .c-radio input {
-    opacity: 0;
-    filter: alpha(opacity=0);
-    height: auto !important;
-    position: absolute;
+    opacity:     0;
+    filter:      alpha(opacity=0);
+    height:      auto !important;
+    position:    absolute;
     margin-left: 0 !important;
 }
 
 .c-checkbox span,
 .c-radio span {
-    position: relative;
-    display: inline-block;
-    width: 22px;
-    height: 22px;
-    border-radius: 2px;
-    border: 1px solid #e4eaec;
-    background: #fff;
-    transition: all 250ms ease;
+    position:       relative;
+    display:        inline-block;
+    width:          2.2rem;
+    height:         2.2rem;
+    border-radius:  0.2rem;
+    border:         .1rem solid #e4eaec;
+    background:     #fff;
+    transition:     all 250ms ease;
     vertical-align: middle;
-    margin-right: 2px;
+    margin-right:   .2rem;
 }
 
 .c-checkbox:hover span,
@@ -149,7 +149,7 @@ select, select option {
 .c-radio:hover span,
 .c-radio input:hover + span {
     border-color: #3498db;
-    background: #fff;
+    background:   #fff;
 }
 
 /* override for radio */
@@ -160,34 +160,34 @@ select, select option {
 /* the icon */
 .c-checkbox span:before,
 .c-radio span:before {
-    color: #fff;
-    position: absolute;
-    font-family: "advancedtomato" !important;
-    content: "\e006";
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    text-align: center !important;
-    font-size: 12px;
-    line-height: 20px;
+    color:          #fff;
+    position:       absolute;
+    font-family:    "advancedtomato" !important;
+    content:        "\e006";
+    top:            0;
+    left:           0;
+    right:          0;
+    bottom:         0;
+    opacity:        0;
+    text-align:     center !important;
+    font-size:      1.2rem;
+    line-height:    2rem;
     vertical-align: middle;
-    transform: scale(0);
-    transition: all 450ms cubic-bezier(0.680, -0.750, 0.265, 1.550) 50ms;
+    transform:      scale(0);
+    transition:     all 450ms cubic-bezier(0.680, -0.750, 0.265, 1.550) 50ms;
 }
 
 /* Checked state */
 input[type=checkbox]:checked + span:before,
 input[type=radio]:checked + span:before {
-    color: #fff;
-    opacity: 1;
+    color:     #fff;
+    opacity:   1;
     transform: scale(1);
 }
 
 input[type=checkbox]:checked + span,
 input[type=radio]:checked + span {
-    border-color: #3498db;
+    border-color:     #3498db;
     background-color: #3498db;
 }
 
@@ -207,14 +207,14 @@ input[type=radio]:checked + span:before {
 /* Disable state */
 input[type=checkbox]:disabled + span,
 input[type=radio]:disabled + span {
-    pointer-events: none;
-    border-color: #dddddd !important;
+    pointer-events:   none;
+    border-color:     #dddddd !important;
     background-color: #dddddd !important;
 }
 
 /* override for radio */
 input[type=radio]:disabled + span {
-    pointer-events: none;
+    pointer-events:   none;
     background-color: #fff !important;
 }
 
@@ -224,81 +224,81 @@ input[type=radio]:disabled + span:before {
 
 /* Input appends */
 .input-append {
-    line-height: 0;
+    line-height:    0;
     vertical-align: middle;
-    margin: 4px 0;
+    margin:         .4rem 0;
 }
 
 .input-append .btn {
-    margin: 0;
-    vertical-align: middle;
-    border-top-left-radius: 0;
+    margin:                    0;
+    vertical-align:            middle;
+    border-top-left-radius:    0;
     border-bottom-left-radius: 0;
 }
 
 .input-append input,
 .input-append select {
-    vertical-align: middle;
-    padding: 8px 10px;
-    margin: 0 -4px 0 0;
-    border-top-right-radius: 0;
+    vertical-align:             middle;
+    padding:                    .8rem 1rem;
+    margin:                     0 -.4rem 0 0;
+    border-top-right-radius:    0;
     border-bottom-right-radius: 0;
 }
 
 /* custom upload elements */
 .customfile {
     vertical-align: middle;
-    display: inline-block;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    transition: none;
+    display:        inline-block;
+    cursor:         pointer;
+    overflow:       hidden;
+    position:       relative;
+    transition:     none;
 }
 
 .customfile-input {
-    position: absolute;
-    height: 100px;
-    cursor: pointer;
+    position:   absolute;
+    height:     10rem;
+    cursor:     pointer;
     background: transparent;
-    border: 0;
-    opacity: 0;
-    z-index: 999;
+    border:     0;
+    opacity:    0;
+    z-index:    999;
     transition: none;
 }
 
 .customfile-disabled {
     pointer-events: none;
-    opacity: .5;
-    filter: alpha(opacity=50);
-    cursor: default;
+    opacity:        .5;
+    filter:         alpha(opacity=50);
+    cursor:         default;
 }
 
 .customfile-text {
-    display: block;
-    font-size: 10pt;
-    line-height: normal;
-    height: 34px;
-    float: left;
-    overflow: hidden;
-    width: 280px;
-    margin: 0 -1px 0 0;
-    color: #313131;
-    font-style: normal;
-    padding: 8px 12px;
-    white-space: nowrap;
-    background: #fff;
-    border: 1px solid #e4eaec;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-    transition: border-color 150ms ease;
+    display:                   block;
+    font-size:                 1.4rem;
+    line-height:               normal;
+    height:                    3.4rem;
+    float:                     left;
+    overflow:                  hidden;
+    width:                     28rem;
+    margin:                    0 -.1rem 0 0;
+    color:                     #313131;
+    font-style:                normal;
+    padding:                   .8rem 1.2rem;
+    white-space:               nowrap;
+    background:                #fff;
+    border:                    .1rem solid #e4eaec;
+    border-top-left-radius:    .3rem;
+    border-bottom-left-radius: .3rem;
+    transition:                border-color 150ms ease;
 }
 
 .customfile .browse {
-    float: left;
-    height: 34px;
-    line-height: 17px;
-    margin: 0;
-    border-top-left-radius: 0;
+    float:                     left;
+    height:                    3.4rem;
+    line-height:               1.7rem;
+    margin:                    0;
+    border-top-left-radius:    0;
     border-bottom-left-radius: 0;
 }
 
@@ -312,7 +312,7 @@ input[type=radio]:disabled + span:before {
 
 /* Fix refresh timer append */
 .tomato-refresh select {
-    padding: 7px 10px;
-    width: 150px;
+    padding:        .7rem 1rem;
+    width:          15rem;
     vertical-align: middle;
 }
