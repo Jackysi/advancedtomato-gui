@@ -11,6 +11,7 @@ No part of this file may be used without permission.
 	<style type='text/css'>
 		* {
 			cursor: pointer;
+            font: .85rem 'Segoe UI', 'Roboto', sans-serif;
 		}
 		path {
 			stroke: #000;
@@ -19,7 +20,6 @@ No part of this file may be used without permission.
 			shape-rendering: geometricPrecision;
 		}
 		#info {
-			font: 11px sans-serif;
 		}
 		#tip-mask {
 			fill: #ffffff;
@@ -28,7 +28,6 @@ No part of this file may be used without permission.
 			stroke-opacity: 0.2;
 		}
 		#tip-text {
-			font: 11px sans-serif;
 			font-weight: normal;
 		}
 	</style>
