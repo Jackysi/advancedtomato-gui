@@ -272,8 +272,8 @@ No part of this file may be used without permission.
 				<script type="text/javascript">
 					$('.br0-set').forms([
 						{ title: 'Enable Limiter', name: 'f_new_qoslimit_enable', type: 'checkbox', value: nvram.new_qoslimit_enable != '0' },
-						{ title: 'Max Available Download <br><small>(same as used in QoS)</small>', indent: 2, name: 'wan_qos_ibw', type: 'text', maxlen: 6, size: 8, suffix: ' <small>kbit/s</small>', value: nvram.wan_qos_ibw },
-						{ title: 'Max Available Upload <br><small>(same as used in QoS)</small>', indent: 2, name: 'wan_qos_obw', type: 'text', maxlen: 6, size: 8, suffix: ' <small>kbit/s</small>', value: nvram.wan_qos_obw }
+						{ title: 'Max Available Download <br><small>(same as used in QoS)</small>', indent: 2, name: 'wan_qos_ibw', type: 'text', maxlen: 12, size: 8, suffix: ' <small>kbit/s</small>', value: nvram.wan_qos_ibw },
+						{ title: 'Max Available Upload <br><small>(same as used in QoS)</small>', indent: 2, name: 'wan_qos_obw', type: 'text', maxlen: 12, size: 8, suffix: ' <small>kbit/s</small>', value: nvram.wan_qos_obw }
 					]);
 				</script>
 
